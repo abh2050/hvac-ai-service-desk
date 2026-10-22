@@ -9,6 +9,7 @@ dependencies = [
     "pyyaml>=6",
     "pypdf>=5",
     "boto3>=1.35",
+    "botocore[crt]>=1.35",
     "xgboost>=3.4.1",
     "scikit-learn>=1.9.1",
 ]

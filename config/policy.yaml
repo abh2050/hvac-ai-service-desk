@@ -3,6 +3,12 @@
 # the values in force for each run.
 
 detection:
+  # Owner decision after Gate 1 (2026-10-22): rules are the primary detector. The model runs
+  # beside them on every unit. When rules and model disagree, the case goes to manager review.
+  # The model is trained locally (pipelines/training/train_detector.py), not on SageMaker,
+  # and its artifact ships with the detection Lambda.
+  primary: rules
+  second_opinion: model
   min_confidence: 0.70            # below this, the case goes to manual review and is not diagnosed
   require_review_on_disagreement: true
 
