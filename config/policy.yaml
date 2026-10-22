@@ -1,0 +1,20 @@
+# CONFIGURATION, NOT DATA.
+# Decision policy thresholds. Deterministic code reads these values. Gate reports record
+# the values in force for each run.
+
+detection:
+  min_confidence: 0.70            # below this, the case goes to manual review and is not diagnosed
+  require_review_on_disagreement: true
+
+diagnosis:
+  min_citations: 1                # zero supported citations -> "insufficient evidence"
+  require_exact_manual_match: false   # class match -> "compatibility uncertain" flag, not a block
+  deterministic_match_min_token_overlap: 0.6
+  entailment_required: true
+
+work_order:
+  block_if_required_safety_step_unsourced: true
+  approval_timeout_hours: 4       # Step Functions task token timeout; expiry escalates the order
+
+mcp:
+  audit_denied_calls: true

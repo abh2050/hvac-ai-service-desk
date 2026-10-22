@@ -1,0 +1,18 @@
+[project]
+name = "uptime-desk"
+version = "0.1.0"
+description = "AI service desk for HVAC maintenance in critical buildings"
+requires-python = ">=3.12,<3.13"
+dependencies = [
+    "pandas>=2.2",
+    "pyarrow>=17",
+    "pyyaml>=6",
+    "pypdf>=5",
+    "boto3>=1.35",
+]
+
+[dependency-groups]
+dev = ["pytest>=8", "ruff>=0.6"]
+
+[tool.uv]
+package = false

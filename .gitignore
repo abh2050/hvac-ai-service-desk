@@ -1,0 +1,23 @@
+# Data stays local except the source register
+data/*
+!data/SOURCES.md
+!data/episodes.csv
+
+# Secrets
+.env
+.env.*
+*.pem
+
+# Build output
+node_modules/
+cdk.out/
+dist/
+.venv/
+__pycache__/
+*.pyc
+.amplify/
+amplify_outputs.json
+video/out/*.mp4
+video/audio/
+.DS_Store
+!data/checksums.sha256

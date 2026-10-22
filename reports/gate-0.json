@@ -1,0 +1,75 @@
+{
+  "gate": 0,
+  "name": "setup",
+  "run_date": "2026-10-22",
+  "aws": {
+    "profile": "awsnew",
+    "account": "054772656600",
+    "region": "us-east-2",
+    "region_reason": "Org SCP explicitly denies regional services in us-west-2 and us-east-1",
+    "deployed_resources": 0,
+    "cdk_bootstrap": "not run; awaiting approval",
+    "budget": "prepared in scripts/create-budget.sh; not created; awaiting approval",
+    "existing_budget": {"name": "My Monthly Cost Budget", "limit_usd": 20, "scope": "account"},
+    "claude_agreement": "NOT_AVAILABLE",
+    "titan_embed_text_v2": "listed"
+  },
+  "measured": {
+    "files_downloaded": 99,
+    "checksum_verification": "99 of 99 OK",
+    "episodes_total": 150,
+    "release1_episodes": 123,
+    "release1_by_source_and_class": {
+      "field/RTU": 4,
+      "lab/AHU-MZVAV": 15,
+      "lab/AHU-SZCAV": 15,
+      "lab/AHU-SZVAV": 11,
+      "lab/RTU": 78
+    },
+    "release1_label_conflict_rows": 16,
+    "release2_simulated_files": 27,
+    "manuals": 5,
+    "manuals_exact_match_release1": 0,
+    "brick_models": ["ORNL lab RTU (Exp.ttl)", "simulated RTU (Sim.ttl)"],
+    "cdk_synth": {"idle": "ok", "demo": "ok"},
+    "cdk_diff_foundation_new_resources": 30,
+    "nat_gateways": 0,
+    "interface_endpoints": 4,
+    "shellcheck": "pass"
+  },
+  "ground_truth": {
+    "source": "LBNL inventory tables and per-minute Fault Detection Ground Truth flags",
+    "file": "data/episodes.csv"
+  },
+  "not_validated": {
+    "idle_cost_usd_per_month_estimate": [33, 35],
+    "estimate_basis": "4 interface endpoints x 1 AZ x $0.01/h x 730 h plus storage; not yet measured"
+  },
+  "passed": [
+    "repo layout",
+    "downloads and checksums",
+    "SOURCES.md with compatibility table",
+    "field RTU data present",
+    "Brick model check",
+    "episode index",
+    "seed configuration",
+    "cdk synth idle and demo",
+    "profile and teardown scripts lint clean"
+  ],
+  "failed_or_blocked": [
+    "Claude model agreement not accepted in account",
+    "No exact manual match for any release 1 unit",
+    "Trane CLCH-SVX07R general AHU manual URL returned HTTP 404"
+  ],
+  "unverified": [
+    "End to end service behavior in us-east-2",
+    "Amplify Gen 2 hosting under the SCP",
+    "Measured idle cost"
+  ],
+  "awaiting_approval": [
+    "cdk bootstrap aws://054772656600/us-east-2",
+    "scripts/create-budget.sh ($50/month, tag-scoped)",
+    "Anthropic use-case form in Bedrock console",
+    "Gate 1 scoring rules for label conflicts, field cross-domain test, and operations faults"
+  ]
+}

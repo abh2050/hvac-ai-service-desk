@@ -1,0 +1,8 @@
+{
+  "app": "npx tsx bin/uptime-desk.ts",
+  "context": {
+    "account": "054772656600",
+    "region": "us-east-2",
+    "profile": "idle"
+  }
+}

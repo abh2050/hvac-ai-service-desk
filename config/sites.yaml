@@ -1,0 +1,94 @@
+# CONFIGURATION, NOT DATA.
+# This file is seed configuration for the Uptime Desk demo. The client names, criticality,
+# SLA targets and site access rules are invented. The town coordinates are real town centers.
+# Each asset points at the recorded LBNL unit whose sensor data it replays ("lbnl_unit").
+# The LBNL units were recorded in Iowa, California, Tennessee and Connecticut. The demo
+# places all of them in one Connecticut service territory so dispatch has a coherent map.
+
+travel_model_ref: dispatch.yaml#travel
+
+sites:
+  - id: SITE-HTF-DC1
+    name: Hartford colocation data center
+    town: Hartford, CT
+    lat: 41.7658
+    lon: -72.6734
+    criticality: critical
+    sla_response_hours: 4
+    access: {badge_required: true, escort_required: true, allowed_hours: "00:00-24:00"}
+  - id: SITE-NHV-HOSP
+    name: New Haven hospital outpatient wing
+    town: New Haven, CT
+    lat: 41.3083
+    lon: -72.9279
+    criticality: critical
+    sla_response_hours: 4
+    access: {badge_required: true, escort_required: false, allowed_hours: "00:00-24:00"}
+  - id: SITE-MLF-REST
+    name: Milford restaurant
+    town: Milford, CT
+    lat: 41.2223
+    lon: -73.0565
+    criticality: standard
+    sla_response_hours: 24
+    access: {badge_required: false, escort_required: false, allowed_hours: "06:00-23:00"}
+  - id: SITE-COL-DIST
+    name: Colchester cold chain distribution center
+    town: Colchester, CT
+    lat: 41.5754
+    lon: -72.3320
+    criticality: high
+    sla_response_hours: 8
+    access: {badge_required: true, escort_required: false, allowed_hours: "05:00-22:00"}
+  - id: SITE-STM-LAB
+    name: Stamford pharmaceutical lab
+    town: Stamford, CT
+    lat: 41.0534
+    lon: -73.5387
+    criticality: critical
+    sla_response_hours: 4
+    access: {badge_required: true, escort_required: true, allowed_hours: "06:00-20:00"}
+
+assets:
+  - id: AST-RTU-01
+    site: SITE-HTF-DC1
+    equipment_class: RTU
+    description: 12.5 ton gas/electric rooftop unit serving 10 VAV zones
+    lbnl_unit: ORNL-FRP-RTU-YCD150
+    brick_model: LBNL_FDD_Data_Sets_RTU_Exp.ttl
+  - id: AST-RTU-02
+    site: SITE-HTF-DC1
+    equipment_class: RTU
+    description: 12.5 ton rooftop unit (Figshare RTU.csv recording)
+    lbnl_unit: ORNL-FRP2-RTU
+    brick_model: null
+  - id: AST-RTU-03
+    site: SITE-MLF-REST
+    equipment_class: RTU
+    description: 7.5 ton two-stage rooftop unit
+    lbnl_unit: Site1-Milford-7.5t
+    brick_model: null
+  - id: AST-RTU-04
+    site: SITE-COL-DIST
+    equipment_class: RTU
+    description: 10 ton two-circuit rooftop unit
+    lbnl_unit: Site2-Colchester-10t
+    brick_model: null
+  - id: AST-AHU-01
+    site: SITE-NHV-HOSP
+    equipment_class: AHU-MZVAV
+    description: multi-zone VAV air handler with preheat, cooling and heating coils
+    lbnl_unit: ERS-AHU-A
+    brick_model: null
+  - id: AST-AHU-02
+    site: SITE-STM-LAB
+    equipment_class: AHU-SZCAV
+    description: single-zone air handler, constant volume mode
+    lbnl_unit: FLEXLAB-X3A-AHU-CAV
+    brick_model: null
+  - id: AST-AHU-03
+    site: SITE-STM-LAB
+    equipment_class: AHU-SZVAV
+    description: single-zone air handler, variable volume mode
+    lbnl_unit: FLEXLAB-X3A-AHU-VAV
+    brick_model: null

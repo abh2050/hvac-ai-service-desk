@@ -1,0 +1,38 @@
+# CONFIGURATION, NOT DATA.
+# Dispatch optimizer settings for the Uptime Desk demo. All results that use this file are
+# scenario model results, not field savings.
+
+objective_weights:          # minimize w_sla * lateness_min + w_travel * travel_min + w_balance * imbalance_min
+  sla_lateness_per_min: 10.0
+  travel_per_min: 1.0
+  workload_imbalance_per_min: 0.5
+
+travel:
+  model: straight_line      # great-circle distance between technician home base and site
+  average_speed_kmh: 40     # stated average road speed, applied to straight-line distance
+  detour_factor: 1.0        # no road-network correction; the README states this limitation
+
+job_duration_minutes:       # planning estimate per required skill set, used only for scheduling
+  default: 120
+  refrigerant: 180
+  controls: 90
+
+required_certs_by_fault:    # hard constraint: technician must hold every listed cert (EPA608_UNIVERSAL satisfies EPA608_II)
+  refrigerant_undercharge: [EPA608_II, HVAC]
+  condenser_fouling: [HVAC]
+  compressor_stage2_not_engaging: [HVAC, ELECTRICAL]
+  oa_damper_stuck: [CONTROLS]
+  oa_damper_leak: [HVAC]
+  economizer_setpoint_incorrect: [CONTROLS]
+  sa_temp_sensor_bias: [CONTROLS]
+  heating_valve_stuck: [CONTROLS]
+  heating_valve_leak: [HVAC]
+  cooling_valve_stuck: [CONTROLS]
+  cooling_valve_leak: [HVAC]
+  thermostat_bias: [CONTROLS]
+  default: [HVAC]
+
+solver:
+  engine: ortools_cp_sat
+  time_limit_seconds: 10
+  planning_horizon_hours: 24

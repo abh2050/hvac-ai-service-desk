@@ -1,0 +1,27 @@
+# CONFIGURATION, NOT DATA.
+# This file is the seed technician roster for the Uptime Desk demo. The people are invented.
+# Home bases are real Connecticut town centers. Certifications use these codes:
+#   EPA608_II, EPA608_UNIVERSAL: EPA Section 608 refrigerant handling (Type II or Universal)
+#   HVAC: HVAC mechanical service
+#   CONTROLS: building automation and controls
+#   ELECTRICAL: electrical license for HVAC power and control wiring
+# Shifts are local time (America/New_York). site_access lists the sites a technician is
+# cleared to enter. Escort-required sites also need "escort_cleared: true".
+
+technicians:
+  - {id: T01, name: Avery Kim,      home: Hartford,     lat: 41.7658, lon: -72.6734, certs: [EPA608_UNIVERSAL, HVAC, ELECTRICAL], shift: "07:00-15:30", days: [Mon, Tue, Wed, Thu, Fri], site_access: [SITE-HTF-DC1, SITE-COL-DIST, SITE-NHV-HOSP], escort_cleared: true}
+  - {id: T02, name: Jordan Reyes,   home: New Britain,  lat: 41.6612, lon: -72.7795, certs: [HVAC, CONTROLS],                      shift: "07:00-15:30", days: [Mon, Tue, Wed, Thu, Fri], site_access: [SITE-HTF-DC1, SITE-NHV-HOSP], escort_cleared: true}
+  - {id: T03, name: Sam Okafor,     home: Middletown,   lat: 41.5623, lon: -72.6506, certs: [EPA608_II, HVAC],                     shift: "06:00-14:30", days: [Mon, Tue, Wed, Thu, Fri], site_access: [SITE-COL-DIST, SITE-NHV-HOSP, SITE-MLF-REST], escort_cleared: false}
+  - {id: T04, name: Riley Chen,     home: New Haven,    lat: 41.3083, lon: -72.9279, certs: [CONTROLS, ELECTRICAL],                shift: "08:00-16:30", days: [Mon, Tue, Wed, Thu, Fri], site_access: [SITE-NHV-HOSP, SITE-MLF-REST, SITE-STM-LAB], escort_cleared: true}
+  - {id: T05, name: Morgan Diaz,    home: Bridgeport,   lat: 41.1865, lon: -73.1952, certs: [EPA608_UNIVERSAL, HVAC, CONTROLS],    shift: "07:00-15:30", days: [Mon, Tue, Wed, Thu, Fri], site_access: [SITE-MLF-REST, SITE-STM-LAB, SITE-NHV-HOSP], escort_cleared: true}
+  - {id: T06, name: Casey Patel,    home: Stamford,     lat: 41.0534, lon: -73.5387, certs: [HVAC, ELECTRICAL],                    shift: "07:00-15:30", days: [Mon, Tue, Wed, Thu, Fri], site_access: [SITE-STM-LAB], escort_cleared: true}
+  - {id: T07, name: Taylor Nguyen,  home: Norwalk,      lat: 41.1177, lon: -73.4082, certs: [EPA608_II, HVAC, CONTROLS],           shift: "15:00-23:30", days: [Mon, Tue, Wed, Thu, Fri], site_access: [SITE-STM-LAB, SITE-MLF-REST], escort_cleared: false}
+  - {id: T08, name: Quinn Murphy,   home: Waterbury,    lat: 41.5582, lon: -73.0515, certs: [HVAC],                                shift: "07:00-15:30", days: [Mon, Tue, Wed, Thu, Fri], site_access: [SITE-HTF-DC1, SITE-MLF-REST], escort_cleared: false}
+  - {id: T09, name: Drew Santos,    home: Meriden,      lat: 41.5382, lon: -72.8070, certs: [EPA608_UNIVERSAL, HVAC, ELECTRICAL], shift: "15:00-23:30", days: [Mon, Tue, Wed, Thu, Fri], site_access: [SITE-HTF-DC1, SITE-NHV-HOSP, SITE-COL-DIST], escort_cleared: true}
+  - {id: T10, name: Jamie Rossi,    home: Norwich,      lat: 41.5243, lon: -72.0759, certs: [EPA608_II, HVAC],                     shift: "06:00-14:30", days: [Mon, Tue, Wed, Thu, Fri, Sat], site_access: [SITE-COL-DIST], escort_cleared: false}
+  - {id: T11, name: Alex Novak,     home: Danbury,      lat: 41.3948, lon: -73.4540, certs: [CONTROLS],                            shift: "08:00-16:30", days: [Mon, Tue, Wed, Thu, Fri], site_access: [SITE-STM-LAB, SITE-HTF-DC1], escort_cleared: true}
+  - {id: T12, name: Parker Lee,     home: Manchester,   lat: 41.7759, lon: -72.5215, certs: [EPA608_UNIVERSAL, HVAC, CONTROLS],    shift: "23:00-07:30", days: [Sun, Mon, Tue, Wed, Thu], site_access: [SITE-HTF-DC1, SITE-COL-DIST, SITE-NHV-HOSP], escort_cleared: true}
+  - {id: T13, name: Rowan Ali,      home: Shelton,      lat: 41.3165, lon: -73.0932, certs: [HVAC, ELECTRICAL],                    shift: "23:00-07:30", days: [Sun, Mon, Tue, Wed, Thu], site_access: [SITE-NHV-HOSP, SITE-STM-LAB, SITE-MLF-REST], escort_cleared: true}
+  - {id: T14, name: Skyler Brooks,  home: Enfield,      lat: 41.9762, lon: -72.5918, certs: [EPA608_II, HVAC],                     shift: "07:00-15:30", days: [Sat, Sun], site_access: [SITE-HTF-DC1, SITE-COL-DIST], escort_cleared: false}
+  - {id: T15, name: Emerson Wu,     home: Milford,      lat: 41.2223, lon: -73.0565, certs: [CONTROLS, ELECTRICAL],                shift: "07:00-15:30", days: [Sat, Sun], site_access: [SITE-MLF-REST, SITE-NHV-HOSP, SITE-STM-LAB], escort_cleared: true}
+  - {id: T16, name: Hayden Moore,   home: Glastonbury,  lat: 41.7123, lon: -72.6081, certs: [EPA608_UNIVERSAL, HVAC, ELECTRICAL, CONTROLS], shift: "15:00-23:30", days: [Fri, Sat, Sun], site_access: [SITE-HTF-DC1, SITE-COL-DIST, SITE-NHV-HOSP, SITE-STM-LAB], escort_cleared: true}

@@ -1,0 +1,151 @@
+file,unit,equipment_class,source_type,start,end,fault_type,intensity,label_source,gt_flag,label_conflict,release
+raw/figshare-ahu-rtu/MZVAV-2-1.csv,ERS-AHU-A,AHU-MZVAV,lab,2007-08-28 00:00,2007-08-28 23:59,heating_valve_leak,0.4 GPM,Figshare inventory Table 2-2 p.11-12,1,,1
+raw/figshare-ahu-rtu/MZVAV-2-1.csv,ERS-AHU-A,AHU-MZVAV,lab,2007-08-29 00:00,2007-08-29 23:59,heating_valve_leak,1.0 GPM,Figshare inventory Table 2-2 p.11-12,1,,1
+raw/figshare-ahu-rtu/MZVAV-2-1.csv,ERS-AHU-A,AHU-MZVAV,lab,2007-08-30 00:00,2007-08-30 23:59,heating_valve_leak,2.0 GPM,Figshare inventory Table 2-2 p.11-12,0,"table says faulted, flag says 0",1
+raw/figshare-ahu-rtu/MZVAV-2-1.csv,ERS-AHU-A,AHU-MZVAV,lab,2008-08-19 00:00,2008-08-19 23:59,unfaulted,,Figshare inventory Table 2-2 p.11-12,0,,1
+raw/figshare-ahu-rtu/MZVAV-2-1.csv,ERS-AHU-A,AHU-MZVAV,lab,2008-08-25 00:00,2008-08-25 23:59,unfaulted,,Figshare inventory Table 2-2 p.11-12,0,,1
+raw/figshare-ahu-rtu/MZVAV-2-1.csv,ERS-AHU-A,AHU-MZVAV,lab,2008-09-04 00:00,2008-09-04 23:59,unfaulted,,Figshare inventory Table 2-2 p.11-12,0,,1
+raw/figshare-ahu-rtu/MZVAV-2-1.csv,ERS-AHU-A,AHU-MZVAV,lab,2009-01-19 00:00,2009-01-19 23:59,unfaulted,,Figshare inventory Table 2-2 p.11-12,0,,1
+raw/figshare-ahu-rtu/MZVAV-2-1.csv,ERS-AHU-A,AHU-MZVAV,lab,2009-02-16 00:00,2009-02-16 23:59,unfaulted,,Figshare inventory Table 2-2 p.11-12,0,,1
+raw/figshare-ahu-rtu/MZVAV-2-1.csv,ERS-AHU-A,AHU-MZVAV,lab,2009-02-17 00:00,2009-02-17 23:59,unfaulted,,Figshare inventory Table 2-2 p.11-12,0,,1
+raw/figshare-ahu-rtu/MZVAV-2-1.csv,ERS-AHU-A,AHU-MZVAV,lab,2009-05-03 00:00,2009-05-03 23:59,unfaulted,,Figshare inventory Table 2-2 p.11-12,0,,1
+raw/figshare-ahu-rtu/MZVAV-2-1.csv,ERS-AHU-A,AHU-MZVAV,lab,2009-05-04 00:00,2009-05-04 23:59,unfaulted,,Figshare inventory Table 2-2 p.11-12,0,,1
+raw/figshare-ahu-rtu/MZVAV-2-1.csv,ERS-AHU-A,AHU-MZVAV,lab,2009-05-05 00:00,2009-05-05 23:59,unfaulted,,Figshare inventory Table 2-2 p.11-12,0,,1
+raw/figshare-ahu-rtu/MZVAV-2-1.csv,ERS-AHU-A,AHU-MZVAV,lab,2009-05-06 00:00,2009-05-06 23:59,unfaulted,,Figshare inventory Table 2-2 p.11-12,0,,1
+raw/figshare-ahu-rtu/MZVAV-2-1.csv,ERS-AHU-A,AHU-MZVAV,lab,2009-05-30 00:00,2009-05-30 23:59,not in source table,,Figshare inventory Table 2-2 p.11-12,0,day present in file but not in table,1
+raw/figshare-ahu-rtu/MZVAV-2-1.csv,ERS-AHU-A,AHU-MZVAV,lab,2009-05-31 00:00,2009-05-31 23:59,not in source table,,Figshare inventory Table 2-2 p.11-12,0,day present in file but not in table,1
+raw/figshare-ahu-rtu/SZCAV.csv,FLEXLAB-X3A-AHU-CAV,AHU-SZCAV,lab,2017-03-11 00:00,2017-03-11 23:59,cooling_valve_stuck,0% closed,Figshare inventory Table 3-3 p.18,1,,1
+raw/figshare-ahu-rtu/SZCAV.csv,FLEXLAB-X3A-AHU-CAV,AHU-SZCAV,lab,2017-03-12 00:00,2017-03-12 23:59,cooling_valve_stuck,100% open,Figshare inventory Table 3-3 p.18,1,,1
+raw/figshare-ahu-rtu/SZCAV.csv,FLEXLAB-X3A-AHU-CAV,AHU-SZCAV,lab,2017-03-15 00:00,2017-03-15 23:59,cooling_valve_leak,5% of max flow,Figshare inventory Table 3-3 p.18,1,,1
+raw/figshare-ahu-rtu/SZCAV.csv,FLEXLAB-X3A-AHU-CAV,AHU-SZCAV,lab,2017-03-16 00:00,2017-03-16 23:59,cooling_valve_leak,50% of max flow,Figshare inventory Table 3-3 p.18,1,,1
+raw/figshare-ahu-rtu/SZCAV.csv,FLEXLAB-X3A-AHU-CAV,AHU-SZCAV,lab,2017-03-18 00:00,2017-03-18 23:59,oa_damper_stuck,100% open,Figshare inventory Table 3-3 p.18,1,,1
+raw/figshare-ahu-rtu/SZCAV.csv,FLEXLAB-X3A-AHU-CAV,AHU-SZCAV,lab,2017-03-19 00:00,2017-03-19 23:59,oa_damper_stuck,50% open,Figshare inventory Table 3-3 p.18,1,,1
+raw/figshare-ahu-rtu/SZCAV.csv,FLEXLAB-X3A-AHU-CAV,AHU-SZCAV,lab,2017-03-20 00:00,2017-03-20 23:59,oa_damper_leak,20% of max flow,Figshare inventory Table 3-3 p.18,1,,1
+raw/figshare-ahu-rtu/SZCAV.csv,FLEXLAB-X3A-AHU-CAV,AHU-SZCAV,lab,2017-03-21 00:00,2017-03-21 23:59,oa_damper_leak,50% of max flow,Figshare inventory Table 3-3 p.18,1,,1
+raw/figshare-ahu-rtu/SZCAV.csv,FLEXLAB-X3A-AHU-CAV,AHU-SZCAV,lab,2017-03-22 00:00,2017-03-22 23:59,heating_valve_leak,5% of max flow,Figshare inventory Table 3-3 p.18,1,,1
+raw/figshare-ahu-rtu/SZCAV.csv,FLEXLAB-X3A-AHU-CAV,AHU-SZCAV,lab,2017-03-23 00:00,2017-03-23 23:59,heating_valve_leak,40% of max flow,Figshare inventory Table 3-3 p.18,1,,1
+raw/figshare-ahu-rtu/SZCAV.csv,FLEXLAB-X3A-AHU-CAV,AHU-SZCAV,lab,2017-03-24 00:00,2017-03-24 23:59,heating_valve_stuck,0% closed,Figshare inventory Table 3-3 p.18,1,,1
+raw/figshare-ahu-rtu/SZCAV.csv,FLEXLAB-X3A-AHU-CAV,AHU-SZCAV,lab,2017-03-25 00:00,2017-03-25 23:59,heating_valve_stuck,100% open,Figshare inventory Table 3-3 p.18,1,,1
+raw/figshare-ahu-rtu/SZCAV.csv,FLEXLAB-X3A-AHU-CAV,AHU-SZCAV,lab,2017-03-26 00:00,2017-03-26 23:59,heating_valve_stuck,50% open,Figshare inventory Table 3-3 p.18,1,,1
+raw/figshare-ahu-rtu/SZCAV.csv,FLEXLAB-X3A-AHU-CAV,AHU-SZCAV,lab,2017-03-31 00:00,2017-03-31 23:59,cooling_valve_stuck,50% open,Figshare inventory Table 3-3 p.18,1,,1
+raw/figshare-ahu-rtu/SZCAV.csv,FLEXLAB-X3A-AHU-CAV,AHU-SZCAV,lab,2017-04-01 00:00,2017-04-01 23:59,unfaulted,,Figshare inventory Table 3-3 p.18,0,,1
+raw/figshare-ahu-rtu/SZVAV.csv,FLEXLAB-X3A-AHU-VAV,AHU-SZVAV,lab,2017-09-11 00:00,2017-09-11 23:59,cooling_valve_leak,50% of max flow,Figshare inventory Table 3-4 p.19,1,,1
+raw/figshare-ahu-rtu/SZVAV.csv,FLEXLAB-X3A-AHU-VAV,AHU-SZVAV,lab,2017-09-12 00:00,2017-09-12 23:59,heating_valve_leak,40% of max flow,Figshare inventory Table 3-4 p.19,1,,1
+raw/figshare-ahu-rtu/SZVAV.csv,FLEXLAB-X3A-AHU-VAV,AHU-SZVAV,lab,2017-09-14 00:00,2017-09-14 23:59,heating_valve_stuck,100% open,Figshare inventory Table 3-4 p.19,1,,1
+raw/figshare-ahu-rtu/SZVAV.csv,FLEXLAB-X3A-AHU-VAV,AHU-SZVAV,lab,2017-09-15 00:00,2017-09-15 23:59,heating_valve_stuck,50% open,Figshare inventory Table 3-4 p.19,1,,1
+raw/figshare-ahu-rtu/SZVAV.csv,FLEXLAB-X3A-AHU-VAV,AHU-SZVAV,lab,2017-09-18 00:00,2017-09-18 23:59,oa_damper_stuck,minimum position,Figshare inventory Table 3-4 p.19,1,,1
+raw/figshare-ahu-rtu/SZVAV.csv,FLEXLAB-X3A-AHU-VAV,AHU-SZVAV,lab,2017-09-19 00:00,2017-09-19 23:59,oa_damper_stuck,100% open,Figshare inventory Table 3-4 p.19,1,,1
+raw/figshare-ahu-rtu/SZVAV.csv,FLEXLAB-X3A-AHU-VAV,AHU-SZVAV,lab,2017-09-20 00:00,2017-09-20 23:59,unfaulted,,Figshare inventory Table 3-4 p.19,0,,1
+raw/figshare-ahu-rtu/SZVAV.csv,FLEXLAB-X3A-AHU-VAV,AHU-SZVAV,lab,2017-09-21 00:00,2017-09-21 23:59,unfaulted,,Figshare inventory Table 3-4 p.19,0,,1
+raw/figshare-ahu-rtu/SZVAV.csv,FLEXLAB-X3A-AHU-VAV,AHU-SZVAV,lab,2017-09-22 00:00,2017-09-22 23:59,cooling_valve_stuck,100% open,Figshare inventory Table 3-4 p.19,1,,1
+raw/figshare-ahu-rtu/SZVAV.csv,FLEXLAB-X3A-AHU-VAV,AHU-SZVAV,lab,2017-09-23 00:00,2017-09-23 23:59,unfaulted,,Figshare inventory Table 3-4 p.19,0,,1
+raw/figshare-ahu-rtu/SZVAV.csv,FLEXLAB-X3A-AHU-VAV,AHU-SZVAV,lab,2017-09-24 00:00,2017-09-24 23:59,unfaulted,,Figshare inventory Table 3-4 p.19,0,,1
+raw/figshare-ahu-rtu/RTU.csv,ORNL-FRP2-RTU,RTU,lab,2017-08-27 00:00,2017-08-27 23:59,condenser_fouling,25% airflow reduction,Figshare inventory Table 4-3 p.24-25,1,,1
+raw/figshare-ahu-rtu/RTU.csv,ORNL-FRP2-RTU,RTU,lab,2017-08-28 00:00,2017-08-28 23:59,not in source table,,Figshare inventory Table 4-3 p.24-25,1,day present in file but not in table; only 1 rows (day boundary spill),1
+raw/figshare-ahu-rtu/RTU.csv,ORNL-FRP2-RTU,RTU,lab,2017-08-29 00:00,2017-08-29 23:59,condenser_fouling,50% airflow reduction,Figshare inventory Table 4-3 p.24-25,1,,1
+raw/figshare-ahu-rtu/RTU.csv,ORNL-FRP2-RTU,RTU,lab,2017-09-01 00:00,2017-09-01 23:59,unfaulted,,Figshare inventory Table 4-3 p.24-25,1,"table says unfaulted, flag says 1",1
+raw/figshare-ahu-rtu/RTU.csv,ORNL-FRP2-RTU,RTU,lab,2017-11-30 00:00,2017-11-30 23:59,unfaulted,,Figshare inventory Table 4-3 p.24-25,1,"table says unfaulted, flag says 1",1
+raw/figshare-ahu-rtu/RTU.csv,ORNL-FRP2-RTU,RTU,lab,2017-12-01 00:00,2017-12-01 23:59,hvac_setback_delayed_onset,3 h,Figshare inventory Table 4-3 p.24-25,1,,1
+raw/figshare-ahu-rtu/RTU.csv,ORNL-FRP2-RTU,RTU,lab,2017-12-03 00:00,2017-12-03 23:59,hvac_setback_early_termination,3 h,Figshare inventory Table 4-3 p.24-25,1,day listed under more than one scenario,1
+raw/figshare-ahu-rtu/RTU.csv,ORNL-FRP2-RTU,RTU,lab,2017-12-03 00:00,2017-12-03 23:59,unfaulted,,Figshare inventory Table 4-3 p.24-25,1,day listed under more than one scenario,1
+raw/figshare-ahu-rtu/RTU.csv,ORNL-FRP2-RTU,RTU,lab,2017-12-07 00:00,2017-12-07 23:59,excessive_infiltration,+20%,Figshare inventory Table 4-3 p.24-25,1,,1
+raw/figshare-ahu-rtu/RTU.csv,ORNL-FRP2-RTU,RTU,lab,2017-12-08 00:00,2017-12-08 23:59,not in source table,,Figshare inventory Table 4-3 p.24-25,1,day present in file but not in table; only 1 rows (day boundary spill),1
+raw/figshare-ahu-rtu/RTU.csv,ORNL-FRP2-RTU,RTU,lab,2017-12-09 00:00,2017-12-09 23:59,unfaulted,,Figshare inventory Table 4-3 p.24-25,1,"table says unfaulted, flag says 1",1
+raw/figshare-ahu-rtu/RTU.csv,ORNL-FRP2-RTU,RTU,lab,2017-12-10 00:00,2017-12-10 23:59,not in source table,,Figshare inventory Table 4-3 p.24-25,1,day present in file but not in table,1
+raw/figshare-ahu-rtu/RTU.csv,ORNL-FRP2-RTU,RTU,lab,2017-12-11 00:00,2017-12-11 23:59,not in source table,,Figshare inventory Table 4-3 p.24-25,1,day present in file but not in table; only 1 rows (day boundary spill),1
+raw/figshare-ahu-rtu/RTU.csv,ORNL-FRP2-RTU,RTU,lab,2017-12-14 00:00,2017-12-14 23:59,excessive_infiltration,+40%,Figshare inventory Table 4-3 p.24-25,1,,1
+raw/figshare-ahu-rtu/RTU.csv,ORNL-FRP2-RTU,RTU,lab,2017-12-20 00:00,2017-12-20 23:59,no_overnight_hvac_setback,,Figshare inventory Table 4-3 p.24-25,1,,1
+raw/figshare-ahu-rtu/RTU.csv,ORNL-FRP2-RTU,RTU,lab,2017-12-24 00:00,2017-12-24 23:59,unfaulted,,Figshare inventory Table 4-3 p.24-25,1,"table says unfaulted, flag says 1",1
+raw/figshare-ahu-rtu/RTU.csv,ORNL-FRP2-RTU,RTU,lab,2018-01-27 00:00,2018-01-27 23:59,thermostat_bias,-4F perimeter zone 205,Figshare inventory Table 4-3 p.24-25,1,,1
+raw/figshare-ahu-rtu/RTU.csv,ORNL-FRP2-RTU,RTU,lab,2018-01-28 00:00,2018-01-28 23:59,thermostat_bias,+4F perimeter zone 205,Figshare inventory Table 4-3 p.24-25,1,,1
+raw/figshare-ahu-rtu/RTU.csv,ORNL-FRP2-RTU,RTU,lab,2018-01-31 00:00,2018-01-31 23:59,thermostat_bias,-4F core zone 103,Figshare inventory Table 4-3 p.24-25,1,,1
+raw/figshare-ahu-rtu/RTU.csv,ORNL-FRP2-RTU,RTU,lab,2018-02-01 00:00,2018-02-01 23:59,thermostat_bias,+4F core zone 103,Figshare inventory Table 4-3 p.24-25,1,,1
+raw/figshare-ahu-rtu/RTU.csv,ORNL-FRP2-RTU,RTU,lab,2018-02-04 00:00,2018-02-04 23:59,unfaulted,,Figshare inventory Table 4-3 p.24-25,1,"table says unfaulted, flag says 1",1
+raw/figshare-ahu-rtu/RTU.csv,ORNL-FRP2-RTU,RTU,lab,2018-02-05 00:00,2018-02-05 23:59,unfaulted,,Figshare inventory Table 4-3 p.24-25,1,"table says unfaulted, flag says 1",1
+raw/figshare-ahu-rtu/RTU.csv,ORNL-FRP2-RTU,RTU,lab,2018-02-06 00:00,2018-02-06 23:59,not in source table,,Figshare inventory Table 4-3 p.24-25,1,day present in file but not in table; only 1 rows (day boundary spill),1
+raw/figshare-ahu-rtu/RTU.csv,ORNL-FRP2-RTU,RTU,lab,2018-02-07 00:00,2018-02-07 23:59,lighting_setback_delayed_onset,3 h,Figshare inventory Table 4-3 p.24-25,1,,1
+raw/figshare-ahu-rtu/RTU.csv,ORNL-FRP2-RTU,RTU,lab,2018-02-09 00:00,2018-02-09 23:59,lighting_setback_early_termination,3 h,Figshare inventory Table 4-3 p.24-25,1,,1
+raw/figshare-ahu-rtu/RTU.csv,ORNL-FRP2-RTU,RTU,lab,2018-02-18 00:00,2018-02-18 23:59,no_overnight_lighting_setback,,Figshare inventory Table 4-3 p.24-25,1,,1
+raw/figshare-ahu-rtu/MZVAV-1.csv,PNNL-sim-MZVAV,AHU-MZVAV,simulated,,,see source table,,Figshare inventory Table 1-2,,,2
+raw/figshare-ahu-rtu/MZVAV-2-2.csv,ERS-AHU-A-sim,AHU-MZVAV,simulated,,,see source table,,Figshare inventory Table 2-2 (simulation),,,2
+raw/lbnl-rtu-extracted/ORNL_RTU/ERTU_Fall_2020.csv,ORNL-FRP-RTU-YCD150,RTU,lab,2020-09-12 00:00,2020-10-12 23:59,unfaulted,,LBNL RTU inventory Table E3 p.9-10,,,1
+raw/lbnl-rtu-extracted/ORNL_RTU/ERTU_Spring_2021.csv,ORNL-FRP-RTU-YCD150,RTU,lab,2021-04-02 00:00,2021-04-16 23:59,unfaulted,,LBNL RTU inventory Table E3 p.9-10,,,1
+raw/lbnl-rtu-extracted/ORNL_RTU/ERTU_Summer_2021.csv,ORNL-FRP-RTU-YCD150,RTU,lab,2021-06-04 00:00,2021-06-17 23:59,unfaulted,,LBNL RTU inventory Table E3 p.9-10,,,1
+raw/lbnl-rtu-extracted/ORNL_RTU/ERTU_Winter_2022.csv,ORNL-FRP-RTU-YCD150,RTU,lab,2022-02-24 00:00,2022-03-09 23:59,unfaulted,,LBNL RTU inventory Table E3 p.9-10,,,1
+raw/lbnl-rtu-extracted/ORNL_RTU/Inc_Eco_SP_-2_Fall_2020.csv,ORNL-FRP-RTU-YCD150,RTU,lab,2020-10-10 00:00,2020-10-10 23:59,economizer_setpoint_incorrect,-2,LBNL RTU inventory Table E3 p.9-10,,,1
+raw/lbnl-rtu-extracted/ORNL_RTU/Inc_Eco_SP_-2_Spring_2021.csv,ORNL-FRP-RTU-YCD150,RTU,lab,2021-04-13 00:00,2021-04-13 23:59,economizer_setpoint_incorrect,-2,LBNL RTU inventory Table E3 p.9-10,,,1
+raw/lbnl-rtu-extracted/ORNL_RTU/Inc_Eco_SP_-2_Summer_2021.csv,ORNL-FRP-RTU-YCD150,RTU,lab,2021-06-15 00:00,2021-06-15 23:59,economizer_setpoint_incorrect,-2,LBNL RTU inventory Table E3 p.9-10,,,1
+raw/lbnl-rtu-extracted/ORNL_RTU/Inc_Eco_SP_-2_Winter_2022.csv,ORNL-FRP-RTU-YCD150,RTU,lab,2022-03-07 00:00,2022-03-07 23:59,economizer_setpoint_incorrect,-2,LBNL RTU inventory Table E3 p.9-10,,,1
+raw/lbnl-rtu-extracted/ORNL_RTU/Inc_Eco_SP_-4_Fall_2020.csv,ORNL-FRP-RTU-YCD150,RTU,lab,2020-10-13 00:00,2020-10-13 23:59,economizer_setpoint_incorrect,-4,LBNL RTU inventory Table E3 p.9-10,,,1
+raw/lbnl-rtu-extracted/ORNL_RTU/Inc_Eco_SP_-4_Spring_2021.csv,ORNL-FRP-RTU-YCD150,RTU,lab,2021-04-15 00:00,2021-04-15 23:59,economizer_setpoint_incorrect,-4,LBNL RTU inventory Table E3 p.9-10,,,1
+raw/lbnl-rtu-extracted/ORNL_RTU/Inc_Eco_SP_-4_Summer_2021.csv,ORNL-FRP-RTU-YCD150,RTU,lab,2021-06-16 00:00,2021-06-16 23:59,economizer_setpoint_incorrect,-4,LBNL RTU inventory Table E3 p.9-10,,,1
+raw/lbnl-rtu-extracted/ORNL_RTU/Inc_Eco_SP_-4_Winter_2022.csv,ORNL-FRP-RTU-YCD150,RTU,lab,2022-03-08 00:00,2022-03-08 23:59,economizer_setpoint_incorrect,-4,LBNL RTU inventory Table E3 p.9-10,,,1
+raw/lbnl-rtu-extracted/ORNL_RTU/Inc_Eco_SP_2_Fall_2020.csv,ORNL-FRP-RTU-YCD150,RTU,lab,2020-10-06 00:00,2020-10-06 23:59,economizer_setpoint_incorrect,2,LBNL RTU inventory Table E3 p.9-10,,,1
+raw/lbnl-rtu-extracted/ORNL_RTU/Inc_Eco_SP_2_Spring_2021.csv,ORNL-FRP-RTU-YCD150,RTU,lab,2021-04-11 00:00,2021-04-11 23:59,economizer_setpoint_incorrect,2,LBNL RTU inventory Table E3 p.9-10,,,1
+raw/lbnl-rtu-extracted/ORNL_RTU/Inc_Eco_SP_2_Summer_2021.csv,ORNL-FRP-RTU-YCD150,RTU,lab,2021-06-13 00:00,2021-06-13 23:59,economizer_setpoint_incorrect,2,LBNL RTU inventory Table E3 p.9-10,,,1
+raw/lbnl-rtu-extracted/ORNL_RTU/Inc_Eco_SP_2_Winter_2022.csv,ORNL-FRP-RTU-YCD150,RTU,lab,2022-03-05 00:00,2022-03-05 23:59,economizer_setpoint_incorrect,2,LBNL RTU inventory Table E3 p.9-10,,,1
+raw/lbnl-rtu-extracted/ORNL_RTU/Inc_Eco_SP_4_Fall_2020.csv,ORNL-FRP-RTU-YCD150,RTU,lab,2020-10-08 00:00,2020-10-08 23:59,economizer_setpoint_incorrect,4,LBNL RTU inventory Table E3 p.9-10,,,1
+raw/lbnl-rtu-extracted/ORNL_RTU/Inc_Eco_SP_4_Spring_2021.csv,ORNL-FRP-RTU-YCD150,RTU,lab,2021-04-12 00:00,2021-04-12 23:59,economizer_setpoint_incorrect,4,LBNL RTU inventory Table E3 p.9-10,,,1
+raw/lbnl-rtu-extracted/ORNL_RTU/Inc_Eco_SP_4_Summer_2021.csv,ORNL-FRP-RTU-YCD150,RTU,lab,2021-06-14 00:00,2021-06-14 23:59,economizer_setpoint_incorrect,4,LBNL RTU inventory Table E3 p.9-10,,,1
+raw/lbnl-rtu-extracted/ORNL_RTU/Inc_Eco_SP_4_Winter_2022.csv,ORNL-FRP-RTU-YCD150,RTU,lab,2022-03-06 00:00,2022-03-06 23:59,economizer_setpoint_incorrect,4,LBNL RTU inventory Table E3 p.9-10,,,1
+raw/lbnl-rtu-extracted/ORNL_RTU/OA_damper_stuck_005_Fall_2020.csv,ORNL-FRP-RTU-YCD150,RTU,lab,2020-09-13 00:00,2020-09-13 23:59,oa_damper_stuck,005,LBNL RTU inventory Table E3 p.9-10,,,1
+raw/lbnl-rtu-extracted/ORNL_RTU/OA_damper_stuck_005_Spring_2021.csv,ORNL-FRP-RTU-YCD150,RTU,lab,2021-04-03 00:00,2021-04-03 23:59,oa_damper_stuck,005,LBNL RTU inventory Table E3 p.9-10,,,1
+raw/lbnl-rtu-extracted/ORNL_RTU/OA_damper_stuck_005_Summer_2021.csv,ORNL-FRP-RTU-YCD150,RTU,lab,2021-06-05 00:00,2021-06-05 23:59,oa_damper_stuck,005,LBNL RTU inventory Table E3 p.9-10,,,1
+raw/lbnl-rtu-extracted/ORNL_RTU/OA_damper_stuck_005_Winter_2022.csv,ORNL-FRP-RTU-YCD150,RTU,lab,2022-02-25 00:00,2022-02-25 23:59,oa_damper_stuck,005,LBNL RTU inventory Table E3 p.9-10,,,1
+raw/lbnl-rtu-extracted/ORNL_RTU/OA_damper_stuck_010_Fall_2020.csv,ORNL-FRP-RTU-YCD150,RTU,lab,2020-09-15 00:00,2020-09-15 23:59,oa_damper_stuck,010,LBNL RTU inventory Table E3 p.9-10,,,1
+raw/lbnl-rtu-extracted/ORNL_RTU/OA_damper_stuck_010_Spring_2021.csv,ORNL-FRP-RTU-YCD150,RTU,lab,2021-04-04 00:00,2021-04-04 23:59,oa_damper_stuck,010,LBNL RTU inventory Table E3 p.9-10,,,1
+raw/lbnl-rtu-extracted/ORNL_RTU/OA_damper_stuck_010_Summer_2021.csv,ORNL-FRP-RTU-YCD150,RTU,lab,2021-06-06 00:00,2021-06-06 23:59,oa_damper_stuck,010,LBNL RTU inventory Table E3 p.9-10,,,1
+raw/lbnl-rtu-extracted/ORNL_RTU/OA_damper_stuck_010_Winter_2022.csv,ORNL-FRP-RTU-YCD150,RTU,lab,2022-02-26 00:00,2022-02-26 23:59,oa_damper_stuck,010,LBNL RTU inventory Table E3 p.9-10,,,1
+raw/lbnl-rtu-extracted/ORNL_RTU/OA_damper_stuck_050_Fall_2020.csv,ORNL-FRP-RTU-YCD150,RTU,lab,2020-09-19 00:00,2020-09-19 23:59,oa_damper_stuck,050,LBNL RTU inventory Table E3 p.9-10,,,1
+raw/lbnl-rtu-extracted/ORNL_RTU/OA_damper_stuck_050_Spring_2021.csv,ORNL-FRP-RTU-YCD150,RTU,lab,2021-04-05 00:00,2021-04-05 23:59,oa_damper_stuck,050,LBNL RTU inventory Table E3 p.9-10,,,1
+raw/lbnl-rtu-extracted/ORNL_RTU/OA_damper_stuck_050_Summer_2021.csv,ORNL-FRP-RTU-YCD150,RTU,lab,2021-06-07 00:00,2021-06-07 23:59,oa_damper_stuck,050,LBNL RTU inventory Table E3 p.9-10,,,1
+raw/lbnl-rtu-extracted/ORNL_RTU/OA_damper_stuck_050_Winter_2022.csv,ORNL-FRP-RTU-YCD150,RTU,lab,2022-02-27 00:00,2022-02-27 23:59,oa_damper_stuck,050,LBNL RTU inventory Table E3 p.9-10,,,1
+raw/lbnl-rtu-extracted/ORNL_RTU/OA_damper_stuck_100_Fall_2020.csv,ORNL-FRP-RTU-YCD150,RTU,lab,2020-09-21 00:00,2020-09-21 23:59,oa_damper_stuck,100,LBNL RTU inventory Table E3 p.9-10,,,1
+raw/lbnl-rtu-extracted/ORNL_RTU/OA_damper_stuck_100_Spring_2021.csv,ORNL-FRP-RTU-YCD150,RTU,lab,2021-04-06 00:00,2021-04-06 23:59,oa_damper_stuck,100,LBNL RTU inventory Table E3 p.9-10,,,1
+raw/lbnl-rtu-extracted/ORNL_RTU/OA_damper_stuck_100_Summer_2021.csv,ORNL-FRP-RTU-YCD150,RTU,lab,2021-06-08 00:00,2021-06-08 23:59,oa_damper_stuck,100,LBNL RTU inventory Table E3 p.9-10,,,1
+raw/lbnl-rtu-extracted/ORNL_RTU/OA_damper_stuck_100_Winter_2022.csv,ORNL-FRP-RTU-YCD150,RTU,lab,2022-02-28 00:00,2022-02-28 23:59,oa_damper_stuck,100,LBNL RTU inventory Table E3 p.9-10,,,1
+raw/lbnl-rtu-extracted/ORNL_RTU/SA_temp_bias_-2_Fall_2020.csv,ORNL-FRP-RTU-YCD150,RTU,lab,2020-10-01 00:00,2020-10-01 23:59,sa_temp_sensor_bias,-2,LBNL RTU inventory Table E3 p.9-10,,,1
+raw/lbnl-rtu-extracted/ORNL_RTU/SA_temp_bias_-2_Spring_2021.csv,ORNL-FRP-RTU-YCD150,RTU,lab,2021-04-09 00:00,2021-04-09 23:59,sa_temp_sensor_bias,-2,LBNL RTU inventory Table E3 p.9-10,,,1
+raw/lbnl-rtu-extracted/ORNL_RTU/SA_temp_bias_-2_Summer_2021.csv,ORNL-FRP-RTU-YCD150,RTU,lab,2021-06-11 00:00,2021-06-11 23:59,sa_temp_sensor_bias,-2,LBNL RTU inventory Table E3 p.9-10,,,1
+raw/lbnl-rtu-extracted/ORNL_RTU/SA_temp_bias_-2_Winter_2022.csv,ORNL-FRP-RTU-YCD150,RTU,lab,2022-03-03 00:00,2022-03-03 23:59,sa_temp_sensor_bias,-2,LBNL RTU inventory Table E3 p.9-10,,,1
+raw/lbnl-rtu-extracted/ORNL_RTU/SA_temp_bias_-4_Fall_2020.csv,ORNL-FRP-RTU-YCD150,RTU,lab,2020-10-04 00:00,2020-10-04 23:59,sa_temp_sensor_bias,-4,LBNL RTU inventory Table E3 p.9-10,,,1
+raw/lbnl-rtu-extracted/ORNL_RTU/SA_temp_bias_-4_Spring_2021.csv,ORNL-FRP-RTU-YCD150,RTU,lab,2021-04-10 00:00,2021-04-10 23:59,sa_temp_sensor_bias,-4,LBNL RTU inventory Table E3 p.9-10,,,1
+raw/lbnl-rtu-extracted/ORNL_RTU/SA_temp_bias_-4_Summer_2021.csv,ORNL-FRP-RTU-YCD150,RTU,lab,2021-06-12 00:00,2021-06-12 23:59,sa_temp_sensor_bias,-4,LBNL RTU inventory Table E3 p.9-10,,,1
+raw/lbnl-rtu-extracted/ORNL_RTU/SA_temp_bias_-4_Winter_2022.csv,ORNL-FRP-RTU-YCD150,RTU,lab,2022-03-04 00:00,2022-03-04 23:59,sa_temp_sensor_bias,-4,LBNL RTU inventory Table E3 p.9-10,,,1
+raw/lbnl-rtu-extracted/ORNL_RTU/SA_temp_bias_2_Fall_2020.csv,ORNL-FRP-RTU-YCD150,RTU,lab,2020-09-24 00:00,2020-09-24 23:59,sa_temp_sensor_bias,2,LBNL RTU inventory Table E3 p.9-10,,,1
+raw/lbnl-rtu-extracted/ORNL_RTU/SA_temp_bias_2_Spring_2021.csv,ORNL-FRP-RTU-YCD150,RTU,lab,2021-04-07 00:00,2021-04-07 23:59,sa_temp_sensor_bias,2,LBNL RTU inventory Table E3 p.9-10,,,1
+raw/lbnl-rtu-extracted/ORNL_RTU/SA_temp_bias_2_Summer_2021.csv,ORNL-FRP-RTU-YCD150,RTU,lab,2021-06-09 00:00,2021-06-09 23:59,sa_temp_sensor_bias,2,LBNL RTU inventory Table E3 p.9-10,,,1
+raw/lbnl-rtu-extracted/ORNL_RTU/SA_temp_bias_2_Winter_2022.csv,ORNL-FRP-RTU-YCD150,RTU,lab,2022-03-01 00:00,2022-03-01 23:59,sa_temp_sensor_bias,2,LBNL RTU inventory Table E3 p.9-10,,,1
+raw/lbnl-rtu-extracted/ORNL_RTU/SA_temp_bias_4_Fall_2020.csv,ORNL-FRP-RTU-YCD150,RTU,lab,2020-09-26 00:00,2020-09-26 23:59,sa_temp_sensor_bias,4,LBNL RTU inventory Table E3 p.9-10,,,1
+raw/lbnl-rtu-extracted/ORNL_RTU/SA_temp_bias_4_Spring_2021.csv,ORNL-FRP-RTU-YCD150,RTU,lab,2021-04-08 00:00,2021-04-08 23:59,sa_temp_sensor_bias,4,LBNL RTU inventory Table E3 p.9-10,,,1
+raw/lbnl-rtu-extracted/ORNL_RTU/SA_temp_bias_4_Summer_2021.csv,ORNL-FRP-RTU-YCD150,RTU,lab,2021-06-10 00:00,2021-06-10 23:59,sa_temp_sensor_bias,4,LBNL RTU inventory Table E3 p.9-10,,,1
+raw/lbnl-rtu-extracted/ORNL_RTU/SA_temp_bias_4_Winter_2022.csv,ORNL-FRP-RTU-YCD150,RTU,lab,2022-03-02 00:00,2022-03-02 23:59,sa_temp_sensor_bias,4,LBNL RTU inventory Table E3 p.9-10,,,1
+raw/lbnl-rtu-extracted/Field RTU/Site1_Staging_Fault.csv,Site1-Milford-7.5t,RTU,field,2021-06-09 00:00,2021-08-09 00:00,compressor_stage2_not_engaging,stage 2 will not engage,LBNL RTU inventory Table F4 p.18,,,1
+raw/lbnl-rtu-extracted/Field RTU/Site1_Unfaulted.csv,Site1-Milford-7.5t,RTU,field,2021-08-10 00:00,2021-09-30 00:00,unfaulted,,LBNL RTU inventory Table F4 p.18,,,1
+raw/lbnl-rtu-extracted/Field RTU/Site2_Undercharged40.csv,Site2-Colchester-10t,RTU,field,2020-06-01 00:00,2020-06-30 00:00,refrigerant_undercharge,40% circuit B,LBNL RTU inventory Table F4 p.18,,,1
+raw/lbnl-rtu-extracted/Field RTU/Site2_Unfaulted.csv,Site2-Colchester-10t,RTU,field,2020-07-31 00:01,2021-09-30 23:59,unfaulted,,LBNL RTU inventory Table F4 p.18,,,1
+raw/lbnl-rtu-extracted/Simulated RTU/RTU_sim_baseline.csv,NREL-sim-Precedent-5t,RTU,simulated,,,baseline,,LBNL RTU inventory Table S3,,,2
+raw/lbnl-rtu-extracted/Simulated RTU/RTU_sim_condfouling10.csv,NREL-sim-Precedent-5t,RTU,simulated,,,condfouling10,,LBNL RTU inventory Table S3,,,2
+raw/lbnl-rtu-extracted/Simulated RTU/RTU_sim_condfouling20.csv,NREL-sim-Precedent-5t,RTU,simulated,,,condfouling20,,LBNL RTU inventory Table S3,,,2
+raw/lbnl-rtu-extracted/Simulated RTU/RTU_sim_condfouling30.csv,NREL-sim-Precedent-5t,RTU,simulated,,,condfouling30,,LBNL RTU inventory Table S3,,,2
+raw/lbnl-rtu-extracted/Simulated RTU/RTU_sim_condfouling40.csv,NREL-sim-Precedent-5t,RTU,simulated,,,condfouling40,,LBNL RTU inventory Table S3,,,2
+raw/lbnl-rtu-extracted/Simulated RTU/RTU_sim_condfouling50.csv,NREL-sim-Precedent-5t,RTU,simulated,,,condfouling50,,LBNL RTU inventory Table S3,,,2
+raw/lbnl-rtu-extracted/Simulated RTU/RTU_sim_evapfouling10.csv,NREL-sim-Precedent-5t,RTU,simulated,,,evapfouling10,,LBNL RTU inventory Table S3,,,2
+raw/lbnl-rtu-extracted/Simulated RTU/RTU_sim_evapfouling20.csv,NREL-sim-Precedent-5t,RTU,simulated,,,evapfouling20,,LBNL RTU inventory Table S3,,,2
+raw/lbnl-rtu-extracted/Simulated RTU/RTU_sim_evapfouling30.csv,NREL-sim-Precedent-5t,RTU,simulated,,,evapfouling30,,LBNL RTU inventory Table S3,,,2
+raw/lbnl-rtu-extracted/Simulated RTU/RTU_sim_evapfouling40.csv,NREL-sim-Precedent-5t,RTU,simulated,,,evapfouling40,,LBNL RTU inventory Table S3,,,2
+raw/lbnl-rtu-extracted/Simulated RTU/RTU_sim_evapfouling50.csv,NREL-sim-Precedent-5t,RTU,simulated,,,evapfouling50,,LBNL RTU inventory Table S3,,,2
+raw/lbnl-rtu-extracted/Simulated RTU/RTU_sim_liquidpipe01bar.csv,NREL-sim-Precedent-5t,RTU,simulated,,,liquidpipe01bar,,LBNL RTU inventory Table S3,,,2
+raw/lbnl-rtu-extracted/Simulated RTU/RTU_sim_liquidpipe04bar.csv,NREL-sim-Precedent-5t,RTU,simulated,,,liquidpipe04bar,,LBNL RTU inventory Table S3,,,2
+raw/lbnl-rtu-extracted/Simulated RTU/RTU_sim_liquidpipe08bar.csv,NREL-sim-Precedent-5t,RTU,simulated,,,liquidpipe08bar,,LBNL RTU inventory Table S3,,,2
+raw/lbnl-rtu-extracted/Simulated RTU/RTU_sim_liquidpipe10bar.csv,NREL-sim-Precedent-5t,RTU,simulated,,,liquidpipe10bar,,LBNL RTU inventory Table S3,,,2
+raw/lbnl-rtu-extracted/Simulated RTU/RTU_sim_overcharge10.csv,NREL-sim-Precedent-5t,RTU,simulated,,,overcharge10,,LBNL RTU inventory Table S3,,,2
+raw/lbnl-rtu-extracted/Simulated RTU/RTU_sim_overcharge15.csv,NREL-sim-Precedent-5t,RTU,simulated,,,overcharge15,,LBNL RTU inventory Table S3,,,2
+raw/lbnl-rtu-extracted/Simulated RTU/RTU_sim_overcharge20.csv,NREL-sim-Precedent-5t,RTU,simulated,,,overcharge20,,LBNL RTU inventory Table S3,,,2
+raw/lbnl-rtu-extracted/Simulated RTU/RTU_sim_suctionpipe01bar.csv,NREL-sim-Precedent-5t,RTU,simulated,,,suctionpipe01bar,,LBNL RTU inventory Table S3,,,2
+raw/lbnl-rtu-extracted/Simulated RTU/RTU_sim_suctionpipe03bar.csv,NREL-sim-Precedent-5t,RTU,simulated,,,suctionpipe03bar,,LBNL RTU inventory Table S3,,,2
+raw/lbnl-rtu-extracted/Simulated RTU/RTU_sim_suctionpipe06bar.csv,NREL-sim-Precedent-5t,RTU,simulated,,,suctionpipe06bar,,LBNL RTU inventory Table S3,,,2
+raw/lbnl-rtu-extracted/Simulated RTU/RTU_sim_suctionpipe09bar.csv,NREL-sim-Precedent-5t,RTU,simulated,,,suctionpipe09bar,,LBNL RTU inventory Table S3,,,2
+raw/lbnl-rtu-extracted/Simulated RTU/RTU_sim_undercharge10.csv,NREL-sim-Precedent-5t,RTU,simulated,,,undercharge10,,LBNL RTU inventory Table S3,,,2
+raw/lbnl-rtu-extracted/Simulated RTU/RTU_sim_undercharge15.csv,NREL-sim-Precedent-5t,RTU,simulated,,,undercharge15,,LBNL RTU inventory Table S3,,,2
+raw/lbnl-rtu-extracted/Simulated RTU/RTU_sim_undercharge20.csv,NREL-sim-Precedent-5t,RTU,simulated,,,undercharge20,,LBNL RTU inventory Table S3,,,2
