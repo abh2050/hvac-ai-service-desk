@@ -1,0 +1,336 @@
+{
+ "gate": 1,
+ "name": "detection",
+ "run_utc": "2026-10-22T13:44:54Z",
+ "git_commit": "2c97944",
+ "runtime_seconds": 5.0,
+ "where": "local CPU (SageMaker training job pending CDK bootstrap approval)",
+ "split": "lab: 5-fold StratifiedGroupKFold by episode (seed 7); field: train on lab RTU.csv, test on field",
+ "scoring_unit": "operating day; flagged when >= 2 alarm windows of 60 minutes",
+ "model_threshold": 0.5,
+ "category": {
+  "ground_truth": "LBNL inventory labels in data/episodes.csv",
+  "measured": "all metrics below"
+ },
+ "results": {
+  "lab/ahu": {
+   "rules": {
+    "faulted_days": 23,
+    "unfaulted_days": 15,
+    "recall": 0.739,
+    "precision": 0.68,
+    "false_alarm_events_per_operating_day": 1.333,
+    "unfaulted_days_flagged": 8,
+    "by_fault_type": {
+     "cooling_valve_leak": {
+      "days": 3,
+      "recall": 0.667,
+      "category": "equipment"
+     },
+     "cooling_valve_stuck": {
+      "days": 4,
+      "recall": 1.0,
+      "category": "equipment"
+     },
+     "heating_valve_leak": {
+      "days": 5,
+      "recall": 0.6,
+      "category": "equipment"
+     },
+     "heating_valve_stuck": {
+      "days": 5,
+      "recall": 1.0,
+      "category": "equipment"
+     },
+     "oa_damper_leak": {
+      "days": 2,
+      "recall": 0.0,
+      "category": "equipment"
+     },
+     "oa_damper_stuck": {
+      "days": 4,
+      "recall": 0.75,
+      "category": "equipment"
+     }
+    }
+   },
+   "model": {
+    "faulted_days": 23,
+    "unfaulted_days": 15,
+    "recall": 0.957,
+    "precision": 0.71,
+    "false_alarm_events_per_operating_day": 1.933,
+    "unfaulted_days_flagged": 9,
+    "by_fault_type": {
+     "cooling_valve_leak": {
+      "days": 3,
+      "recall": 1.0,
+      "category": "equipment"
+     },
+     "cooling_valve_stuck": {
+      "days": 4,
+      "recall": 1.0,
+      "category": "equipment"
+     },
+     "heating_valve_leak": {
+      "days": 5,
+      "recall": 0.8,
+      "category": "equipment"
+     },
+     "heating_valve_stuck": {
+      "days": 5,
+      "recall": 1.0,
+      "category": "equipment"
+     },
+     "oa_damper_leak": {
+      "days": 2,
+      "recall": 1.0,
+      "category": "equipment"
+     },
+     "oa_damper_stuck": {
+      "days": 4,
+      "recall": 1.0,
+      "category": "equipment"
+     }
+    }
+   }
+  },
+  "lab/econ": {
+   "rules": {
+    "faulted_days": 48,
+    "unfaulted_days": 14,
+    "recall": 1.0,
+    "precision": 0.857,
+    "false_alarm_events_per_operating_day": 1.643,
+    "unfaulted_days_flagged": 8,
+    "by_fault_type": {
+     "economizer_setpoint_incorrect": {
+      "days": 16,
+      "recall": 1.0,
+      "category": "equipment"
+     },
+     "oa_damper_stuck": {
+      "days": 16,
+      "recall": 1.0,
+      "category": "equipment"
+     },
+     "sa_temp_sensor_bias": {
+      "days": 16,
+      "recall": 1.0,
+      "category": "equipment"
+     }
+    }
+   },
+   "model": {
+    "faulted_days": 48,
+    "unfaulted_days": 14,
+    "recall": 0.958,
+    "precision": 0.767,
+    "false_alarm_events_per_operating_day": 1.857,
+    "unfaulted_days_flagged": 14,
+    "by_fault_type": {
+     "economizer_setpoint_incorrect": {
+      "days": 16,
+      "recall": 1.0,
+      "category": "equipment"
+     },
+     "oa_damper_stuck": {
+      "days": 16,
+      "recall": 0.875,
+      "category": "equipment"
+     },
+     "sa_temp_sensor_bias": {
+      "days": 16,
+      "recall": 1.0,
+      "category": "equipment"
+     }
+    }
+   }
+  },
+  "field/refrig": {
+   "rules": {
+    "faulted_days": 91,
+    "unfaulted_days": 231,
+    "recall": 0.648,
+    "precision": 0.401,
+    "false_alarm_events_per_operating_day": 0.476,
+    "unfaulted_days_flagged": 88,
+    "by_fault_type": {
+     "compressor_stage2_not_engaging": {
+      "days": 62,
+      "recall": 0.726,
+      "category": "equipment"
+     },
+     "refrigerant_undercharge": {
+      "days": 29,
+      "recall": 0.483,
+      "category": "equipment"
+     }
+    }
+   },
+   "model": {
+    "faulted_days": 91,
+    "unfaulted_days": 231,
+    "recall": 0.187,
+    "precision": 0.212,
+    "false_alarm_events_per_operating_day": 0.628,
+    "unfaulted_days_flagged": 63,
+    "by_fault_type": {
+     "compressor_stage2_not_engaging": {
+      "days": 62,
+      "recall": 0.0,
+      "category": "equipment"
+     },
+     "refrigerant_undercharge": {
+      "days": 29,
+      "recall": 0.586,
+      "category": "equipment"
+     }
+    }
+   }
+  },
+  "lab/refrig": {
+   "rules": {
+    "faulted_days": 13,
+    "unfaulted_days": 0,
+    "recall": 0.077,
+    "precision": 1.0,
+    "false_alarm_events_per_operating_day": null,
+    "unfaulted_days_flagged": 0,
+    "by_fault_type": {
+     "condenser_fouling": {
+      "days": 2,
+      "recall": 0.5,
+      "category": "equipment"
+     },
+     "excessive_infiltration": {
+      "days": 2,
+      "recall": 0.0,
+      "category": "operations"
+     },
+     "hvac_setback_delayed_onset": {
+      "days": 1,
+      "recall": 0.0,
+      "category": "operations"
+     },
+     "lighting_setback_delayed_onset": {
+      "days": 1,
+      "recall": 0.0,
+      "category": "operations"
+     },
+     "lighting_setback_early_termination": {
+      "days": 1,
+      "recall": 0.0,
+      "category": "operations"
+     },
+     "no_overnight_hvac_setback": {
+      "days": 1,
+      "recall": 0.0,
+      "category": "operations"
+     },
+     "no_overnight_lighting_setback": {
+      "days": 1,
+      "recall": 0.0,
+      "category": "operations"
+     },
+     "thermostat_bias": {
+      "days": 4,
+      "recall": 0.0,
+      "category": "operations"
+     }
+    }
+   },
+   "model": {
+    "faulted_days": 13,
+    "unfaulted_days": 0,
+    "recall": 1.0,
+    "precision": 1.0,
+    "false_alarm_events_per_operating_day": null,
+    "unfaulted_days_flagged": 0,
+    "by_fault_type": {
+     "condenser_fouling": {
+      "days": 2,
+      "recall": 1.0,
+      "category": "equipment"
+     },
+     "excessive_infiltration": {
+      "days": 2,
+      "recall": 1.0,
+      "category": "operations"
+     },
+     "hvac_setback_delayed_onset": {
+      "days": 1,
+      "recall": 1.0,
+      "category": "operations"
+     },
+     "lighting_setback_delayed_onset": {
+      "days": 1,
+      "recall": 1.0,
+      "category": "operations"
+     },
+     "lighting_setback_early_termination": {
+      "days": 1,
+      "recall": 1.0,
+      "category": "operations"
+     },
+     "no_overnight_hvac_setback": {
+      "days": 1,
+      "recall": 1.0,
+      "category": "operations"
+     },
+     "no_overnight_lighting_setback": {
+      "days": 1,
+      "recall": 1.0,
+      "category": "operations"
+     },
+     "thermostat_bias": {
+      "days": 4,
+      "recall": 1.0,
+      "category": "operations"
+     }
+    }
+   }
+  }
+ },
+ "model_window_auc": {
+  "lab/ahu": 0.826,
+  "lab/econ": 0.552,
+  "field/refrig": 0.609,
+  "lab/refrig": null
+ },
+ "rule_hint_matches_lbnl_fault_type": 0.517,
+ "windows": 6424,
+ "scored_windows": 6253,
+ "run": 2,
+ "runs": {
+  "run1": {
+   "file": "reports/gate-1-runs/run1-gate-1.json",
+   "rules": "reports/gate-1-runs/run1-rules.yaml",
+   "status": "superseded for the economizer family only"
+  },
+  "run2": {
+   "file": "reports/gate-1-runs/run2-gate-1.json",
+   "rules": "reports/gate-1-runs/run2-rules.yaml",
+   "change": "Economizer rules E1, E2, E5 and two economizer model features corrected to the documented ORNL control sequence (LBNL RTU inventory section E1.2): changeover OAT 50 F, MAT > 45 F, SAT setpoint 55 F. No AHU or refrigerant threshold changed."
+  }
+ },
+ "measured_extra": {
+  "model_alarm_rate_on_unscored_lab_refrig_unfaulted_windows": 0.8,
+  "model_alarm_rate_on_lab_econ_unfaulted_windows": 0.848,
+  "rule_alarm_rate_on_lab_econ_unfaulted_windows": 0.219
+ },
+ "recommendation": {
+  "lab/ahu": "keep both; model has higher recall (0.957 vs 0.739) but more false alarm events (1.933 vs 1.333 per operating day); disagreement goes to manager review",
+  "lab/econ": "rules; the model flags every unfaulted day (window AUC 0.552)",
+  "field/refrig": "rules; the model trained on lab RTU.csv does not transfer (recall 0.187 vs 0.648)",
+  "lab/refrig": "no valid comparison; no scorable unfaulted day exists, and the model alarms on 80% of unscored unfaulted windows"
+ },
+ "not_validated": {
+  "note": "No downtime, visit, or dollar figure is claimed in this gate."
+ },
+ "unverified": [
+  "SageMaker training job not run (resource creation awaits approval); model trained locally with the same script",
+  "Lambda serving of the model",
+  "Per-type results for types with 1 or 2 days are anecdotal"
+ ]
+}

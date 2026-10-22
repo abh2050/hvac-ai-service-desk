@@ -1,0 +1,304 @@
+{
+ "gate": 1,
+ "name": "detection",
+ "run_utc": "2026-10-22T13:42:58Z",
+ "git_commit": "2c97944",
+ "runtime_seconds": 6.3,
+ "where": "local CPU (SageMaker training job pending CDK bootstrap approval)",
+ "split": "lab: 5-fold StratifiedGroupKFold by episode (seed 7); field: train on lab RTU.csv, test on field",
+ "scoring_unit": "operating day; flagged when >= 2 alarm windows of 60 minutes",
+ "model_threshold": 0.5,
+ "category": {
+  "ground_truth": "LBNL inventory labels in data/episodes.csv",
+  "measured": "all metrics below"
+ },
+ "results": {
+  "lab/ahu": {
+   "rules": {
+    "faulted_days": 23,
+    "unfaulted_days": 15,
+    "recall": 0.739,
+    "precision": 0.68,
+    "false_alarm_events_per_operating_day": 1.333,
+    "unfaulted_days_flagged": 8,
+    "by_fault_type": {
+     "cooling_valve_leak": {
+      "days": 3,
+      "recall": 0.667,
+      "category": "equipment"
+     },
+     "cooling_valve_stuck": {
+      "days": 4,
+      "recall": 1.0,
+      "category": "equipment"
+     },
+     "heating_valve_leak": {
+      "days": 5,
+      "recall": 0.6,
+      "category": "equipment"
+     },
+     "heating_valve_stuck": {
+      "days": 5,
+      "recall": 1.0,
+      "category": "equipment"
+     },
+     "oa_damper_leak": {
+      "days": 2,
+      "recall": 0.0,
+      "category": "equipment"
+     },
+     "oa_damper_stuck": {
+      "days": 4,
+      "recall": 0.75,
+      "category": "equipment"
+     }
+    }
+   },
+   "model": {
+    "faulted_days": 23,
+    "unfaulted_days": 15,
+    "recall": 0.957,
+    "precision": 0.71,
+    "false_alarm_events_per_operating_day": 1.933,
+    "unfaulted_days_flagged": 9,
+    "by_fault_type": {
+     "cooling_valve_leak": {
+      "days": 3,
+      "recall": 1.0,
+      "category": "equipment"
+     },
+     "cooling_valve_stuck": {
+      "days": 4,
+      "recall": 1.0,
+      "category": "equipment"
+     },
+     "heating_valve_leak": {
+      "days": 5,
+      "recall": 0.8,
+      "category": "equipment"
+     },
+     "heating_valve_stuck": {
+      "days": 5,
+      "recall": 1.0,
+      "category": "equipment"
+     },
+     "oa_damper_leak": {
+      "days": 2,
+      "recall": 1.0,
+      "category": "equipment"
+     },
+     "oa_damper_stuck": {
+      "days": 4,
+      "recall": 1.0,
+      "category": "equipment"
+     }
+    }
+   }
+  },
+  "lab/econ": {
+   "rules": {
+    "faulted_days": 48,
+    "unfaulted_days": 14,
+    "recall": 1.0,
+    "precision": 0.774,
+    "false_alarm_events_per_operating_day": 2.0,
+    "unfaulted_days_flagged": 14,
+    "by_fault_type": {
+     "economizer_setpoint_incorrect": {
+      "days": 16,
+      "recall": 1.0,
+      "category": "equipment"
+     },
+     "oa_damper_stuck": {
+      "days": 16,
+      "recall": 1.0,
+      "category": "equipment"
+     },
+     "sa_temp_sensor_bias": {
+      "days": 16,
+      "recall": 1.0,
+      "category": "equipment"
+     }
+    }
+   },
+   "model": {
+    "faulted_days": 48,
+    "unfaulted_days": 14,
+    "recall": 0.938,
+    "precision": 0.763,
+    "false_alarm_events_per_operating_day": 1.786,
+    "unfaulted_days_flagged": 14,
+    "by_fault_type": {
+     "economizer_setpoint_incorrect": {
+      "days": 16,
+      "recall": 0.938,
+      "category": "equipment"
+     },
+     "oa_damper_stuck": {
+      "days": 16,
+      "recall": 0.875,
+      "category": "equipment"
+     },
+     "sa_temp_sensor_bias": {
+      "days": 16,
+      "recall": 1.0,
+      "category": "equipment"
+     }
+    }
+   }
+  },
+  "field/refrig": {
+   "rules": {
+    "faulted_days": 91,
+    "unfaulted_days": 231,
+    "recall": 0.648,
+    "precision": 0.401,
+    "false_alarm_events_per_operating_day": 0.476,
+    "unfaulted_days_flagged": 88,
+    "by_fault_type": {
+     "compressor_stage2_not_engaging": {
+      "days": 62,
+      "recall": 0.726,
+      "category": "equipment"
+     },
+     "refrigerant_undercharge": {
+      "days": 29,
+      "recall": 0.483,
+      "category": "equipment"
+     }
+    }
+   },
+   "model": {
+    "faulted_days": 91,
+    "unfaulted_days": 231,
+    "recall": 0.187,
+    "precision": 0.212,
+    "false_alarm_events_per_operating_day": 0.628,
+    "unfaulted_days_flagged": 63,
+    "by_fault_type": {
+     "compressor_stage2_not_engaging": {
+      "days": 62,
+      "recall": 0.0,
+      "category": "equipment"
+     },
+     "refrigerant_undercharge": {
+      "days": 29,
+      "recall": 0.586,
+      "category": "equipment"
+     }
+    }
+   }
+  },
+  "lab/refrig": {
+   "rules": {
+    "faulted_days": 13,
+    "unfaulted_days": 0,
+    "recall": 0.077,
+    "precision": 1.0,
+    "false_alarm_events_per_operating_day": null,
+    "unfaulted_days_flagged": 0,
+    "by_fault_type": {
+     "condenser_fouling": {
+      "days": 2,
+      "recall": 0.5,
+      "category": "equipment"
+     },
+     "excessive_infiltration": {
+      "days": 2,
+      "recall": 0.0,
+      "category": "operations"
+     },
+     "hvac_setback_delayed_onset": {
+      "days": 1,
+      "recall": 0.0,
+      "category": "operations"
+     },
+     "lighting_setback_delayed_onset": {
+      "days": 1,
+      "recall": 0.0,
+      "category": "operations"
+     },
+     "lighting_setback_early_termination": {
+      "days": 1,
+      "recall": 0.0,
+      "category": "operations"
+     },
+     "no_overnight_hvac_setback": {
+      "days": 1,
+      "recall": 0.0,
+      "category": "operations"
+     },
+     "no_overnight_lighting_setback": {
+      "days": 1,
+      "recall": 0.0,
+      "category": "operations"
+     },
+     "thermostat_bias": {
+      "days": 4,
+      "recall": 0.0,
+      "category": "operations"
+     }
+    }
+   },
+   "model": {
+    "faulted_days": 13,
+    "unfaulted_days": 0,
+    "recall": 1.0,
+    "precision": 1.0,
+    "false_alarm_events_per_operating_day": null,
+    "unfaulted_days_flagged": 0,
+    "by_fault_type": {
+     "condenser_fouling": {
+      "days": 2,
+      "recall": 1.0,
+      "category": "equipment"
+     },
+     "excessive_infiltration": {
+      "days": 2,
+      "recall": 1.0,
+      "category": "operations"
+     },
+     "hvac_setback_delayed_onset": {
+      "days": 1,
+      "recall": 1.0,
+      "category": "operations"
+     },
+     "lighting_setback_delayed_onset": {
+      "days": 1,
+      "recall": 1.0,
+      "category": "operations"
+     },
+     "lighting_setback_early_termination": {
+      "days": 1,
+      "recall": 1.0,
+      "category": "operations"
+     },
+     "no_overnight_hvac_setback": {
+      "days": 1,
+      "recall": 1.0,
+      "category": "operations"
+     },
+     "no_overnight_lighting_setback": {
+      "days": 1,
+      "recall": 1.0,
+      "category": "operations"
+     },
+     "thermostat_bias": {
+      "days": 4,
+      "recall": 1.0,
+      "category": "operations"
+     }
+    }
+   }
+  }
+ },
+ "model_window_auc": {
+  "lab/ahu": 0.826,
+  "lab/econ": 0.558,
+  "field/refrig": 0.609,
+  "lab/refrig": null
+ },
+ "rule_hint_matches_lbnl_fault_type": 0.552,
+ "windows": 6424,
+ "scored_windows": 6253
+}

@@ -1,0 +1,49 @@
+# CONFIGURATION, NOT DATA.
+# Thresholds for the rules baseline. These values were fixed on 2026-10-22 before any Gate 1
+# result was computed, from the cited references and engineering defaults. They are not tuned
+# on test data. Changing them after a gate run requires a new gate run and a note in the report.
+#
+# References:
+# - APAR: House, Vaezi-Nejad, Whitcomb, "An expert rule set for fault detection in air-handling
+#   units", ASHRAE Transactions 107(1), 2001. Defaults below follow its suggested tolerances.
+# - Economizer checks follow common economizer FDD practice (outdoor air fraction from a
+#   temperature balance; damper behavior against economizer availability).
+
+window_minutes: 60
+operating_fraction_min: 0.5        # a window counts only if the fan runs for at least half of it
+alarm_persistence_fraction: 0.5    # a rule fires for a window when true for at least half its operating minutes
+day_alarm_min_windows: 2           # a day is flagged when at least this many windows alarm
+
+ahu_apar:                          # degrees F, signals as 0..1 fractions
+  eps_t: 2.0                       # temperature tolerance
+  eps_f: 0.3                       # outdoor air fraction tolerance
+  fan_heat: 2.0                    # supply fan temperature rise
+  valve_closed: 0.02
+  valve_open: 0.98
+  damper_open: 0.95
+  min_oa_damper: 0.20              # damper at or below this is "minimum position"
+  min_oat_rat_gap: 4.0             # outdoor air fraction is computed only when |OAT - RAT| >= this
+
+rtu_economizer:                    # ORNL FRP RTU, degrees F, damper command in percent
+  # Run 2 correction (2026-10-22): run 1 used a 65 F high limit and treated the 10 C (50 F)
+  # "correct economizer setpoint" as a supply air target. The LBNL RTU inventory section E1.2
+  # documents it as the outdoor air changeover: the economizer is enabled when OAT < 50 F and
+  # MAT > 45 F, the SAT setpoint is 55 F, and the OA damper minimum is 10%.
+  econ_changeover_oat: 50.0        # documented economizer enable setpoint (OAT)
+  econ_min_mat: 45.0               # documented: economizer enabled only while MAT > 45 F
+  changeover_band: 3.0             # dead band around the changeover before a rule applies
+  sat_setpoint: 55.0               # documented SAT setpoint, year round
+  sat_tolerance: 2.5
+  min_damper_pct: 10.0
+  excess_damper_margin_pct: 15.0
+  oaf_tolerance: 0.3
+  min_oat_rat_gap: 4.0
+  sat_vs_vav_tolerance: 2.7        # 1.5 C; VAV discharge temperatures with reheat off
+  vav_reheat_off_watts: 50.0
+
+rtu_refrigerant:                   # SI units after conversion (bar, degrees C)
+  circuit_on_lift_bar: 3.0         # circuit counts as running when discharge minus suction exceeds this
+  suction_imbalance_ratio: 0.80    # running circuit suction pressure below 80% of the other circuit
+  high_pressure_ratio: 3.5         # discharge over suction pressure ratio suggesting high head pressure
+  stage2_high_load_oat_c: 29.0     # high load hour: OAT above this (field units)
+  stage2_high_load_rat_c: 24.0     # high load hour when OAT is missing (lab RTU.csv)

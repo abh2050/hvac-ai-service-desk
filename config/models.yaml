@@ -1,0 +1,31 @@
+# CONFIGURATION, NOT DATA.
+# Bedrock model choices. Code resolves each entry at deploy time with
+# "aws bedrock list-foundation-models" / "list-inference-profiles" and fails if no match is ACTIVE.
+#
+# Owner decisions 2026-10-22: use cheaper models, and use GPT Luna if available.
+# - GPT Luna (us.openai.gpt-6-luna, us.openai.gpt-5.6-luna) is listed in us-east-2 but Converse
+#   returns AccessDeniedException "not available for this account" (AWS Sales gated).
+# - Anthropic Claude: agreement not accepted in this account.
+# - Chosen: OpenAI open-weight gpt-oss models (on-demand, no agreement needed).
+# Smoke test 2026-10-22, us-east-2, 5-token reply: gpt-oss-120b 589 ms, gpt-oss-20b 216 ms,
+# nova-2-lite 435 ms, nova-micro 347 ms.
+# gpt-oss returns a reasoningContent block before the text block; parsers read only "text" blocks.
+
+region: us-east-2
+diagnosis:
+  model_match: "openai.gpt-oss-120b"        # structured diagnosis with citations, Guardrails attached
+  max_tokens: 2000                            # includes reasoning tokens
+  temperature: 0
+entailment:
+  model_match: "openai.gpt-oss-20b"         # yes/no: does the cited page text support the claim
+  max_tokens: 400
+  temperature: 0
+assistant:
+  model_match: "openai.gpt-oss-120b"        # technician assistant answers over MCP tool results
+  max_tokens: 1500
+  temperature: 0
+fallback:
+  model_match: "amazon.nova-2-lite-v1"      # used only if gpt-oss is unavailable; recorded per run
+embeddings:
+  model_id: "amazon.titan-embed-text-v2:0"
+  dimensions: 1024
