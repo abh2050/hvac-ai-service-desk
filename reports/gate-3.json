@@ -402,5 +402,6 @@
    "test_db_rejects_unverified_instruction"
   ],
   "fixtures": "reports/gate-2-cases.jsonl (recorded diagnoses), data/processed/gate2_cases.jsonl (LBNL cases), data/processed/manual_pages.jsonl (manual text)"
- }
+ },
+ "code_commit": "2b976cc"
 }

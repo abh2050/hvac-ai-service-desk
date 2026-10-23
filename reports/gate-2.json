@@ -154,5 +154,6 @@
    "query_embedding_note": "Titan v2 query embeddings at $0.02 per 1M tokens are under $0.0001 per case"
   },
   "policy_1_would_route_to_manual_review": 0.304
- }
+ },
+ "code_commit": "2b976cc"
 }
