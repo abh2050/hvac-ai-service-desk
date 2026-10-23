@@ -148,5 +148,7 @@
   },
   "policy_1_would_route_to_manual_review": 0.304
  },
- "resummarized_utc": "2026-10-23T16:10:38Z"
+ "resummarized_utc": "2026-10-23T16:10:38Z",
+ "code_commit": "1169bf7",
+ "git_commit_note": "git_commit is HEAD when the run started; the code that produced the run is code_commit"
 }
