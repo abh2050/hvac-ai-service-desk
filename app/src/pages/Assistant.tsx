@@ -1,7 +1,8 @@
 import { useEffect, useState } from 'react';
 import { api, type Me } from '../api';
+import { STATIC } from '../mode';
 
-type Answer = { question: string; answer: string; citations_shown: { manual_id: string; page: number; quote: string }[];
+type Answer = { asked_as?: string; question: string; answer: string; citations_shown: { manual_id: string; page: number; quote: string }[];
   insufficient_evidence: boolean; answer_rewritten: boolean; tool_trace: { tool: string; input: Record<string, unknown>; error: boolean; denied: boolean }[];
   seconds: number; cost_usd: number };
 
@@ -17,7 +18,10 @@ export default function Assistant() {
   const [busy, setBusy] = useState(false);
   const [error, setError] = useState('');
   const [me, setMe] = useState<Me | null>(null);
-  useEffect(() => { api<Me>('/me').then(setMe).catch(() => undefined); }, []);
+  useEffect(() => {
+    if (STATIC) api<Answer[]>('/assistant').then(setLog).catch((e) => setError(e.message));
+    else api<Me>('/me').then(setMe).catch(() => undefined);
+  }, []);
   async function ask() {
     setBusy(true);
     setError('');
@@ -38,14 +42,17 @@ export default function Assistant() {
         <div className="banner warn">You are signed in as a manager. Managers have no jobs of their own: ask about any work order
           or asset by its id, for example a work order id from the Work orders page. Sign in as a technician to ask "what are my jobs".</div>
       )}
-      <div className="card row">
+      {STATIC && <div className="banner warn">Recorded answers. These three questions were asked of the live assistant, twice as technician T01
+        and once as the manager. The second shows the ownership check: that work order belongs to technician T16, so T01's request was denied.</div>}
+      {!STATIC && <div className="card row">
         <input style={{ flex: 1, minWidth: 240 }} value={q} onChange={(e) => setQ(e.target.value)}
           onKeyDown={(e) => { if (e.key === 'Enter' && !busy) ask(); }} aria-label="Question" />
         <button disabled={busy || !q.trim()} onClick={ask}>{busy ? 'Thinking' : 'Ask'}</button>
-      </div>
+      </div>}
       {error && <div className="banner bad">{error}</div>}
       {log.map((a, i) => (
         <div className="card" key={i}>
+          {a.asked_as && <span className="pill">Asked as {a.asked_as}</span>}
           <p><strong>{a.question}</strong></p>
           {a.tool_trace.some((t) => t.denied) && <div className="banner bad">Access denied. That item belongs to another technician, and the request was recorded in the audit log.</div>}
           {a.insufficient_evidence && <div className="banner warn">The tools did not provide what this question needs.</div>}

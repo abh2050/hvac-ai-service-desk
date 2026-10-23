@@ -1,11 +1,13 @@
 import { useEffect, useMemo, useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { api, type Me } from '../api';
 import { rememberRun } from '../run';
+import { SNAPSHOT, STATIC } from '../mode';
 
 type Scenario = { scenario_id: string; source_type: 'lab' | 'field'; family: string; unit: string; asset_id: string;
   site_id: string; equipment_class: string; day: string; operating_windows: number };
 
+const RECORDED = SNAPSHOT?.scenario_id ?? '';
 const FAMILY = { ahu: 'Air handler', econ: 'Rooftop unit, economizer', refrig: 'Rooftop unit, refrigerant circuits' } as const;
 
 export default function Scenarios({ me }: { me: Me | null }) {
@@ -15,7 +17,9 @@ export default function Scenarios({ me }: { me: Me | null }) {
   const [busy, setBusy] = useState('');
   const nav = useNavigate();
   useEffect(() => { api<Scenario[]>('/scenarios').then(setItems).catch((e) => setError(e.message)); }, []);
-  const shown = useMemo(() => items.filter((s) => source === 'all' || s.source_type === source), [items, source]);
+  // The recorded scenario comes first in the static demo.
+  const shown = useMemo(() => items.filter((s) => source === 'all' || s.source_type === source)
+    .sort((a, b) => Number(b.scenario_id === RECORDED) - Number(a.scenario_id === RECORDED)), [items, source]);
 
   async function start(id: string) {
     setBusy(id);
@@ -46,7 +50,9 @@ export default function Scenarios({ me }: { me: Me | null }) {
         <span className="muted">{shown.length} recorded days</span>
       </div>
       {error && <div className="banner bad">{error}</div>}
-      {me?.role !== 'manager' && <div className="banner warn">Only a manager can start a replay.</div>}
+      {STATIC && <div className="banner warn">This recorded demo holds one day run end to end, listed first. Open it with View recorded run.
+        The other days show the catalog; replaying them needs the live system.</div>}
+      {!STATIC && me?.role !== 'manager' && <div className="banner warn">Only a manager can start a replay.</div>}
       <div className="card">
         <table>
           <thead><tr><th>Recorded day</th><th>Source</th><th>Equipment</th><th>Asset</th><th>Operating hours</th><th></th></tr></thead>
@@ -58,8 +64,9 @@ export default function Scenarios({ me }: { me: Me | null }) {
                 <td>{FAMILY[s.family as keyof typeof FAMILY] ?? s.family}</td>
                 <td>{s.asset_id}<div className="muted">{s.site_id}</div></td>
                 <td>{s.operating_windows}</td>
-                <td><button disabled={me?.role !== 'manager' || !!busy} onClick={() => start(s.scenario_id)}>
-                  {busy === s.scenario_id ? 'Starting' : 'Replay'}</button></td>
+                <td>{STATIC ? (s.scenario_id === RECORDED ? <Link to="/pipeline">View recorded run</Link> : <span className="muted">Not recorded</span>)
+                  : <button disabled={me?.role !== 'manager' || !!busy} onClick={() => start(s.scenario_id)}>
+                  {busy === s.scenario_id ? 'Starting' : 'Replay'}</button>}</td>
               </tr>
             ))}
           </tbody>

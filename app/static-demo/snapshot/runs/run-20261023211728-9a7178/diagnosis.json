@@ -1,0 +1,73 @@
+{
+ "ready": true,
+ "probable_cause": "refrigerant_undercharge",
+ "llm_proposed_cause": "refrigerant_undercharge",
+ "confidence": 0.88,
+ "explanation": "Both circuits show very high discharge\u2011to\u2011suction pressure ratios and large temperature differentials, especially circuit 2, indicating abnormally low suction pressure typical of an undercharged system. The rule hint also points to undercharge, and no evidence suggests damper, sensor, or control issues.",
+ "abstained": false,
+ "route": "technician",
+ "compatibility_uncertain": true,
+ "lockout_sourced": true,
+ "citations": [
+  {
+   "page": 65,
+   "claim": "The manual instructs to check system superheat and states it must be within \u00b15\u202f\u00b0F of the chart value, which is the method used to verify correct refrigerant charge.",
+   "match": "class",
+   "quote": "Check system superheat. Follow the instruction listed on the superheat charging curve in the Service Facts. Superheat should be within \u00b15 F of the superheat chart value.",
+   "manual_id": "trane-rt-svx21ad-precedent-gas-electric-3-10t",
+   "passage_id": "P1",
+   "url": "https://elibrary.tranetechnologies.com/public/commercial-hvac/Literature/Installation%20Operation%20and%20Maintenance/RT-SVX21AD-EN_06172022.pdf#page=65",
+   "kind": "citation",
+   "support": "passed: quote on page and entailed"
+  },
+  {
+   "page": 65,
+   "match": "class",
+   "quote": "Check system superheat. Follow the instruction listed on the superheat charging curve in the Service Facts. Superheat should be within \u00b15 F of the superheat chart value.",
+   "manual_id": "trane-rt-svx21ad-precedent-gas-electric-3-10t",
+   "passage_id": "P1",
+   "url": "https://elibrary.tranetechnologies.com/public/commercial-hvac/Literature/Installation%20Operation%20and%20Maintenance/RT-SVX21AD-EN_06172022.pdf#page=65",
+   "kind": "check",
+   "support": "passed: quote on page and entailed"
+  },
+  {
+   "page": 73,
+   "match": "class",
+   "quote": "Disconnect all electric power, including remote disconnects before servicing. Follow proper lockout/tagout procedures to ensure the power can not be inadvertently energized.",
+   "manual_id": "trane-rt-svx21ad-precedent-gas-electric-3-10t",
+   "passage_id": "P3",
+   "url": "https://elibrary.tranetechnologies.com/public/commercial-hvac/Literature/Installation%20Operation%20and%20Maintenance/RT-SVX21AD-EN_06172022.pdf#page=73",
+   "kind": "safety",
+   "support": "passed: quote on page and entailed"
+  }
+ ],
+ "removed_unverified": {
+  "citations": 0,
+  "safety_steps": 0,
+  "recommended_checks": 0
+ },
+ "detection": {
+  "rule_hint": "refrigerant_undercharge",
+  "rules_fired": [
+   {
+    "rule": "F2",
+    "windows": 6,
+    "description": "Running circuits: suction pressure imbalance"
+   },
+   {
+    "rule": "F3",
+    "windows": 3,
+    "description": "High discharge to suction pressure ratio"
+   }
+  ],
+  "operating_windows": 14,
+  "model_alarm_windows": 14,
+  "rules_alarm_windows": 6,
+  "model_probability_mean": 0.911
+ },
+ "rules_vs_model": {
+  "rules_alarm_windows": 6,
+  "model_alarm_windows": 14,
+  "disagreement": false
+ }
+}

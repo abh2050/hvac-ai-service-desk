@@ -102,6 +102,9 @@ def start_run(body: RunRequest, c: Caller = Depends(manager_only)):
             "note": "replay of recorded data"}
 
 
+MODEL_STAGES = ("DiagnoseCase", "VerifyAndDraft")
+
+
 def _stages(execution_arn: str) -> list[dict]:
     """Stage status and timing from the case state machine history."""
     hist = client("stepfunctions").get_execution_history(executionArn=execution_arn, maxResults=500)["events"]
@@ -118,6 +121,8 @@ def _stages(execution_arn: str) -> list[dict]:
                     s["status"] = "done"
                     s["seconds"] = round((e["timestamp"] - open_[name]).total_seconds(), 2)
                     out = e["stateExitedEventDetails"].get("output") or "{}"
+                    if name not in MODEL_STAGES:      # later states carry the cost fields forward in their output
+                        break
                     try:
                         o = json.loads(out)
                         cost = (o.get("llm_usage") or {}).get("cost_usd", 0) + (o.get("entailment_cost_usd") or 0)

@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { api } from '../api';
 import { currentRun } from '../run';
+import { STATIC } from '../mode';
 
 type Stage = { stage: string; status: string; started: string; seconds?: number; model_cost_usd?: number };
 type Run = { run_id: string; scenario_id: string; source_type: string; note: string;
@@ -26,6 +27,7 @@ export default function Pipeline() {
     let stop = false;
     const tick = () => api<Run>(`/runs/${runId}`).then((r) => { if (!stop) setRun(r); }).catch((e) => setError(e.message));
     tick();
+    if (STATIC) return;
     const id = window.setInterval(tick, 3000);
     return () => { stop = true; window.clearInterval(id); };
   }, [runId]);
@@ -33,7 +35,7 @@ export default function Pipeline() {
   const cost = run?.stages.reduce((a, s) => a + (s.model_cost_usd ?? 0), 0) ?? 0;
   return (
     <>
-      <h1>Live pipeline</h1>
+      <h1>{STATIC ? 'Recorded pipeline run' : 'Live pipeline'}</h1>
       <p className="muted">Run <code>{runId}</code>, recorded day {run?.scenario_id}. Replay of recorded data.</p>
       {error && <div className="banner bad">{error}</div>}
       <div className="card row">

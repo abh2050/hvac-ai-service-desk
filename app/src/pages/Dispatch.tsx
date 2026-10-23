@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
 import { api } from '../api';
+import { SNAPSHOT } from '../mode';
 
 type Item = { work_order_id: string; technician_id: string | null; runner_up_id: string | null; start_at: string | null;
   travel_minutes: number | null; lateness_minutes: number | null; reason: string; status: string; sla_due_at: string;
@@ -14,9 +15,11 @@ function slaClock(due: string, now: number) {
 export default function Dispatch() {
   const [d, setD] = useState<{ assigned: Item[]; escalated: Item[]; note: string } | null>(null);
   const [error, setError] = useState('');
-  const [now, setNow] = useState(Date.now());
+  // The static demo measures SLA clocks at capture time; a live clock would show every order overdue.
+  const [now, setNow] = useState(SNAPSHOT ? new Date(SNAPSHOT.captured_at).getTime() : Date.now());
   useEffect(() => {
     api<typeof d>('/dispatch').then(setD).catch((e) => setError(e.message));
+    if (SNAPSHOT) return;
     const id = window.setInterval(() => setNow(Date.now()), 30000);
     return () => window.clearInterval(id);
   }, []);
@@ -24,7 +27,8 @@ export default function Dispatch() {
     <>
       <h1>Dispatch board</h1>
       <p className="muted">OR-Tools assigns approved work orders under hard constraints: certifications, shifts, site access, and escort clearance.
-        Rows from the scenario week are scenario model results, not field savings.</p>
+        Rows from the scenario week are scenario model results, not field savings.
+        {SNAPSHOT && ` SLA clocks are as of capture, ${SNAPSHOT.captured_at.replace('T', ' ').slice(0, 16)} UTC.`}</p>
       {error && <div className="banner bad">{error}</div>}
       <div className="card">
         <h2>Assigned</h2>

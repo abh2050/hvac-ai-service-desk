@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
 import { api, type Me } from '../api';
+import { SNAPSHOT, STATIC } from '../mode';
 
 type Step = { kind: string; seq: number; quote: string; manual_id: string; page: number };
 type WO = { work_order_id: string; asset_id: string; status: string; status_reason: string; priority: string; sla_due_at: string;
@@ -42,6 +43,9 @@ export default function WorkOrders({ me }: { me: Me | null }) {
     <>
       <h1>Work orders</h1>
       <p className="muted">Every instruction is a verified quote from an equipment manual, with its page. The database refuses anything else.</p>
+      {STATIC && <div className="banner warn">Recorded queue. The manager approved {SNAPSHOT?.work_order_id} in the live run, which resumed the
+        pipeline and dispatched it. The other orders are the labeled scenario week used for the dispatch board. One of them is blocked:
+        no lockout step could be sourced from a manual, so no one can approve it.</div>}
       {error && <div className="banner bad">{error}</div>}
       {items.length === 0 && <p>No work orders yet.</p>}
       {items.map((wo) => (

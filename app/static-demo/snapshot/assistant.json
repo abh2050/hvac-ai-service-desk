@@ -1,0 +1,72 @@
+[
+ {
+  "asked_as": "technician T01",
+  "question": "What jobs do I have this week?",
+  "answer": "Here are the jobs assigned to you for the upcoming week (starting Monday, 2026-10-26):\n\n- 2026-10-26 08:15\u202f\u2013\u202fWO\u2011AST\u2011RTU\u201102\u2011202610260800\u2011271201 (Asset AST\u2011RTU\u201102) \u2013 Fault: compressor_stage2_not_engaging \u2013 SLA due 2026-10-26 12:00\n- 2026-10-27 07:15\u202f\u2013\u202fWO\u2011AST\u2011RTU\u201102\u2011202610270700\u2011dd3dcb (Asset AST\u2011RTU\u201102) \u2013 Fault: compressor_stage2_not_engaging \u2013 SLA due 2026-10-27 11:00\n- 2026-10-28 07:15\u202f\u2013\u202fWO\u2011AST\u2011RTU\u201102\u2011202610280700\u20110cb897 (Asset AST\u2011RTU\u201102) \u2013 Fault: refrigerant_undercharge \u2013 SLA due 2026-10-28 11:00\n- 2026-10-28 10:15\u202f\u2013\u202fWO\u2011AST\u2011RTU\u201102\u2011202610280900\u2011316728 (Asset AST\u2011RTU\u201102) \u2013 Fault: compressor_stage2_not_engaging \u2013 SLA due 2026-10-28 13:00\n- 2026-10-28 12:15\u202f\u2013\u202fWO\u2011AST\u2011RTU\u201102\u2011202610281000\u2011a483b2 (Asset AST\u2011RTU\u201102) \u2013 Fault: compressor_stage2_not_engaging \u2013 SLA due 2026-10-28 14:00\n- 2026-10-29 07:15\u202f\u2013\u202fWO\u2011AST\u2011RTU\u201102\u2011202610290700\u20113a3dd3 (Asset AST\u2011RTU\u201102) \u2013 Fault: compressor_stage2_not_engaging \u2013 SLA due 2026-10-29 11:00\n- 2026-10-29 09:15\u202f\u2013\u202fWO\u2011AST\u2011RTU\u201102\u2011202610290700\u20118a0581 (Asset AST\u2011RTU\u201102) \u2013 Fault: compressor_stage2_not_engaging \u2013 SLA due 2026-10-29 11:00\n- 2026-10-29 11:15\u202f\u2013\u202fWO\u2011AST\u2011RTU\u201102\u2011202610290800\u201196c163 (Asset AST\u2011RTU\u201102) \u2013 Fault: refrigerant_undercharge \u2013 SLA due 2026-10-29 12:00\n- 2026-10-30 09:15\u202f\u2013\u202fWO\u2011AST\u2011RTU\u201102\u2011202610300900\u2011f414e3 (Asset AST\u2011RTU\u201102) \u2013 Fault: compressor_stage2_not_engaging \u2013 SLA due 2026-10-30 13:00\n\nAll jobs are at the Hartford colocation data center (SITE\u2011HTF\u2011DC1).",
+  "unquoted_instructions": [],
+  "answer_rewritten": false,
+  "citations_shown": [],
+  "insufficient_evidence": false,
+  "tool_trace": [
+   {
+    "tool": "list_my_jobs",
+    "input": {},
+    "error": false,
+    "denied": false
+   }
+  ],
+  "parse_ok": true,
+  "seconds": 4.66,
+  "cost_usd": 0.00086
+ },
+ {
+  "asked_as": "technician T01",
+  "question": "What are the safety steps for work order WO-AST-RTU-04-202610231718-cdaee1?",
+  "answer": "I cannot access that work order.",
+  "unquoted_instructions": [],
+  "answer_rewritten": false,
+  "citations_shown": [],
+  "insufficient_evidence": true,
+  "tool_trace": [
+   {
+    "tool": "get_work_order",
+    "input": {
+     "work_order_id": "WO-AST-RTU-04-202610231718-cdaee1"
+    },
+    "error": false,
+    "denied": true
+   }
+  ],
+  "parse_ok": true,
+  "seconds": 2.34,
+  "cost_usd": 0.0003
+ },
+ {
+  "asked_as": "manager",
+  "question": "Summarize work order WO-AST-RTU-04-202610231718-cdaee1: the fault, who it is assigned to, and its sourced safety steps.",
+  "answer": "The work order WO-AST-RTU-04-202610231718-cdaee1 has a refrigerant undercharge fault and is assigned to technician T16. See the quoted manual steps below.",
+  "unquoted_instructions": [],
+  "answer_rewritten": false,
+  "citations_shown": [
+   {
+    "manual_id": "trane-rt-svx21ad-precedent-gas-electric-3-10t",
+    "page": 73,
+    "quote": "Disconnect all electric power, including remote disconnects before servicing. Follow proper lockout/tagout procedures to ensure the power can not be inadvertently energized."
+   }
+  ],
+  "insufficient_evidence": false,
+  "tool_trace": [
+   {
+    "tool": "get_work_order",
+    "input": {
+     "work_order_id": "WO-AST-RTU-04-202610231718-cdaee1"
+    },
+    "error": false,
+    "denied": false
+   }
+  ],
+  "parse_ok": true,
+  "seconds": 6.64,
+  "cost_usd": 0.0009
+ }
+]

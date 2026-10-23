@@ -1,0 +1,1514 @@
+[
+ {
+  "work_order_id": "WO-AST-RTU-04-202610301100-aa2c22",
+  "asset_id": "AST-RTU-04",
+  "status": "assigned",
+  "status_reason": "lowest weighted cost of lateness, travel, and workload",
+  "priority": "P2",
+  "sla_due_at": "2026-10-30T19:00:00-04:00",
+  "fault_type": "refrigerant_undercharge",
+  "route": "technician",
+  "required_certs": [
+   "EPA608_II",
+   "HVAC"
+  ],
+  "compatibility_uncertain": true,
+  "detection_disagreement": true,
+  "steps": [
+   {
+    "kind": "check",
+    "seq": 1,
+    "quote": "Check system superheat. Follow the instruction listed on the superheat charging curve in the Service Facts. Superheat should be within \u00b15 F of the superheat chart value.",
+    "manual_id": "trane-rt-svx21ad-precedent-gas-electric-3-10t",
+    "page": 65
+   },
+   {
+    "kind": "citation",
+    "seq": 1,
+    "quote": "Check system superheat. Follow the instruction listed on the superheat charging curve in the Service Facts. Superheat should be within \u00b15 F of the superheat chart value.",
+    "manual_id": "trane-rt-svx21ad-precedent-gas-electric-3-10t",
+    "page": 65
+   },
+   {
+    "kind": "safety",
+    "seq": 1,
+    "quote": "Close the main disconnect switch or circuit protector switch that provides the supply power to the unit\u2019s terminal block or the unit mounted disconnect switch.",
+    "manual_id": "trane-rt-svx21ad-precedent-gas-electric-3-10t",
+    "page": 65
+   }
+  ]
+ },
+ {
+  "work_order_id": "WO-AST-RTU-02-202610300900-f414e3",
+  "asset_id": "AST-RTU-02",
+  "status": "assigned",
+  "status_reason": "lowest weighted cost of lateness, travel, and workload",
+  "priority": "P1",
+  "sla_due_at": "2026-10-30T13:00:00-04:00",
+  "fault_type": "compressor_stage2_not_engaging",
+  "route": "technician",
+  "required_certs": [
+   "HVAC",
+   "ELECTRICAL"
+  ],
+  "compatibility_uncertain": true,
+  "detection_disagreement": true,
+  "steps": [
+   {
+    "kind": "citation",
+    "seq": 1,
+    "quote": "When the (K10) relay contacts close, compressor contactor (CC2) is energized. This is the smaller of the two compressors (CPR2).",
+    "manual_id": "trane-rt-svx21ad-precedent-gas-electric-3-10t",
+    "page": 51
+   },
+   {
+    "kind": "safety",
+    "seq": 1,
+    "quote": "To stop the SERVICE TEST, turn the main power disconnect switch to the \u201cOff\u201d position or proceed to the next component start-up procedure.",
+    "manual_id": "trane-rt-svx21ad-precedent-gas-electric-3-10t",
+    "page": 65
+   }
+  ]
+ },
+ {
+  "work_order_id": "WO-AST-RTU-03-202610300800-de7085",
+  "asset_id": "AST-RTU-03",
+  "status": "reschedule_requested",
+  "status_reason": "qualified technicians exist but none has capacity in the planning horizon",
+  "priority": "P3",
+  "sla_due_at": "2026-10-31T08:00:00-04:00",
+  "fault_type": "compressor_stage2_not_engaging",
+  "route": "technician",
+  "required_certs": [
+   "HVAC",
+   "ELECTRICAL"
+  ],
+  "compatibility_uncertain": true,
+  "detection_disagreement": true,
+  "steps": [
+   {
+    "kind": "citation",
+    "seq": 1,
+    "quote": "When the (K10) relay contacts close, the compressor contactor (CC2) coil is energized provided the low pressure control (LPC2), high pressure control (HPC2) and discharge line thermostat (TDL 2) are closed.",
+    "manual_id": "trane-rt-svx21ad-precedent-gas-electric-3-10t",
+    "page": 51
+   },
+   {
+    "kind": "safety",
+    "seq": 1,
+    "quote": "To stop the SERVICE TEST, turn the main power disconnect switch to the \u201cOff\u201d position or proceed to the next component start-up procedure.",
+    "manual_id": "trane-rt-svx21ad-precedent-gas-electric-3-10t",
+    "page": 65
+   }
+  ]
+ },
+ {
+  "work_order_id": "WO-AST-RTU-01-202610300700-7699c3",
+  "asset_id": "AST-RTU-01",
+  "status": "assigned",
+  "status_reason": "lowest weighted cost of lateness, travel, and workload",
+  "priority": "P1",
+  "sla_due_at": "2026-10-30T11:00:00-04:00",
+  "fault_type": "oa_damper_stuck",
+  "route": "technician",
+  "required_certs": [
+   "CONTROLS"
+  ],
+  "compatibility_uncertain": true,
+  "detection_disagreement": false,
+  "steps": [
+   {
+    "kind": "check",
+    "seq": 1,
+    "quote": "2. Verify that the dampers stroked to the minimum position.",
+    "manual_id": "trane-rt-svx21ad-precedent-gas-electric-3-10t",
+    "page": 64
+   },
+   {
+    "kind": "citation",
+    "seq": 1,
+    "quote": "2. Verify that the dampers stroked to the minimum position.",
+    "manual_id": "trane-rt-svx21ad-precedent-gas-electric-3-10t",
+    "page": 64
+   },
+   {
+    "kind": "citation",
+    "seq": 2,
+    "quote": "Replace the filter access panel. The damper will close when the blower circuit is de-energized.",
+    "manual_id": "trane-rt-svx21ad-precedent-gas-electric-3-10t",
+    "page": 64
+   },
+   {
+    "kind": "safety",
+    "seq": 1,
+    "quote": "Failure to disconnect power before servicing could result in rotating components cutting and slashing technician which could result in death or serious injury.",
+    "manual_id": "trane-rt-svx21ad-precedent-gas-electric-3-10t",
+    "page": 64
+   },
+   {
+    "kind": "safety",
+    "seq": 2,
+    "quote": "Replace the filter access panel. The damper will close when the blower circuit is de-energized.",
+    "manual_id": "trane-rt-svx21ad-precedent-gas-electric-3-10t",
+    "page": 64
+   }
+  ]
+ },
+ {
+  "work_order_id": "WO-AST-RTU-01-202610300700-541000",
+  "asset_id": "AST-RTU-01",
+  "status": "assigned",
+  "status_reason": "lowest weighted cost of lateness, travel, and workload",
+  "priority": "P1",
+  "sla_due_at": "2026-10-30T11:00:00-04:00",
+  "fault_type": "oa_damper_stuck",
+  "route": "technician",
+  "required_certs": [
+   "CONTROLS"
+  ],
+  "compatibility_uncertain": true,
+  "detection_disagreement": false,
+  "steps": [
+   {
+    "kind": "check",
+    "seq": 1,
+    "quote": "2. Verify that the dampers stroked to the minimum position.",
+    "manual_id": "trane-rt-svx21ad-precedent-gas-electric-3-10t",
+    "page": 64
+   },
+   {
+    "kind": "citation",
+    "seq": 1,
+    "quote": "2. Verify that the dampers stroked to the minimum position.",
+    "manual_id": "trane-rt-svx21ad-precedent-gas-electric-3-10t",
+    "page": 64
+   },
+   {
+    "kind": "citation",
+    "seq": 2,
+    "quote": "Replace the filter access panel. The damper will close when the blower circuit is de-energized.",
+    "manual_id": "trane-rt-svx21ad-precedent-gas-electric-3-10t",
+    "page": 64
+   },
+   {
+    "kind": "safety",
+    "seq": 1,
+    "quote": "Failure to disconnect power before servicing could result in rotating components cutting and slashing technician which could result in death or serious injury.",
+    "manual_id": "trane-rt-svx21ad-precedent-gas-electric-3-10t",
+    "page": 64
+   }
+  ]
+ },
+ {
+  "work_order_id": "WO-AST-AHU-02-202610300400-360538",
+  "asset_id": "AST-AHU-02",
+  "status": "assigned",
+  "status_reason": "lowest weighted cost of lateness, travel, and workload",
+  "priority": "P1",
+  "sla_due_at": "2026-10-30T08:00:00-04:00",
+  "fault_type": "oa_damper_stuck",
+  "route": "technician",
+  "required_certs": [
+   "CONTROLS"
+  ],
+  "compatibility_uncertain": true,
+  "detection_disagreement": true,
+  "steps": [
+   {
+    "kind": "citation",
+    "seq": 1,
+    "quote": "All zone damper blades should close properly. If one or a few zones do not close completely, repeat the procedure for these zones.",
+    "manual_id": "daikin-im672-vision-ahu",
+    "page": 25
+   },
+   {
+    "kind": "safety",
+    "seq": 1,
+    "quote": "After 48 Hours of Operation 1. Disconnect and lock electrical power source.",
+    "manual_id": "daikin-im672-vision-ahu",
+    "page": 39
+   }
+  ]
+ },
+ {
+  "work_order_id": "WO-AST-AHU-02-202610300000-3f9281",
+  "asset_id": "AST-AHU-02",
+  "status": "assigned",
+  "status_reason": "lowest weighted cost of lateness, travel, and workload",
+  "priority": "P1",
+  "sla_due_at": "2026-10-30T04:00:00-04:00",
+  "fault_type": "oa_damper_stuck",
+  "route": "technician",
+  "required_certs": [
+   "CONTROLS"
+  ],
+  "compatibility_uncertain": true,
+  "detection_disagreement": true,
+  "steps": [
+   {
+    "kind": "citation",
+    "seq": 1,
+    "quote": "All zone damper blades should close properly. If one or a few zones do not close completely, repeat the procedure for these zones.",
+    "manual_id": "daikin-im672-vision-ahu",
+    "page": 25
+   },
+   {
+    "kind": "safety",
+    "seq": 1,
+    "quote": "Before entering fan section, make sure that fan electrical power source is disconnected and locked in the OFF position.",
+    "manual_id": "daikin-im672-vision-ahu",
+    "page": 38
+   }
+  ]
+ },
+ {
+  "work_order_id": "WO-AST-RTU-01-202610291100-5fca3e",
+  "asset_id": "AST-RTU-01",
+  "status": "assigned",
+  "status_reason": "lowest weighted cost of lateness, travel, and workload",
+  "priority": "P1",
+  "sla_due_at": "2026-10-29T15:00:00-04:00",
+  "fault_type": "oa_damper_stuck",
+  "route": "technician",
+  "required_certs": [
+   "CONTROLS"
+  ],
+  "compatibility_uncertain": true,
+  "detection_disagreement": true,
+  "steps": [
+   {
+    "kind": "check",
+    "seq": 1,
+    "quote": "Verify that the dampers stroked to the minimum position.",
+    "manual_id": "trane-rt-svx21ad-precedent-gas-electric-3-10t",
+    "page": 64
+   },
+   {
+    "kind": "citation",
+    "seq": 1,
+    "quote": "Range of damper for this setting is 0-100%.",
+    "manual_id": "trane-rt-svx21ad-precedent-gas-electric-3-10t",
+    "page": 64
+   },
+   {
+    "kind": "citation",
+    "seq": 2,
+    "quote": "The damper will close when the blower circuit is de-energized.",
+    "manual_id": "trane-rt-svx21ad-precedent-gas-electric-3-10t",
+    "page": 64
+   },
+   {
+    "kind": "citation",
+    "seq": 3,
+    "quote": "set the minimum position setpoint for the economizer to 0% using the setpoint potentiometer located on the Economizer Control (ECA)",
+    "manual_id": "trane-rt-svx26p-voyager-gas-electric-12-25t",
+    "page": 37
+   },
+   {
+    "kind": "safety",
+    "seq": 1,
+    "quote": "Failure to disconnect power before servicing could result in rotating components cutting and slashing technician which could result in death or serious injury.",
+    "manual_id": "trane-rt-svx21ad-precedent-gas-electric-3-10t",
+    "page": 64
+   }
+  ]
+ },
+ {
+  "work_order_id": "WO-AST-RTU-01-202610290900-2a2d1d",
+  "asset_id": "AST-RTU-01",
+  "status": "assigned",
+  "status_reason": "lowest weighted cost of lateness, travel, and workload",
+  "priority": "P1",
+  "sla_due_at": "2026-10-29T13:00:00-04:00",
+  "fault_type": "oa_damper_stuck",
+  "route": "technician",
+  "required_certs": [
+   "CONTROLS"
+  ],
+  "compatibility_uncertain": true,
+  "detection_disagreement": false,
+  "steps": [
+   {
+    "kind": "check",
+    "seq": 1,
+    "quote": "Actuator has failed or become disconnected - check for stall, over voltage, under voltage and actuator count. Replace actuator if damper is moveable and supply voltage is between 21.6 V and 26.4 V.",
+    "manual_id": "honeywell-jade-w7220-63-2700",
+    "page": 24
+   },
+   {
+    "kind": "citation",
+    "seq": 1,
+    "quote": "Actuator has failed or become disconnected - check for stall, over voltage, under voltage and actuator count. Replace actuator if damper is moveable and supply voltage is between 21.6 V and 26.4 V.",
+    "manual_id": "honeywell-jade-w7220-63-2700",
+    "page": 24
+   },
+   {
+    "kind": "safety",
+    "seq": 1,
+    "quote": "Failure to disconnect power before servicing could result in rotating components cutting and slashing technician which could result in death or serious injury.",
+    "manual_id": "trane-rt-svx21ad-precedent-gas-electric-3-10t",
+    "page": 64
+   }
+  ]
+ },
+ {
+  "work_order_id": "WO-AST-RTU-01-202610290800-6ea40a",
+  "asset_id": "AST-RTU-01",
+  "status": "assigned",
+  "status_reason": "lowest weighted cost of lateness, travel, and workload",
+  "priority": "P1",
+  "sla_due_at": "2026-10-29T12:00:00-04:00",
+  "fault_type": "oa_damper_stuck",
+  "route": "technician",
+  "required_certs": [
+   "CONTROLS"
+  ],
+  "compatibility_uncertain": true,
+  "detection_disagreement": false,
+  "steps": [
+   {
+    "kind": "check",
+    "seq": 1,
+    "quote": "Actuator has failed or become disconnected - check for stall, over voltage, under voltage and actuator count.",
+    "manual_id": "honeywell-jade-w7220-63-2700",
+    "page": 24
+   },
+   {
+    "kind": "citation",
+    "seq": 1,
+    "quote": "If the actuator does not drive, the economizer actuator is bad. Replace the ECA.",
+    "manual_id": "trane-rt-svx21ad-precedent-gas-electric-3-10t",
+    "page": 76
+   },
+   {
+    "kind": "citation",
+    "seq": 2,
+    "quote": "If the ECA is not driving the dampers, verify that 24 Vac is between the ECA terminals TR and TR1 is present.",
+    "manual_id": "trane-rt-svx21ad-precedent-gas-electric-3-10t",
+    "page": 76
+   },
+   {
+    "kind": "safety",
+    "seq": 1,
+    "quote": "Failure to disconnect power before servicing could result in rotating components cutting and slashing technician which could result in death or serious injury.",
+    "manual_id": "trane-rt-svx21ad-precedent-gas-electric-3-10t",
+    "page": 64
+   }
+  ]
+ },
+ {
+  "work_order_id": "WO-AST-RTU-02-202610290800-96c163",
+  "asset_id": "AST-RTU-02",
+  "status": "assigned",
+  "status_reason": "lowest weighted cost of lateness, travel, and workload",
+  "priority": "P1",
+  "sla_due_at": "2026-10-29T12:00:00-04:00",
+  "fault_type": "refrigerant_undercharge",
+  "route": "technician",
+  "required_certs": [
+   "EPA608_II",
+   "HVAC"
+  ],
+  "compatibility_uncertain": true,
+  "detection_disagreement": true,
+  "steps": [
+   {
+    "kind": "check",
+    "seq": 1,
+    "quote": "Check system superheat. Follow the instruction listed on the superheat charging curve in the Service Facts.",
+    "manual_id": "trane-rt-svx21ad-precedent-gas-electric-3-10t",
+    "page": 65
+   },
+   {
+    "kind": "citation",
+    "seq": 1,
+    "quote": "Superheat should be within \u00b15 F of the superheat chart value.",
+    "manual_id": "trane-rt-svx21ad-precedent-gas-electric-3-10t",
+    "page": 65
+   },
+   {
+    "kind": "safety",
+    "seq": 1,
+    "quote": "Close the main disconnect switch or circuit protector switch that provides the supply power to the unit\u2019s terminal block.",
+    "manual_id": "trane-rt-svx21ad-precedent-gas-electric-3-10t",
+    "page": 65
+   }
+  ]
+ },
+ {
+  "work_order_id": "WO-AST-RTU-02-202610290700-3a3dd3",
+  "asset_id": "AST-RTU-02",
+  "status": "assigned",
+  "status_reason": "lowest weighted cost of lateness, travel, and workload",
+  "priority": "P1",
+  "sla_due_at": "2026-10-29T11:00:00-04:00",
+  "fault_type": "compressor_stage2_not_engaging",
+  "route": "technician",
+  "required_certs": [
+   "HVAC",
+   "ELECTRICAL"
+  ],
+  "compatibility_uncertain": true,
+  "detection_disagreement": true,
+  "steps": [
+   {
+    "kind": "citation",
+    "seq": 1,
+    "quote": "When the (K10) relay contacts close, the compressor contactor (CC2) coil is energized provided the low pressure control (LPC2), high pressure control (HPC2) and discharge line thermostat (TDL 2) are closed.",
+    "manual_id": "trane-rt-svx21ad-precedent-gas-electric-3-10t",
+    "page": 51
+   },
+   {
+    "kind": "safety",
+    "seq": 1,
+    "quote": "To stop the SERVICE TEST, turn the main power disconnect switch to the \u201cOff\u201d position or proceed to the next component start-up procedure.",
+    "manual_id": "trane-rt-svx21ad-precedent-gas-electric-3-10t",
+    "page": 65
+   }
+  ]
+ },
+ {
+  "work_order_id": "WO-AST-RTU-02-202610290700-8a0581",
+  "asset_id": "AST-RTU-02",
+  "status": "assigned",
+  "status_reason": "lowest weighted cost of lateness, travel, and workload",
+  "priority": "P1",
+  "sla_due_at": "2026-10-29T11:00:00-04:00",
+  "fault_type": "compressor_stage2_not_engaging",
+  "route": "technician",
+  "required_certs": [
+   "HVAC",
+   "ELECTRICAL"
+  ],
+  "compatibility_uncertain": true,
+  "detection_disagreement": true,
+  "steps": [
+   {
+    "kind": "citation",
+    "seq": 1,
+    "quote": "When the (K10) relay contacts close, compressor contactor (CC2) coil is energized provided the low pressure control (LPC2), high pressure control (HPC2) and discharge line thermostat (TDL 2) are closed.",
+    "manual_id": "trane-rt-svx21ad-precedent-gas-electric-3-10t",
+    "page": 51
+   },
+   {
+    "kind": "citation",
+    "seq": 2,
+    "quote": "If the second stage of cooling can not satisfy the cooling requirement, the RTRM keeps the (K9) relay coil energized and energizes the (K10) relay coil.",
+    "manual_id": "trane-rt-svx21ad-precedent-gas-electric-3-10t",
+    "page": 51
+   },
+   {
+    "kind": "safety",
+    "seq": 1,
+    "quote": "To stop the SERVICE TEST, turn the main power disconnect switch to the \u201cOff\u201d position or proceed to the next component start-up procedure.",
+    "manual_id": "trane-rt-svx21ad-precedent-gas-electric-3-10t",
+    "page": 65
+   }
+  ]
+ },
+ {
+  "work_order_id": "WO-AST-RTU-01-202610290700-e956b0",
+  "asset_id": "AST-RTU-01",
+  "status": "assigned",
+  "status_reason": "lowest weighted cost of lateness, travel, and workload",
+  "priority": "P1",
+  "sla_due_at": "2026-10-29T11:00:00-04:00",
+  "fault_type": "oa_damper_stuck",
+  "route": "technician",
+  "required_certs": [
+   "CONTROLS"
+  ],
+  "compatibility_uncertain": true,
+  "detection_disagreement": false,
+  "steps": [
+   {
+    "kind": "check",
+    "seq": 1,
+    "quote": "Actuator has failed or become disconnected - check for stall, over voltage, under voltage and actuator count.",
+    "manual_id": "honeywell-jade-w7220-63-2700",
+    "page": 24
+   },
+   {
+    "kind": "citation",
+    "seq": 1,
+    "quote": "The damper will close when the blower circuit is de-energized.",
+    "manual_id": "trane-rt-svx21ad-precedent-gas-electric-3-10t",
+    "page": 64
+   },
+   {
+    "kind": "citation",
+    "seq": 2,
+    "quote": "Range of damper for this setting is 0-100%.",
+    "manual_id": "trane-rt-svx21ad-precedent-gas-electric-3-10t",
+    "page": 64
+   },
+   {
+    "kind": "safety",
+    "seq": 1,
+    "quote": "Failure to disconnect power before servicing could result in rotating components cutting and slashing technician which could result in death or serious injury.",
+    "manual_id": "trane-rt-svx21ad-precedent-gas-electric-3-10t",
+    "page": 64
+   }
+  ]
+ },
+ {
+  "work_order_id": "WO-AST-RTU-01-202610290700-46b0d2",
+  "asset_id": "AST-RTU-01",
+  "status": "assigned",
+  "status_reason": "lowest weighted cost of lateness, travel, and workload",
+  "priority": "P1",
+  "sla_due_at": "2026-10-29T11:00:00-04:00",
+  "fault_type": "oa_damper_stuck",
+  "route": "technician",
+  "required_certs": [
+   "CONTROLS"
+  ],
+  "compatibility_uncertain": true,
+  "detection_disagreement": false,
+  "steps": [
+   {
+    "kind": "check",
+    "seq": 1,
+    "quote": "2. Verify that the dampers stroked to the minimum position.",
+    "manual_id": "trane-rt-svx21ad-precedent-gas-electric-3-10t",
+    "page": 64
+   },
+   {
+    "kind": "citation",
+    "seq": 1,
+    "quote": "2. Verify that the dampers stroked to the minimum position.",
+    "manual_id": "trane-rt-svx21ad-precedent-gas-electric-3-10t",
+    "page": 64
+   },
+   {
+    "kind": "citation",
+    "seq": 2,
+    "quote": "Replace the filter access panel. The damper will close when the blower circuit is de-energized.",
+    "manual_id": "trane-rt-svx21ad-precedent-gas-electric-3-10t",
+    "page": 64
+   },
+   {
+    "kind": "safety",
+    "seq": 1,
+    "quote": "Failure to disconnect power before servicing could result in rotating components cutting and slashing technician which could result in death or serious injury.",
+    "manual_id": "trane-rt-svx21ad-precedent-gas-electric-3-10t",
+    "page": 64
+   }
+  ]
+ },
+ {
+  "work_order_id": "WO-AST-AHU-02-202610290000-af92fb",
+  "asset_id": "AST-AHU-02",
+  "status": "assigned",
+  "status_reason": "lowest weighted cost of lateness, travel, and workload",
+  "priority": "P1",
+  "sla_due_at": "2026-10-29T04:00:00-04:00",
+  "fault_type": "oa_damper_stuck",
+  "route": "technician",
+  "required_certs": [
+   "CONTROLS"
+  ],
+  "compatibility_uncertain": true,
+  "detection_disagreement": true,
+  "steps": [
+   {
+    "kind": "citation",
+    "seq": 1,
+    "quote": "Fresh air and return air dampers can be linked together and driven from the same actuator if the dampers are the same size.",
+    "manual_id": "daikin-im672-vision-ahu",
+    "page": 26
+   },
+   {
+    "kind": "safety",
+    "seq": 1,
+    "quote": "Before entering fan section, make sure that fan electrical power source is disconnected and locked in the OFF position.",
+    "manual_id": "daikin-im672-vision-ahu",
+    "page": 38
+   }
+  ]
+ },
+ {
+  "work_order_id": "WO-AST-RTU-03-202610281100-6a1f2f",
+  "asset_id": "AST-RTU-03",
+  "status": "reschedule_requested",
+  "status_reason": "qualified technicians exist but none has capacity in the planning horizon",
+  "priority": "P3",
+  "sla_due_at": "2026-10-29T11:00:00-04:00",
+  "fault_type": "compressor_stage2_not_engaging",
+  "route": "technician",
+  "required_certs": [
+   "HVAC",
+   "ELECTRICAL"
+  ],
+  "compatibility_uncertain": true,
+  "detection_disagreement": true,
+  "steps": [
+   {
+    "kind": "citation",
+    "seq": 1,
+    "quote": "When the (K10) relay contacts close, compressor contactor (CC2) coil is energized provided the low pressure control (LPC2), high pressure control (HPC2) and discharge line thermostat (TDL 2) are closed.",
+    "manual_id": "trane-rt-svx21ad-precedent-gas-electric-3-10t",
+    "page": 51
+   },
+   {
+    "kind": "citation",
+    "seq": 2,
+    "quote": "This is the smaller of the two compressors (CPR2). This staging order is opposite standard staging order.",
+    "manual_id": "trane-rt-svx21ad-precedent-gas-electric-3-10t",
+    "page": 51
+   },
+   {
+    "kind": "safety",
+    "seq": 1,
+    "quote": "To stop the SERVICE TEST, turn the main power disconnect switch to the \u201cOff\u201d position.",
+    "manual_id": "trane-rt-svx21ad-precedent-gas-electric-3-10t",
+    "page": 65
+   }
+  ]
+ },
+ {
+  "work_order_id": "WO-AST-RTU-02-202610281000-a483b2",
+  "asset_id": "AST-RTU-02",
+  "status": "assigned",
+  "status_reason": "lowest weighted cost of lateness, travel, and workload",
+  "priority": "P1",
+  "sla_due_at": "2026-10-28T14:00:00-04:00",
+  "fault_type": "compressor_stage2_not_engaging",
+  "route": "technician",
+  "required_certs": [
+   "HVAC",
+   "ELECTRICAL"
+  ],
+  "compatibility_uncertain": true,
+  "detection_disagreement": true,
+  "steps": [
+   {
+    "kind": "citation",
+    "seq": 1,
+    "quote": "When the (K10) relay contacts close, the compressor contactor (CC2) coil is energized provided the low pressure control (LPC2), high pressure control (HPC2) and discharge line thermostat (TDL 2) are closed.",
+    "manual_id": "trane-rt-svx21ad-precedent-gas-electric-3-10t",
+    "page": 51
+   },
+   {
+    "kind": "safety",
+    "seq": 1,
+    "quote": "To stop the SERVICE TEST, turn the main power disconnect switch to the \u201cOff\u201d position or proceed to the next component start-up procedure.",
+    "manual_id": "trane-rt-svx21ad-precedent-gas-electric-3-10t",
+    "page": 65
+   }
+  ]
+ },
+ {
+  "work_order_id": "WO-AST-RTU-01-202610281000-c490ef",
+  "asset_id": "AST-RTU-01",
+  "status": "assigned",
+  "status_reason": "lowest weighted cost of lateness, travel, and workload",
+  "priority": "P1",
+  "sla_due_at": "2026-10-28T14:00:00-04:00",
+  "fault_type": "oa_damper_stuck",
+  "route": "technician",
+  "required_certs": [
+   "CONTROLS"
+  ],
+  "compatibility_uncertain": true,
+  "detection_disagreement": false,
+  "steps": [
+   {
+    "kind": "check",
+    "seq": 1,
+    "quote": "Actuator has failed or become disconnected - check for stall, over voltage, under voltage and actuator count. Replace actuator if damper is moveable and supply voltage is between 21.6 V and 26.4 V. Check actuator count on STATUS menu.",
+    "manual_id": "honeywell-jade-w7220-63-2700",
+    "page": 24
+   },
+   {
+    "kind": "citation",
+    "seq": 1,
+    "quote": "Actuator has failed or become disconnected - check for stall, over voltage, under voltage and actuator count. Replace actuator if damper is moveable and supply voltage is between 21.6 V and 26.4 V. Check actuator count on STATUS menu.",
+    "manual_id": "honeywell-jade-w7220-63-2700",
+    "page": 24
+   },
+   {
+    "kind": "safety",
+    "seq": 1,
+    "quote": "Failure to disconnect power before servicing could result in rotating components cutting and slashing technician which could result in death or serious injury.",
+    "manual_id": "trane-rt-svx21ad-precedent-gas-electric-3-10t",
+    "page": 64
+   }
+  ]
+ },
+ {
+  "work_order_id": "WO-AST-RTU-02-202610280900-316728",
+  "asset_id": "AST-RTU-02",
+  "status": "assigned",
+  "status_reason": "lowest weighted cost of lateness, travel, and workload",
+  "priority": "P1",
+  "sla_due_at": "2026-10-28T13:00:00-04:00",
+  "fault_type": "compressor_stage2_not_engaging",
+  "route": "technician",
+  "required_certs": [
+   "HVAC",
+   "ELECTRICAL"
+  ],
+  "compatibility_uncertain": true,
+  "detection_disagreement": true,
+  "steps": [
+   {
+    "kind": "citation",
+    "seq": 1,
+    "quote": "When the (K10) relay contacts close, the compressor contactor (CC2) coil is energized provided the low pressure control (LPC2), high pressure control (HPC2) and discharge line thermostat (TDL 2) are closed.",
+    "manual_id": "trane-rt-svx21ad-precedent-gas-electric-3-10t",
+    "page": 51
+   },
+   {
+    "kind": "safety",
+    "seq": 1,
+    "quote": "To stop the SERVICE TEST, turn the main power disconnect switch to the \u201cOff\u201d position or proceed to the next component start-up procedure.",
+    "manual_id": "trane-rt-svx21ad-precedent-gas-electric-3-10t",
+    "page": 65
+   }
+  ]
+ },
+ {
+  "work_order_id": "WO-AST-RTU-01-202610280700-74bdbd",
+  "asset_id": "AST-RTU-01",
+  "status": "assigned",
+  "status_reason": "lowest weighted cost of lateness, travel, and workload",
+  "priority": "P1",
+  "sla_due_at": "2026-10-28T11:00:00-04:00",
+  "fault_type": "oa_damper_stuck",
+  "route": "technician",
+  "required_certs": [
+   "CONTROLS"
+  ],
+  "compatibility_uncertain": true,
+  "detection_disagreement": false,
+  "steps": [
+   {
+    "kind": "check",
+    "seq": 1,
+    "quote": "Verify that the dampers stroked to the minimum position.",
+    "manual_id": "trane-rt-svx21ad-precedent-gas-electric-3-10t",
+    "page": 64
+   },
+   {
+    "kind": "check",
+    "seq": 2,
+    "quote": "Actuator has failed or become disconnected - check for stall, over voltage, under voltage and actuator count. Replace actuator if damper is moveable and supply voltage is between 21.6 V and 26.4 V.",
+    "manual_id": "honeywell-jade-w7220-63-2700",
+    "page": 24
+   },
+   {
+    "kind": "citation",
+    "seq": 1,
+    "quote": "Actuator has failed or become disconnected - check for stall, over voltage, under voltage and actuator count. Replace actuator if damper is moveable and supply voltage is between 21.6 V and 26.4 V.",
+    "manual_id": "honeywell-jade-w7220-63-2700",
+    "page": 24
+   },
+   {
+    "kind": "safety",
+    "seq": 1,
+    "quote": "Failure to disconnect power before servicing could result in rotating components cutting and slashing technician which could result in death or serious injury.",
+    "manual_id": "trane-rt-svx21ad-precedent-gas-electric-3-10t",
+    "page": 64
+   }
+  ]
+ },
+ {
+  "work_order_id": "WO-AST-RTU-02-202610280700-0cb897",
+  "asset_id": "AST-RTU-02",
+  "status": "assigned",
+  "status_reason": "lowest weighted cost of lateness, travel, and workload",
+  "priority": "P1",
+  "sla_due_at": "2026-10-28T11:00:00-04:00",
+  "fault_type": "refrigerant_undercharge",
+  "route": "technician",
+  "required_certs": [
+   "EPA608_II",
+   "HVAC"
+  ],
+  "compatibility_uncertain": true,
+  "detection_disagreement": false,
+  "steps": [
+   {
+    "kind": "check",
+    "seq": 1,
+    "quote": "Check system superheat. Follow the instruction listed on the superheat charging curve in the Service Facts. Superheat should be within \u00b15 F of the superheat chart value.",
+    "manual_id": "trane-rt-svx21ad-precedent-gas-electric-3-10t",
+    "page": 65
+   },
+   {
+    "kind": "citation",
+    "seq": 1,
+    "quote": "Check system superheat. Follow the instruction listed on the superheat charging curve in the Service Facts. Superheat should be within \u00b15 F of the superheat chart value.",
+    "manual_id": "trane-rt-svx21ad-precedent-gas-electric-3-10t",
+    "page": 65
+   },
+   {
+    "kind": "safety",
+    "seq": 1,
+    "quote": "Close the main disconnect switch or circuit protector switch that provides the supply power to the unit\u2019s terminal block.",
+    "manual_id": "trane-rt-svx21ad-precedent-gas-electric-3-10t",
+    "page": 65
+   }
+  ]
+ },
+ {
+  "work_order_id": "WO-AST-RTU-01-202610280700-19f514",
+  "asset_id": "AST-RTU-01",
+  "status": "assigned",
+  "status_reason": "lowest weighted cost of lateness, travel, and workload",
+  "priority": "P1",
+  "sla_due_at": "2026-10-28T11:00:00-04:00",
+  "fault_type": "oa_damper_stuck",
+  "route": "technician",
+  "required_certs": [
+   "CONTROLS"
+  ],
+  "compatibility_uncertain": true,
+  "detection_disagreement": false,
+  "steps": [
+   {
+    "kind": "check",
+    "seq": 1,
+    "quote": "2. Verify that the dampers stroked to the minimum position.",
+    "manual_id": "trane-rt-svx21ad-precedent-gas-electric-3-10t",
+    "page": 64
+   },
+   {
+    "kind": "citation",
+    "seq": 1,
+    "quote": "Range of damper for this setting is 0-100%.",
+    "manual_id": "trane-rt-svx21ad-precedent-gas-electric-3-10t",
+    "page": 64
+   },
+   {
+    "kind": "citation",
+    "seq": 2,
+    "quote": "The damper will close when the blower circuit is de-energized.",
+    "manual_id": "trane-rt-svx21ad-precedent-gas-electric-3-10t",
+    "page": 64
+   },
+   {
+    "kind": "safety",
+    "seq": 1,
+    "quote": "Failure to disconnect power before servicing could result in rotating components cutting and slashing technician which could result in death or serious injury.",
+    "manual_id": "trane-rt-svx21ad-precedent-gas-electric-3-10t",
+    "page": 64
+   }
+  ]
+ },
+ {
+  "work_order_id": "WO-AST-RTU-01-202610280700-f73323",
+  "asset_id": "AST-RTU-01",
+  "status": "assigned",
+  "status_reason": "lowest weighted cost of lateness, travel, and workload",
+  "priority": "P1",
+  "sla_due_at": "2026-10-28T11:00:00-04:00",
+  "fault_type": "oa_damper_stuck",
+  "route": "technician",
+  "required_certs": [
+   "CONTROLS"
+  ],
+  "compatibility_uncertain": true,
+  "detection_disagreement": false,
+  "steps": [
+   {
+    "kind": "check",
+    "seq": 1,
+    "quote": "Actuator has failed or become disconnected - check for stall, over voltage, under voltage and actuator count. Replace actuator if damper is moveable and supply voltage is between 21.6 V and 26.4 V.",
+    "manual_id": "honeywell-jade-w7220-63-2700",
+    "page": 24
+   },
+   {
+    "kind": "citation",
+    "seq": 1,
+    "quote": "Actuator has failed or become disconnected - check for stall, over voltage, under voltage and actuator count. Replace actuator if damper is moveable and supply voltage is between 21.6 V and 26.4 V.",
+    "manual_id": "honeywell-jade-w7220-63-2700",
+    "page": 24
+   },
+   {
+    "kind": "safety",
+    "seq": 1,
+    "quote": "Failure to disconnect power before servicing could result in rotating components cutting and slashing technician which could result in death or serious injury.",
+    "manual_id": "trane-rt-svx21ad-precedent-gas-electric-3-10t",
+    "page": 64
+   }
+  ]
+ },
+ {
+  "work_order_id": "WO-AST-RTU-01-202610280700-ec1a95",
+  "asset_id": "AST-RTU-01",
+  "status": "assigned",
+  "status_reason": "lowest weighted cost of lateness, travel, and workload",
+  "priority": "P1",
+  "sla_due_at": "2026-10-28T11:00:00-04:00",
+  "fault_type": "oa_damper_stuck",
+  "route": "technician",
+  "required_certs": [
+   "CONTROLS"
+  ],
+  "compatibility_uncertain": true,
+  "detection_disagreement": false,
+  "steps": [
+   {
+    "kind": "check",
+    "seq": 1,
+    "quote": "Verify that the dampers stroked to the minimum position.",
+    "manual_id": "trane-rt-svx21ad-precedent-gas-electric-3-10t",
+    "page": 64
+   },
+   {
+    "kind": "citation",
+    "seq": 1,
+    "quote": "Range of damper for this setting is 0-100%.",
+    "manual_id": "trane-rt-svx21ad-precedent-gas-electric-3-10t",
+    "page": 64
+   },
+   {
+    "kind": "citation",
+    "seq": 2,
+    "quote": "Verify that the dampers stroked to the minimum position.",
+    "manual_id": "trane-rt-svx21ad-precedent-gas-electric-3-10t",
+    "page": 64
+   },
+   {
+    "kind": "safety",
+    "seq": 1,
+    "quote": "Failure to disconnect power before servicing could result in rotating components cutting and slashing technician which could result in death or serious injury.",
+    "manual_id": "trane-rt-svx21ad-precedent-gas-electric-3-10t",
+    "page": 64
+   },
+   {
+    "kind": "safety",
+    "seq": 2,
+    "quote": "The damper will close when the blower circuit is de-energized.",
+    "manual_id": "trane-rt-svx21ad-precedent-gas-electric-3-10t",
+    "page": 64
+   }
+  ]
+ },
+ {
+  "work_order_id": "WO-AST-RTU-04-202610271500-70fbf3",
+  "asset_id": "AST-RTU-04",
+  "status": "blocked",
+  "status_reason": "no sourced lockout or disconnect step in the manuals; approval blocked",
+  "priority": "P2",
+  "sla_due_at": "2026-10-27T23:00:00-04:00",
+  "fault_type": "condenser_fouling",
+  "route": "technician",
+  "required_certs": [
+   "HVAC"
+  ],
+  "compatibility_uncertain": true,
+  "detection_disagreement": true,
+  "steps": [
+   {
+    "kind": "check",
+    "seq": 1,
+    "quote": "Inspect the evaporator and condenser coils for dirt, bent fins, etc. If the coils appear dirty, clean them according to the instructions described in \u201cCondenser Coil Cleaning,\u201d p. 43.",
+    "manual_id": "trane-rt-svx26p-voyager-gas-electric-12-25t",
+    "page": 43
+   },
+   {
+    "kind": "citation",
+    "seq": 1,
+    "quote": "fan brake horsepower, due to increase static pressure losses; airflow reduction.",
+    "manual_id": "trane-rt-svx26p-voyager-gas-electric-12-25t",
+    "page": 43
+   }
+  ]
+ },
+ {
+  "work_order_id": "WO-AST-RTU-02-202610271400-73d719",
+  "asset_id": "AST-RTU-02",
+  "status": "assigned",
+  "status_reason": "lowest weighted cost of lateness, travel, and workload",
+  "priority": "P1",
+  "sla_due_at": "2026-10-27T18:00:00-04:00",
+  "fault_type": "refrigerant_undercharge",
+  "route": "technician",
+  "required_certs": [
+   "EPA608_II",
+   "HVAC"
+  ],
+  "compatibility_uncertain": true,
+  "detection_disagreement": true,
+  "steps": [
+   {
+    "kind": "check",
+    "seq": 1,
+    "quote": "Attach a set of service gauges onto the suction and discharge gauge ports for each circuit. Refer to the refrigerant circuit illustration in the Service Facts.",
+    "manual_id": "trane-rt-svx21ad-precedent-gas-electric-3-10t",
+    "page": 65
+   },
+   {
+    "kind": "citation",
+    "seq": 1,
+    "quote": "Check system superheat. Follow the instruction listed on the superheat charging curve in the Service Facts. Superheat should be within \u00b15 F of the superheat chart value.",
+    "manual_id": "trane-rt-svx21ad-precedent-gas-electric-3-10t",
+    "page": 65
+   },
+   {
+    "kind": "safety",
+    "seq": 1,
+    "quote": "Unless specified otherwise, disconnect all electrical power including remote disconnect and discharge all energy storing devices such as capacitors before servicing. Follow proper lockout/tagout procedures to ensure the power can not be inadvertently energized.",
+    "manual_id": "trane-rt-svx26p-voyager-gas-electric-12-25t",
+    "page": 45
+   }
+  ]
+ },
+ {
+  "work_order_id": "WO-AST-RTU-01-202610270700-0490d8",
+  "asset_id": "AST-RTU-01",
+  "status": "assigned",
+  "status_reason": "lowest weighted cost of lateness, travel, and workload",
+  "priority": "P1",
+  "sla_due_at": "2026-10-27T11:00:00-04:00",
+  "fault_type": "oa_damper_stuck",
+  "route": "technician",
+  "required_certs": [
+   "CONTROLS"
+  ],
+  "compatibility_uncertain": true,
+  "detection_disagreement": false,
+  "steps": [
+   {
+    "kind": "check",
+    "seq": 1,
+    "quote": "Replace actuator if damper is moveable and supply voltage is between 21.6 V and 26.4 V.",
+    "manual_id": "honeywell-jade-w7220-63-2700",
+    "page": 24
+   },
+   {
+    "kind": "citation",
+    "seq": 1,
+    "quote": "verify that the economizer actuator (ECA) drives fully open (approximately 90 seconds).",
+    "manual_id": "trane-rt-svx21ad-precedent-gas-electric-3-10t",
+    "page": 76
+   },
+   {
+    "kind": "safety",
+    "seq": 1,
+    "quote": "Failure to disconnect power before servicing could result in rotating components cutting and slashing technician which could result in death or serious injury.",
+    "manual_id": "trane-rt-svx21ad-precedent-gas-electric-3-10t",
+    "page": 64
+   }
+  ]
+ },
+ {
+  "work_order_id": "WO-AST-RTU-01-202610270700-127477",
+  "asset_id": "AST-RTU-01",
+  "status": "assigned",
+  "status_reason": "lowest weighted cost of lateness, travel, and workload",
+  "priority": "P1",
+  "sla_due_at": "2026-10-27T11:00:00-04:00",
+  "fault_type": "oa_damper_stuck",
+  "route": "technician",
+  "required_certs": [
+   "CONTROLS"
+  ],
+  "compatibility_uncertain": true,
+  "detection_disagreement": false,
+  "steps": [
+   {
+    "kind": "check",
+    "seq": 1,
+    "quote": "Actuator has failed or become disconnected - check for stall, over voltage, under voltage and actuator count. Replace actuator if damper is moveable and supply voltage is between 21.6 V and 26.4 V.",
+    "manual_id": "honeywell-jade-w7220-63-2700",
+    "page": 24
+   },
+   {
+    "kind": "citation",
+    "seq": 1,
+    "quote": "Actuator has failed or become disconnected - check for stall, over voltage, under voltage and actuator count. Replace actuator if damper is moveable and supply voltage is between 21.6 V and 26.4 V.",
+    "manual_id": "honeywell-jade-w7220-63-2700",
+    "page": 24
+   },
+   {
+    "kind": "safety",
+    "seq": 1,
+    "quote": "Failure to disconnect power before servicing could result in rotating components cutting and slashing technician which could result in death or serious injury.",
+    "manual_id": "trane-rt-svx21ad-precedent-gas-electric-3-10t",
+    "page": 64
+   }
+  ]
+ },
+ {
+  "work_order_id": "WO-AST-RTU-01-202610270700-4de6aa",
+  "asset_id": "AST-RTU-01",
+  "status": "assigned",
+  "status_reason": "lowest weighted cost of lateness, travel, and workload",
+  "priority": "P1",
+  "sla_due_at": "2026-10-27T11:00:00-04:00",
+  "fault_type": "oa_damper_stuck",
+  "route": "technician",
+  "required_certs": [
+   "CONTROLS"
+  ],
+  "compatibility_uncertain": true,
+  "detection_disagreement": false,
+  "steps": [
+   {
+    "kind": "check",
+    "seq": 1,
+    "quote": "2. Verify that the dampers stroked to the minimum position.",
+    "manual_id": "trane-rt-svx21ad-precedent-gas-electric-3-10t",
+    "page": 64
+   },
+   {
+    "kind": "citation",
+    "seq": 1,
+    "quote": "Range of damper for this setting is 0-100%.",
+    "manual_id": "trane-rt-svx21ad-precedent-gas-electric-3-10t",
+    "page": 64
+   },
+   {
+    "kind": "citation",
+    "seq": 2,
+    "quote": "2. Verify that the dampers stroked to the minimum position.",
+    "manual_id": "trane-rt-svx21ad-precedent-gas-electric-3-10t",
+    "page": 64
+   },
+   {
+    "kind": "safety",
+    "seq": 1,
+    "quote": "Failure to disconnect power before servicing could result in rotating components cutting and slashing technician which could result in death or serious injury.",
+    "manual_id": "trane-rt-svx21ad-precedent-gas-electric-3-10t",
+    "page": 64
+   }
+  ]
+ },
+ {
+  "work_order_id": "WO-AST-RTU-01-202610270700-48de95",
+  "asset_id": "AST-RTU-01",
+  "status": "assigned",
+  "status_reason": "lowest weighted cost of lateness, travel, and workload",
+  "priority": "P1",
+  "sla_due_at": "2026-10-27T11:00:00-04:00",
+  "fault_type": "oa_damper_stuck",
+  "route": "technician",
+  "required_certs": [
+   "CONTROLS"
+  ],
+  "compatibility_uncertain": true,
+  "detection_disagreement": false,
+  "steps": [
+   {
+    "kind": "citation",
+    "seq": 1,
+    "quote": "Turn the MIN POS - DESIGN potentiometer on the RTEM clockwise to open or counter-clockwise to close. This will set the minimum damper position at maximum fan speed. Range of damper for this setting is 0-50%.",
+    "manual_id": "trane-rt-svx21ad-precedent-gas-electric-3-10t",
+    "page": 64
+   },
+   {
+    "kind": "citation",
+    "seq": 2,
+    "quote": "Replace the filter access panel. The damper will close when the blower circuit is de-energized.",
+    "manual_id": "trane-rt-svx21ad-precedent-gas-electric-3-10t",
+    "page": 64
+   },
+   {
+    "kind": "safety",
+    "seq": 1,
+    "quote": "Failure to disconnect power before servicing could result in rotating components cutting and slashing technician which could result in death or serious injury.",
+    "manual_id": "trane-rt-svx21ad-precedent-gas-electric-3-10t",
+    "page": 64
+   }
+  ]
+ },
+ {
+  "work_order_id": "WO-AST-RTU-02-202610270700-dd3dcb",
+  "asset_id": "AST-RTU-02",
+  "status": "assigned",
+  "status_reason": "lowest weighted cost of lateness, travel, and workload",
+  "priority": "P1",
+  "sla_due_at": "2026-10-27T11:00:00-04:00",
+  "fault_type": "compressor_stage2_not_engaging",
+  "route": "technician",
+  "required_certs": [
+   "HVAC",
+   "ELECTRICAL"
+  ],
+  "compatibility_uncertain": true,
+  "detection_disagreement": true,
+  "steps": [
+   {
+    "kind": "citation",
+    "seq": 1,
+    "quote": "When the (K10) relay contacts close, the compressor contactor (CC2) coil is energized provided the low pressure control (LPC2), high pressure control (HPC2) and discharge line thermostat (TDL 2) are closed.",
+    "manual_id": "trane-rt-svx21ad-precedent-gas-electric-3-10t",
+    "page": 51
+   },
+   {
+    "kind": "safety",
+    "seq": 1,
+    "quote": "To stop the SERVICE TEST, turn the main power disconnect switch to the \u201cOff\u201d position or proceed to the next component start\u2011up procedure.",
+    "manual_id": "trane-rt-svx21ad-precedent-gas-electric-3-10t",
+    "page": 65
+   }
+  ]
+ },
+ {
+  "work_order_id": "WO-AST-RTU-04-202610260900-985630",
+  "asset_id": "AST-RTU-04",
+  "status": "assigned",
+  "status_reason": "lowest weighted cost of lateness, travel, and workload",
+  "priority": "P2",
+  "sla_due_at": "2026-10-26T17:00:00-04:00",
+  "fault_type": "refrigerant_undercharge",
+  "route": "technician",
+  "required_certs": [
+   "EPA608_II",
+   "HVAC"
+  ],
+  "compatibility_uncertain": true,
+  "detection_disagreement": false,
+  "steps": [
+   {
+    "kind": "check",
+    "seq": 1,
+    "quote": "Check system superheat. Follow the instruction listed on the superheat charging curve in the Service Facts. Superheat should be within \u00b15 F of the superheat chart value.",
+    "manual_id": "trane-rt-svx21ad-precedent-gas-electric-3-10t",
+    "page": 65
+   },
+   {
+    "kind": "citation",
+    "seq": 1,
+    "quote": "Check system superheat. Follow the instruction listed on the superheat charging curve in the Service Facts. Superheat should be within \u00b15 F of the superheat chart value.",
+    "manual_id": "trane-rt-svx21ad-precedent-gas-electric-3-10t",
+    "page": 65
+   },
+   {
+    "kind": "safety",
+    "seq": 1,
+    "quote": "Close the main disconnect switch or circuit protector switch that provides the supply power to the unit\u2019s terminal block or the unit mounted disconnect switch.",
+    "manual_id": "trane-rt-svx21ad-precedent-gas-electric-3-10t",
+    "page": 65
+   }
+  ]
+ },
+ {
+  "work_order_id": "WO-AST-RTU-01-202610260800-7e0963",
+  "asset_id": "AST-RTU-01",
+  "status": "assigned",
+  "status_reason": "lowest weighted cost of lateness, travel, and workload",
+  "priority": "P1",
+  "sla_due_at": "2026-10-26T12:00:00-04:00",
+  "fault_type": "oa_damper_stuck",
+  "route": "technician",
+  "required_certs": [
+   "CONTROLS"
+  ],
+  "compatibility_uncertain": true,
+  "detection_disagreement": false,
+  "steps": [
+   {
+    "kind": "check",
+    "seq": 1,
+    "quote": "Actuator has failed or become disconnected - check for stall, over voltage, under voltage and actuator count. Replace actuator if damper is moveable and supply voltage is between 21.6 V and 26.4 V.",
+    "manual_id": "honeywell-jade-w7220-63-2700",
+    "page": 24
+   },
+   {
+    "kind": "citation",
+    "seq": 1,
+    "quote": "Actuator has failed or become disconnected - check for stall, over voltage, under voltage and actuator count. Replace actuator if damper is moveable and supply voltage is between 21.6 V and 26.4 V.",
+    "manual_id": "honeywell-jade-w7220-63-2700",
+    "page": 24
+   },
+   {
+    "kind": "safety",
+    "seq": 1,
+    "quote": "Failure to disconnect power before servicing could result in rotating components cutting and slashing technician which could result in death or serious injury.",
+    "manual_id": "trane-rt-svx21ad-precedent-gas-electric-3-10t",
+    "page": 64
+   }
+  ]
+ },
+ {
+  "work_order_id": "WO-AST-RTU-02-202610260800-271201",
+  "asset_id": "AST-RTU-02",
+  "status": "assigned",
+  "status_reason": "lowest weighted cost of lateness, travel, and workload",
+  "priority": "P1",
+  "sla_due_at": "2026-10-26T12:00:00-04:00",
+  "fault_type": "compressor_stage2_not_engaging",
+  "route": "technician",
+  "required_certs": [
+   "HVAC",
+   "ELECTRICAL"
+  ],
+  "compatibility_uncertain": true,
+  "detection_disagreement": true,
+  "steps": [
+   {
+    "kind": "citation",
+    "seq": 1,
+    "quote": "If the second stage of cooling cannot satisfy the cooling requirement, the RTRM keeps the (K9) relay coil energized and energizes the (K10) relay coil. Compressor contactors (CC1)",
+    "manual_id": "trane-rt-svx21ad-precedent-gas-electric-3-10t",
+    "page": 51
+   },
+   {
+    "kind": "safety",
+    "seq": 1,
+    "quote": "To stop the SERVICE TEST, turn the main power disconnect switch to the \u201cOff\u201d position",
+    "manual_id": "trane-rt-svx21ad-precedent-gas-electric-3-10t",
+    "page": 65
+   }
+  ]
+ },
+ {
+  "work_order_id": "WO-AST-RTU-01-202610260700-b1c20e",
+  "asset_id": "AST-RTU-01",
+  "status": "assigned",
+  "status_reason": "lowest weighted cost of lateness, travel, and workload",
+  "priority": "P1",
+  "sla_due_at": "2026-10-26T11:00:00-04:00",
+  "fault_type": "oa_damper_stuck",
+  "route": "technician",
+  "required_certs": [
+   "CONTROLS"
+  ],
+  "compatibility_uncertain": true,
+  "detection_disagreement": false,
+  "steps": [
+   {
+    "kind": "citation",
+    "seq": 1,
+    "quote": "Verify that the dampers stroked to the minimum position.",
+    "manual_id": "trane-rt-svx21ad-precedent-gas-electric-3-10t",
+    "page": 64
+   },
+   {
+    "kind": "safety",
+    "seq": 1,
+    "quote": "Failure to disconnect power before servicing could result in rotating components cutting and slashing technician which could result in death or serious injury.",
+    "manual_id": "trane-rt-svx21ad-precedent-gas-electric-3-10t",
+    "page": 64
+   }
+  ]
+ },
+ {
+  "work_order_id": "WO-AST-RTU-01-202610260700-ab58f7",
+  "asset_id": "AST-RTU-01",
+  "status": "assigned",
+  "status_reason": "lowest weighted cost of lateness, travel, and workload",
+  "priority": "P1",
+  "sla_due_at": "2026-10-26T11:00:00-04:00",
+  "fault_type": "oa_damper_stuck",
+  "route": "technician",
+  "required_certs": [
+   "CONTROLS"
+  ],
+  "compatibility_uncertain": true,
+  "detection_disagreement": false,
+  "steps": [
+   {
+    "kind": "check",
+    "seq": 1,
+    "quote": "Replace actuator if damper is moveable and supply voltage is between 21.6 V and 26.4 V.",
+    "manual_id": "honeywell-jade-w7220-63-2700",
+    "page": 24
+   },
+   {
+    "kind": "check",
+    "seq": 2,
+    "quote": "Actuator has failed or become disconnected - check for stall, over voltage, under voltage and actuator count.",
+    "manual_id": "honeywell-jade-w7220-63-2700",
+    "page": 24
+   },
+   {
+    "kind": "citation",
+    "seq": 1,
+    "quote": "The economizer minimum damper position for all fan speeds is complete.",
+    "manual_id": "trane-rt-svx21ad-precedent-gas-electric-3-10t",
+    "page": 64
+   },
+   {
+    "kind": "citation",
+    "seq": 2,
+    "quote": "Actuator has failed or become disconnected - check for stall, over voltage, under voltage and actuator count.",
+    "manual_id": "honeywell-jade-w7220-63-2700",
+    "page": 24
+   },
+   {
+    "kind": "safety",
+    "seq": 1,
+    "quote": "Failure to disconnect power before servicing could result in rotating components cutting and slashing technician which could result in death or serious injury.",
+    "manual_id": "trane-rt-svx21ad-precedent-gas-electric-3-10t",
+    "page": 64
+   }
+  ]
+ },
+ {
+  "work_order_id": "WO-AST-RTU-03-202610260700-2c482e",
+  "asset_id": "AST-RTU-03",
+  "status": "reschedule_requested",
+  "status_reason": "qualified technicians exist but none has capacity in the planning horizon",
+  "priority": "P3",
+  "sla_due_at": "2026-10-27T07:00:00-04:00",
+  "fault_type": "compressor_stage2_not_engaging",
+  "route": "technician",
+  "required_certs": [
+   "HVAC",
+   "ELECTRICAL"
+  ],
+  "compatibility_uncertain": true,
+  "detection_disagreement": true,
+  "steps": [
+   {
+    "kind": "citation",
+    "seq": 1,
+    "quote": "When the (K10) relay contacts close, the compressor contactor (CC2) coil is energized provided the low pressure control (LPC2), high pressure control (HPC2) and discharge line thermostat (TDL 2) are closed.",
+    "manual_id": "trane-rt-svx21ad-precedent-gas-electric-3-10t",
+    "page": 51
+   },
+   {
+    "kind": "safety",
+    "seq": 1,
+    "quote": "turn the main power disconnect switch to the \u201cOff\u201d position",
+    "manual_id": "trane-rt-svx21ad-precedent-gas-electric-3-10t",
+    "page": 65
+   }
+  ]
+ },
+ {
+  "work_order_id": "WO-AST-RTU-04-202610231718-cdaee1",
+  "asset_id": "AST-RTU-04",
+  "status": "assigned",
+  "status_reason": "lowest weighted cost of lateness, travel, and workload",
+  "priority": "P2",
+  "sla_due_at": "2026-10-24T01:18:00-04:00",
+  "fault_type": "refrigerant_undercharge",
+  "route": "technician",
+  "required_certs": [
+   "EPA608_II",
+   "HVAC"
+  ],
+  "compatibility_uncertain": true,
+  "detection_disagreement": false,
+  "steps": [
+   {
+    "kind": "check",
+    "seq": 1,
+    "quote": "Check system superheat. Follow the instruction listed on the superheat charging curve in the Service Facts. Superheat should be within \u00b15 F of the superheat chart value.",
+    "manual_id": "trane-rt-svx21ad-precedent-gas-electric-3-10t",
+    "page": 65
+   },
+   {
+    "kind": "citation",
+    "seq": 1,
+    "quote": "Check system superheat. Follow the instruction listed on the superheat charging curve in the Service Facts. Superheat should be within \u00b15 F of the superheat chart value.",
+    "manual_id": "trane-rt-svx21ad-precedent-gas-electric-3-10t",
+    "page": 65
+   },
+   {
+    "kind": "safety",
+    "seq": 1,
+    "quote": "Disconnect all electric power, including remote disconnects before servicing. Follow proper lockout/tagout procedures to ensure the power can not be inadvertently energized.",
+    "manual_id": "trane-rt-svx21ad-precedent-gas-electric-3-10t",
+    "page": 73
+   }
+  ]
+ }
+]

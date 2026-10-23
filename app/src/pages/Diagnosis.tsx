@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 import { api } from '../api';
 import { currentRun } from '../run';
+import { STATIC } from '../mode';
 
 type Cite = { kind: string; manual_id: string; page: number; quote: string; claim?: string; url: string; support: string };
 type Diag = { ready: boolean; probable_cause?: string; llm_proposed_cause?: string; confidence?: number; explanation?: string;
@@ -18,6 +19,7 @@ export default function Diagnosis() {
     let stop = false;
     const tick = () => api<Diag>(`/runs/${runId}/diagnosis`).then((x) => { if (!stop) setD(x); }).catch((e) => setError(e.message));
     tick();
+    if (STATIC) return;
     const id = window.setInterval(tick, 4000);
     return () => { stop = true; window.clearInterval(id); };
   }, [runId]);
@@ -48,7 +50,7 @@ export default function Diagnosis() {
         {(d.citations ?? []).map((c, i) => (
           <div key={i} style={{ marginBottom: 12 }}>
             <span className={`pill ${c.kind === 'safety' ? 'warn' : 'ok'}`}>{KIND[c.kind as keyof typeof KIND]}</span>{' '}
-            <a href={c.url} target="_blank" rel="noreferrer">{c.manual_id}, page {c.page}</a>{' '}
+            {c.url ? <a href={c.url} target="_blank" rel="noreferrer">{c.manual_id}, page {c.page}</a> : <span>{c.manual_id}, page {c.page}</span>}{' '}
             <span className="pill ok">{c.support}</span>
             <blockquote>{c.quote}</blockquote>
           </div>

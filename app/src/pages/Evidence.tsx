@@ -4,7 +4,7 @@ type Gate = { file: string; title: string; data: Record<string, unknown> | null 
 const GATES: [string, string][] = [
   ['gate-0.json', 'Gate 0: setup'], ['gate-1.json', 'Gate 1: detection'], ['gate-2.json', 'Gate 2: diagnosis (test cases)'],
   ['gate-2-holdout.json', 'Gate 2: diagnosis (holdout)'], ['gate-2-stats.json', 'Gate 2: statistics'],
-  ['gate-3.json', 'Gate 3: work orders and dispatch'], ['gate-4.json', 'Gate 4: technician assistant'],
+  ['gate-3.json', 'Gate 3: work orders and dispatch'], ['gate-4.json', 'Gate 4: technician assistant'], ['gate-5.json', 'Gate 5: cloud and app'],
 ];
 
 export default function Evidence() {
