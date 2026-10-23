@@ -76,11 +76,31 @@ The tests ran against the local Postgres container. Fixtures are recorded output
 
 The surge is limited by capacity. Few technicians on Monday's shifts hold both the certifications and the site clearance that these jobs need, so every method requests rescheduling for about 20 jobs. The weighted cost excludes the unassigned job penalty. OR-Tools assigned one more job than the baselines.
 
+### Seeded surge days (10 days; added at the owner's request)
+
+A single surge day is one sample, so we ran 10 seeded surge days. Each seed:
+- picks the weekday, which changes who is on shift;
+- shuffles the recorded alarm hours across the 37 jobs;
+- seeds the CP-SAT search.
+
+Values are the mean, with the range in parentheses.
+
+| Method | Assigned | Rescheduled | Escalated | SLA lateness (min) | Late jobs | Travel (min) | Max workload (min) | Weighted cost |
+|---|---|---|---|---|---|---|---|---|
+| OR-Tools CP-SAT | **20.0** (19 to 24) | **16.8** (12 to 18) | **0.2** (0 to 1) | **1,083** (486 to 2,241) | **5.6** (4 to 11) | 695.4 (665 to 745) | 534 (486 to 546) | **11,792** (5,798 to 23,379) |
+| Nearest qualified | 18.7 (17 to 22) | 17.8 (13 to 20) | 0.5 (0 to 3) | 2,137 (1,412 to 4,377) | 9.2 (7 to 14) | 683.9 (661 to 726) | 530.9 (486 to 546) | 22,316 (15,058 to 44,720) |
+| Earliest available | 18.8 (17 to 23) | 17.7 (12 to 20) | 0.5 (0 to 3) | 1,938 (1,294 to 3,674) | 8.7 (7 to 14) | **675.7** (579 to 790) | 530.9 (486 to 546) | 20,324 (13,820 to 37,618) |
+
+- OR-Tools had the lowest weighted cost on 10 of 10 surge days.
+- It reached proven optimality on 8 days. On the 2 Friday surges it stopped at the 10-second limit with a feasible but unproven plan.
+- Every method had 0 constraint violations on every day.
+- An escalation means no technician qualified. This happens when the seeded day has no technician on shift with the needed certifications and clearance.
+
 ## Passed
 
 1. Required field validity is 1.000 and there are 0 unsourced instructions.
 2. All 10 policy branches pass their tests against Postgres.
-3. OR-Tools has the lowest weighted cost in both scenario sets, with 0 constraint violations.
+3. OR-Tools has the lowest weighted cost on the daily scenarios and on 10 of 10 seeded surge days, with 0 constraint violations.
 4. Every daily solve reached proven optimality in under a second.
 
 ## Failed or limited
@@ -91,7 +111,19 @@ The surge is limited by capacity. Few technicians on Monday's shifts hold both t
 
 ## Defects found and fixed in this gate
 
-The independent validator found 10 OR-Tools assignments that broke the constraints in the first evaluation run. The cause was work order IDs built from the asset and the creation minute. Cases on the same asset at the same scenario hour collided, which overwrote the one-assignment-per-job constraint. IDs now include a hash of the case ID, and the evaluation asserts that they are unique. All numbers above come from the run after the fix. The faulty run was never reported.
+The independent validator found 10 OR-Tools assignments that broke the constraints in the first evaluation run. The cause was work order IDs built from the asset and the creation minute. Cases on the same asset at the same scenario hour collided, which overwrote the one-assignment-per-job constraint. All numbers above come from the run after the fix. The faulty run was never reported.
+
+The fix left these safeguards behind, as the owner requested:
+1. Work order IDs now include a hash of the case ID, and the evaluation asserts that they are unique.
+2. Every planner (OR-Tools and both baselines) raises an error on duplicate job IDs.
+3. `work_orders.work_order_id` is the primary key, so the database rejects a duplicate.
+4. `tests/test_duplicate_ids.py` holds 6 regression tests:
+   - same asset, same minute gives distinct IDs;
+   - each planner rejects duplicates (3 tests);
+   - a job is never assigned twice;
+   - the database rejects a duplicate ID.
+
+All 19 tests in `tests/` pass against the local Postgres container.
 
 ## Not verified
 
@@ -103,6 +135,6 @@ The independent validator found 10 OR-Tools assignments that broke the constrain
 
 | Choice | Baseline | Outcome |
 |---|---|---|
-| OR-Tools CP-SAT with a weighted objective | Nearest qualified; earliest available | It survives. It has the lowest weighted cost (5,890 against 6,165 and 15,337 daily; 10,165 against 20,885 and 22,190 in the surge). On light days, earliest-available is close and would be acceptable. |
+| OR-Tools CP-SAT with a weighted objective | Nearest qualified; earliest available | It survives. It has the lowest weighted cost: 5,890 against 6,165 and 15,337 daily, and a mean of 11,792 against 20,324 and 22,316 over 10 surge days. On light days, earliest-available is close and would be acceptable. |
 | Instructions only as verified quotes, enforced in the schema | Free-text instructions | It survives: 0 unsourced instructions, and the database rejects unverified steps. |
 | Rules as the primary detector, with disagreement sent to review | Model only | It survives the Gate 1 results. 24 of 92 cases get flagged for manager review. |

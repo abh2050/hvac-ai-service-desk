@@ -1,0 +1,374 @@
+{
+ "source": "reports/gate-2-cases.jsonl",
+ "method": "exact McNemar on discordant pairs; Wilson 95% intervals",
+ "proposal_vs_rule_hint": {
+  "all": {
+   "cases": 92,
+   "ai_proposal": {
+    "correct": 39,
+    "rate": 0.424,
+    "wilson95": [
+     0.328,
+     0.526
+    ]
+   },
+   "rule_hint": {
+    "correct": 30,
+    "rate": 0.326,
+    "wilson95": [
+     0.239,
+     0.427
+    ]
+   },
+   "discordant": {
+    "only_ai_proposal": 15,
+    "only_rule_hint": 6
+   },
+   "mcnemar_exact_p": 0.0784,
+   "significant_at_0.05": false
+  },
+  "lab": {
+   "cases": 84,
+   "ai_proposal": {
+    "correct": 33,
+    "rate": 0.393,
+    "wilson95": [
+     0.295,
+     0.5
+    ]
+   },
+   "rule_hint": {
+    "correct": 25,
+    "rate": 0.298,
+    "wilson95": [
+     0.21,
+     0.402
+    ]
+   },
+   "discordant": {
+    "only_ai_proposal": 14,
+    "only_rule_hint": 6
+   },
+   "mcnemar_exact_p": 0.1153,
+   "significant_at_0.05": false
+  },
+  "field": {
+   "cases": 8,
+   "ai_proposal": {
+    "correct": 6,
+    "rate": 0.75,
+    "wilson95": [
+     0.409,
+     0.929
+    ]
+   },
+   "rule_hint": {
+    "correct": 5,
+    "rate": 0.625,
+    "wilson95": [
+     0.306,
+     0.863
+    ]
+   },
+   "discordant": {
+    "only_ai_proposal": 1,
+    "only_rule_hint": 0
+   },
+   "mcnemar_exact_p": 1.0,
+   "significant_at_0.05": false
+  },
+  "field/refrig": {
+   "cases": 8,
+   "ai_proposal": {
+    "correct": 6,
+    "rate": 0.75,
+    "wilson95": [
+     0.409,
+     0.929
+    ]
+   },
+   "rule_hint": {
+    "correct": 5,
+    "rate": 0.625,
+    "wilson95": [
+     0.306,
+     0.863
+    ]
+   },
+   "discordant": {
+    "only_ai_proposal": 1,
+    "only_rule_hint": 0
+   },
+   "mcnemar_exact_p": 1.0,
+   "significant_at_0.05": false
+  },
+  "lab/ahu": {
+   "cases": 23,
+   "ai_proposal": {
+    "correct": 5,
+    "rate": 0.217,
+    "wilson95": [
+     0.097,
+     0.419
+    ]
+   },
+   "rule_hint": {
+    "correct": 2,
+    "rate": 0.087,
+    "wilson95": [
+     0.024,
+     0.268
+    ]
+   },
+   "discordant": {
+    "only_ai_proposal": 3,
+    "only_rule_hint": 0
+   },
+   "mcnemar_exact_p": 0.25,
+   "significant_at_0.05": false
+  },
+  "lab/econ": {
+   "cases": 48,
+   "ai_proposal": {
+    "correct": 28,
+    "rate": 0.583,
+    "wilson95": [
+     0.443,
+     0.712
+    ]
+   },
+   "rule_hint": {
+    "correct": 22,
+    "rate": 0.458,
+    "wilson95": [
+     0.326,
+     0.597
+    ]
+   },
+   "discordant": {
+    "only_ai_proposal": 11,
+    "only_rule_hint": 5
+   },
+   "mcnemar_exact_p": 0.2101,
+   "significant_at_0.05": false
+  },
+  "lab/refrig": {
+   "cases": 13,
+   "ai_proposal": {
+    "correct": 0,
+    "rate": 0.0,
+    "wilson95": [
+     0.0,
+     0.228
+    ]
+   },
+   "rule_hint": {
+    "correct": 1,
+    "rate": 0.077,
+    "wilson95": [
+     0.014,
+     0.333
+    ]
+   },
+   "discordant": {
+    "only_ai_proposal": 0,
+    "only_rule_hint": 1
+   },
+   "mcnemar_exact_p": 1.0,
+   "significant_at_0.05": false
+  }
+ },
+ "verified_ai_vs_verified_baseline": {
+  "all": {
+   "cases": 92,
+   "ai_verified": {
+    "correct": 27,
+    "rate": 0.293,
+    "wilson95": [
+     0.21,
+     0.393
+    ]
+   },
+   "baseline_verified": {
+    "correct": 4,
+    "rate": 0.043,
+    "wilson95": [
+     0.017,
+     0.107
+    ]
+   },
+   "discordant": {
+    "only_ai_verified": 24,
+    "only_baseline_verified": 1
+   },
+   "mcnemar_exact_p": 0.0,
+   "significant_at_0.05": true
+  },
+  "lab": {
+   "cases": 84,
+   "ai_verified": {
+    "correct": 22,
+    "rate": 0.262,
+    "wilson95": [
+     0.18,
+     0.365
+    ]
+   },
+   "baseline_verified": {
+    "correct": 3,
+    "rate": 0.036,
+    "wilson95": [
+     0.012,
+     0.1
+    ]
+   },
+   "discordant": {
+    "only_ai_verified": 20,
+    "only_baseline_verified": 1
+   },
+   "mcnemar_exact_p": 0.0,
+   "significant_at_0.05": true
+  },
+  "field": {
+   "cases": 8,
+   "ai_verified": {
+    "correct": 5,
+    "rate": 0.625,
+    "wilson95": [
+     0.306,
+     0.863
+    ]
+   },
+   "baseline_verified": {
+    "correct": 1,
+    "rate": 0.125,
+    "wilson95": [
+     0.022,
+     0.471
+    ]
+   },
+   "discordant": {
+    "only_ai_verified": 4,
+    "only_baseline_verified": 0
+   },
+   "mcnemar_exact_p": 0.125,
+   "significant_at_0.05": false
+  },
+  "field/refrig": {
+   "cases": 8,
+   "ai_verified": {
+    "correct": 5,
+    "rate": 0.625,
+    "wilson95": [
+     0.306,
+     0.863
+    ]
+   },
+   "baseline_verified": {
+    "correct": 1,
+    "rate": 0.125,
+    "wilson95": [
+     0.022,
+     0.471
+    ]
+   },
+   "discordant": {
+    "only_ai_verified": 4,
+    "only_baseline_verified": 0
+   },
+   "mcnemar_exact_p": 0.125,
+   "significant_at_0.05": false
+  },
+  "lab/ahu": {
+   "cases": 23,
+   "ai_verified": {
+    "correct": 0,
+    "rate": 0.0,
+    "wilson95": [
+     0.0,
+     0.143
+    ]
+   },
+   "baseline_verified": {
+    "correct": 0,
+    "rate": 0.0,
+    "wilson95": [
+     0.0,
+     0.143
+    ]
+   },
+   "discordant": {
+    "only_ai_verified": 0,
+    "only_baseline_verified": 0
+   },
+   "mcnemar_exact_p": 1.0,
+   "significant_at_0.05": false
+  },
+  "lab/econ": {
+   "cases": 48,
+   "ai_verified": {
+    "correct": 22,
+    "rate": 0.458,
+    "wilson95": [
+     0.326,
+     0.597
+    ]
+   },
+   "baseline_verified": {
+    "correct": 2,
+    "rate": 0.042,
+    "wilson95": [
+     0.012,
+     0.14
+    ]
+   },
+   "discordant": {
+    "only_ai_verified": 20,
+    "only_baseline_verified": 0
+   },
+   "mcnemar_exact_p": 0.0,
+   "significant_at_0.05": true
+  },
+  "lab/refrig": {
+   "cases": 13,
+   "ai_verified": {
+    "correct": 0,
+    "rate": 0.0,
+    "wilson95": [
+     0.0,
+     0.228
+    ]
+   },
+   "baseline_verified": {
+    "correct": 1,
+    "rate": 0.077,
+    "wilson95": [
+     0.014,
+     0.333
+    ]
+   },
+   "discordant": {
+    "only_ai_verified": 0,
+    "only_baseline_verified": 1
+   },
+   "mcnemar_exact_p": 1.0,
+   "significant_at_0.05": false
+  }
+ },
+ "probe_abstention": {
+  "abstained": 20,
+  "probes": 20,
+  "wilson95": [
+   0.839,
+   1.0
+  ]
+ },
+ "citation_support": {
+  "passed": 73,
+  "checked": 83,
+  "wilson95": [
+   0.792,
+   0.933
+  ]
+ }
+}

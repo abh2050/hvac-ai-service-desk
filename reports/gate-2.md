@@ -1,17 +1,25 @@
 # Gate 2: diagnosis
 
-We recorded three runs on 2026-10-23 in us-east-2 with Bedrock.
-- **Run 3 is the result of record.** Its data is in `reports/gate-2.json`, and each case's output is in `reports/gate-2-cases.jsonl`.
+We recorded three runs on 2026-10-23 in us-east-2 with Bedrock, plus one holdout scoring of the frozen run 3 pipeline.
+- **Run 3 on the test cases:** `reports/gate-2.json` and `reports/gate-2-cases.jsonl`.
+- **Holdout:** `reports/gate-2-holdout.json` and `reports/gate-2-holdout-cases.jsonl`.
+- **Statistics:** `reports/gate-2-stats.json` and `reports/gate-2-holdout-stats.json`.
 - **All three runs are kept in `reports/gate-2-runs/`**, including the run 1 report as first written.
 - **Cost:** each run took about 280 seconds and cost about $0.22 in model calls.
 
 ## Summary
 
-The AI names the fault more accurately than the rule hint overall (0.424 against 0.326). Its manual citations pass verification at 0.880, against 0.122 for a keyword baseline. When the policy requires a verified citation, the AI is right on 0.293 of real cases and abstains on 0.348. The baseline is right on 0.043.
+**Result of record.** This gate has two results of record, both from the run 3 pipeline: run 3 on the test cases, and that pipeline frozen and scored once on a holdout.
+- **The prompt was chosen on the test set.** Run 3 was picked after runs 1 and 2 were scored on the same 92 test cases. Every lab episode was used in those runs, so no lab holdout exists.
+- **The holdout is unused days, not unused episodes.** The frozen pipeline was scored once on 60 flagged field days that no run had used. Those days come from the same 2 field episodes.
 
-It abstained on all 20 cases where we withheld the manual evidence. It finds the economizer RTU and field RTU faults reliably (verified 0.458 and 0.625). Two weak spots remain:
-- **Lab AHUs:** zero verified answers. The coil valve faults have no matching manual page.
-- **Building operations faults:** the AI never recognizes them (0 of 11).
+**The AI does not significantly beat the rule hint at naming the fault.** It scored 0.424 against 0.326 on the test cases (exact McNemar p = 0.078) and 0.867 against 0.783 on the holdout (p = 0.0625). We make no claim that it does.
+
+**The AI does significantly beat the keyword baseline on verified diagnoses.** It scored 0.293 against 0.043 on the test cases and 0.750 against 0.133 on the holdout (both p < 0.0001). Its citations pass verification at 0.880 on the test cases and 0.915 on the holdout. Citations that fail verification never reach a user, as the tests confirm.
+
+**Weak spots.** These are listed in the README as limitations.
+- Lab AHUs get zero verified answers, because no manual covers their coil valves.
+- The AI recognizes none of the 11 building operations faults.
 
 ## What changed across runs
 
@@ -36,6 +44,47 @@ Step 1, which names the cause, never sees the manuals. So changes in proposal ac
 | Equipment cases misrouted to operations review | n/a | 9/81 | **1/81** | n/a |
 | Operations faults routed to operations review | n/a | 0/11 | 0/11 | n/a |
 | Cost per diagnosis | $0.00187 | $0.00187 | $0.00196 | $0 |
+
+## Statistics (owner condition 2)
+
+All figures are from `reports/gate-2-stats.json` (test cases) and `reports/gate-2-holdout-stats.json` (holdout). The intervals are Wilson 95% intervals, and the tests are exact McNemar tests on paired cases.
+
+| Comparison | Set | AI | Comparison | Discordant (AI only : other only) | p |
+|---|---|---|---|---|---|
+| AI proposal vs rule hint | test, 92 cases | 0.424 (0.328 to 0.526) | 0.326 (0.239 to 0.427) | 15 : 6 | 0.078 |
+| AI proposal vs rule hint | test, lab, 84 | 0.393 (0.295 to 0.500) | 0.298 (0.210 to 0.402) | 14 : 6 | 0.115 |
+| AI proposal vs rule hint | test, field, 8 | 0.750 (0.409 to 0.929) | 0.625 (0.306 to 0.863) | 1 : 0 | 1.000 |
+| AI proposal vs rule hint | holdout, field, 60 | 0.867 (0.758 to 0.931) | 0.783 (0.664 to 0.869) | 5 : 0 | 0.0625 |
+| AI verified vs baseline verified | test, 92 | 0.293 | 0.043 | 24 : 1 | < 0.0001 |
+| AI verified vs baseline verified | holdout, field, 60 | 0.750 | 0.133 | 38 : 1 | < 0.0001 |
+| Withheld-evidence probes abstained | test, 20 | 20 of 20 (0.839 to 1.000) | n/a | n/a | n/a |
+| Citation support | test | 73 of 83 = 0.880 (0.792 to 0.933) | baseline 0.122 | n/a | n/a |
+| Citation support | holdout | 54 of 59 = 0.915 (0.816 to 0.963) | baseline 0.222 | n/a | n/a |
+
+The 60 holdout days come from 2 units, so they are not independent, and the intervals understate the real uncertainty.
+
+## Holdout result (frozen run 3, scored once)
+
+The case set is `data/processed/gate2_holdout_cases.jsonl`, and the results are in `reports/gate-2-holdout.json` and `reports/gate-2-holdout-cases.jsonl`. The diagnosis code, prompts, models, and manual index did not change from run 3 (`git diff 2b976cc` on `services/diagnosis`, `services/citation_verifier`, and the config files is empty).
+
+| Measure | Value |
+|---|---|
+| Cases | 60 field days: 41 stage 2 compressor, 19 refrigerant undercharge |
+| AI proposal accuracy | 0.867 (stage 2: 40 of 41; undercharge: 12 of 19) |
+| Rule hint accuracy | 0.783 (stage 2: 39 of 41; undercharge: 8 of 19) |
+| AI verified accuracy | 0.750 (stage 2: 35 of 41; undercharge: 10 of 19) |
+| AI abstention | 0.133 |
+| Citation support | 0.915 |
+| Actionability (answered cases with at least one verified check) | 0.269 |
+| Sourced lockout step | 0.654 |
+| Cost per diagnosis | $0.00239 ($0.14 total) |
+| Latency | p50 10.39 s, p95 14.93 s |
+
+## No unverified output reaches a user (owner condition 3)
+
+1. `services/diagnosis/policy.py` keeps only items whose verification passed. `tests/test_no_unverified_output.py` checks every recorded run 3 case and confirms that no failed quote appears in a final output. The recorded run contains failed items, so the test is not vacuous.
+2. Work orders carry only the policy output. The `work_order_steps` table enforces `CHECK (verified)`, and a test confirms that an unverified insert fails.
+3. `services/api/views.py` is the single read path for the console and the MCP tools. It reads steps only from `work_order_steps`. A test saves a work order for every recorded case and confirms that no failed quote is returned. The MCP tool handlers arrive in Gate 4, and they call this read path.
 
 ## Run 3 detail
 
@@ -96,7 +145,7 @@ Prices come from the AWS Pricing API for us-east-2.
 1. Every quote cited by the AI appears on the cited page. The deterministic pass rate is 1.000 in all runs.
 2. No unverified quote, check, or safety step reaches the final output.
 3. The AI abstained on 20 of 20 withheld-evidence probes in run 3.
-4. The AI beats the rule hint at naming the fault overall, and in 3 of 4 segments.
+4. The AI significantly beats the keyword baseline on verified diagnoses, on both the test cases and the holdout.
 5. The cost per diagnosis is under $0.002.
 
 ## Failed
@@ -115,7 +164,7 @@ Prices come from the AWS Pricing API for us-east-2.
 
 | Choice | Baseline | Outcome |
 |---|---|---|
-| The LLM proposes the cause from sensor evidence | The rule hint | It survives: 0.424 against 0.326 overall. It loses on lab RTU.csv operations faults. |
+| The LLM proposes the cause from sensor evidence | The rule hint | It is not shown to be better (p = 0.078 test, 0.0625 holdout). We keep it because the citation step needs a component and a search query, which the rule hint does not supply. The simpler path, the rule hint, would serve for naming the fault alone. |
 | LLM citation selection with deterministic and entailment checks | The BM25 best sentence | It survives: 0.880 against 0.122 citation support. |
 | Abstaining without a verified citation | Always answering | It survives: 20 of 20 probes abstain, and no unverified procedure is shown. |
 | Operations routing gated by the rules | Trusting the LLM's operations label | It survives: misroutes fall from 9 of 81 to 1 of 81. |

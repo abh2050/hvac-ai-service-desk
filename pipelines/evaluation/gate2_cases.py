@@ -106,6 +106,11 @@ def main() -> None:
     probes = [dict(c, case_id=c["case_id"] + "|withheld", probe="evidence_withheld") for c in rng.sample(keep, N_PROBES)]
     out = keep + probes
     (ROOT / "data/processed/gate2_cases.jsonl").write_text("\n".join(json.dumps(c, default=str) for c in out))
+    # Holdout: flagged field days that runs 1 to 3 never used (same 2 episodes, unused days).
+    used = {c["case_id"] for c in keep}
+    holdout = [c for c in cases if c["source_type"] == "field" and c["case_id"] not in used]
+    (ROOT / "data/processed/gate2_holdout_cases.jsonl").write_text("\n".join(json.dumps(c, default=str) for c in holdout))
+    print("holdout field days:", len(holdout), dict(pd.Series([c["label"]["fault_type"] for c in holdout]).value_counts()))
     summary = pd.DataFrame(out).assign(kind=lambda d: d.probe.fillna("normal"))
     print(summary.groupby(["kind", "source_type", "family"]).size().to_string())
     print("faulted scored days not flagged (not diagnosed):",

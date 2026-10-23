@@ -1,0 +1,112 @@
+{
+ "gate": 2,
+ "name": "diagnosis",
+ "run_utc": "2026-10-23T17:20:44Z",
+ "git_commit": "0980dd8",
+ "runtime_seconds": 181.6,
+ "limit": null,
+ "cases_file": "data/processed/gate2_holdout_cases.jsonl",
+ "models": {
+  "diagnosis": "openai.gpt-oss-120b-1:0",
+  "entailment": "openai.gpt-oss-20b-1:0",
+  "embeddings": "amazon.titan-embed-text-v2:0 (local index; Bedrock KB pending deploy)"
+ },
+ "guardrails": "not attached (Bedrock Guardrail resource not yet deployed)",
+ "categories": {
+  "ground_truth": "LBNL fault labels",
+  "measured": "every metric in results"
+ },
+ "results": {
+  "field": {
+   "cases": 60,
+   "ai": {
+    "fault_type_accuracy": 0.75,
+    "accuracy_when_answered": 0.865,
+    "proposal_accuracy": 0.867,
+    "abstention_rate": 0.133,
+    "citation_support_rate": 0.915,
+    "citation_deterministic_pass_rate": 1.0,
+    "citations_checked": 59,
+    "actionability_rate": 0.269,
+    "compatibility_warning_rate": 1.0,
+    "lockout_sourced_rate": 0.654,
+    "parse_ok_rate": 0.933
+   },
+   "baseline": {
+    "fault_type_accuracy": 0.133,
+    "rule_hint_accuracy": 0.783,
+    "abstention_rate": 0.8,
+    "citation_support_rate": 0.222,
+    "actionability_rate": 1.0
+   }
+  },
+  "all": {
+   "cases": 60,
+   "ai": {
+    "fault_type_accuracy": 0.75,
+    "accuracy_when_answered": 0.865,
+    "proposal_accuracy": 0.867,
+    "abstention_rate": 0.133,
+    "citation_support_rate": 0.915,
+    "citation_deterministic_pass_rate": 1.0,
+    "citations_checked": 59,
+    "actionability_rate": 0.269,
+    "compatibility_warning_rate": 1.0,
+    "lockout_sourced_rate": 0.654,
+    "parse_ok_rate": 0.933
+   },
+   "baseline": {
+    "fault_type_accuracy": 0.133,
+    "rule_hint_accuracy": 0.783,
+    "abstention_rate": 0.8,
+    "citation_support_rate": 0.222,
+    "actionability_rate": 1.0
+   }
+  },
+  "by_family": {
+   "field/refrig": {
+    "cases": 60,
+    "ai_proposal_accuracy": 0.867,
+    "rule_hint_accuracy": 0.783,
+    "ai_final_accuracy": 0.75,
+    "baseline_final_accuracy": 0.133,
+    "ai_abstention_rate": 0.133
+   }
+  },
+  "operations_routing": {
+   "operations_cases": 0,
+   "operations_routed_to_operations_review": null,
+   "operations_exact_type_correct": null,
+   "equipment_cases": 60,
+   "equipment_misrouted_to_operations_review": 0.0
+  },
+  "evidence_withheld_probes": {
+   "cases": 0,
+   "ai_abstention_rate": null,
+   "ai_llm_self_abstention_rate": null,
+   "baseline_abstention_rate": null
+  },
+  "cost_latency": {
+   "ai_seconds_p50": 10.39,
+   "ai_seconds_p95": 14.93,
+   "baseline_seconds_p50": 0.69,
+   "diagnosis_llm": {
+    "calls": 120,
+    "input_tokens": 259176,
+    "output_tokens": 107740,
+    "cost_usd": 0.1035,
+    "truncated_replies": 4
+   },
+   "entailment_llm": {
+    "calls": 234,
+    "input_tokens": 313759,
+    "output_tokens": 60615,
+    "cost_usd": 0.0401,
+    "truncated_replies": 0
+   },
+   "cost_per_diagnosis_usd": 0.00239,
+   "query_embedding_note": "Titan v2 query embeddings at $0.02 per 1M tokens are under $0.0001 per case"
+  },
+  "policy_1_would_route_to_manual_review": 0.917
+ }
+}

@@ -195,6 +195,8 @@ def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--limit", type=int, default=0)
     ap.add_argument("--workers", type=int, default=4)
+    ap.add_argument("--cases", default="data/processed/gate2_cases.jsonl")
+    ap.add_argument("--name", default="gate-2", help="output name under reports/")
     ap.add_argument("--resummarize", action="store_true",
                     help="recompute metrics from reports/gate-2-cases.jsonl without new model calls")
     args = ap.parse_args()
@@ -213,7 +215,7 @@ def main():
     ent_llm = LLM("openai.gpt-oss-20b-1:0", profile="awsnew", max_tokens=models["entailment"]["max_tokens"])
     verifier = Verifier.from_jsonl(ROOT / "data/processed/manual_pages.jsonl", ent_llm,
                                    pol["diagnosis"]["deterministic_match_min_token_overlap"])
-    cases = [json.loads(line) for line in (ROOT / "data/processed/gate2_cases.jsonl").read_text().splitlines()]
+    cases = [json.loads(line) for line in (ROOT / args.cases).read_text().splitlines()]
     if args.limit:
         cases = cases[:args.limit]
     with ThreadPoolExecutor(args.workers) as pool:
@@ -223,12 +225,13 @@ def main():
     commit = subprocess.run(["git", "rev-parse", "--short", "HEAD"], capture_output=True, text=True, cwd=ROOT).stdout.strip()
     report = {"gate": 2, "name": "diagnosis", "run_utc": datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ"),
               "git_commit": commit, "runtime_seconds": round(time.time() - started, 1), "limit": args.limit or None,
+              "cases_file": args.cases,
               "models": {"diagnosis": "openai.gpt-oss-120b-1:0", "entailment": "openai.gpt-oss-20b-1:0",
                          "embeddings": "amazon.titan-embed-text-v2:0 (local index; Bedrock KB pending deploy)"},
               "guardrails": "not attached (Bedrock Guardrail resource not yet deployed)",
               "categories": {"ground_truth": "LBNL fault labels", "measured": "every metric in results"},
               "results": summary}
-    name = "gate-2" if not args.limit else "gate-2-smoke"
+    name = args.name if not args.limit else f"{args.name}-smoke"
     (ROOT / f"reports/{name}.json").write_text(json.dumps(report, indent=1))
     with open(ROOT / f"reports/{name}-cases.jsonl", "w") as f:
         for r in rows:

@@ -15,7 +15,10 @@ Usage: .venv/bin/python -I pipelines/evaluation/gate3_dispatch.py
 
 from __future__ import annotations
 
+import copy
 import json
+import random
+import statistics
 import subprocess
 import sys
 import time
@@ -33,6 +36,7 @@ from dispatch import optimizer as opt  # noqa: E402
 
 SCENARIO_DAYS = [datetime(2026, 10, 26) + timedelta(days=i) for i in range(5)]
 APPROVAL_DELAY = timedelta(minutes=15)
+N_SURGE_SEEDS = 10
 METHODS = ("ortools", "nearest_qualified", "earliest_available")
 
 
@@ -145,6 +149,39 @@ def main():
         j.sla_due_at += shift
         surge_jobs.append(j)
     surge = run_methods(surge_jobs, techs, sites, surge_start, dispatch)
+
+    # Surge robustness: 10 seeded surge days. The seed picks the weekday (which changes who is on
+    # shift), shuffles the recorded alarm hours across jobs, and seeds the CP-SAT search.
+    surge_runs = []
+    for seed in range(1, N_SURGE_SEEDS + 1):
+        rng = random.Random(seed)
+        day = SCENARIO_DAYS[seed % len(SCENARIO_DAYS)]
+        hours = [w.approved_at.hour + w.approved_at.minute / 60 for w in approved]
+        rng.shuffle(hours)
+        jobs = []
+        for w, h in zip(approved, hours):
+            rel = day + timedelta(hours=h)
+            jobs.append(dm.Job(w.work_order_id, w.site_id, rel, rel + (w.sla_due_at - w.approved_at)
+                               + APPROVAL_DELAY, tuple(w.required_certs), w.est_minutes, w.priority))
+        cfg_seed = copy.deepcopy(dispatch)
+        cfg_seed["solver"]["random_seed"] = seed
+        res = run_methods(jobs, techs, sites, day, cfg_seed)
+        for m in METHODS:
+            sc = res[m]["score"]
+            sc["weighted_cost"] = round(dispatch["objective_weights"]["sla_lateness_per_min"] * sc["sla_lateness_total_min"]
+                                        + dispatch["objective_weights"]["travel_per_min"] * sc["travel_total_min"]
+                                        + dispatch["objective_weights"]["workload_imbalance_per_min"] * sc["max_workload_min"], 1)
+        surge_runs.append({"seed": seed, "day": day.strftime("%a"), **{m: res[m]["score"] for m in METHODS}})
+    surge_summary = {}
+    for m in METHODS:
+        surge_summary[m] = {}
+        for k in ("assigned", "reschedule_requested", "escalated_unassigned", "sla_lateness_total_min", "late_jobs",
+                  "travel_total_min", "max_workload_min", "weighted_cost", "constraint_violations"):
+            vals = [r[m][k] for r in surge_runs]
+            surge_summary[m][k] = {"mean": round(statistics.mean(vals), 1), "min": min(vals), "max": max(vals)}
+    wins = sum(1 for r in surge_runs if r["ortools"]["weighted_cost"]
+               <= min(r["nearest_qualified"]["weighted_cost"], r["earliest_available"]["weighted_cost"]))
+    surge_summary["ortools_lowest_weighted_cost_in"] = f"{wins} of {len(surge_runs)} surge days"
     w = dispatch["objective_weights"]
 
     def weighted(late, travel, maxload):
@@ -180,10 +217,11 @@ def main():
                                      "sla_measured_on": "arrival", "visits_start_from": "home base"},
                      "daily_totals": totals,
                      "daily": {d: {m: v[m]["score"] for m in METHODS} for d, v in per_day.items()},
-                     "surge_monday": {m: surge[m]["score"] for m in METHODS}},
+                     "surge_monday": {m: surge[m]["score"] for m in METHODS},
+                     "surge_seeded": {"days": N_SURGE_SEEDS, "summary": surge_summary, "runs": surge_runs}},
     }
     (ROOT / "reports/gate-3.json").write_text(json.dumps(report, indent=1, default=str))
-    detail = {"daily": per_day, "surge_monday": surge,
+    detail = {"daily": per_day, "surge_monday": surge, "surge_seeded_runs": surge_runs,
               "work_orders": [dict(w.__dict__) for w in work_orders]}
     (ROOT / "reports/gate-3-detail.json").write_text(json.dumps(detail, indent=1, default=str))
     print(json.dumps({k: report[k] for k in ("inputs", "work_orders")}, indent=1, default=str))

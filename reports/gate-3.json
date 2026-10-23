@@ -1,9 +1,9 @@
 {
  "gate": 3,
  "name": "work orders and dispatch",
- "run_utc": "2026-10-23T17:11:41Z",
- "git_commit": "f6b2a3c",
- "runtime_seconds": 0.3,
+ "run_utc": "2026-10-23T17:19:11Z",
+ "git_commit": "0980dd8",
+ "runtime_seconds": 29.1,
  "categories": {
   "measured": "work order validity, unsourced instructions, and computed optimizer results",
   "scenario_model": "every dispatch number is a scenario model result, not a field saving"
@@ -54,7 +54,7 @@
     "sla_lateness_total_min": 402,
     "late_jobs": 4,
     "travel_total_min": 974,
-    "solve_seconds": 0.06,
+    "solve_seconds": 0.04,
     "constraint_violations": 0,
     "weighted_cost": 5890.0,
     "daily_solver_status": [
@@ -109,7 +109,7 @@
      "workload_std_min_active_techs": 88.4,
      "technicians_used": 3,
      "constraint_violations": 0,
-     "solve_seconds": 0.03,
+     "solve_seconds": 0.01,
      "solver_status": "OPTIMAL"
     },
     "nearest_qualified": {
@@ -345,7 +345,7 @@
     "workload_std_min_active_techs": 168.9,
     "technicians_used": 7,
     "constraint_violations": 0,
-    "solve_seconds": 0.25,
+    "solve_seconds": 0.14,
     "solver_status": "OPTIMAL",
     "weighted_cost": 10165.0
    },
@@ -381,27 +381,675 @@
     "solver_status": "GREEDY",
     "weighted_cost": 20885.0
    }
+  },
+  "surge_seeded": {
+   "days": 10,
+   "summary": {
+    "ortools": {
+     "assigned": {
+      "mean": 20,
+      "min": 19,
+      "max": 24
+     },
+     "reschedule_requested": {
+      "mean": 16.8,
+      "min": 12,
+      "max": 18
+     },
+     "escalated_unassigned": {
+      "mean": 0.2,
+      "min": 0,
+      "max": 1
+     },
+     "sla_lateness_total_min": {
+      "mean": 1083,
+      "min": 486,
+      "max": 2241
+     },
+     "late_jobs": {
+      "mean": 5.6,
+      "min": 4,
+      "max": 11
+     },
+     "travel_total_min": {
+      "mean": 695.4,
+      "min": 665,
+      "max": 745
+     },
+     "max_workload_min": {
+      "mean": 534,
+      "min": 486,
+      "max": 546
+     },
+     "weighted_cost": {
+      "mean": 11792.4,
+      "min": 5798.0,
+      "max": 23379.0
+     },
+     "constraint_violations": {
+      "mean": 0,
+      "min": 0,
+      "max": 0
+     }
+    },
+    "nearest_qualified": {
+     "assigned": {
+      "mean": 18.7,
+      "min": 17,
+      "max": 22
+     },
+     "reschedule_requested": {
+      "mean": 17.8,
+      "min": 13,
+      "max": 20
+     },
+     "escalated_unassigned": {
+      "mean": 0.5,
+      "min": 0,
+      "max": 3
+     },
+     "sla_lateness_total_min": {
+      "mean": 2136.7,
+      "min": 1412,
+      "max": 4377
+     },
+     "late_jobs": {
+      "mean": 9.2,
+      "min": 7,
+      "max": 14
+     },
+     "travel_total_min": {
+      "mean": 683.9,
+      "min": 661,
+      "max": 726
+     },
+     "max_workload_min": {
+      "mean": 530.9,
+      "min": 486,
+      "max": 546
+     },
+     "weighted_cost": {
+      "mean": 22316.3,
+      "min": 15058.0,
+      "max": 44720.0
+     },
+     "constraint_violations": {
+      "mean": 0,
+      "min": 0,
+      "max": 0
+     }
+    },
+    "earliest_available": {
+     "assigned": {
+      "mean": 18.8,
+      "min": 17,
+      "max": 23
+     },
+     "reschedule_requested": {
+      "mean": 17.7,
+      "min": 12,
+      "max": 20
+     },
+     "escalated_unassigned": {
+      "mean": 0.5,
+      "min": 0,
+      "max": 3
+     },
+     "sla_lateness_total_min": {
+      "mean": 1938.3,
+      "min": 1294,
+      "max": 3674
+     },
+     "late_jobs": {
+      "mean": 8.7,
+      "min": 7,
+      "max": 14
+     },
+     "travel_total_min": {
+      "mean": 675.7,
+      "min": 579,
+      "max": 790
+     },
+     "max_workload_min": {
+      "mean": 530.9,
+      "min": 486,
+      "max": 546
+     },
+     "weighted_cost": {
+      "mean": 20324.2,
+      "min": 13820.0,
+      "max": 37617.5
+     },
+     "constraint_violations": {
+      "mean": 0,
+      "min": 0,
+      "max": 0
+     }
+    },
+    "ortools_lowest_weighted_cost_in": "10 of 10 surge days"
+   },
+   "runs": [
+    {
+     "seed": 1,
+     "day": "Tue",
+     "ortools": {
+      "jobs": 37,
+      "assigned": 19,
+      "escalated_unassigned": 0,
+      "reschedule_requested": 18,
+      "sla_lateness_total_min": 786,
+      "late_jobs": 4,
+      "travel_total_min": 719,
+      "max_workload_min": 486,
+      "workload_std_min_active_techs": 135.9,
+      "technicians_used": 8,
+      "constraint_violations": 0,
+      "solve_seconds": 0.22,
+      "solver_status": "OPTIMAL",
+      "weighted_cost": 8822.0
+     },
+     "nearest_qualified": {
+      "jobs": 37,
+      "assigned": 18,
+      "escalated_unassigned": 0,
+      "reschedule_requested": 19,
+      "sla_lateness_total_min": 1457,
+      "late_jobs": 8,
+      "travel_total_min": 719,
+      "max_workload_min": 546,
+      "workload_std_min_active_techs": 139.5,
+      "technicians_used": 8,
+      "constraint_violations": 0,
+      "solve_seconds": 0.0,
+      "solver_status": "GREEDY",
+      "weighted_cost": 15562.0
+     },
+     "earliest_available": {
+      "jobs": 37,
+      "assigned": 18,
+      "escalated_unassigned": 0,
+      "reschedule_requested": 19,
+      "sla_lateness_total_min": 1457,
+      "late_jobs": 8,
+      "travel_total_min": 725,
+      "max_workload_min": 546,
+      "workload_std_min_active_techs": 138.8,
+      "technicians_used": 9,
+      "constraint_violations": 0,
+      "solve_seconds": 0.0,
+      "solver_status": "GREEDY",
+      "weighted_cost": 15568.0
+     }
+    },
+    {
+     "seed": 2,
+     "day": "Wed",
+     "ortools": {
+      "jobs": 37,
+      "assigned": 19,
+      "escalated_unassigned": 0,
+      "reschedule_requested": 18,
+      "sla_lateness_total_min": 966,
+      "late_jobs": 5,
+      "travel_total_min": 680,
+      "max_workload_min": 546,
+      "workload_std_min_active_techs": 128.6,
+      "technicians_used": 7,
+      "constraint_violations": 0,
+      "solve_seconds": 0.69,
+      "solver_status": "OPTIMAL",
+      "weighted_cost": 10613.0
+     },
+     "nearest_qualified": {
+      "jobs": 37,
+      "assigned": 18,
+      "escalated_unassigned": 0,
+      "reschedule_requested": 19,
+      "sla_lateness_total_min": 1742,
+      "late_jobs": 9,
+      "travel_total_min": 680,
+      "max_workload_min": 546,
+      "workload_std_min_active_techs": 125.3,
+      "technicians_used": 7,
+      "constraint_violations": 0,
+      "solve_seconds": 0.0,
+      "solver_status": "GREEDY",
+      "weighted_cost": 18373.0
+     },
+     "earliest_available": {
+      "jobs": 37,
+      "assigned": 17,
+      "escalated_unassigned": 0,
+      "reschedule_requested": 20,
+      "sla_lateness_total_min": 1684,
+      "late_jobs": 9,
+      "travel_total_min": 579,
+      "max_workload_min": 546,
+      "workload_std_min_active_techs": 135.1,
+      "technicians_used": 8,
+      "constraint_violations": 0,
+      "solve_seconds": 0.0,
+      "solver_status": "GREEDY",
+      "weighted_cost": 17692.0
+     }
+    },
+    {
+     "seed": 3,
+     "day": "Thu",
+     "ortools": {
+      "jobs": 37,
+      "assigned": 19,
+      "escalated_unassigned": 0,
+      "reschedule_requested": 18,
+      "sla_lateness_total_min": 486,
+      "late_jobs": 4,
+      "travel_total_min": 665,
+      "max_workload_min": 546,
+      "workload_std_min_active_techs": 118.1,
+      "technicians_used": 7,
+      "constraint_violations": 0,
+      "solve_seconds": 0.38,
+      "solver_status": "OPTIMAL",
+      "weighted_cost": 5798.0
+     },
+     "nearest_qualified": {
+      "jobs": 37,
+      "assigned": 19,
+      "escalated_unassigned": 0,
+      "reschedule_requested": 18,
+      "sla_lateness_total_min": 1412,
+      "late_jobs": 7,
+      "travel_total_min": 665,
+      "max_workload_min": 546,
+      "workload_std_min_active_techs": 118.1,
+      "technicians_used": 7,
+      "constraint_violations": 0,
+      "solve_seconds": 0.0,
+      "solver_status": "GREEDY",
+      "weighted_cost": 15058.0
+     },
+     "earliest_available": {
+      "jobs": 37,
+      "assigned": 19,
+      "escalated_unassigned": 0,
+      "reschedule_requested": 18,
+      "sla_lateness_total_min": 1412,
+      "late_jobs": 7,
+      "travel_total_min": 704,
+      "max_workload_min": 546,
+      "workload_std_min_active_techs": 132.0,
+      "technicians_used": 8,
+      "constraint_violations": 0,
+      "solve_seconds": 0.0,
+      "solver_status": "GREEDY",
+      "weighted_cost": 15097.0
+     }
+    },
+    {
+     "seed": 4,
+     "day": "Fri",
+     "ortools": {
+      "jobs": 37,
+      "assigned": 23,
+      "escalated_unassigned": 1,
+      "reschedule_requested": 13,
+      "sla_lateness_total_min": 2241,
+      "late_jobs": 11,
+      "travel_total_min": 696,
+      "max_workload_min": 546,
+      "workload_std_min_active_techs": 110.7,
+      "technicians_used": 8,
+      "constraint_violations": 0,
+      "solve_seconds": 10.75,
+      "solver_status": "FEASIBLE",
+      "weighted_cost": 23379.0
+     },
+     "nearest_qualified": {
+      "jobs": 37,
+      "assigned": 21,
+      "escalated_unassigned": 3,
+      "reschedule_requested": 13,
+      "sla_lateness_total_min": 4377,
+      "late_jobs": 14,
+      "travel_total_min": 677,
+      "max_workload_min": 546,
+      "workload_std_min_active_techs": 79.6,
+      "technicians_used": 7,
+      "constraint_violations": 0,
+      "solve_seconds": 0.0,
+      "solver_status": "GREEDY",
+      "weighted_cost": 44720.0
+     },
+     "earliest_available": {
+      "jobs": 37,
+      "assigned": 21,
+      "escalated_unassigned": 3,
+      "reschedule_requested": 13,
+      "sla_lateness_total_min": 3674,
+      "late_jobs": 13,
+      "travel_total_min": 595,
+      "max_workload_min": 546,
+      "workload_std_min_active_techs": 142.2,
+      "technicians_used": 9,
+      "constraint_violations": 0,
+      "solve_seconds": 0.0,
+      "solver_status": "GREEDY",
+      "weighted_cost": 37608.0
+     }
+    },
+    {
+     "seed": 5,
+     "day": "Mon",
+     "ortools": {
+      "jobs": 37,
+      "assigned": 19,
+      "escalated_unassigned": 0,
+      "reschedule_requested": 18,
+      "sla_lateness_total_min": 561,
+      "late_jobs": 4,
+      "travel_total_min": 665,
+      "max_workload_min": 546,
+      "workload_std_min_active_techs": 118.1,
+      "technicians_used": 7,
+      "constraint_violations": 0,
+      "solve_seconds": 1.25,
+      "solver_status": "OPTIMAL",
+      "weighted_cost": 6548.0
+     },
+     "nearest_qualified": {
+      "jobs": 37,
+      "assigned": 18,
+      "escalated_unassigned": 0,
+      "reschedule_requested": 19,
+      "sla_lateness_total_min": 1427,
+      "late_jobs": 7,
+      "travel_total_min": 665,
+      "max_workload_min": 546,
+      "workload_std_min_active_techs": 113.4,
+      "technicians_used": 7,
+      "constraint_violations": 0,
+      "solve_seconds": 0.0,
+      "solver_status": "GREEDY",
+      "weighted_cost": 15208.0
+     },
+     "earliest_available": {
+      "jobs": 37,
+      "assigned": 18,
+      "escalated_unassigned": 0,
+      "reschedule_requested": 19,
+      "sla_lateness_total_min": 1427,
+      "late_jobs": 7,
+      "travel_total_min": 704,
+      "max_workload_min": 546,
+      "workload_std_min_active_techs": 125.8,
+      "technicians_used": 8,
+      "constraint_violations": 0,
+      "solve_seconds": 0.0,
+      "solver_status": "GREEDY",
+      "weighted_cost": 15247.0
+     }
+    },
+    {
+     "seed": 6,
+     "day": "Tue",
+     "ortools": {
+      "jobs": 37,
+      "assigned": 19,
+      "escalated_unassigned": 0,
+      "reschedule_requested": 18,
+      "sla_lateness_total_min": 981,
+      "late_jobs": 4,
+      "travel_total_min": 686,
+      "max_workload_min": 546,
+      "workload_std_min_active_techs": 144.3,
+      "technicians_used": 8,
+      "constraint_violations": 0,
+      "solve_seconds": 1.18,
+      "solver_status": "OPTIMAL",
+      "weighted_cost": 10769.0
+     },
+     "nearest_qualified": {
+      "jobs": 37,
+      "assigned": 18,
+      "escalated_unassigned": 0,
+      "reschedule_requested": 19,
+      "sla_lateness_total_min": 1472,
+      "late_jobs": 7,
+      "travel_total_min": 686,
+      "max_workload_min": 486,
+      "workload_std_min_active_techs": 135.5,
+      "technicians_used": 8,
+      "constraint_violations": 0,
+      "solve_seconds": 0.0,
+      "solver_status": "GREEDY",
+      "weighted_cost": 15649.0
+     },
+     "earliest_available": {
+      "jobs": 37,
+      "assigned": 18,
+      "escalated_unassigned": 0,
+      "reschedule_requested": 19,
+      "sla_lateness_total_min": 1472,
+      "late_jobs": 7,
+      "travel_total_min": 725,
+      "max_workload_min": 486,
+      "workload_std_min_active_techs": 135.5,
+      "technicians_used": 9,
+      "constraint_violations": 0,
+      "solve_seconds": 0.0,
+      "solver_status": "GREEDY",
+      "weighted_cost": 15688.0
+     }
+    },
+    {
+     "seed": 7,
+     "day": "Wed",
+     "ortools": {
+      "jobs": 37,
+      "assigned": 19,
+      "escalated_unassigned": 0,
+      "reschedule_requested": 18,
+      "sla_lateness_total_min": 1131,
+      "late_jobs": 5,
+      "travel_total_min": 680,
+      "max_workload_min": 546,
+      "workload_std_min_active_techs": 128.6,
+      "technicians_used": 7,
+      "constraint_violations": 0,
+      "solve_seconds": 0.32,
+      "solver_status": "OPTIMAL",
+      "weighted_cost": 12263.0
+     },
+     "nearest_qualified": {
+      "jobs": 37,
+      "assigned": 18,
+      "escalated_unassigned": 0,
+      "reschedule_requested": 19,
+      "sla_lateness_total_min": 1877,
+      "late_jobs": 8,
+      "travel_total_min": 680,
+      "max_workload_min": 546,
+      "workload_std_min_active_techs": 125.3,
+      "technicians_used": 7,
+      "constraint_violations": 0,
+      "solve_seconds": 0.0,
+      "solver_status": "GREEDY",
+      "weighted_cost": 19723.0
+     },
+     "earliest_available": {
+      "jobs": 37,
+      "assigned": 17,
+      "escalated_unassigned": 0,
+      "reschedule_requested": 20,
+      "sla_lateness_total_min": 1819,
+      "late_jobs": 8,
+      "travel_total_min": 579,
+      "max_workload_min": 546,
+      "workload_std_min_active_techs": 135.1,
+      "technicians_used": 8,
+      "constraint_violations": 0,
+      "solve_seconds": 0.0,
+      "solver_status": "GREEDY",
+      "weighted_cost": 19042.0
+     }
+    },
+    {
+     "seed": 8,
+     "day": "Thu",
+     "ortools": {
+      "jobs": 37,
+      "assigned": 20,
+      "escalated_unassigned": 0,
+      "reschedule_requested": 17,
+      "sla_lateness_total_min": 921,
+      "late_jobs": 4,
+      "travel_total_min": 738,
+      "max_workload_min": 486,
+      "workload_std_min_active_techs": 103.4,
+      "technicians_used": 8,
+      "constraint_violations": 0,
+      "solve_seconds": 2.6,
+      "solver_status": "OPTIMAL",
+      "weighted_cost": 10191.0
+     },
+     "nearest_qualified": {
+      "jobs": 37,
+      "assigned": 18,
+      "escalated_unassigned": 0,
+      "reschedule_requested": 19,
+      "sla_lateness_total_min": 1889,
+      "late_jobs": 10,
+      "travel_total_min": 680,
+      "max_workload_min": 546,
+      "workload_std_min_active_techs": 128.6,
+      "technicians_used": 7,
+      "constraint_violations": 0,
+      "solve_seconds": 0.0,
+      "solver_status": "GREEDY",
+      "weighted_cost": 19843.0
+     },
+     "earliest_available": {
+      "jobs": 37,
+      "assigned": 18,
+      "escalated_unassigned": 0,
+      "reschedule_requested": 19,
+      "sla_lateness_total_min": 1294,
+      "late_jobs": 7,
+      "travel_total_min": 637,
+      "max_workload_min": 486,
+      "workload_std_min_active_techs": 126.8,
+      "technicians_used": 9,
+      "constraint_violations": 0,
+      "solve_seconds": 0.0,
+      "solver_status": "GREEDY",
+      "weighted_cost": 13820.0
+     }
+    },
+    {
+     "seed": 9,
+     "day": "Fri",
+     "ortools": {
+      "jobs": 37,
+      "assigned": 24,
+      "escalated_unassigned": 1,
+      "reschedule_requested": 12,
+      "sla_lateness_total_min": 1716,
+      "late_jobs": 11,
+      "travel_total_min": 745,
+      "max_workload_min": 546,
+      "workload_std_min_active_techs": 125.6,
+      "technicians_used": 8,
+      "constraint_violations": 0,
+      "solve_seconds": 10.73,
+      "solver_status": "FEASIBLE",
+      "weighted_cost": 18178.0
+     },
+     "nearest_qualified": {
+      "jobs": 37,
+      "assigned": 22,
+      "escalated_unassigned": 2,
+      "reschedule_requested": 13,
+      "sla_lateness_total_min": 4137,
+      "late_jobs": 14,
+      "travel_total_min": 726,
+      "max_workload_min": 515,
+      "workload_std_min_active_techs": 36.6,
+      "technicians_used": 7,
+      "constraint_violations": 0,
+      "solve_seconds": 0.0,
+      "solver_status": "GREEDY",
+      "weighted_cost": 42353.5
+     },
+     "earliest_available": {
+      "jobs": 37,
+      "assigned": 23,
+      "escalated_unassigned": 2,
+      "reschedule_requested": 12,
+      "sla_lateness_total_min": 3657,
+      "late_jobs": 14,
+      "travel_total_min": 790,
+      "max_workload_min": 515,
+      "workload_std_min_active_techs": 136.9,
+      "technicians_used": 10,
+      "constraint_violations": 0,
+      "solve_seconds": 0.0,
+      "solver_status": "GREEDY",
+      "weighted_cost": 37617.5
+     }
+    },
+    {
+     "seed": 10,
+     "day": "Mon",
+     "ortools": {
+      "jobs": 37,
+      "assigned": 19,
+      "escalated_unassigned": 0,
+      "reschedule_requested": 18,
+      "sla_lateness_total_min": 1041,
+      "late_jobs": 4,
+      "travel_total_min": 680,
+      "max_workload_min": 546,
+      "workload_std_min_active_techs": 99.4,
+      "technicians_used": 7,
+      "constraint_violations": 0,
+      "solve_seconds": 0.67,
+      "solver_status": "OPTIMAL",
+      "weighted_cost": 11363.0
+     },
+     "nearest_qualified": {
+      "jobs": 37,
+      "assigned": 17,
+      "escalated_unassigned": 0,
+      "reschedule_requested": 20,
+      "sla_lateness_total_min": 1577,
+      "late_jobs": 8,
+      "travel_total_min": 661,
+      "max_workload_min": 486,
+      "workload_std_min_active_techs": 25.5,
+      "technicians_used": 6,
+      "constraint_violations": 0,
+      "solve_seconds": 0.0,
+      "solver_status": "GREEDY",
+      "weighted_cost": 16674.0
+     },
+     "earliest_available": {
+      "jobs": 37,
+      "assigned": 19,
+      "escalated_unassigned": 0,
+      "reschedule_requested": 18,
+      "sla_lateness_total_min": 1487,
+      "late_jobs": 7,
+      "travel_total_min": 719,
+      "max_workload_min": 546,
+      "workload_std_min_active_techs": 126.9,
+      "technicians_used": 8,
+      "constraint_violations": 0,
+      "solve_seconds": 0.0,
+      "solver_status": "GREEDY",
+      "weighted_cost": 15862.0
+     }
+    }
+   ]
   }
- },
- "policy_tests": {
-  "file": "tests/test_policies.py",
-  "database": "postgres:16-alpine local container",
-  "passed": 11,
-  "failed": 0,
-  "tests": [
-   "test_policy1_low_confidence_goes_to_manual_review",
-   "test_policy2_disagreement_requires_manager_review",
-   "test_policy3_no_supported_passage_abstains",
-   "test_policy4_citation_needs_page_text_and_entailment",
-   "test_policy5_class_match_flags_compatibility",
-   "test_policy6_unsourced_lockout_blocks_approval",
-   "test_policy7_no_qualified_technician_escalates",
-   "test_policy8_no_feasible_plan_requests_reschedule",
-   "test_policy9_expired_approval_escalates",
-   "test_policy10_other_technicians_job_denied_and_audited",
-   "test_db_rejects_unverified_instruction"
-  ],
-  "fixtures": "reports/gate-2-cases.jsonl (recorded diagnoses), data/processed/gate2_cases.jsonl (LBNL cases), data/processed/manual_pages.jsonl (manual text)"
- },
- "code_commit": "2b976cc"
+ }
 }

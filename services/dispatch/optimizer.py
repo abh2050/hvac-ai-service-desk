@@ -35,6 +35,13 @@ class Assignment:
     reason: str = ""
 
 
+def _require_unique(jobs: list[Job]) -> None:
+    ids = [j.work_order_id for j in jobs]
+    if len(ids) != len(set(ids)):
+        dup = sorted({i for i in ids if ids.count(i) > 1})
+        raise ValueError(f"duplicate work order ids: {dup}")
+
+
 def _minutes(t: datetime, start: datetime) -> int:
     return int(math.floor((t - start).total_seconds() / 60))
 
@@ -80,6 +87,7 @@ def _unassigned(job: Job, reasons: dict) -> Assignment:
 
 
 def plan_cpsat(jobs: list[Job], techs, sites, start: datetime, cfg: dict) -> dict:
+    _require_unique(jobs)
     w = cfg["objective_weights"]
     horizon = cfg["solver"]["planning_horizon_hours"] * 60
     speed = cfg["travel"]["average_speed_kmh"]
@@ -125,7 +133,7 @@ def plan_cpsat(jobs: list[Job], techs, sites, start: datetime, cfg: dict) -> dic
     solver = cp_model.CpSolver()
     solver.parameters.max_time_in_seconds = cfg["solver"]["time_limit_seconds"]
     solver.parameters.num_workers = 8
-    solver.parameters.random_seed = 7
+    solver.parameters.random_seed = cfg["solver"].get("random_seed", 7)
     status = solver.Solve(m)
     status_name = solver.StatusName(status)
     if status not in (cp_model.OPTIMAL, cp_model.FEASIBLE):
@@ -148,6 +156,7 @@ def plan_cpsat(jobs: list[Job], techs, sites, start: datetime, cfg: dict) -> dic
 
 def plan_greedy(jobs: list[Job], techs, sites, start: datetime, cfg: dict, rule: str) -> dict:
     """Baselines. rule = nearest_qualified (least travel) or earliest_available (earliest arrival)."""
+    _require_unique(jobs)
     horizon = cfg["solver"]["planning_horizon_hours"] * 60
     speed = cfg["travel"]["average_speed_kmh"]
     busy = {t: [] for t in techs}           # list of (start, end) minutes

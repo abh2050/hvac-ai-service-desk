@@ -1,0 +1,174 @@
+{
+ "source": "reports/gate-2-holdout-cases.jsonl",
+ "method": "exact McNemar on discordant pairs; Wilson 95% intervals",
+ "proposal_vs_rule_hint": {
+  "all": {
+   "cases": 60,
+   "ai_proposal": {
+    "correct": 52,
+    "rate": 0.867,
+    "wilson95": [
+     0.758,
+     0.931
+    ]
+   },
+   "rule_hint": {
+    "correct": 47,
+    "rate": 0.783,
+    "wilson95": [
+     0.664,
+     0.869
+    ]
+   },
+   "discordant": {
+    "only_ai_proposal": 5,
+    "only_rule_hint": 0
+   },
+   "mcnemar_exact_p": 0.0625,
+   "significant_at_0.05": false
+  },
+  "field": {
+   "cases": 60,
+   "ai_proposal": {
+    "correct": 52,
+    "rate": 0.867,
+    "wilson95": [
+     0.758,
+     0.931
+    ]
+   },
+   "rule_hint": {
+    "correct": 47,
+    "rate": 0.783,
+    "wilson95": [
+     0.664,
+     0.869
+    ]
+   },
+   "discordant": {
+    "only_ai_proposal": 5,
+    "only_rule_hint": 0
+   },
+   "mcnemar_exact_p": 0.0625,
+   "significant_at_0.05": false
+  },
+  "field/refrig": {
+   "cases": 60,
+   "ai_proposal": {
+    "correct": 52,
+    "rate": 0.867,
+    "wilson95": [
+     0.758,
+     0.931
+    ]
+   },
+   "rule_hint": {
+    "correct": 47,
+    "rate": 0.783,
+    "wilson95": [
+     0.664,
+     0.869
+    ]
+   },
+   "discordant": {
+    "only_ai_proposal": 5,
+    "only_rule_hint": 0
+   },
+   "mcnemar_exact_p": 0.0625,
+   "significant_at_0.05": false
+  }
+ },
+ "verified_ai_vs_verified_baseline": {
+  "all": {
+   "cases": 60,
+   "ai_verified": {
+    "correct": 45,
+    "rate": 0.75,
+    "wilson95": [
+     0.628,
+     0.842
+    ]
+   },
+   "baseline_verified": {
+    "correct": 8,
+    "rate": 0.133,
+    "wilson95": [
+     0.069,
+     0.242
+    ]
+   },
+   "discordant": {
+    "only_ai_verified": 38,
+    "only_baseline_verified": 1
+   },
+   "mcnemar_exact_p": 0.0,
+   "significant_at_0.05": true
+  },
+  "field": {
+   "cases": 60,
+   "ai_verified": {
+    "correct": 45,
+    "rate": 0.75,
+    "wilson95": [
+     0.628,
+     0.842
+    ]
+   },
+   "baseline_verified": {
+    "correct": 8,
+    "rate": 0.133,
+    "wilson95": [
+     0.069,
+     0.242
+    ]
+   },
+   "discordant": {
+    "only_ai_verified": 38,
+    "only_baseline_verified": 1
+   },
+   "mcnemar_exact_p": 0.0,
+   "significant_at_0.05": true
+  },
+  "field/refrig": {
+   "cases": 60,
+   "ai_verified": {
+    "correct": 45,
+    "rate": 0.75,
+    "wilson95": [
+     0.628,
+     0.842
+    ]
+   },
+   "baseline_verified": {
+    "correct": 8,
+    "rate": 0.133,
+    "wilson95": [
+     0.069,
+     0.242
+    ]
+   },
+   "discordant": {
+    "only_ai_verified": 38,
+    "only_baseline_verified": 1
+   },
+   "mcnemar_exact_p": 0.0,
+   "significant_at_0.05": true
+  }
+ },
+ "probe_abstention": {
+  "abstained": 0,
+  "probes": 0,
+  "wilson95": [
+   null,
+   null
+  ]
+ },
+ "citation_support": {
+  "passed": 54,
+  "checked": 59,
+  "wilson95": [
+   0.816,
+   0.963
+  ]
+ }
+}
