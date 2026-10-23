@@ -84,7 +84,7 @@ def run_case(case, vindex, bm25, chunks_by_class, diag_llm, verifier):
         "safety_steps": [verifier.check(c["manual_id"], c["page"], c.get("quote", ""), SAFETY_CLAIM)
                          for c in diag["safety_steps"]],
     }
-    final = policy.apply(diag, verified)
+    final = policy.apply(diag, verified, equipment_rules_fired=bool(case["detection"]["rules_fired"]))
     ai_seconds = time.time() - t0
     t1 = time.time()
     pool = bm25.search(UNRELATED_QUERY, cls, k=6) if probe else bm25.search(

@@ -1,0 +1,6031 @@
+{
+ "daily": {
+  "2026-10-26 Mon": {
+   "ortools": {
+    "score": {
+     "jobs": 6,
+     "assigned": 5,
+     "escalated_unassigned": 0,
+     "reschedule_requested": 1,
+     "sla_lateness_total_min": 0,
+     "late_jobs": 0,
+     "travel_total_min": 100,
+     "max_workload_min": 336,
+     "workload_std_min_active_techs": 88.4,
+     "technicians_used": 3,
+     "constraint_violations": 0,
+     "solve_seconds": 0.03,
+     "solver_status": "OPTIMAL"
+    },
+    "assignments": [
+     {
+      "work_order_id": "WO-AST-RTU-01-202610260700-b1c20e",
+      "technician_id": "T02",
+      "status": "assigned",
+      "start_min": 435,
+      "travel_min": 22,
+      "arrival_min": 457,
+      "lateness_min": 0,
+      "runner_up_id": "T11",
+      "reason": "lowest weighted cost of lateness, travel, and workload"
+     },
+     {
+      "work_order_id": "WO-AST-RTU-01-202610260700-ab58f7",
+      "technician_id": "T02",
+      "status": "assigned",
+      "start_min": 547,
+      "travel_min": 22,
+      "arrival_min": 569,
+      "lateness_min": 0,
+      "runner_up_id": "T11",
+      "reason": "lowest weighted cost of lateness, travel, and workload"
+     },
+     {
+      "work_order_id": "WO-AST-RTU-01-202610260800-7e0963",
+      "technician_id": "T02",
+      "status": "assigned",
+      "start_min": 659,
+      "travel_min": 22,
+      "arrival_min": 681,
+      "lateness_min": 0,
+      "runner_up_id": "T11",
+      "reason": "lowest weighted cost of lateness, travel, and workload"
+     },
+     {
+      "work_order_id": "WO-AST-RTU-02-202610260800-271201",
+      "technician_id": "T01",
+      "status": "assigned",
+      "start_min": 495,
+      "travel_min": 0,
+      "arrival_min": 495,
+      "lateness_min": 0,
+      "runner_up_id": "T09",
+      "reason": "lowest weighted cost of lateness, travel, and workload"
+     },
+     {
+      "work_order_id": "WO-AST-RTU-03-202610260700-2c482e",
+      "technician_id": null,
+      "status": "reschedule_requested",
+      "start_min": null,
+      "travel_min": null,
+      "arrival_min": null,
+      "lateness_min": null,
+      "runner_up_id": null,
+      "reason": "qualified technicians exist but none has capacity in the planning horizon"
+     },
+     {
+      "work_order_id": "WO-AST-RTU-04-202610260900-985630",
+      "technician_id": "T10",
+      "status": "assigned",
+      "start_min": 555,
+      "travel_min": 34,
+      "arrival_min": 589,
+      "lateness_min": 0,
+      "runner_up_id": "T03",
+      "reason": "lowest weighted cost of lateness, travel, and workload"
+     }
+    ]
+   },
+   "nearest_qualified": {
+    "score": {
+     "jobs": 6,
+     "assigned": 5,
+     "escalated_unassigned": 0,
+     "reschedule_requested": 1,
+     "sla_lateness_total_min": 0,
+     "late_jobs": 0,
+     "travel_total_min": 100,
+     "max_workload_min": 336,
+     "workload_std_min_active_techs": 88.4,
+     "technicians_used": 3,
+     "constraint_violations": 0,
+     "solve_seconds": 0.0,
+     "solver_status": "GREEDY"
+    },
+    "assignments": [
+     {
+      "work_order_id": "WO-AST-RTU-01-202610260700-b1c20e",
+      "technician_id": "T02",
+      "status": "assigned",
+      "start_min": 435,
+      "travel_min": 22,
+      "arrival_min": 457,
+      "lateness_min": 0,
+      "runner_up_id": "T11",
+      "reason": "nearest qualified technician"
+     },
+     {
+      "work_order_id": "WO-AST-RTU-01-202610260700-ab58f7",
+      "technician_id": "T02",
+      "status": "assigned",
+      "start_min": 547,
+      "travel_min": 22,
+      "arrival_min": 569,
+      "lateness_min": 0,
+      "runner_up_id": "T11",
+      "reason": "nearest qualified technician"
+     },
+     {
+      "work_order_id": "WO-AST-RTU-03-202610260700-2c482e",
+      "technician_id": null,
+      "status": "reschedule_requested",
+      "start_min": null,
+      "travel_min": null,
+      "arrival_min": null,
+      "lateness_min": null,
+      "runner_up_id": null,
+      "reason": "qualified technicians exist but none has capacity in the planning horizon"
+     },
+     {
+      "work_order_id": "WO-AST-RTU-01-202610260800-7e0963",
+      "technician_id": "T02",
+      "status": "assigned",
+      "start_min": 659,
+      "travel_min": 22,
+      "arrival_min": 681,
+      "lateness_min": 0,
+      "runner_up_id": "T11",
+      "reason": "nearest qualified technician"
+     },
+     {
+      "work_order_id": "WO-AST-RTU-02-202610260800-271201",
+      "technician_id": "T01",
+      "status": "assigned",
+      "start_min": 495,
+      "travel_min": 0,
+      "arrival_min": 495,
+      "lateness_min": 0,
+      "runner_up_id": "T09",
+      "reason": "nearest qualified technician"
+     },
+     {
+      "work_order_id": "WO-AST-RTU-04-202610260900-985630",
+      "technician_id": "T10",
+      "status": "assigned",
+      "start_min": 555,
+      "travel_min": 34,
+      "arrival_min": 589,
+      "lateness_min": 0,
+      "runner_up_id": "T03",
+      "reason": "nearest qualified technician"
+     }
+    ]
+   },
+   "earliest_available": {
+    "score": {
+     "jobs": 6,
+     "assigned": 5,
+     "escalated_unassigned": 0,
+     "reschedule_requested": 1,
+     "sla_lateness_total_min": 0,
+     "late_jobs": 0,
+     "travel_total_min": 194,
+     "max_workload_min": 224,
+     "workload_std_min_active_techs": 41.5,
+     "technicians_used": 4,
+     "constraint_violations": 0,
+     "solve_seconds": 0.0,
+     "solver_status": "GREEDY"
+    },
+    "assignments": [
+     {
+      "work_order_id": "WO-AST-RTU-01-202610260700-b1c20e",
+      "technician_id": "T02",
+      "status": "assigned",
+      "start_min": 435,
+      "travel_min": 22,
+      "arrival_min": 457,
+      "lateness_min": 0,
+      "runner_up_id": "T11",
+      "reason": "earliest available qualified technician"
+     },
+     {
+      "work_order_id": "WO-AST-RTU-01-202610260700-ab58f7",
+      "technician_id": "T11",
+      "status": "assigned",
+      "start_min": 435,
+      "travel_min": 116,
+      "arrival_min": 551,
+      "lateness_min": 0,
+      "runner_up_id": "T02",
+      "reason": "earliest available qualified technician"
+     },
+     {
+      "work_order_id": "WO-AST-RTU-03-202610260700-2c482e",
+      "technician_id": null,
+      "status": "reschedule_requested",
+      "start_min": null,
+      "travel_min": null,
+      "arrival_min": null,
+      "lateness_min": null,
+      "runner_up_id": null,
+      "reason": "qualified technicians exist but none has capacity in the planning horizon"
+     },
+     {
+      "work_order_id": "WO-AST-RTU-01-202610260800-7e0963",
+      "technician_id": "T02",
+      "status": "assigned",
+      "start_min": 547,
+      "travel_min": 22,
+      "arrival_min": 569,
+      "lateness_min": 0,
+      "runner_up_id": "T11",
+      "reason": "earliest available qualified technician"
+     },
+     {
+      "work_order_id": "WO-AST-RTU-02-202610260800-271201",
+      "technician_id": "T01",
+      "status": "assigned",
+      "start_min": 495,
+      "travel_min": 0,
+      "arrival_min": 495,
+      "lateness_min": 0,
+      "runner_up_id": "T09",
+      "reason": "earliest available qualified technician"
+     },
+     {
+      "work_order_id": "WO-AST-RTU-04-202610260900-985630",
+      "technician_id": "T10",
+      "status": "assigned",
+      "start_min": 555,
+      "travel_min": 34,
+      "arrival_min": 589,
+      "lateness_min": 0,
+      "runner_up_id": "T03",
+      "reason": "earliest available qualified technician"
+     }
+    ]
+   }
+  },
+  "2026-10-27 Tue": {
+   "ortools": {
+    "score": {
+     "jobs": 6,
+     "assigned": 6,
+     "escalated_unassigned": 0,
+     "reschedule_requested": 0,
+     "sla_lateness_total_min": 21,
+     "late_jobs": 1,
+     "travel_total_min": 224,
+     "max_workload_min": 336,
+     "workload_std_min_active_techs": 76.9,
+     "technicians_used": 4,
+     "constraint_violations": 0,
+     "solve_seconds": 0.0,
+     "solver_status": "OPTIMAL"
+    },
+    "assignments": [
+     {
+      "work_order_id": "WO-AST-RTU-01-202610270700-0490d8",
+      "technician_id": "T11",
+      "status": "assigned",
+      "start_min": 435,
+      "travel_min": 116,
+      "arrival_min": 551,
+      "lateness_min": 0,
+      "runner_up_id": "T02",
+      "reason": "lowest weighted cost of lateness, travel, and workload"
+     },
+     {
+      "work_order_id": "WO-AST-RTU-01-202610270700-4de6aa",
+      "technician_id": "T02",
+      "status": "assigned",
+      "start_min": 659,
+      "travel_min": 22,
+      "arrival_min": 681,
+      "lateness_min": 21,
+      "runner_up_id": "T11",
+      "reason": "lowest weighted cost of lateness, travel, and workload"
+     },
+     {
+      "work_order_id": "WO-AST-RTU-01-202610270700-127477",
+      "technician_id": "T02",
+      "status": "assigned",
+      "start_min": 547,
+      "travel_min": 22,
+      "arrival_min": 569,
+      "lateness_min": 0,
+      "runner_up_id": "T11",
+      "reason": "lowest weighted cost of lateness, travel, and workload"
+     },
+     {
+      "work_order_id": "WO-AST-RTU-01-202610270700-48de95",
+      "technician_id": "T02",
+      "status": "assigned",
+      "start_min": 435,
+      "travel_min": 22,
+      "arrival_min": 457,
+      "lateness_min": 0,
+      "runner_up_id": "T11",
+      "reason": "lowest weighted cost of lateness, travel, and workload"
+     },
+     {
+      "work_order_id": "WO-AST-RTU-02-202610271400-73d719",
+      "technician_id": "T09",
+      "status": "assigned",
+      "start_min": 858,
+      "travel_min": 42,
+      "arrival_min": 900,
+      "lateness_min": 0,
+      "runner_up_id": null,
+      "reason": "lowest weighted cost of lateness, travel, and workload"
+     },
+     {
+      "work_order_id": "WO-AST-RTU-02-202610270700-dd3dcb",
+      "technician_id": "T01",
+      "status": "assigned",
+      "start_min": 435,
+      "travel_min": 0,
+      "arrival_min": 435,
+      "lateness_min": 0,
+      "runner_up_id": "T09",
+      "reason": "lowest weighted cost of lateness, travel, and workload"
+     }
+    ]
+   },
+   "nearest_qualified": {
+    "score": {
+     "jobs": 6,
+     "assigned": 6,
+     "escalated_unassigned": 0,
+     "reschedule_requested": 0,
+     "sla_lateness_total_min": 154,
+     "late_jobs": 2,
+     "travel_total_min": 130,
+     "max_workload_min": 448,
+     "workload_std_min_active_techs": 137.1,
+     "technicians_used": 3,
+     "constraint_violations": 0,
+     "solve_seconds": 0.0,
+     "solver_status": "GREEDY"
+    },
+    "assignments": [
+     {
+      "work_order_id": "WO-AST-RTU-01-202610270700-0490d8",
+      "technician_id": "T02",
+      "status": "assigned",
+      "start_min": 435,
+      "travel_min": 22,
+      "arrival_min": 457,
+      "lateness_min": 0,
+      "runner_up_id": "T11",
+      "reason": "nearest qualified technician"
+     },
+     {
+      "work_order_id": "WO-AST-RTU-01-202610270700-4de6aa",
+      "technician_id": "T02",
+      "status": "assigned",
+      "start_min": 547,
+      "travel_min": 22,
+      "arrival_min": 569,
+      "lateness_min": 0,
+      "runner_up_id": "T11",
+      "reason": "nearest qualified technician"
+     },
+     {
+      "work_order_id": "WO-AST-RTU-01-202610270700-127477",
+      "technician_id": "T02",
+      "status": "assigned",
+      "start_min": 659,
+      "travel_min": 22,
+      "arrival_min": 681,
+      "lateness_min": 21,
+      "runner_up_id": "T11",
+      "reason": "nearest qualified technician"
+     },
+     {
+      "work_order_id": "WO-AST-RTU-01-202610270700-48de95",
+      "technician_id": "T02",
+      "status": "assigned",
+      "start_min": 771,
+      "travel_min": 22,
+      "arrival_min": 793,
+      "lateness_min": 133,
+      "runner_up_id": "T11",
+      "reason": "nearest qualified technician"
+     },
+     {
+      "work_order_id": "WO-AST-RTU-02-202610270700-dd3dcb",
+      "technician_id": "T01",
+      "status": "assigned",
+      "start_min": 435,
+      "travel_min": 0,
+      "arrival_min": 435,
+      "lateness_min": 0,
+      "runner_up_id": "T09",
+      "reason": "nearest qualified technician"
+     },
+     {
+      "work_order_id": "WO-AST-RTU-02-202610271400-73d719",
+      "technician_id": "T09",
+      "status": "assigned",
+      "start_min": 858,
+      "travel_min": 42,
+      "arrival_min": 900,
+      "lateness_min": 0,
+      "runner_up_id": null,
+      "reason": "nearest qualified technician"
+     }
+    ]
+   },
+   "earliest_available": {
+    "score": {
+     "jobs": 6,
+     "assigned": 6,
+     "escalated_unassigned": 0,
+     "reschedule_requested": 0,
+     "sla_lateness_total_min": 21,
+     "late_jobs": 1,
+     "travel_total_min": 224,
+     "max_workload_min": 336,
+     "workload_std_min_active_techs": 76.9,
+     "technicians_used": 4,
+     "constraint_violations": 0,
+     "solve_seconds": 0.0,
+     "solver_status": "GREEDY"
+    },
+    "assignments": [
+     {
+      "work_order_id": "WO-AST-RTU-01-202610270700-0490d8",
+      "technician_id": "T02",
+      "status": "assigned",
+      "start_min": 435,
+      "travel_min": 22,
+      "arrival_min": 457,
+      "lateness_min": 0,
+      "runner_up_id": "T11",
+      "reason": "earliest available qualified technician"
+     },
+     {
+      "work_order_id": "WO-AST-RTU-01-202610270700-4de6aa",
+      "technician_id": "T11",
+      "status": "assigned",
+      "start_min": 435,
+      "travel_min": 116,
+      "arrival_min": 551,
+      "lateness_min": 0,
+      "runner_up_id": "T02",
+      "reason": "earliest available qualified technician"
+     },
+     {
+      "work_order_id": "WO-AST-RTU-01-202610270700-127477",
+      "technician_id": "T02",
+      "status": "assigned",
+      "start_min": 547,
+      "travel_min": 22,
+      "arrival_min": 569,
+      "lateness_min": 0,
+      "runner_up_id": "T11",
+      "reason": "earliest available qualified technician"
+     },
+     {
+      "work_order_id": "WO-AST-RTU-01-202610270700-48de95",
+      "technician_id": "T02",
+      "status": "assigned",
+      "start_min": 659,
+      "travel_min": 22,
+      "arrival_min": 681,
+      "lateness_min": 21,
+      "runner_up_id": "T11",
+      "reason": "earliest available qualified technician"
+     },
+     {
+      "work_order_id": "WO-AST-RTU-02-202610270700-dd3dcb",
+      "technician_id": "T01",
+      "status": "assigned",
+      "start_min": 435,
+      "travel_min": 0,
+      "arrival_min": 435,
+      "lateness_min": 0,
+      "runner_up_id": "T09",
+      "reason": "earliest available qualified technician"
+     },
+     {
+      "work_order_id": "WO-AST-RTU-02-202610271400-73d719",
+      "technician_id": "T09",
+      "status": "assigned",
+      "start_min": 858,
+      "travel_min": 42,
+      "arrival_min": 900,
+      "lateness_min": 0,
+      "runner_up_id": null,
+      "reason": "earliest available qualified technician"
+     }
+    ]
+   }
+  },
+  "2026-10-28 Wed": {
+   "ortools": {
+    "score": {
+     "jobs": 9,
+     "assigned": 8,
+     "escalated_unassigned": 0,
+     "reschedule_requested": 1,
+     "sla_lateness_total_min": 21,
+     "late_jobs": 1,
+     "travel_total_min": 204,
+     "max_workload_min": 448,
+     "workload_std_min_active_techs": 108.1,
+     "technicians_used": 3,
+     "constraint_violations": 0,
+     "solve_seconds": 0.01,
+     "solver_status": "OPTIMAL"
+    },
+    "assignments": [
+     {
+      "work_order_id": "WO-AST-RTU-01-202610281000-c490ef",
+      "technician_id": "T02",
+      "status": "assigned",
+      "start_min": 771,
+      "travel_min": 22,
+      "arrival_min": 793,
+      "lateness_min": 0,
+      "runner_up_id": "T11",
+      "reason": "lowest weighted cost of lateness, travel, and workload"
+     },
+     {
+      "work_order_id": "WO-AST-RTU-01-202610280700-74bdbd",
+      "technician_id": "T11",
+      "status": "assigned",
+      "start_min": 435,
+      "travel_min": 116,
+      "arrival_min": 551,
+      "lateness_min": 0,
+      "runner_up_id": "T02",
+      "reason": "lowest weighted cost of lateness, travel, and workload"
+     },
+     {
+      "work_order_id": "WO-AST-RTU-01-202610280700-ec1a95",
+      "technician_id": "T02",
+      "status": "assigned",
+      "start_min": 659,
+      "travel_min": 22,
+      "arrival_min": 681,
+      "lateness_min": 21,
+      "runner_up_id": "T11",
+      "reason": "lowest weighted cost of lateness, travel, and workload"
+     },
+     {
+      "work_order_id": "WO-AST-RTU-01-202610280700-f73323",
+      "technician_id": "T02",
+      "status": "assigned",
+      "start_min": 547,
+      "travel_min": 22,
+      "arrival_min": 569,
+      "lateness_min": 0,
+      "runner_up_id": "T11",
+      "reason": "lowest weighted cost of lateness, travel, and workload"
+     },
+     {
+      "work_order_id": "WO-AST-RTU-01-202610280700-19f514",
+      "technician_id": "T02",
+      "status": "assigned",
+      "start_min": 435,
+      "travel_min": 22,
+      "arrival_min": 457,
+      "lateness_min": 0,
+      "runner_up_id": "T11",
+      "reason": "lowest weighted cost of lateness, travel, and workload"
+     },
+     {
+      "work_order_id": "WO-AST-RTU-02-202610280700-0cb897",
+      "technician_id": "T01",
+      "status": "assigned",
+      "start_min": 435,
+      "travel_min": 0,
+      "arrival_min": 435,
+      "lateness_min": 0,
+      "runner_up_id": "T09",
+      "reason": "lowest weighted cost of lateness, travel, and workload"
+     },
+     {
+      "work_order_id": "WO-AST-RTU-02-202610280900-316728",
+      "technician_id": "T01",
+      "status": "assigned",
+      "start_min": 615,
+      "travel_min": 0,
+      "arrival_min": 615,
+      "lateness_min": 0,
+      "runner_up_id": "T09",
+      "reason": "lowest weighted cost of lateness, travel, and workload"
+     },
+     {
+      "work_order_id": "WO-AST-RTU-02-202610281000-a483b2",
+      "technician_id": "T01",
+      "status": "assigned",
+      "start_min": 735,
+      "travel_min": 0,
+      "arrival_min": 735,
+      "lateness_min": 0,
+      "runner_up_id": "T09",
+      "reason": "lowest weighted cost of lateness, travel, and workload"
+     },
+     {
+      "work_order_id": "WO-AST-RTU-03-202610281100-6a1f2f",
+      "technician_id": null,
+      "status": "reschedule_requested",
+      "start_min": null,
+      "travel_min": null,
+      "arrival_min": null,
+      "lateness_min": null,
+      "runner_up_id": null,
+      "reason": "qualified technicians exist but none has capacity in the planning horizon"
+     }
+    ]
+   },
+   "nearest_qualified": {
+    "score": {
+     "jobs": 9,
+     "assigned": 8,
+     "escalated_unassigned": 0,
+     "reschedule_requested": 1,
+     "sla_lateness_total_min": 154,
+     "late_jobs": 2,
+     "travel_total_min": 204,
+     "max_workload_min": 448,
+     "workload_std_min_active_techs": 108.1,
+     "technicians_used": 3,
+     "constraint_violations": 0,
+     "solve_seconds": 0.0,
+     "solver_status": "GREEDY"
+    },
+    "assignments": [
+     {
+      "work_order_id": "WO-AST-RTU-01-202610280700-74bdbd",
+      "technician_id": "T02",
+      "status": "assigned",
+      "start_min": 435,
+      "travel_min": 22,
+      "arrival_min": 457,
+      "lateness_min": 0,
+      "runner_up_id": "T11",
+      "reason": "nearest qualified technician"
+     },
+     {
+      "work_order_id": "WO-AST-RTU-01-202610280700-ec1a95",
+      "technician_id": "T02",
+      "status": "assigned",
+      "start_min": 547,
+      "travel_min": 22,
+      "arrival_min": 569,
+      "lateness_min": 0,
+      "runner_up_id": "T11",
+      "reason": "nearest qualified technician"
+     },
+     {
+      "work_order_id": "WO-AST-RTU-01-202610280700-f73323",
+      "technician_id": "T02",
+      "status": "assigned",
+      "start_min": 659,
+      "travel_min": 22,
+      "arrival_min": 681,
+      "lateness_min": 21,
+      "runner_up_id": "T11",
+      "reason": "nearest qualified technician"
+     },
+     {
+      "work_order_id": "WO-AST-RTU-01-202610280700-19f514",
+      "technician_id": "T02",
+      "status": "assigned",
+      "start_min": 771,
+      "travel_min": 22,
+      "arrival_min": 793,
+      "lateness_min": 133,
+      "runner_up_id": "T11",
+      "reason": "nearest qualified technician"
+     },
+     {
+      "work_order_id": "WO-AST-RTU-02-202610280700-0cb897",
+      "technician_id": "T01",
+      "status": "assigned",
+      "start_min": 435,
+      "travel_min": 0,
+      "arrival_min": 435,
+      "lateness_min": 0,
+      "runner_up_id": "T09",
+      "reason": "nearest qualified technician"
+     },
+     {
+      "work_order_id": "WO-AST-RTU-02-202610280900-316728",
+      "technician_id": "T01",
+      "status": "assigned",
+      "start_min": 615,
+      "travel_min": 0,
+      "arrival_min": 615,
+      "lateness_min": 0,
+      "runner_up_id": "T09",
+      "reason": "nearest qualified technician"
+     },
+     {
+      "work_order_id": "WO-AST-RTU-01-202610281000-c490ef",
+      "technician_id": "T11",
+      "status": "assigned",
+      "start_min": 615,
+      "travel_min": 116,
+      "arrival_min": 731,
+      "lateness_min": 0,
+      "runner_up_id": "T02",
+      "reason": "nearest qualified technician"
+     },
+     {
+      "work_order_id": "WO-AST-RTU-02-202610281000-a483b2",
+      "technician_id": "T01",
+      "status": "assigned",
+      "start_min": 735,
+      "travel_min": 0,
+      "arrival_min": 735,
+      "lateness_min": 0,
+      "runner_up_id": "T09",
+      "reason": "nearest qualified technician"
+     },
+     {
+      "work_order_id": "WO-AST-RTU-03-202610281100-6a1f2f",
+      "technician_id": null,
+      "status": "reschedule_requested",
+      "start_min": null,
+      "travel_min": null,
+      "arrival_min": null,
+      "lateness_min": null,
+      "runner_up_id": null,
+      "reason": "qualified technicians exist but none has capacity in the planning horizon"
+     }
+    ]
+   },
+   "earliest_available": {
+    "score": {
+     "jobs": 9,
+     "assigned": 8,
+     "escalated_unassigned": 0,
+     "reschedule_requested": 1,
+     "sla_lateness_total_min": 21,
+     "late_jobs": 1,
+     "travel_total_min": 298,
+     "max_workload_min": 420,
+     "workload_std_min_active_techs": 37.9,
+     "technicians_used": 3,
+     "constraint_violations": 0,
+     "solve_seconds": 0.0,
+     "solver_status": "GREEDY"
+    },
+    "assignments": [
+     {
+      "work_order_id": "WO-AST-RTU-01-202610280700-74bdbd",
+      "technician_id": "T02",
+      "status": "assigned",
+      "start_min": 435,
+      "travel_min": 22,
+      "arrival_min": 457,
+      "lateness_min": 0,
+      "runner_up_id": "T11",
+      "reason": "earliest available qualified technician"
+     },
+     {
+      "work_order_id": "WO-AST-RTU-01-202610280700-ec1a95",
+      "technician_id": "T11",
+      "status": "assigned",
+      "start_min": 435,
+      "travel_min": 116,
+      "arrival_min": 551,
+      "lateness_min": 0,
+      "runner_up_id": "T02",
+      "reason": "earliest available qualified technician"
+     },
+     {
+      "work_order_id": "WO-AST-RTU-01-202610280700-f73323",
+      "technician_id": "T02",
+      "status": "assigned",
+      "start_min": 547,
+      "travel_min": 22,
+      "arrival_min": 569,
+      "lateness_min": 0,
+      "runner_up_id": "T11",
+      "reason": "earliest available qualified technician"
+     },
+     {
+      "work_order_id": "WO-AST-RTU-01-202610280700-19f514",
+      "technician_id": "T02",
+      "status": "assigned",
+      "start_min": 659,
+      "travel_min": 22,
+      "arrival_min": 681,
+      "lateness_min": 21,
+      "runner_up_id": "T11",
+      "reason": "earliest available qualified technician"
+     },
+     {
+      "work_order_id": "WO-AST-RTU-02-202610280700-0cb897",
+      "technician_id": "T01",
+      "status": "assigned",
+      "start_min": 435,
+      "travel_min": 0,
+      "arrival_min": 435,
+      "lateness_min": 0,
+      "runner_up_id": "T09",
+      "reason": "earliest available qualified technician"
+     },
+     {
+      "work_order_id": "WO-AST-RTU-02-202610280900-316728",
+      "technician_id": "T01",
+      "status": "assigned",
+      "start_min": 615,
+      "travel_min": 0,
+      "arrival_min": 615,
+      "lateness_min": 0,
+      "runner_up_id": "T09",
+      "reason": "earliest available qualified technician"
+     },
+     {
+      "work_order_id": "WO-AST-RTU-01-202610281000-c490ef",
+      "technician_id": "T11",
+      "status": "assigned",
+      "start_min": 641,
+      "travel_min": 116,
+      "arrival_min": 757,
+      "lateness_min": 0,
+      "runner_up_id": "T02",
+      "reason": "earliest available qualified technician"
+     },
+     {
+      "work_order_id": "WO-AST-RTU-02-202610281000-a483b2",
+      "technician_id": "T01",
+      "status": "assigned",
+      "start_min": 735,
+      "travel_min": 0,
+      "arrival_min": 735,
+      "lateness_min": 0,
+      "runner_up_id": "T09",
+      "reason": "earliest available qualified technician"
+     },
+     {
+      "work_order_id": "WO-AST-RTU-03-202610281100-6a1f2f",
+      "technician_id": null,
+      "status": "reschedule_requested",
+      "start_min": null,
+      "travel_min": null,
+      "arrival_min": null,
+      "lateness_min": null,
+      "runner_up_id": null,
+      "reason": "qualified technicians exist but none has capacity in the planning horizon"
+     }
+    ]
+   }
+  },
+  "2026-10-29 Thu": {
+   "ortools": {
+    "score": {
+     "jobs": 9,
+     "assigned": 9,
+     "escalated_unassigned": 0,
+     "reschedule_requested": 0,
+     "sla_lateness_total_min": 180,
+     "late_jobs": 1,
+     "travel_total_min": 253,
+     "max_workload_min": 448,
+     "workload_std_min_active_techs": 133.2,
+     "technicians_used": 4,
+     "constraint_violations": 0,
+     "solve_seconds": 0.01,
+     "solver_status": "OPTIMAL"
+    },
+    "assignments": [
+     {
+      "work_order_id": "WO-AST-AHU-02-202610290000-af92fb",
+      "technician_id": "T05",
+      "status": "assigned",
+      "start_min": 371,
+      "travel_min": 49,
+      "arrival_min": 420,
+      "lateness_min": 180,
+      "runner_up_id": "T11",
+      "reason": "lowest weighted cost of lateness, travel, and workload"
+     },
+     {
+      "work_order_id": "WO-AST-RTU-01-202610290900-2a2d1d",
+      "technician_id": "T11",
+      "status": "assigned",
+      "start_min": 555,
+      "travel_min": 116,
+      "arrival_min": 671,
+      "lateness_min": 0,
+      "runner_up_id": "T02",
+      "reason": "lowest weighted cost of lateness, travel, and workload"
+     },
+     {
+      "work_order_id": "WO-AST-RTU-01-202610290700-46b0d2",
+      "technician_id": "T02",
+      "status": "assigned",
+      "start_min": 435,
+      "travel_min": 22,
+      "arrival_min": 457,
+      "lateness_min": 0,
+      "runner_up_id": "T11",
+      "reason": "lowest weighted cost of lateness, travel, and workload"
+     },
+     {
+      "work_order_id": "WO-AST-RTU-01-202610291100-5fca3e",
+      "technician_id": "T02",
+      "status": "assigned",
+      "start_min": 771,
+      "travel_min": 22,
+      "arrival_min": 793,
+      "lateness_min": 0,
+      "runner_up_id": "T11",
+      "reason": "lowest weighted cost of lateness, travel, and workload"
+     },
+     {
+      "work_order_id": "WO-AST-RTU-01-202610290800-6ea40a",
+      "technician_id": "T02",
+      "status": "assigned",
+      "start_min": 659,
+      "travel_min": 22,
+      "arrival_min": 681,
+      "lateness_min": 0,
+      "runner_up_id": "T11",
+      "reason": "lowest weighted cost of lateness, travel, and workload"
+     },
+     {
+      "work_order_id": "WO-AST-RTU-01-202610290700-e956b0",
+      "technician_id": "T02",
+      "status": "assigned",
+      "start_min": 547,
+      "travel_min": 22,
+      "arrival_min": 569,
+      "lateness_min": 0,
+      "runner_up_id": "T11",
+      "reason": "lowest weighted cost of lateness, travel, and workload"
+     },
+     {
+      "work_order_id": "WO-AST-RTU-02-202610290700-3a3dd3",
+      "technician_id": "T01",
+      "status": "assigned",
+      "start_min": 435,
+      "travel_min": 0,
+      "arrival_min": 435,
+      "lateness_min": 0,
+      "runner_up_id": "T09",
+      "reason": "lowest weighted cost of lateness, travel, and workload"
+     },
+     {
+      "work_order_id": "WO-AST-RTU-02-202610290700-8a0581",
+      "technician_id": "T01",
+      "status": "assigned",
+      "start_min": 555,
+      "travel_min": 0,
+      "arrival_min": 555,
+      "lateness_min": 0,
+      "runner_up_id": "T09",
+      "reason": "lowest weighted cost of lateness, travel, and workload"
+     },
+     {
+      "work_order_id": "WO-AST-RTU-02-202610290800-96c163",
+      "technician_id": "T01",
+      "status": "assigned",
+      "start_min": 675,
+      "travel_min": 0,
+      "arrival_min": 675,
+      "lateness_min": 0,
+      "runner_up_id": "T09",
+      "reason": "lowest weighted cost of lateness, travel, and workload"
+     }
+    ]
+   },
+   "nearest_qualified": {
+    "score": {
+     "jobs": 9,
+     "assigned": 9,
+     "escalated_unassigned": 0,
+     "reschedule_requested": 0,
+     "sla_lateness_total_min": 193,
+     "late_jobs": 2,
+     "travel_total_min": 253,
+     "max_workload_min": 448,
+     "workload_std_min_active_techs": 133.2,
+     "technicians_used": 4,
+     "constraint_violations": 0,
+     "solve_seconds": 0.0,
+     "solver_status": "GREEDY"
+    },
+    "assignments": [
+     {
+      "work_order_id": "WO-AST-AHU-02-202610290000-af92fb",
+      "technician_id": "T05",
+      "status": "assigned",
+      "start_min": 371,
+      "travel_min": 49,
+      "arrival_min": 420,
+      "lateness_min": 180,
+      "runner_up_id": "T11",
+      "reason": "nearest qualified technician"
+     },
+     {
+      "work_order_id": "WO-AST-RTU-01-202610290700-46b0d2",
+      "technician_id": "T02",
+      "status": "assigned",
+      "start_min": 435,
+      "travel_min": 22,
+      "arrival_min": 457,
+      "lateness_min": 0,
+      "runner_up_id": "T11",
+      "reason": "nearest qualified technician"
+     },
+     {
+      "work_order_id": "WO-AST-RTU-01-202610290700-e956b0",
+      "technician_id": "T02",
+      "status": "assigned",
+      "start_min": 547,
+      "travel_min": 22,
+      "arrival_min": 569,
+      "lateness_min": 0,
+      "runner_up_id": "T11",
+      "reason": "nearest qualified technician"
+     },
+     {
+      "work_order_id": "WO-AST-RTU-02-202610290700-3a3dd3",
+      "technician_id": "T01",
+      "status": "assigned",
+      "start_min": 435,
+      "travel_min": 0,
+      "arrival_min": 435,
+      "lateness_min": 0,
+      "runner_up_id": "T09",
+      "reason": "nearest qualified technician"
+     },
+     {
+      "work_order_id": "WO-AST-RTU-02-202610290700-8a0581",
+      "technician_id": "T01",
+      "status": "assigned",
+      "start_min": 555,
+      "travel_min": 0,
+      "arrival_min": 555,
+      "lateness_min": 0,
+      "runner_up_id": "T09",
+      "reason": "nearest qualified technician"
+     },
+     {
+      "work_order_id": "WO-AST-RTU-01-202610290800-6ea40a",
+      "technician_id": "T02",
+      "status": "assigned",
+      "start_min": 659,
+      "travel_min": 22,
+      "arrival_min": 681,
+      "lateness_min": 0,
+      "runner_up_id": "T11",
+      "reason": "nearest qualified technician"
+     },
+     {
+      "work_order_id": "WO-AST-RTU-02-202610290800-96c163",
+      "technician_id": "T01",
+      "status": "assigned",
+      "start_min": 675,
+      "travel_min": 0,
+      "arrival_min": 675,
+      "lateness_min": 0,
+      "runner_up_id": "T09",
+      "reason": "nearest qualified technician"
+     },
+     {
+      "work_order_id": "WO-AST-RTU-01-202610290900-2a2d1d",
+      "technician_id": "T02",
+      "status": "assigned",
+      "start_min": 771,
+      "travel_min": 22,
+      "arrival_min": 793,
+      "lateness_min": 13,
+      "runner_up_id": "T11",
+      "reason": "nearest qualified technician"
+     },
+     {
+      "work_order_id": "WO-AST-RTU-01-202610291100-5fca3e",
+      "technician_id": "T11",
+      "status": "assigned",
+      "start_min": 675,
+      "travel_min": 116,
+      "arrival_min": 791,
+      "lateness_min": 0,
+      "runner_up_id": "T02",
+      "reason": "nearest qualified technician"
+     }
+    ]
+   },
+   "earliest_available": {
+    "score": {
+     "jobs": 9,
+     "assigned": 9,
+     "escalated_unassigned": 0,
+     "reschedule_requested": 0,
+     "sla_lateness_total_min": 180,
+     "late_jobs": 1,
+     "travel_total_min": 347,
+     "max_workload_min": 420,
+     "workload_std_min_active_techs": 113.2,
+     "technicians_used": 4,
+     "constraint_violations": 0,
+     "solve_seconds": 0.0,
+     "solver_status": "GREEDY"
+    },
+    "assignments": [
+     {
+      "work_order_id": "WO-AST-AHU-02-202610290000-af92fb",
+      "technician_id": "T05",
+      "status": "assigned",
+      "start_min": 371,
+      "travel_min": 49,
+      "arrival_min": 420,
+      "lateness_min": 180,
+      "runner_up_id": "T11",
+      "reason": "earliest available qualified technician"
+     },
+     {
+      "work_order_id": "WO-AST-RTU-01-202610290700-46b0d2",
+      "technician_id": "T02",
+      "status": "assigned",
+      "start_min": 435,
+      "travel_min": 22,
+      "arrival_min": 457,
+      "lateness_min": 0,
+      "runner_up_id": "T11",
+      "reason": "earliest available qualified technician"
+     },
+     {
+      "work_order_id": "WO-AST-RTU-01-202610290700-e956b0",
+      "technician_id": "T11",
+      "status": "assigned",
+      "start_min": 435,
+      "travel_min": 116,
+      "arrival_min": 551,
+      "lateness_min": 0,
+      "runner_up_id": "T02",
+      "reason": "earliest available qualified technician"
+     },
+     {
+      "work_order_id": "WO-AST-RTU-02-202610290700-3a3dd3",
+      "technician_id": "T01",
+      "status": "assigned",
+      "start_min": 435,
+      "travel_min": 0,
+      "arrival_min": 435,
+      "lateness_min": 0,
+      "runner_up_id": "T09",
+      "reason": "earliest available qualified technician"
+     },
+     {
+      "work_order_id": "WO-AST-RTU-02-202610290700-8a0581",
+      "technician_id": "T01",
+      "status": "assigned",
+      "start_min": 555,
+      "travel_min": 0,
+      "arrival_min": 555,
+      "lateness_min": 0,
+      "runner_up_id": "T09",
+      "reason": "earliest available qualified technician"
+     },
+     {
+      "work_order_id": "WO-AST-RTU-01-202610290800-6ea40a",
+      "technician_id": "T02",
+      "status": "assigned",
+      "start_min": 547,
+      "travel_min": 22,
+      "arrival_min": 569,
+      "lateness_min": 0,
+      "runner_up_id": "T11",
+      "reason": "earliest available qualified technician"
+     },
+     {
+      "work_order_id": "WO-AST-RTU-02-202610290800-96c163",
+      "technician_id": "T01",
+      "status": "assigned",
+      "start_min": 675,
+      "travel_min": 0,
+      "arrival_min": 675,
+      "lateness_min": 0,
+      "runner_up_id": "T09",
+      "reason": "earliest available qualified technician"
+     },
+     {
+      "work_order_id": "WO-AST-RTU-01-202610290900-2a2d1d",
+      "technician_id": "T02",
+      "status": "assigned",
+      "start_min": 659,
+      "travel_min": 22,
+      "arrival_min": 681,
+      "lateness_min": 0,
+      "runner_up_id": "T11",
+      "reason": "earliest available qualified technician"
+     },
+     {
+      "work_order_id": "WO-AST-RTU-01-202610291100-5fca3e",
+      "technician_id": "T11",
+      "status": "assigned",
+      "start_min": 675,
+      "travel_min": 116,
+      "arrival_min": 791,
+      "lateness_min": 0,
+      "runner_up_id": "T02",
+      "reason": "earliest available qualified technician"
+     }
+    ]
+   }
+  },
+  "2026-10-30 Fri": {
+   "ortools": {
+    "score": {
+     "jobs": 7,
+     "assigned": 6,
+     "escalated_unassigned": 0,
+     "reschedule_requested": 1,
+     "sla_lateness_total_min": 180,
+     "late_jobs": 1,
+     "travel_total_min": 193,
+     "max_workload_min": 224,
+     "workload_std_min_active_techs": 43.7,
+     "technicians_used": 5,
+     "constraint_violations": 0,
+     "solve_seconds": 0.01,
+     "solver_status": "OPTIMAL"
+    },
+    "assignments": [
+     {
+      "work_order_id": "WO-AST-AHU-02-202610300400-360538",
+      "technician_id": "T11",
+      "status": "assigned",
+      "start_min": 422,
+      "travel_min": 58,
+      "arrival_min": 480,
+      "lateness_min": 0,
+      "runner_up_id": "T05",
+      "reason": "lowest weighted cost of lateness, travel, and workload"
+     },
+     {
+      "work_order_id": "WO-AST-AHU-02-202610300000-3f9281",
+      "technician_id": "T05",
+      "status": "assigned",
+      "start_min": 371,
+      "travel_min": 49,
+      "arrival_min": 420,
+      "lateness_min": 180,
+      "runner_up_id": "T11",
+      "reason": "lowest weighted cost of lateness, travel, and workload"
+     },
+     {
+      "work_order_id": "WO-AST-RTU-01-202610300700-7699c3",
+      "technician_id": "T02",
+      "status": "assigned",
+      "start_min": 547,
+      "travel_min": 22,
+      "arrival_min": 569,
+      "lateness_min": 0,
+      "runner_up_id": "T11",
+      "reason": "lowest weighted cost of lateness, travel, and workload"
+     },
+     {
+      "work_order_id": "WO-AST-RTU-01-202610300700-541000",
+      "technician_id": "T02",
+      "status": "assigned",
+      "start_min": 435,
+      "travel_min": 22,
+      "arrival_min": 457,
+      "lateness_min": 0,
+      "runner_up_id": "T11",
+      "reason": "lowest weighted cost of lateness, travel, and workload"
+     },
+     {
+      "work_order_id": "WO-AST-RTU-02-202610300900-f414e3",
+      "technician_id": "T01",
+      "status": "assigned",
+      "start_min": 555,
+      "travel_min": 0,
+      "arrival_min": 555,
+      "lateness_min": 0,
+      "runner_up_id": "T16",
+      "reason": "lowest weighted cost of lateness, travel, and workload"
+     },
+     {
+      "work_order_id": "WO-AST-RTU-03-202610300800-de7085",
+      "technician_id": null,
+      "status": "reschedule_requested",
+      "start_min": null,
+      "travel_min": null,
+      "arrival_min": null,
+      "lateness_min": null,
+      "runner_up_id": null,
+      "reason": "qualified technicians exist but none has capacity in the planning horizon"
+     },
+     {
+      "work_order_id": "WO-AST-RTU-04-202610301100-aa2c22",
+      "technician_id": "T16",
+      "status": "assigned",
+      "start_min": 858,
+      "travel_min": 42,
+      "arrival_min": 900,
+      "lateness_min": 0,
+      "runner_up_id": "T01",
+      "reason": "lowest weighted cost of lateness, travel, and workload"
+     }
+    ]
+   },
+   "nearest_qualified": {
+    "score": {
+     "jobs": 7,
+     "assigned": 6,
+     "escalated_unassigned": 0,
+     "reschedule_requested": 1,
+     "sla_lateness_total_min": 842,
+     "late_jobs": 4,
+     "travel_total_min": 166,
+     "max_workload_min": 428,
+     "workload_std_min_active_techs": 125.8,
+     "technicians_used": 3,
+     "constraint_violations": 0,
+     "solve_seconds": 0.0,
+     "solver_status": "GREEDY"
+    },
+    "assignments": [
+     {
+      "work_order_id": "WO-AST-AHU-02-202610300000-3f9281",
+      "technician_id": "T05",
+      "status": "assigned",
+      "start_min": 371,
+      "travel_min": 49,
+      "arrival_min": 420,
+      "lateness_min": 180,
+      "runner_up_id": "T11",
+      "reason": "nearest qualified technician"
+     },
+     {
+      "work_order_id": "WO-AST-AHU-02-202610300400-360538",
+      "technician_id": "T05",
+      "status": "assigned",
+      "start_min": 510,
+      "travel_min": 49,
+      "arrival_min": 559,
+      "lateness_min": 79,
+      "runner_up_id": "T11",
+      "reason": "nearest qualified technician"
+     },
+     {
+      "work_order_id": "WO-AST-RTU-01-202610300700-7699c3",
+      "technician_id": "T16",
+      "status": "assigned",
+      "start_min": 887,
+      "travel_min": 13,
+      "arrival_min": 900,
+      "lateness_min": 240,
+      "runner_up_id": "T02",
+      "reason": "nearest qualified technician"
+     },
+     {
+      "work_order_id": "WO-AST-RTU-01-202610300700-541000",
+      "technician_id": "T16",
+      "status": "assigned",
+      "start_min": 990,
+      "travel_min": 13,
+      "arrival_min": 1003,
+      "lateness_min": 343,
+      "runner_up_id": "T02",
+      "reason": "nearest qualified technician"
+     },
+     {
+      "work_order_id": "WO-AST-RTU-03-202610300800-de7085",
+      "technician_id": null,
+      "status": "reschedule_requested",
+      "start_min": null,
+      "travel_min": null,
+      "arrival_min": null,
+      "lateness_min": null,
+      "runner_up_id": null,
+      "reason": "qualified technicians exist but none has capacity in the planning horizon"
+     },
+     {
+      "work_order_id": "WO-AST-RTU-02-202610300900-f414e3",
+      "technician_id": "T01",
+      "status": "assigned",
+      "start_min": 555,
+      "travel_min": 0,
+      "arrival_min": 555,
+      "lateness_min": 0,
+      "runner_up_id": "T16",
+      "reason": "nearest qualified technician"
+     },
+     {
+      "work_order_id": "WO-AST-RTU-04-202610301100-aa2c22",
+      "technician_id": "T16",
+      "status": "assigned",
+      "start_min": 1093,
+      "travel_min": 42,
+      "arrival_min": 1135,
+      "lateness_min": 0,
+      "runner_up_id": "T01",
+      "reason": "nearest qualified technician"
+     }
+    ]
+   },
+   "earliest_available": {
+    "score": {
+     "jobs": 7,
+     "assigned": 6,
+     "escalated_unassigned": 0,
+     "reschedule_requested": 1,
+     "sla_lateness_total_min": 180,
+     "late_jobs": 1,
+     "travel_total_min": 205,
+     "max_workload_min": 354,
+     "workload_std_min_active_techs": 86.1,
+     "technicians_used": 4,
+     "constraint_violations": 0,
+     "solve_seconds": 0.0,
+     "solver_status": "GREEDY"
+    },
+    "assignments": [
+     {
+      "work_order_id": "WO-AST-AHU-02-202610300000-3f9281",
+      "technician_id": "T05",
+      "status": "assigned",
+      "start_min": 371,
+      "travel_min": 49,
+      "arrival_min": 420,
+      "lateness_min": 180,
+      "runner_up_id": "T11",
+      "reason": "earliest available qualified technician"
+     },
+     {
+      "work_order_id": "WO-AST-AHU-02-202610300400-360538",
+      "technician_id": "T11",
+      "status": "assigned",
+      "start_min": 422,
+      "travel_min": 58,
+      "arrival_min": 480,
+      "lateness_min": 0,
+      "runner_up_id": "T05",
+      "reason": "earliest available qualified technician"
+     },
+     {
+      "work_order_id": "WO-AST-RTU-01-202610300700-7699c3",
+      "technician_id": "T02",
+      "status": "assigned",
+      "start_min": 435,
+      "travel_min": 22,
+      "arrival_min": 457,
+      "lateness_min": 0,
+      "runner_up_id": "T11",
+      "reason": "earliest available qualified technician"
+     },
+     {
+      "work_order_id": "WO-AST-RTU-01-202610300700-541000",
+      "technician_id": "T02",
+      "status": "assigned",
+      "start_min": 547,
+      "travel_min": 22,
+      "arrival_min": 569,
+      "lateness_min": 0,
+      "runner_up_id": "T11",
+      "reason": "earliest available qualified technician"
+     },
+     {
+      "work_order_id": "WO-AST-RTU-03-202610300800-de7085",
+      "technician_id": null,
+      "status": "reschedule_requested",
+      "start_min": null,
+      "travel_min": null,
+      "arrival_min": null,
+      "lateness_min": null,
+      "runner_up_id": null,
+      "reason": "qualified technicians exist but none has capacity in the planning horizon"
+     },
+     {
+      "work_order_id": "WO-AST-RTU-02-202610300900-f414e3",
+      "technician_id": "T01",
+      "status": "assigned",
+      "start_min": 555,
+      "travel_min": 0,
+      "arrival_min": 555,
+      "lateness_min": 0,
+      "runner_up_id": "T16",
+      "reason": "earliest available qualified technician"
+     },
+     {
+      "work_order_id": "WO-AST-RTU-04-202610301100-aa2c22",
+      "technician_id": "T01",
+      "status": "assigned",
+      "start_min": 675,
+      "travel_min": 54,
+      "arrival_min": 729,
+      "lateness_min": 0,
+      "runner_up_id": "T16",
+      "reason": "earliest available qualified technician"
+     }
+    ]
+   }
+  }
+ },
+ "surge_monday": {
+  "ortools": {
+   "score": {
+    "jobs": 37,
+    "assigned": 17,
+    "escalated_unassigned": 0,
+    "reschedule_requested": 20,
+    "sla_lateness_total_min": 921,
+    "late_jobs": 6,
+    "travel_total_min": 675,
+    "max_workload_min": 560,
+    "workload_std_min_active_techs": 168.9,
+    "technicians_used": 7,
+    "constraint_violations": 0,
+    "solve_seconds": 0.25,
+    "solver_status": "OPTIMAL",
+    "weighted_cost": 10165.0
+   },
+   "assignments": [
+    {
+     "work_order_id": "WO-AST-AHU-02-202610300400-360538",
+     "technician_id": "T04",
+     "status": "assigned",
+     "start_min": 392,
+     "travel_min": 88,
+     "arrival_min": 480,
+     "lateness_min": 0,
+     "runner_up_id": "T05",
+     "reason": "lowest weighted cost of lateness, travel, and workload"
+    },
+    {
+     "work_order_id": "WO-AST-AHU-02-202610290000-af92fb",
+     "technician_id": "T11",
+     "status": "assigned",
+     "start_min": 422,
+     "travel_min": 58,
+     "arrival_min": 480,
+     "lateness_min": 240,
+     "runner_up_id": "T05",
+     "reason": "lowest weighted cost of lateness, travel, and workload"
+    },
+    {
+     "work_order_id": "WO-AST-AHU-02-202610300000-3f9281",
+     "technician_id": "T05",
+     "status": "assigned",
+     "start_min": 371,
+     "travel_min": 49,
+     "arrival_min": 420,
+     "lateness_min": 180,
+     "runner_up_id": "T11",
+     "reason": "lowest weighted cost of lateness, travel, and workload"
+    },
+    {
+     "work_order_id": "WO-AST-RTU-01-202610260700-b1c20e",
+     "technician_id": null,
+     "status": "reschedule_requested",
+     "start_min": null,
+     "travel_min": null,
+     "arrival_min": null,
+     "lateness_min": null,
+     "runner_up_id": null,
+     "reason": "qualified technicians exist but none has capacity in the planning horizon"
+    },
+    {
+     "work_order_id": "WO-AST-RTU-01-202610270700-0490d8",
+     "technician_id": null,
+     "status": "reschedule_requested",
+     "start_min": null,
+     "travel_min": null,
+     "arrival_min": null,
+     "lateness_min": null,
+     "runner_up_id": null,
+     "reason": "qualified technicians exist but none has capacity in the planning horizon"
+    },
+    {
+     "work_order_id": "WO-AST-RTU-01-202610281000-c490ef",
+     "technician_id": "T02",
+     "status": "assigned",
+     "start_min": 771,
+     "travel_min": 22,
+     "arrival_min": 793,
+     "lateness_min": 0,
+     "runner_up_id": "T11",
+     "reason": "lowest weighted cost of lateness, travel, and workload"
+    },
+    {
+     "work_order_id": "WO-AST-RTU-01-202610290900-2a2d1d",
+     "technician_id": null,
+     "status": "reschedule_requested",
+     "start_min": null,
+     "travel_min": null,
+     "arrival_min": null,
+     "lateness_min": null,
+     "runner_up_id": null,
+     "reason": "qualified technicians exist but none has capacity in the planning horizon"
+    },
+    {
+     "work_order_id": "WO-AST-RTU-01-202610300700-7699c3",
+     "technician_id": "T02",
+     "status": "assigned",
+     "start_min": 547,
+     "travel_min": 22,
+     "arrival_min": 569,
+     "lateness_min": 0,
+     "runner_up_id": "T11",
+     "reason": "lowest weighted cost of lateness, travel, and workload"
+    },
+    {
+     "work_order_id": "WO-AST-RTU-01-202610260700-ab58f7",
+     "technician_id": null,
+     "status": "reschedule_requested",
+     "start_min": null,
+     "travel_min": null,
+     "arrival_min": null,
+     "lateness_min": null,
+     "runner_up_id": null,
+     "reason": "qualified technicians exist but none has capacity in the planning horizon"
+    },
+    {
+     "work_order_id": "WO-AST-RTU-01-202610270700-4de6aa",
+     "technician_id": null,
+     "status": "reschedule_requested",
+     "start_min": null,
+     "travel_min": null,
+     "arrival_min": null,
+     "lateness_min": null,
+     "runner_up_id": null,
+     "reason": "qualified technicians exist but none has capacity in the planning horizon"
+    },
+    {
+     "work_order_id": "WO-AST-RTU-01-202610290700-46b0d2",
+     "technician_id": null,
+     "status": "reschedule_requested",
+     "start_min": null,
+     "travel_min": null,
+     "arrival_min": null,
+     "lateness_min": null,
+     "runner_up_id": null,
+     "reason": "qualified technicians exist but none has capacity in the planning horizon"
+    },
+    {
+     "work_order_id": "WO-AST-RTU-01-202610280700-74bdbd",
+     "technician_id": null,
+     "status": "reschedule_requested",
+     "start_min": null,
+     "travel_min": null,
+     "arrival_min": null,
+     "lateness_min": null,
+     "runner_up_id": null,
+     "reason": "qualified technicians exist but none has capacity in the planning horizon"
+    },
+    {
+     "work_order_id": "WO-AST-RTU-01-202610291100-5fca3e",
+     "technician_id": "T11",
+     "status": "assigned",
+     "start_min": 776,
+     "travel_min": 116,
+     "arrival_min": 892,
+     "lateness_min": 0,
+     "runner_up_id": "T02",
+     "reason": "lowest weighted cost of lateness, travel, and workload"
+    },
+    {
+     "work_order_id": "WO-AST-RTU-01-202610300700-541000",
+     "technician_id": null,
+     "status": "reschedule_requested",
+     "start_min": null,
+     "travel_min": null,
+     "arrival_min": null,
+     "lateness_min": null,
+     "runner_up_id": null,
+     "reason": "qualified technicians exist but none has capacity in the planning horizon"
+    },
+    {
+     "work_order_id": "WO-AST-RTU-01-202610270700-127477",
+     "technician_id": null,
+     "status": "reschedule_requested",
+     "start_min": null,
+     "travel_min": null,
+     "arrival_min": null,
+     "lateness_min": null,
+     "runner_up_id": null,
+     "reason": "qualified technicians exist but none has capacity in the planning horizon"
+    },
+    {
+     "work_order_id": "WO-AST-RTU-01-202610280700-ec1a95",
+     "technician_id": null,
+     "status": "reschedule_requested",
+     "start_min": null,
+     "travel_min": null,
+     "arrival_min": null,
+     "lateness_min": null,
+     "runner_up_id": null,
+     "reason": "qualified technicians exist but none has capacity in the planning horizon"
+    },
+    {
+     "work_order_id": "WO-AST-RTU-01-202610260800-7e0963",
+     "technician_id": "T02",
+     "status": "assigned",
+     "start_min": 659,
+     "travel_min": 22,
+     "arrival_min": 681,
+     "lateness_min": 0,
+     "runner_up_id": "T11",
+     "reason": "lowest weighted cost of lateness, travel, and workload"
+    },
+    {
+     "work_order_id": "WO-AST-RTU-01-202610280700-f73323",
+     "technician_id": null,
+     "status": "reschedule_requested",
+     "start_min": null,
+     "travel_min": null,
+     "arrival_min": null,
+     "lateness_min": null,
+     "runner_up_id": null,
+     "reason": "qualified technicians exist but none has capacity in the planning horizon"
+    },
+    {
+     "work_order_id": "WO-AST-RTU-01-202610290800-6ea40a",
+     "technician_id": "T11",
+     "status": "assigned",
+     "start_min": 570,
+     "travel_min": 116,
+     "arrival_min": 686,
+     "lateness_min": 0,
+     "runner_up_id": "T02",
+     "reason": "lowest weighted cost of lateness, travel, and workload"
+    },
+    {
+     "work_order_id": "WO-AST-RTU-01-202610270700-48de95",
+     "technician_id": "T02",
+     "status": "assigned",
+     "start_min": 435,
+     "travel_min": 22,
+     "arrival_min": 457,
+     "lateness_min": 0,
+     "runner_up_id": "T11",
+     "reason": "lowest weighted cost of lateness, travel, and workload"
+    },
+    {
+     "work_order_id": "WO-AST-RTU-01-202610280700-19f514",
+     "technician_id": null,
+     "status": "reschedule_requested",
+     "start_min": null,
+     "travel_min": null,
+     "arrival_min": null,
+     "lateness_min": null,
+     "runner_up_id": null,
+     "reason": "qualified technicians exist but none has capacity in the planning horizon"
+    },
+    {
+     "work_order_id": "WO-AST-RTU-01-202610290700-e956b0",
+     "technician_id": null,
+     "status": "reschedule_requested",
+     "start_min": null,
+     "travel_min": null,
+     "arrival_min": null,
+     "lateness_min": null,
+     "runner_up_id": null,
+     "reason": "qualified technicians exist but none has capacity in the planning horizon"
+    },
+    {
+     "work_order_id": "WO-AST-RTU-02-202610271400-73d719",
+     "technician_id": "T09",
+     "status": "assigned",
+     "start_min": 1182,
+     "travel_min": 42,
+     "arrival_min": 1224,
+     "lateness_min": 144,
+     "runner_up_id": null,
+     "reason": "lowest weighted cost of lateness, travel, and workload"
+    },
+    {
+     "work_order_id": "WO-AST-RTU-02-202610280700-0cb897",
+     "technician_id": null,
+     "status": "reschedule_requested",
+     "start_min": null,
+     "travel_min": null,
+     "arrival_min": null,
+     "lateness_min": null,
+     "runner_up_id": null,
+     "reason": "qualified technicians exist but none has capacity in the planning horizon"
+    },
+    {
+     "work_order_id": "WO-AST-RTU-02-202610290700-3a3dd3",
+     "technician_id": null,
+     "status": "reschedule_requested",
+     "start_min": null,
+     "travel_min": null,
+     "arrival_min": null,
+     "lateness_min": null,
+     "runner_up_id": null,
+     "reason": "qualified technicians exist but none has capacity in the planning horizon"
+    },
+    {
+     "work_order_id": "WO-AST-RTU-02-202610280900-316728",
+     "technician_id": "T01",
+     "status": "assigned",
+     "start_min": 795,
+     "travel_min": 0,
+     "arrival_min": 795,
+     "lateness_min": 15,
+     "runner_up_id": "T09",
+     "reason": "lowest weighted cost of lateness, travel, and workload"
+    },
+    {
+     "work_order_id": "WO-AST-RTU-02-202610290700-8a0581",
+     "technician_id": "T01",
+     "status": "assigned",
+     "start_min": 435,
+     "travel_min": 0,
+     "arrival_min": 435,
+     "lateness_min": 0,
+     "runner_up_id": "T09",
+     "reason": "lowest weighted cost of lateness, travel, and workload"
+    },
+    {
+     "work_order_id": "WO-AST-RTU-02-202610300900-f414e3",
+     "technician_id": "T09",
+     "status": "assigned",
+     "start_min": 1020,
+     "travel_min": 42,
+     "arrival_min": 1062,
+     "lateness_min": 282,
+     "runner_up_id": "T01",
+     "reason": "lowest weighted cost of lateness, travel, and workload"
+    },
+    {
+     "work_order_id": "WO-AST-RTU-02-202610260800-271201",
+     "technician_id": "T01",
+     "status": "assigned",
+     "start_min": 675,
+     "travel_min": 0,
+     "arrival_min": 675,
+     "lateness_min": 0,
+     "runner_up_id": "T09",
+     "reason": "lowest weighted cost of lateness, travel, and workload"
+    },
+    {
+     "work_order_id": "WO-AST-RTU-02-202610270700-dd3dcb",
+     "technician_id": "T01",
+     "status": "assigned",
+     "start_min": 555,
+     "travel_min": 0,
+     "arrival_min": 555,
+     "lateness_min": 0,
+     "runner_up_id": "T09",
+     "reason": "lowest weighted cost of lateness, travel, and workload"
+    },
+    {
+     "work_order_id": "WO-AST-RTU-02-202610281000-a483b2",
+     "technician_id": "T09",
+     "status": "assigned",
+     "start_min": 858,
+     "travel_min": 42,
+     "arrival_min": 900,
+     "lateness_min": 60,
+     "runner_up_id": "T01",
+     "reason": "lowest weighted cost of lateness, travel, and workload"
+    },
+    {
+     "work_order_id": "WO-AST-RTU-02-202610290800-96c163",
+     "technician_id": null,
+     "status": "reschedule_requested",
+     "start_min": null,
+     "travel_min": null,
+     "arrival_min": null,
+     "lateness_min": null,
+     "runner_up_id": null,
+     "reason": "qualified technicians exist but none has capacity in the planning horizon"
+    },
+    {
+     "work_order_id": "WO-AST-RTU-03-202610300800-de7085",
+     "technician_id": null,
+     "status": "reschedule_requested",
+     "start_min": null,
+     "travel_min": null,
+     "arrival_min": null,
+     "lateness_min": null,
+     "runner_up_id": null,
+     "reason": "qualified technicians exist but none has capacity in the planning horizon"
+    },
+    {
+     "work_order_id": "WO-AST-RTU-03-202610260700-2c482e",
+     "technician_id": null,
+     "status": "reschedule_requested",
+     "start_min": null,
+     "travel_min": null,
+     "arrival_min": null,
+     "lateness_min": null,
+     "runner_up_id": null,
+     "reason": "qualified technicians exist but none has capacity in the planning horizon"
+    },
+    {
+     "work_order_id": "WO-AST-RTU-03-202610281100-6a1f2f",
+     "technician_id": null,
+     "status": "reschedule_requested",
+     "start_min": null,
+     "travel_min": null,
+     "arrival_min": null,
+     "lateness_min": null,
+     "runner_up_id": null,
+     "reason": "qualified technicians exist but none has capacity in the planning horizon"
+    },
+    {
+     "work_order_id": "WO-AST-RTU-04-202610301100-aa2c22",
+     "technician_id": null,
+     "status": "reschedule_requested",
+     "start_min": null,
+     "travel_min": null,
+     "arrival_min": null,
+     "lateness_min": null,
+     "runner_up_id": null,
+     "reason": "qualified technicians exist but none has capacity in the planning horizon"
+    },
+    {
+     "work_order_id": "WO-AST-RTU-04-202610260900-985630",
+     "technician_id": "T10",
+     "status": "assigned",
+     "start_min": 555,
+     "travel_min": 34,
+     "arrival_min": 589,
+     "lateness_min": 0,
+     "runner_up_id": "T03",
+     "reason": "lowest weighted cost of lateness, travel, and workload"
+    }
+   ]
+  },
+  "nearest_qualified": {
+   "score": {
+    "jobs": 37,
+    "assigned": 16,
+    "escalated_unassigned": 0,
+    "reschedule_requested": 21,
+    "sla_lateness_total_min": 2129,
+    "late_jobs": 10,
+    "travel_total_min": 627,
+    "max_workload_min": 546,
+    "workload_std_min_active_techs": 98.7,
+    "technicians_used": 6,
+    "constraint_violations": 0,
+    "solve_seconds": 0.0,
+    "solver_status": "GREEDY",
+    "weighted_cost": 22190.0
+   },
+   "assignments": [
+    {
+     "work_order_id": "WO-AST-AHU-02-202610290000-af92fb",
+     "technician_id": "T05",
+     "status": "assigned",
+     "start_min": 371,
+     "travel_min": 49,
+     "arrival_min": 420,
+     "lateness_min": 180,
+     "runner_up_id": "T11",
+     "reason": "nearest qualified technician"
+    },
+    {
+     "work_order_id": "WO-AST-AHU-02-202610300000-3f9281",
+     "technician_id": "T05",
+     "status": "assigned",
+     "start_min": 510,
+     "travel_min": 49,
+     "arrival_min": 559,
+     "lateness_min": 319,
+     "runner_up_id": "T11",
+     "reason": "nearest qualified technician"
+    },
+    {
+     "work_order_id": "WO-AST-AHU-02-202610300400-360538",
+     "technician_id": "T05",
+     "status": "assigned",
+     "start_min": 649,
+     "travel_min": 49,
+     "arrival_min": 698,
+     "lateness_min": 218,
+     "runner_up_id": "T11",
+     "reason": "nearest qualified technician"
+    },
+    {
+     "work_order_id": "WO-AST-RTU-01-202610260700-b1c20e",
+     "technician_id": "T02",
+     "status": "assigned",
+     "start_min": 435,
+     "travel_min": 22,
+     "arrival_min": 457,
+     "lateness_min": 0,
+     "runner_up_id": "T11",
+     "reason": "nearest qualified technician"
+    },
+    {
+     "work_order_id": "WO-AST-RTU-01-202610270700-0490d8",
+     "technician_id": "T02",
+     "status": "assigned",
+     "start_min": 547,
+     "travel_min": 22,
+     "arrival_min": 569,
+     "lateness_min": 0,
+     "runner_up_id": "T11",
+     "reason": "nearest qualified technician"
+    },
+    {
+     "work_order_id": "WO-AST-RTU-01-202610300700-7699c3",
+     "technician_id": "T02",
+     "status": "assigned",
+     "start_min": 659,
+     "travel_min": 22,
+     "arrival_min": 681,
+     "lateness_min": 21,
+     "runner_up_id": "T11",
+     "reason": "nearest qualified technician"
+    },
+    {
+     "work_order_id": "WO-AST-RTU-01-202610260700-ab58f7",
+     "technician_id": "T02",
+     "status": "assigned",
+     "start_min": 771,
+     "travel_min": 22,
+     "arrival_min": 793,
+     "lateness_min": 133,
+     "runner_up_id": "T11",
+     "reason": "nearest qualified technician"
+    },
+    {
+     "work_order_id": "WO-AST-RTU-01-202610270700-4de6aa",
+     "technician_id": "T11",
+     "status": "assigned",
+     "start_min": 435,
+     "travel_min": 116,
+     "arrival_min": 551,
+     "lateness_min": 0,
+     "runner_up_id": "T02",
+     "reason": "nearest qualified technician"
+    },
+    {
+     "work_order_id": "WO-AST-RTU-01-202610290700-46b0d2",
+     "technician_id": "T11",
+     "status": "assigned",
+     "start_min": 641,
+     "travel_min": 116,
+     "arrival_min": 757,
+     "lateness_min": 97,
+     "runner_up_id": "T02",
+     "reason": "nearest qualified technician"
+    },
+    {
+     "work_order_id": "WO-AST-RTU-01-202610280700-74bdbd",
+     "technician_id": null,
+     "status": "reschedule_requested",
+     "start_min": null,
+     "travel_min": null,
+     "arrival_min": null,
+     "lateness_min": null,
+     "runner_up_id": null,
+     "reason": "qualified technicians exist but none has capacity in the planning horizon"
+    },
+    {
+     "work_order_id": "WO-AST-RTU-01-202610300700-541000",
+     "technician_id": null,
+     "status": "reschedule_requested",
+     "start_min": null,
+     "travel_min": null,
+     "arrival_min": null,
+     "lateness_min": null,
+     "runner_up_id": null,
+     "reason": "qualified technicians exist but none has capacity in the planning horizon"
+    },
+    {
+     "work_order_id": "WO-AST-RTU-01-202610270700-127477",
+     "technician_id": null,
+     "status": "reschedule_requested",
+     "start_min": null,
+     "travel_min": null,
+     "arrival_min": null,
+     "lateness_min": null,
+     "runner_up_id": null,
+     "reason": "qualified technicians exist but none has capacity in the planning horizon"
+    },
+    {
+     "work_order_id": "WO-AST-RTU-01-202610280700-ec1a95",
+     "technician_id": null,
+     "status": "reschedule_requested",
+     "start_min": null,
+     "travel_min": null,
+     "arrival_min": null,
+     "lateness_min": null,
+     "runner_up_id": null,
+     "reason": "qualified technicians exist but none has capacity in the planning horizon"
+    },
+    {
+     "work_order_id": "WO-AST-RTU-01-202610280700-f73323",
+     "technician_id": null,
+     "status": "reschedule_requested",
+     "start_min": null,
+     "travel_min": null,
+     "arrival_min": null,
+     "lateness_min": null,
+     "runner_up_id": null,
+     "reason": "qualified technicians exist but none has capacity in the planning horizon"
+    },
+    {
+     "work_order_id": "WO-AST-RTU-01-202610270700-48de95",
+     "technician_id": null,
+     "status": "reschedule_requested",
+     "start_min": null,
+     "travel_min": null,
+     "arrival_min": null,
+     "lateness_min": null,
+     "runner_up_id": null,
+     "reason": "qualified technicians exist but none has capacity in the planning horizon"
+    },
+    {
+     "work_order_id": "WO-AST-RTU-01-202610280700-19f514",
+     "technician_id": null,
+     "status": "reschedule_requested",
+     "start_min": null,
+     "travel_min": null,
+     "arrival_min": null,
+     "lateness_min": null,
+     "runner_up_id": null,
+     "reason": "qualified technicians exist but none has capacity in the planning horizon"
+    },
+    {
+     "work_order_id": "WO-AST-RTU-01-202610290700-e956b0",
+     "technician_id": null,
+     "status": "reschedule_requested",
+     "start_min": null,
+     "travel_min": null,
+     "arrival_min": null,
+     "lateness_min": null,
+     "runner_up_id": null,
+     "reason": "qualified technicians exist but none has capacity in the planning horizon"
+    },
+    {
+     "work_order_id": "WO-AST-RTU-02-202610280700-0cb897",
+     "technician_id": "T01",
+     "status": "assigned",
+     "start_min": 435,
+     "travel_min": 0,
+     "arrival_min": 435,
+     "lateness_min": 0,
+     "runner_up_id": "T09",
+     "reason": "nearest qualified technician"
+    },
+    {
+     "work_order_id": "WO-AST-RTU-02-202610290700-3a3dd3",
+     "technician_id": "T01",
+     "status": "assigned",
+     "start_min": 615,
+     "travel_min": 0,
+     "arrival_min": 615,
+     "lateness_min": 0,
+     "runner_up_id": "T09",
+     "reason": "nearest qualified technician"
+    },
+    {
+     "work_order_id": "WO-AST-RTU-02-202610290700-8a0581",
+     "technician_id": "T01",
+     "status": "assigned",
+     "start_min": 735,
+     "travel_min": 0,
+     "arrival_min": 735,
+     "lateness_min": 75,
+     "runner_up_id": "T09",
+     "reason": "nearest qualified technician"
+    },
+    {
+     "work_order_id": "WO-AST-RTU-02-202610270700-dd3dcb",
+     "technician_id": "T09",
+     "status": "assigned",
+     "start_min": 858,
+     "travel_min": 42,
+     "arrival_min": 900,
+     "lateness_min": 240,
+     "runner_up_id": "T01",
+     "reason": "nearest qualified technician"
+    },
+    {
+     "work_order_id": "WO-AST-RTU-03-202610260700-2c482e",
+     "technician_id": null,
+     "status": "reschedule_requested",
+     "start_min": null,
+     "travel_min": null,
+     "arrival_min": null,
+     "lateness_min": null,
+     "runner_up_id": null,
+     "reason": "qualified technicians exist but none has capacity in the planning horizon"
+    },
+    {
+     "work_order_id": "WO-AST-RTU-01-202610260800-7e0963",
+     "technician_id": null,
+     "status": "reschedule_requested",
+     "start_min": null,
+     "travel_min": null,
+     "arrival_min": null,
+     "lateness_min": null,
+     "runner_up_id": null,
+     "reason": "qualified technicians exist but none has capacity in the planning horizon"
+    },
+    {
+     "work_order_id": "WO-AST-RTU-01-202610290800-6ea40a",
+     "technician_id": null,
+     "status": "reschedule_requested",
+     "start_min": null,
+     "travel_min": null,
+     "arrival_min": null,
+     "lateness_min": null,
+     "runner_up_id": null,
+     "reason": "qualified technicians exist but none has capacity in the planning horizon"
+    },
+    {
+     "work_order_id": "WO-AST-RTU-02-202610260800-271201",
+     "technician_id": "T09",
+     "status": "assigned",
+     "start_min": 1020,
+     "travel_min": 42,
+     "arrival_min": 1062,
+     "lateness_min": 342,
+     "runner_up_id": "T01",
+     "reason": "nearest qualified technician"
+    },
+    {
+     "work_order_id": "WO-AST-RTU-02-202610290800-96c163",
+     "technician_id": "T09",
+     "status": "assigned",
+     "start_min": 1182,
+     "travel_min": 42,
+     "arrival_min": 1224,
+     "lateness_min": 504,
+     "runner_up_id": "T01",
+     "reason": "nearest qualified technician"
+    },
+    {
+     "work_order_id": "WO-AST-RTU-03-202610300800-de7085",
+     "technician_id": null,
+     "status": "reschedule_requested",
+     "start_min": null,
+     "travel_min": null,
+     "arrival_min": null,
+     "lateness_min": null,
+     "runner_up_id": null,
+     "reason": "qualified technicians exist but none has capacity in the planning horizon"
+    },
+    {
+     "work_order_id": "WO-AST-RTU-01-202610290900-2a2d1d",
+     "technician_id": null,
+     "status": "reschedule_requested",
+     "start_min": null,
+     "travel_min": null,
+     "arrival_min": null,
+     "lateness_min": null,
+     "runner_up_id": null,
+     "reason": "qualified technicians exist but none has capacity in the planning horizon"
+    },
+    {
+     "work_order_id": "WO-AST-RTU-02-202610280900-316728",
+     "technician_id": null,
+     "status": "reschedule_requested",
+     "start_min": null,
+     "travel_min": null,
+     "arrival_min": null,
+     "lateness_min": null,
+     "runner_up_id": null,
+     "reason": "qualified technicians exist but none has capacity in the planning horizon"
+    },
+    {
+     "work_order_id": "WO-AST-RTU-02-202610300900-f414e3",
+     "technician_id": null,
+     "status": "reschedule_requested",
+     "start_min": null,
+     "travel_min": null,
+     "arrival_min": null,
+     "lateness_min": null,
+     "runner_up_id": null,
+     "reason": "qualified technicians exist but none has capacity in the planning horizon"
+    },
+    {
+     "work_order_id": "WO-AST-RTU-04-202610260900-985630",
+     "technician_id": "T10",
+     "status": "assigned",
+     "start_min": 555,
+     "travel_min": 34,
+     "arrival_min": 589,
+     "lateness_min": 0,
+     "runner_up_id": "T03",
+     "reason": "nearest qualified technician"
+    },
+    {
+     "work_order_id": "WO-AST-RTU-01-202610281000-c490ef",
+     "technician_id": null,
+     "status": "reschedule_requested",
+     "start_min": null,
+     "travel_min": null,
+     "arrival_min": null,
+     "lateness_min": null,
+     "runner_up_id": null,
+     "reason": "qualified technicians exist but none has capacity in the planning horizon"
+    },
+    {
+     "work_order_id": "WO-AST-RTU-02-202610281000-a483b2",
+     "technician_id": null,
+     "status": "reschedule_requested",
+     "start_min": null,
+     "travel_min": null,
+     "arrival_min": null,
+     "lateness_min": null,
+     "runner_up_id": null,
+     "reason": "qualified technicians exist but none has capacity in the planning horizon"
+    },
+    {
+     "work_order_id": "WO-AST-RTU-01-202610291100-5fca3e",
+     "technician_id": null,
+     "status": "reschedule_requested",
+     "start_min": null,
+     "travel_min": null,
+     "arrival_min": null,
+     "lateness_min": null,
+     "runner_up_id": null,
+     "reason": "qualified technicians exist but none has capacity in the planning horizon"
+    },
+    {
+     "work_order_id": "WO-AST-RTU-04-202610301100-aa2c22",
+     "technician_id": null,
+     "status": "reschedule_requested",
+     "start_min": null,
+     "travel_min": null,
+     "arrival_min": null,
+     "lateness_min": null,
+     "runner_up_id": null,
+     "reason": "qualified technicians exist but none has capacity in the planning horizon"
+    },
+    {
+     "work_order_id": "WO-AST-RTU-03-202610281100-6a1f2f",
+     "technician_id": null,
+     "status": "reschedule_requested",
+     "start_min": null,
+     "travel_min": null,
+     "arrival_min": null,
+     "lateness_min": null,
+     "runner_up_id": null,
+     "reason": "qualified technicians exist but none has capacity in the planning horizon"
+    },
+    {
+     "work_order_id": "WO-AST-RTU-02-202610271400-73d719",
+     "technician_id": null,
+     "status": "reschedule_requested",
+     "start_min": null,
+     "travel_min": null,
+     "arrival_min": null,
+     "lateness_min": null,
+     "runner_up_id": null,
+     "reason": "qualified technicians exist but none has capacity in the planning horizon"
+    }
+   ]
+  },
+  "earliest_available": {
+   "score": {
+    "jobs": 37,
+    "assigned": 16,
+    "escalated_unassigned": 0,
+    "reschedule_requested": 21,
+    "sla_lateness_total_min": 1993,
+    "late_jobs": 10,
+    "travel_total_min": 675,
+    "max_workload_min": 560,
+    "workload_std_min_active_techs": 164.4,
+    "technicians_used": 7,
+    "constraint_violations": 0,
+    "solve_seconds": 0.0,
+    "solver_status": "GREEDY",
+    "weighted_cost": 20885.0
+   },
+   "assignments": [
+    {
+     "work_order_id": "WO-AST-AHU-02-202610290000-af92fb",
+     "technician_id": "T05",
+     "status": "assigned",
+     "start_min": 371,
+     "travel_min": 49,
+     "arrival_min": 420,
+     "lateness_min": 180,
+     "runner_up_id": "T11",
+     "reason": "earliest available qualified technician"
+    },
+    {
+     "work_order_id": "WO-AST-AHU-02-202610300000-3f9281",
+     "technician_id": "T11",
+     "status": "assigned",
+     "start_min": 422,
+     "travel_min": 58,
+     "arrival_min": 480,
+     "lateness_min": 240,
+     "runner_up_id": "T05",
+     "reason": "earliest available qualified technician"
+    },
+    {
+     "work_order_id": "WO-AST-AHU-02-202610300400-360538",
+     "technician_id": "T04",
+     "status": "assigned",
+     "start_min": 392,
+     "travel_min": 88,
+     "arrival_min": 480,
+     "lateness_min": 0,
+     "runner_up_id": "T05",
+     "reason": "earliest available qualified technician"
+    },
+    {
+     "work_order_id": "WO-AST-RTU-01-202610260700-b1c20e",
+     "technician_id": "T02",
+     "status": "assigned",
+     "start_min": 435,
+     "travel_min": 22,
+     "arrival_min": 457,
+     "lateness_min": 0,
+     "runner_up_id": "T11",
+     "reason": "earliest available qualified technician"
+    },
+    {
+     "work_order_id": "WO-AST-RTU-01-202610270700-0490d8",
+     "technician_id": "T02",
+     "status": "assigned",
+     "start_min": 547,
+     "travel_min": 22,
+     "arrival_min": 569,
+     "lateness_min": 0,
+     "runner_up_id": "T11",
+     "reason": "earliest available qualified technician"
+    },
+    {
+     "work_order_id": "WO-AST-RTU-01-202610300700-7699c3",
+     "technician_id": "T02",
+     "status": "assigned",
+     "start_min": 659,
+     "travel_min": 22,
+     "arrival_min": 681,
+     "lateness_min": 21,
+     "runner_up_id": "T11",
+     "reason": "earliest available qualified technician"
+    },
+    {
+     "work_order_id": "WO-AST-RTU-01-202610260700-ab58f7",
+     "technician_id": "T11",
+     "status": "assigned",
+     "start_min": 570,
+     "travel_min": 116,
+     "arrival_min": 686,
+     "lateness_min": 26,
+     "runner_up_id": "T02",
+     "reason": "earliest available qualified technician"
+    },
+    {
+     "work_order_id": "WO-AST-RTU-01-202610270700-4de6aa",
+     "technician_id": "T02",
+     "status": "assigned",
+     "start_min": 771,
+     "travel_min": 22,
+     "arrival_min": 793,
+     "lateness_min": 133,
+     "runner_up_id": "T11",
+     "reason": "earliest available qualified technician"
+    },
+    {
+     "work_order_id": "WO-AST-RTU-01-202610290700-46b0d2",
+     "technician_id": "T11",
+     "status": "assigned",
+     "start_min": 776,
+     "travel_min": 116,
+     "arrival_min": 892,
+     "lateness_min": 232,
+     "runner_up_id": "T02",
+     "reason": "earliest available qualified technician"
+    },
+    {
+     "work_order_id": "WO-AST-RTU-01-202610280700-74bdbd",
+     "technician_id": null,
+     "status": "reschedule_requested",
+     "start_min": null,
+     "travel_min": null,
+     "arrival_min": null,
+     "lateness_min": null,
+     "runner_up_id": null,
+     "reason": "qualified technicians exist but none has capacity in the planning horizon"
+    },
+    {
+     "work_order_id": "WO-AST-RTU-01-202610300700-541000",
+     "technician_id": null,
+     "status": "reschedule_requested",
+     "start_min": null,
+     "travel_min": null,
+     "arrival_min": null,
+     "lateness_min": null,
+     "runner_up_id": null,
+     "reason": "qualified technicians exist but none has capacity in the planning horizon"
+    },
+    {
+     "work_order_id": "WO-AST-RTU-01-202610270700-127477",
+     "technician_id": null,
+     "status": "reschedule_requested",
+     "start_min": null,
+     "travel_min": null,
+     "arrival_min": null,
+     "lateness_min": null,
+     "runner_up_id": null,
+     "reason": "qualified technicians exist but none has capacity in the planning horizon"
+    },
+    {
+     "work_order_id": "WO-AST-RTU-01-202610280700-ec1a95",
+     "technician_id": null,
+     "status": "reschedule_requested",
+     "start_min": null,
+     "travel_min": null,
+     "arrival_min": null,
+     "lateness_min": null,
+     "runner_up_id": null,
+     "reason": "qualified technicians exist but none has capacity in the planning horizon"
+    },
+    {
+     "work_order_id": "WO-AST-RTU-01-202610280700-f73323",
+     "technician_id": null,
+     "status": "reschedule_requested",
+     "start_min": null,
+     "travel_min": null,
+     "arrival_min": null,
+     "lateness_min": null,
+     "runner_up_id": null,
+     "reason": "qualified technicians exist but none has capacity in the planning horizon"
+    },
+    {
+     "work_order_id": "WO-AST-RTU-01-202610270700-48de95",
+     "technician_id": null,
+     "status": "reschedule_requested",
+     "start_min": null,
+     "travel_min": null,
+     "arrival_min": null,
+     "lateness_min": null,
+     "runner_up_id": null,
+     "reason": "qualified technicians exist but none has capacity in the planning horizon"
+    },
+    {
+     "work_order_id": "WO-AST-RTU-01-202610280700-19f514",
+     "technician_id": null,
+     "status": "reschedule_requested",
+     "start_min": null,
+     "travel_min": null,
+     "arrival_min": null,
+     "lateness_min": null,
+     "runner_up_id": null,
+     "reason": "qualified technicians exist but none has capacity in the planning horizon"
+    },
+    {
+     "work_order_id": "WO-AST-RTU-01-202610290700-e956b0",
+     "technician_id": null,
+     "status": "reschedule_requested",
+     "start_min": null,
+     "travel_min": null,
+     "arrival_min": null,
+     "lateness_min": null,
+     "runner_up_id": null,
+     "reason": "qualified technicians exist but none has capacity in the planning horizon"
+    },
+    {
+     "work_order_id": "WO-AST-RTU-02-202610280700-0cb897",
+     "technician_id": "T01",
+     "status": "assigned",
+     "start_min": 435,
+     "travel_min": 0,
+     "arrival_min": 435,
+     "lateness_min": 0,
+     "runner_up_id": "T09",
+     "reason": "earliest available qualified technician"
+    },
+    {
+     "work_order_id": "WO-AST-RTU-02-202610290700-3a3dd3",
+     "technician_id": "T01",
+     "status": "assigned",
+     "start_min": 615,
+     "travel_min": 0,
+     "arrival_min": 615,
+     "lateness_min": 0,
+     "runner_up_id": "T09",
+     "reason": "earliest available qualified technician"
+    },
+    {
+     "work_order_id": "WO-AST-RTU-02-202610290700-8a0581",
+     "technician_id": "T01",
+     "status": "assigned",
+     "start_min": 735,
+     "travel_min": 0,
+     "arrival_min": 735,
+     "lateness_min": 75,
+     "runner_up_id": "T09",
+     "reason": "earliest available qualified technician"
+    },
+    {
+     "work_order_id": "WO-AST-RTU-02-202610270700-dd3dcb",
+     "technician_id": "T09",
+     "status": "assigned",
+     "start_min": 858,
+     "travel_min": 42,
+     "arrival_min": 900,
+     "lateness_min": 240,
+     "runner_up_id": "T01",
+     "reason": "earliest available qualified technician"
+    },
+    {
+     "work_order_id": "WO-AST-RTU-03-202610260700-2c482e",
+     "technician_id": null,
+     "status": "reschedule_requested",
+     "start_min": null,
+     "travel_min": null,
+     "arrival_min": null,
+     "lateness_min": null,
+     "runner_up_id": null,
+     "reason": "qualified technicians exist but none has capacity in the planning horizon"
+    },
+    {
+     "work_order_id": "WO-AST-RTU-01-202610260800-7e0963",
+     "technician_id": null,
+     "status": "reschedule_requested",
+     "start_min": null,
+     "travel_min": null,
+     "arrival_min": null,
+     "lateness_min": null,
+     "runner_up_id": null,
+     "reason": "qualified technicians exist but none has capacity in the planning horizon"
+    },
+    {
+     "work_order_id": "WO-AST-RTU-01-202610290800-6ea40a",
+     "technician_id": null,
+     "status": "reschedule_requested",
+     "start_min": null,
+     "travel_min": null,
+     "arrival_min": null,
+     "lateness_min": null,
+     "runner_up_id": null,
+     "reason": "qualified technicians exist but none has capacity in the planning horizon"
+    },
+    {
+     "work_order_id": "WO-AST-RTU-02-202610260800-271201",
+     "technician_id": "T09",
+     "status": "assigned",
+     "start_min": 1020,
+     "travel_min": 42,
+     "arrival_min": 1062,
+     "lateness_min": 342,
+     "runner_up_id": "T01",
+     "reason": "earliest available qualified technician"
+    },
+    {
+     "work_order_id": "WO-AST-RTU-02-202610290800-96c163",
+     "technician_id": "T09",
+     "status": "assigned",
+     "start_min": 1182,
+     "travel_min": 42,
+     "arrival_min": 1224,
+     "lateness_min": 504,
+     "runner_up_id": "T01",
+     "reason": "earliest available qualified technician"
+    },
+    {
+     "work_order_id": "WO-AST-RTU-03-202610300800-de7085",
+     "technician_id": null,
+     "status": "reschedule_requested",
+     "start_min": null,
+     "travel_min": null,
+     "arrival_min": null,
+     "lateness_min": null,
+     "runner_up_id": null,
+     "reason": "qualified technicians exist but none has capacity in the planning horizon"
+    },
+    {
+     "work_order_id": "WO-AST-RTU-01-202610290900-2a2d1d",
+     "technician_id": null,
+     "status": "reschedule_requested",
+     "start_min": null,
+     "travel_min": null,
+     "arrival_min": null,
+     "lateness_min": null,
+     "runner_up_id": null,
+     "reason": "qualified technicians exist but none has capacity in the planning horizon"
+    },
+    {
+     "work_order_id": "WO-AST-RTU-02-202610280900-316728",
+     "technician_id": null,
+     "status": "reschedule_requested",
+     "start_min": null,
+     "travel_min": null,
+     "arrival_min": null,
+     "lateness_min": null,
+     "runner_up_id": null,
+     "reason": "qualified technicians exist but none has capacity in the planning horizon"
+    },
+    {
+     "work_order_id": "WO-AST-RTU-02-202610300900-f414e3",
+     "technician_id": null,
+     "status": "reschedule_requested",
+     "start_min": null,
+     "travel_min": null,
+     "arrival_min": null,
+     "lateness_min": null,
+     "runner_up_id": null,
+     "reason": "qualified technicians exist but none has capacity in the planning horizon"
+    },
+    {
+     "work_order_id": "WO-AST-RTU-04-202610260900-985630",
+     "technician_id": "T10",
+     "status": "assigned",
+     "start_min": 555,
+     "travel_min": 34,
+     "arrival_min": 589,
+     "lateness_min": 0,
+     "runner_up_id": "T03",
+     "reason": "earliest available qualified technician"
+    },
+    {
+     "work_order_id": "WO-AST-RTU-01-202610281000-c490ef",
+     "technician_id": null,
+     "status": "reschedule_requested",
+     "start_min": null,
+     "travel_min": null,
+     "arrival_min": null,
+     "lateness_min": null,
+     "runner_up_id": null,
+     "reason": "qualified technicians exist but none has capacity in the planning horizon"
+    },
+    {
+     "work_order_id": "WO-AST-RTU-02-202610281000-a483b2",
+     "technician_id": null,
+     "status": "reschedule_requested",
+     "start_min": null,
+     "travel_min": null,
+     "arrival_min": null,
+     "lateness_min": null,
+     "runner_up_id": null,
+     "reason": "qualified technicians exist but none has capacity in the planning horizon"
+    },
+    {
+     "work_order_id": "WO-AST-RTU-01-202610291100-5fca3e",
+     "technician_id": null,
+     "status": "reschedule_requested",
+     "start_min": null,
+     "travel_min": null,
+     "arrival_min": null,
+     "lateness_min": null,
+     "runner_up_id": null,
+     "reason": "qualified technicians exist but none has capacity in the planning horizon"
+    },
+    {
+     "work_order_id": "WO-AST-RTU-04-202610301100-aa2c22",
+     "technician_id": null,
+     "status": "reschedule_requested",
+     "start_min": null,
+     "travel_min": null,
+     "arrival_min": null,
+     "lateness_min": null,
+     "runner_up_id": null,
+     "reason": "qualified technicians exist but none has capacity in the planning horizon"
+    },
+    {
+     "work_order_id": "WO-AST-RTU-03-202610281100-6a1f2f",
+     "technician_id": null,
+     "status": "reschedule_requested",
+     "start_min": null,
+     "travel_min": null,
+     "arrival_min": null,
+     "lateness_min": null,
+     "runner_up_id": null,
+     "reason": "qualified technicians exist but none has capacity in the planning horizon"
+    },
+    {
+     "work_order_id": "WO-AST-RTU-02-202610271400-73d719",
+     "technician_id": null,
+     "status": "reschedule_requested",
+     "start_min": null,
+     "travel_min": null,
+     "arrival_min": null,
+     "lateness_min": null,
+     "runner_up_id": null,
+     "reason": "qualified technicians exist but none has capacity in the planning horizon"
+    }
+   ]
+  }
+ },
+ "work_orders": [
+  {
+   "work_order_id": "WO-AST-AHU-02-202610280000-40d423",
+   "asset_id": "AST-AHU-02",
+   "site_id": "SITE-STM-LAB",
+   "case_id": "FLEXLAB-X3A-AHU-CAV|2017-03-11",
+   "created_at": "2026-10-28 00:00:00",
+   "status": "blocked",
+   "status_reason": "insufficient evidence: no manual passage supports the cause; manual review",
+   "priority": "P1",
+   "sla_due_at": "2026-10-28 04:00:00",
+   "fault_type": "insufficient_evidence",
+   "route": "manual_review",
+   "required_certs": [],
+   "est_minutes": 0,
+   "compatibility_uncertain": false,
+   "detection_disagreement": false,
+   "approval_deadline_at": "2026-10-28 04:00:00",
+   "steps": [],
+   "approved_by": null,
+   "approved_at": null,
+   "edited": false
+  },
+  {
+   "work_order_id": "WO-AST-AHU-02-202610290000-4cc24e",
+   "asset_id": "AST-AHU-02",
+   "site_id": "SITE-STM-LAB",
+   "case_id": "FLEXLAB-X3A-AHU-CAV|2017-03-12",
+   "created_at": "2026-10-29 00:00:00",
+   "status": "blocked",
+   "status_reason": "insufficient evidence: no manual passage supports the cause; manual review",
+   "priority": "P1",
+   "sla_due_at": "2026-10-29 04:00:00",
+   "fault_type": "insufficient_evidence",
+   "route": "manual_review",
+   "required_certs": [],
+   "est_minutes": 0,
+   "compatibility_uncertain": false,
+   "detection_disagreement": false,
+   "approval_deadline_at": "2026-10-29 04:00:00",
+   "steps": [],
+   "approved_by": null,
+   "approved_at": null,
+   "edited": false
+  },
+  {
+   "work_order_id": "WO-AST-AHU-02-202610300400-360538",
+   "asset_id": "AST-AHU-02",
+   "site_id": "SITE-STM-LAB",
+   "case_id": "FLEXLAB-X3A-AHU-CAV|2017-03-15",
+   "created_at": "2026-10-30 04:00:00",
+   "status": "approved",
+   "status_reason": "approved by manager",
+   "priority": "P1",
+   "sla_due_at": "2026-10-30 08:00:00",
+   "fault_type": "oa_damper_stuck",
+   "route": "technician",
+   "required_certs": [
+    "CONTROLS"
+   ],
+   "est_minutes": 90,
+   "compatibility_uncertain": true,
+   "detection_disagreement": true,
+   "approval_deadline_at": "2026-10-30 08:00:00",
+   "steps": [
+    {
+     "kind": "safety",
+     "seq": 1,
+     "quote": "After 48 Hours of Operation 1. Disconnect and lock electrical power source.",
+     "manual_id": "daikin-im672-vision-ahu",
+     "page": 39,
+     "verified": true
+    },
+    {
+     "kind": "citation",
+     "seq": 1,
+     "quote": "All zone damper blades should close properly. If one or a few zones do not close completely, repeat the procedure for these zones.",
+     "manual_id": "daikin-im672-vision-ahu",
+     "page": 25,
+     "verified": true
+    }
+   ],
+   "approved_by": "scenario-manager",
+   "approved_at": "2026-10-30 04:15:00",
+   "edited": false
+  },
+  {
+   "work_order_id": "WO-AST-AHU-02-202610260000-c49f4b",
+   "asset_id": "AST-AHU-02",
+   "site_id": "SITE-STM-LAB",
+   "case_id": "FLEXLAB-X3A-AHU-CAV|2017-03-16",
+   "created_at": "2026-10-26 00:00:00",
+   "status": "blocked",
+   "status_reason": "insufficient evidence: no manual passage supports the cause; manual review",
+   "priority": "P1",
+   "sla_due_at": "2026-10-26 04:00:00",
+   "fault_type": "insufficient_evidence",
+   "route": "manual_review",
+   "required_certs": [],
+   "est_minutes": 0,
+   "compatibility_uncertain": false,
+   "detection_disagreement": false,
+   "approval_deadline_at": "2026-10-26 04:00:00",
+   "steps": [],
+   "approved_by": null,
+   "approved_at": null,
+   "edited": false
+  },
+  {
+   "work_order_id": "WO-AST-AHU-02-202610270000-fdd917",
+   "asset_id": "AST-AHU-02",
+   "site_id": "SITE-STM-LAB",
+   "case_id": "FLEXLAB-X3A-AHU-CAV|2017-03-18",
+   "created_at": "2026-10-27 00:00:00",
+   "status": "blocked",
+   "status_reason": "insufficient evidence: no manual passage supports the cause; manual review",
+   "priority": "P1",
+   "sla_due_at": "2026-10-27 04:00:00",
+   "fault_type": "insufficient_evidence",
+   "route": "manual_review",
+   "required_certs": [],
+   "est_minutes": 0,
+   "compatibility_uncertain": false,
+   "detection_disagreement": false,
+   "approval_deadline_at": "2026-10-27 04:00:00",
+   "steps": [],
+   "approved_by": null,
+   "approved_at": null,
+   "edited": false
+  },
+  {
+   "work_order_id": "WO-AST-AHU-02-202610280000-9cb061",
+   "asset_id": "AST-AHU-02",
+   "site_id": "SITE-STM-LAB",
+   "case_id": "FLEXLAB-X3A-AHU-CAV|2017-03-19",
+   "created_at": "2026-10-28 00:00:00",
+   "status": "blocked",
+   "status_reason": "insufficient evidence: no manual passage supports the cause; manual review",
+   "priority": "P1",
+   "sla_due_at": "2026-10-28 04:00:00",
+   "fault_type": "insufficient_evidence",
+   "route": "manual_review",
+   "required_certs": [],
+   "est_minutes": 0,
+   "compatibility_uncertain": false,
+   "detection_disagreement": true,
+   "approval_deadline_at": "2026-10-28 04:00:00",
+   "steps": [],
+   "approved_by": null,
+   "approved_at": null,
+   "edited": false
+  },
+  {
+   "work_order_id": "WO-AST-AHU-02-202610290000-af92fb",
+   "asset_id": "AST-AHU-02",
+   "site_id": "SITE-STM-LAB",
+   "case_id": "FLEXLAB-X3A-AHU-CAV|2017-03-20",
+   "created_at": "2026-10-29 00:00:00",
+   "status": "approved",
+   "status_reason": "approved by manager",
+   "priority": "P1",
+   "sla_due_at": "2026-10-29 04:00:00",
+   "fault_type": "oa_damper_stuck",
+   "route": "technician",
+   "required_certs": [
+    "CONTROLS"
+   ],
+   "est_minutes": 90,
+   "compatibility_uncertain": true,
+   "detection_disagreement": true,
+   "approval_deadline_at": "2026-10-29 04:00:00",
+   "steps": [
+    {
+     "kind": "safety",
+     "seq": 1,
+     "quote": "Before entering fan section, make sure that fan electrical power source is disconnected and locked in the OFF position.",
+     "manual_id": "daikin-im672-vision-ahu",
+     "page": 38,
+     "verified": true
+    },
+    {
+     "kind": "citation",
+     "seq": 1,
+     "quote": "Fresh air and return air dampers can be linked together and driven from the same actuator if the dampers are the same size.",
+     "manual_id": "daikin-im672-vision-ahu",
+     "page": 26,
+     "verified": true
+    }
+   ],
+   "approved_by": "scenario-manager",
+   "approved_at": "2026-10-29 00:15:00",
+   "edited": false
+  },
+  {
+   "work_order_id": "WO-AST-AHU-02-202610300000-3f9281",
+   "asset_id": "AST-AHU-02",
+   "site_id": "SITE-STM-LAB",
+   "case_id": "FLEXLAB-X3A-AHU-CAV|2017-03-21",
+   "created_at": "2026-10-30 00:00:00",
+   "status": "approved",
+   "status_reason": "approved by manager",
+   "priority": "P1",
+   "sla_due_at": "2026-10-30 04:00:00",
+   "fault_type": "oa_damper_stuck",
+   "route": "technician",
+   "required_certs": [
+    "CONTROLS"
+   ],
+   "est_minutes": 90,
+   "compatibility_uncertain": true,
+   "detection_disagreement": true,
+   "approval_deadline_at": "2026-10-30 04:00:00",
+   "steps": [
+    {
+     "kind": "safety",
+     "seq": 1,
+     "quote": "Before entering fan section, make sure that fan electrical power source is disconnected and locked in the OFF position.",
+     "manual_id": "daikin-im672-vision-ahu",
+     "page": 38,
+     "verified": true
+    },
+    {
+     "kind": "citation",
+     "seq": 1,
+     "quote": "All zone damper blades should close properly. If one or a few zones do not close completely, repeat the procedure for these zones.",
+     "manual_id": "daikin-im672-vision-ahu",
+     "page": 25,
+     "verified": true
+    }
+   ],
+   "approved_by": "scenario-manager",
+   "approved_at": "2026-10-30 00:15:00",
+   "edited": false
+  },
+  {
+   "work_order_id": "WO-AST-AHU-02-202610260000-1c214b",
+   "asset_id": "AST-AHU-02",
+   "site_id": "SITE-STM-LAB",
+   "case_id": "FLEXLAB-X3A-AHU-CAV|2017-03-22",
+   "created_at": "2026-10-26 00:00:00",
+   "status": "blocked",
+   "status_reason": "insufficient evidence: no manual passage supports the cause; manual review",
+   "priority": "P1",
+   "sla_due_at": "2026-10-26 04:00:00",
+   "fault_type": "insufficient_evidence",
+   "route": "manual_review",
+   "required_certs": [],
+   "est_minutes": 0,
+   "compatibility_uncertain": false,
+   "detection_disagreement": false,
+   "approval_deadline_at": "2026-10-26 04:00:00",
+   "steps": [],
+   "approved_by": null,
+   "approved_at": null,
+   "edited": false
+  },
+  {
+   "work_order_id": "WO-AST-AHU-02-202610270000-1e5da0",
+   "asset_id": "AST-AHU-02",
+   "site_id": "SITE-STM-LAB",
+   "case_id": "FLEXLAB-X3A-AHU-CAV|2017-03-23",
+   "created_at": "2026-10-27 00:00:00",
+   "status": "blocked",
+   "status_reason": "insufficient evidence: no manual passage supports the cause; manual review",
+   "priority": "P1",
+   "sla_due_at": "2026-10-27 04:00:00",
+   "fault_type": "insufficient_evidence",
+   "route": "manual_review",
+   "required_certs": [],
+   "est_minutes": 0,
+   "compatibility_uncertain": false,
+   "detection_disagreement": false,
+   "approval_deadline_at": "2026-10-27 04:00:00",
+   "steps": [],
+   "approved_by": null,
+   "approved_at": null,
+   "edited": false
+  },
+  {
+   "work_order_id": "WO-AST-AHU-02-202610280000-7d0c1b",
+   "asset_id": "AST-AHU-02",
+   "site_id": "SITE-STM-LAB",
+   "case_id": "FLEXLAB-X3A-AHU-CAV|2017-03-24",
+   "created_at": "2026-10-28 00:00:00",
+   "status": "blocked",
+   "status_reason": "insufficient evidence: no manual passage supports the cause; manual review",
+   "priority": "P1",
+   "sla_due_at": "2026-10-28 04:00:00",
+   "fault_type": "insufficient_evidence",
+   "route": "manual_review",
+   "required_certs": [],
+   "est_minutes": 0,
+   "compatibility_uncertain": false,
+   "detection_disagreement": false,
+   "approval_deadline_at": "2026-10-28 04:00:00",
+   "steps": [],
+   "approved_by": null,
+   "approved_at": null,
+   "edited": false
+  },
+  {
+   "work_order_id": "WO-AST-AHU-02-202610290000-1ce76c",
+   "asset_id": "AST-AHU-02",
+   "site_id": "SITE-STM-LAB",
+   "case_id": "FLEXLAB-X3A-AHU-CAV|2017-03-25",
+   "created_at": "2026-10-29 00:00:00",
+   "status": "blocked",
+   "status_reason": "insufficient evidence: no manual passage supports the cause; manual review",
+   "priority": "P1",
+   "sla_due_at": "2026-10-29 04:00:00",
+   "fault_type": "insufficient_evidence",
+   "route": "manual_review",
+   "required_certs": [],
+   "est_minutes": 0,
+   "compatibility_uncertain": false,
+   "detection_disagreement": false,
+   "approval_deadline_at": "2026-10-29 04:00:00",
+   "steps": [],
+   "approved_by": null,
+   "approved_at": null,
+   "edited": false
+  },
+  {
+   "work_order_id": "WO-AST-AHU-02-202610300000-604cd8",
+   "asset_id": "AST-AHU-02",
+   "site_id": "SITE-STM-LAB",
+   "case_id": "FLEXLAB-X3A-AHU-CAV|2017-03-26",
+   "created_at": "2026-10-30 00:00:00",
+   "status": "blocked",
+   "status_reason": "insufficient evidence: no manual passage supports the cause; manual review",
+   "priority": "P1",
+   "sla_due_at": "2026-10-30 04:00:00",
+   "fault_type": "insufficient_evidence",
+   "route": "manual_review",
+   "required_certs": [],
+   "est_minutes": 0,
+   "compatibility_uncertain": false,
+   "detection_disagreement": false,
+   "approval_deadline_at": "2026-10-30 04:00:00",
+   "steps": [],
+   "approved_by": null,
+   "approved_at": null,
+   "edited": false
+  },
+  {
+   "work_order_id": "WO-AST-AHU-02-202610260000-778fd6",
+   "asset_id": "AST-AHU-02",
+   "site_id": "SITE-STM-LAB",
+   "case_id": "FLEXLAB-X3A-AHU-CAV|2017-03-31",
+   "created_at": "2026-10-26 00:00:00",
+   "status": "blocked",
+   "status_reason": "insufficient evidence: no manual passage supports the cause; manual review",
+   "priority": "P1",
+   "sla_due_at": "2026-10-26 04:00:00",
+   "fault_type": "insufficient_evidence",
+   "route": "manual_review",
+   "required_certs": [],
+   "est_minutes": 0,
+   "compatibility_uncertain": false,
+   "detection_disagreement": false,
+   "approval_deadline_at": "2026-10-26 04:00:00",
+   "steps": [],
+   "approved_by": null,
+   "approved_at": null,
+   "edited": false
+  },
+  {
+   "work_order_id": "WO-AST-AHU-03-202610270000-80a007",
+   "asset_id": "AST-AHU-03",
+   "site_id": "SITE-STM-LAB",
+   "case_id": "FLEXLAB-X3A-AHU-VAV|2017-09-11",
+   "created_at": "2026-10-27 00:00:00",
+   "status": "blocked",
+   "status_reason": "insufficient evidence: no manual passage supports the cause; manual review",
+   "priority": "P1",
+   "sla_due_at": "2026-10-27 04:00:00",
+   "fault_type": "insufficient_evidence",
+   "route": "manual_review",
+   "required_certs": [],
+   "est_minutes": 0,
+   "compatibility_uncertain": false,
+   "detection_disagreement": false,
+   "approval_deadline_at": "2026-10-27 04:00:00",
+   "steps": [],
+   "approved_by": null,
+   "approved_at": null,
+   "edited": false
+  },
+  {
+   "work_order_id": "WO-AST-AHU-03-202610280000-e406a7",
+   "asset_id": "AST-AHU-03",
+   "site_id": "SITE-STM-LAB",
+   "case_id": "FLEXLAB-X3A-AHU-VAV|2017-09-12",
+   "created_at": "2026-10-28 00:00:00",
+   "status": "blocked",
+   "status_reason": "insufficient evidence: no manual passage supports the cause; manual review",
+   "priority": "P1",
+   "sla_due_at": "2026-10-28 04:00:00",
+   "fault_type": "insufficient_evidence",
+   "route": "manual_review",
+   "required_certs": [],
+   "est_minutes": 0,
+   "compatibility_uncertain": false,
+   "detection_disagreement": false,
+   "approval_deadline_at": "2026-10-28 04:00:00",
+   "steps": [],
+   "approved_by": null,
+   "approved_at": null,
+   "edited": false
+  },
+  {
+   "work_order_id": "WO-AST-AHU-03-202610290000-14cbbf",
+   "asset_id": "AST-AHU-03",
+   "site_id": "SITE-STM-LAB",
+   "case_id": "FLEXLAB-X3A-AHU-VAV|2017-09-14",
+   "created_at": "2026-10-29 00:00:00",
+   "status": "blocked",
+   "status_reason": "insufficient evidence: no manual passage supports the cause; manual review",
+   "priority": "P1",
+   "sla_due_at": "2026-10-29 04:00:00",
+   "fault_type": "insufficient_evidence",
+   "route": "manual_review",
+   "required_certs": [],
+   "est_minutes": 0,
+   "compatibility_uncertain": false,
+   "detection_disagreement": false,
+   "approval_deadline_at": "2026-10-29 04:00:00",
+   "steps": [],
+   "approved_by": null,
+   "approved_at": null,
+   "edited": false
+  },
+  {
+   "work_order_id": "WO-AST-AHU-03-202610300000-b960d9",
+   "asset_id": "AST-AHU-03",
+   "site_id": "SITE-STM-LAB",
+   "case_id": "FLEXLAB-X3A-AHU-VAV|2017-09-15",
+   "created_at": "2026-10-30 00:00:00",
+   "status": "blocked",
+   "status_reason": "insufficient evidence: no manual passage supports the cause; manual review",
+   "priority": "P1",
+   "sla_due_at": "2026-10-30 04:00:00",
+   "fault_type": "insufficient_evidence",
+   "route": "manual_review",
+   "required_certs": [],
+   "est_minutes": 0,
+   "compatibility_uncertain": false,
+   "detection_disagreement": false,
+   "approval_deadline_at": "2026-10-30 04:00:00",
+   "steps": [],
+   "approved_by": null,
+   "approved_at": null,
+   "edited": false
+  },
+  {
+   "work_order_id": "WO-AST-AHU-03-202610260000-468f46",
+   "asset_id": "AST-AHU-03",
+   "site_id": "SITE-STM-LAB",
+   "case_id": "FLEXLAB-X3A-AHU-VAV|2017-09-18",
+   "created_at": "2026-10-26 00:00:00",
+   "status": "blocked",
+   "status_reason": "insufficient evidence: no manual passage supports the cause; manual review",
+   "priority": "P1",
+   "sla_due_at": "2026-10-26 04:00:00",
+   "fault_type": "insufficient_evidence",
+   "route": "manual_review",
+   "required_certs": [],
+   "est_minutes": 0,
+   "compatibility_uncertain": false,
+   "detection_disagreement": false,
+   "approval_deadline_at": "2026-10-26 04:00:00",
+   "steps": [],
+   "approved_by": null,
+   "approved_at": null,
+   "edited": false
+  },
+  {
+   "work_order_id": "WO-AST-AHU-03-202610270000-df86b4",
+   "asset_id": "AST-AHU-03",
+   "site_id": "SITE-STM-LAB",
+   "case_id": "FLEXLAB-X3A-AHU-VAV|2017-09-19",
+   "created_at": "2026-10-27 00:00:00",
+   "status": "blocked",
+   "status_reason": "insufficient evidence: no manual passage supports the cause; manual review",
+   "priority": "P1",
+   "sla_due_at": "2026-10-27 04:00:00",
+   "fault_type": "insufficient_evidence",
+   "route": "manual_review",
+   "required_certs": [],
+   "est_minutes": 0,
+   "compatibility_uncertain": false,
+   "detection_disagreement": false,
+   "approval_deadline_at": "2026-10-27 04:00:00",
+   "steps": [],
+   "approved_by": null,
+   "approved_at": null,
+   "edited": false
+  },
+  {
+   "work_order_id": "WO-AST-AHU-03-202610280000-1a09a5",
+   "asset_id": "AST-AHU-03",
+   "site_id": "SITE-STM-LAB",
+   "case_id": "FLEXLAB-X3A-AHU-VAV|2017-09-22",
+   "created_at": "2026-10-28 00:00:00",
+   "status": "blocked",
+   "status_reason": "insufficient evidence: no manual passage supports the cause; manual review",
+   "priority": "P1",
+   "sla_due_at": "2026-10-28 04:00:00",
+   "fault_type": "insufficient_evidence",
+   "route": "manual_review",
+   "required_certs": [],
+   "est_minutes": 0,
+   "compatibility_uncertain": false,
+   "detection_disagreement": false,
+   "approval_deadline_at": "2026-10-28 04:00:00",
+   "steps": [],
+   "approved_by": null,
+   "approved_at": null,
+   "edited": false
+  },
+  {
+   "work_order_id": "WO-AST-RTU-01-202610290700-033907",
+   "asset_id": "AST-RTU-01",
+   "site_id": "SITE-HTF-DC1",
+   "case_id": "ORNL-FRP-RTU-YCD150|2020-09-13",
+   "created_at": "2026-10-29 07:00:00",
+   "status": "blocked",
+   "status_reason": "insufficient evidence: no manual passage supports the cause; manual review",
+   "priority": "P1",
+   "sla_due_at": "2026-10-29 11:00:00",
+   "fault_type": "oa_damper_stuck",
+   "route": "manual_review",
+   "required_certs": [],
+   "est_minutes": 0,
+   "compatibility_uncertain": false,
+   "detection_disagreement": false,
+   "approval_deadline_at": "2026-10-29 11:00:00",
+   "steps": [],
+   "approved_by": null,
+   "approved_at": null,
+   "edited": false
+  },
+  {
+   "work_order_id": "WO-AST-RTU-01-202610300800-61ac12",
+   "asset_id": "AST-RTU-01",
+   "site_id": "SITE-HTF-DC1",
+   "case_id": "ORNL-FRP-RTU-YCD150|2020-09-15",
+   "created_at": "2026-10-30 08:00:00",
+   "status": "blocked",
+   "status_reason": "insufficient evidence: no manual passage supports the cause; manual review",
+   "priority": "P1",
+   "sla_due_at": "2026-10-30 12:00:00",
+   "fault_type": "oa_damper_stuck",
+   "route": "manual_review",
+   "required_certs": [],
+   "est_minutes": 0,
+   "compatibility_uncertain": false,
+   "detection_disagreement": true,
+   "approval_deadline_at": "2026-10-30 12:00:00",
+   "steps": [],
+   "approved_by": null,
+   "approved_at": null,
+   "edited": false
+  },
+  {
+   "work_order_id": "WO-AST-RTU-01-202610260700-b1c20e",
+   "asset_id": "AST-RTU-01",
+   "site_id": "SITE-HTF-DC1",
+   "case_id": "ORNL-FRP-RTU-YCD150|2020-09-19",
+   "created_at": "2026-10-26 07:00:00",
+   "status": "approved",
+   "status_reason": "approved by manager",
+   "priority": "P1",
+   "sla_due_at": "2026-10-26 11:00:00",
+   "fault_type": "oa_damper_stuck",
+   "route": "technician",
+   "required_certs": [
+    "CONTROLS"
+   ],
+   "est_minutes": 90,
+   "compatibility_uncertain": true,
+   "detection_disagreement": false,
+   "approval_deadline_at": "2026-10-26 11:00:00",
+   "steps": [
+    {
+     "kind": "safety",
+     "seq": 1,
+     "quote": "Failure to disconnect power before servicing could result in rotating components cutting and slashing technician which could result in death or serious injury.",
+     "manual_id": "trane-rt-svx21ad-precedent-gas-electric-3-10t",
+     "page": 64,
+     "verified": true
+    },
+    {
+     "kind": "citation",
+     "seq": 1,
+     "quote": "Verify that the dampers stroked to the minimum position.",
+     "manual_id": "trane-rt-svx21ad-precedent-gas-electric-3-10t",
+     "page": 64,
+     "verified": true
+    }
+   ],
+   "approved_by": "scenario-manager",
+   "approved_at": "2026-10-26 07:15:00",
+   "edited": false
+  },
+  {
+   "work_order_id": "WO-AST-RTU-01-202610270700-0490d8",
+   "asset_id": "AST-RTU-01",
+   "site_id": "SITE-HTF-DC1",
+   "case_id": "ORNL-FRP-RTU-YCD150|2020-09-21",
+   "created_at": "2026-10-27 07:00:00",
+   "status": "approved",
+   "status_reason": "approved by manager",
+   "priority": "P1",
+   "sla_due_at": "2026-10-27 11:00:00",
+   "fault_type": "oa_damper_stuck",
+   "route": "technician",
+   "required_certs": [
+    "CONTROLS"
+   ],
+   "est_minutes": 90,
+   "compatibility_uncertain": true,
+   "detection_disagreement": false,
+   "approval_deadline_at": "2026-10-27 11:00:00",
+   "steps": [
+    {
+     "kind": "safety",
+     "seq": 1,
+     "quote": "Failure to disconnect power before servicing could result in rotating components cutting and slashing technician which could result in death or serious injury.",
+     "manual_id": "trane-rt-svx21ad-precedent-gas-electric-3-10t",
+     "page": 64,
+     "verified": true
+    },
+    {
+     "kind": "check",
+     "seq": 1,
+     "quote": "Replace actuator if damper is moveable and supply voltage is between 21.6 V and 26.4 V.",
+     "manual_id": "honeywell-jade-w7220-63-2700",
+     "page": 24,
+     "verified": true
+    },
+    {
+     "kind": "citation",
+     "seq": 1,
+     "quote": "verify that the economizer actuator (ECA) drives fully open (approximately 90 seconds).",
+     "manual_id": "trane-rt-svx21ad-precedent-gas-electric-3-10t",
+     "page": 76,
+     "verified": true
+    }
+   ],
+   "approved_by": "scenario-manager",
+   "approved_at": "2026-10-27 07:15:00",
+   "edited": false
+  },
+  {
+   "work_order_id": "WO-AST-RTU-01-202610280700-108421",
+   "asset_id": "AST-RTU-01",
+   "site_id": "SITE-HTF-DC1",
+   "case_id": "ORNL-FRP-RTU-YCD150|2020-09-24",
+   "created_at": "2026-10-28 07:00:00",
+   "status": "blocked",
+   "status_reason": "no sourced lockout or disconnect step in the manuals; approval blocked",
+   "priority": "P1",
+   "sla_due_at": "2026-10-28 11:00:00",
+   "fault_type": "sa_temp_sensor_bias",
+   "route": "technician",
+   "required_certs": [
+    "CONTROLS"
+   ],
+   "est_minutes": 90,
+   "compatibility_uncertain": true,
+   "detection_disagreement": false,
+   "approval_deadline_at": "2026-10-28 11:00:00",
+   "steps": [
+    {
+     "kind": "citation",
+     "seq": 1,
+     "quote": "As a limit sensor for supply air temperature: Mount as close as possible to the air outlet into the room.",
+     "manual_id": "siemens-duct-temperature-sensor-129-525",
+     "page": 1,
+     "verified": true
+    }
+   ],
+   "approved_by": null,
+   "approved_at": null,
+   "edited": false
+  },
+  {
+   "work_order_id": "WO-AST-RTU-01-202610290700-823ac3",
+   "asset_id": "AST-RTU-01",
+   "site_id": "SITE-HTF-DC1",
+   "case_id": "ORNL-FRP-RTU-YCD150|2020-09-26",
+   "created_at": "2026-10-29 07:00:00",
+   "status": "blocked",
+   "status_reason": "insufficient evidence: no manual passage supports the cause; manual review",
+   "priority": "P1",
+   "sla_due_at": "2026-10-29 11:00:00",
+   "fault_type": "insufficient_evidence",
+   "route": "manual_review",
+   "required_certs": [],
+   "est_minutes": 0,
+   "compatibility_uncertain": false,
+   "detection_disagreement": false,
+   "approval_deadline_at": "2026-10-29 11:00:00",
+   "steps": [],
+   "approved_by": null,
+   "approved_at": null,
+   "edited": false
+  },
+  {
+   "work_order_id": "WO-AST-RTU-01-202610300700-66fe52",
+   "asset_id": "AST-RTU-01",
+   "site_id": "SITE-HTF-DC1",
+   "case_id": "ORNL-FRP-RTU-YCD150|2020-10-01",
+   "created_at": "2026-10-30 07:00:00",
+   "status": "blocked",
+   "status_reason": "no sourced lockout or disconnect step in the manuals; approval blocked",
+   "priority": "P1",
+   "sla_due_at": "2026-10-30 11:00:00",
+   "fault_type": "sa_temp_sensor_bias",
+   "route": "technician",
+   "required_certs": [
+    "CONTROLS"
+   ],
+   "est_minutes": 90,
+   "compatibility_uncertain": true,
+   "detection_disagreement": false,
+   "approval_deadline_at": "2026-10-30 11:00:00",
+   "steps": [
+    {
+     "kind": "citation",
+     "seq": 1,
+     "quote": "As a limit sensor for supply air temperature: Mount as close as possible to the air outlet into the room.",
+     "manual_id": "siemens-duct-temperature-sensor-129-525",
+     "page": 1,
+     "verified": true
+    }
+   ],
+   "approved_by": null,
+   "approved_at": null,
+   "edited": false
+  },
+  {
+   "work_order_id": "WO-AST-RTU-01-202610260700-243648",
+   "asset_id": "AST-RTU-01",
+   "site_id": "SITE-HTF-DC1",
+   "case_id": "ORNL-FRP-RTU-YCD150|2020-10-04",
+   "created_at": "2026-10-26 07:00:00",
+   "status": "blocked",
+   "status_reason": "no sourced lockout or disconnect step in the manuals; approval blocked",
+   "priority": "P1",
+   "sla_due_at": "2026-10-26 11:00:00",
+   "fault_type": "sa_temp_sensor_bias",
+   "route": "technician",
+   "required_certs": [
+    "CONTROLS"
+   ],
+   "est_minutes": 90,
+   "compatibility_uncertain": true,
+   "detection_disagreement": false,
+   "approval_deadline_at": "2026-10-26 11:00:00",
+   "steps": [
+    {
+     "kind": "citation",
+     "seq": 1,
+     "quote": "As a limit sensor for supply air temperature: Mount as close as possible to the air outlet into the room.",
+     "manual_id": "siemens-duct-temperature-sensor-129-525",
+     "page": 1,
+     "verified": true
+    }
+   ],
+   "approved_by": null,
+   "approved_at": null,
+   "edited": false
+  },
+  {
+   "work_order_id": "WO-AST-RTU-01-202610270700-a26ca5",
+   "asset_id": "AST-RTU-01",
+   "site_id": "SITE-HTF-DC1",
+   "case_id": "ORNL-FRP-RTU-YCD150|2020-10-06",
+   "created_at": "2026-10-27 07:00:00",
+   "status": "blocked",
+   "status_reason": "no sourced lockout or disconnect step in the manuals; approval blocked",
+   "priority": "P1",
+   "sla_due_at": "2026-10-27 11:00:00",
+   "fault_type": "sa_temp_sensor_bias",
+   "route": "technician",
+   "required_certs": [
+    "CONTROLS"
+   ],
+   "est_minutes": 90,
+   "compatibility_uncertain": true,
+   "detection_disagreement": false,
+   "approval_deadline_at": "2026-10-27 11:00:00",
+   "steps": [
+    {
+     "kind": "citation",
+     "seq": 1,
+     "quote": "As a limit sensor for supply air temperature: Mount as close as possible to the air outlet into the room.",
+     "manual_id": "siemens-duct-temperature-sensor-129-525",
+     "page": 1,
+     "verified": true
+    }
+   ],
+   "approved_by": null,
+   "approved_at": null,
+   "edited": false
+  },
+  {
+   "work_order_id": "WO-AST-RTU-01-202610281000-c490ef",
+   "asset_id": "AST-RTU-01",
+   "site_id": "SITE-HTF-DC1",
+   "case_id": "ORNL-FRP-RTU-YCD150|2020-10-08",
+   "created_at": "2026-10-28 10:00:00",
+   "status": "approved",
+   "status_reason": "approved by manager",
+   "priority": "P1",
+   "sla_due_at": "2026-10-28 14:00:00",
+   "fault_type": "oa_damper_stuck",
+   "route": "technician",
+   "required_certs": [
+    "CONTROLS"
+   ],
+   "est_minutes": 90,
+   "compatibility_uncertain": true,
+   "detection_disagreement": false,
+   "approval_deadline_at": "2026-10-28 14:00:00",
+   "steps": [
+    {
+     "kind": "safety",
+     "seq": 1,
+     "quote": "Failure to disconnect power before servicing could result in rotating components cutting and slashing technician which could result in death or serious injury.",
+     "manual_id": "trane-rt-svx21ad-precedent-gas-electric-3-10t",
+     "page": 64,
+     "verified": true
+    },
+    {
+     "kind": "check",
+     "seq": 1,
+     "quote": "Actuator has failed or become disconnected - check for stall, over voltage, under voltage and actuator count. Replace actuator if damper is moveable and supply voltage is between 21.6 V and 26.4 V. Check actuator count on STATUS menu.",
+     "manual_id": "honeywell-jade-w7220-63-2700",
+     "page": 24,
+     "verified": true
+    },
+    {
+     "kind": "citation",
+     "seq": 1,
+     "quote": "Actuator has failed or become disconnected - check for stall, over voltage, under voltage and actuator count. Replace actuator if damper is moveable and supply voltage is between 21.6 V and 26.4 V. Check actuator count on STATUS menu.",
+     "manual_id": "honeywell-jade-w7220-63-2700",
+     "page": 24,
+     "verified": true
+    }
+   ],
+   "approved_by": "scenario-manager",
+   "approved_at": "2026-10-28 10:15:00",
+   "edited": false
+  },
+  {
+   "work_order_id": "WO-AST-RTU-01-202610290900-2a2d1d",
+   "asset_id": "AST-RTU-01",
+   "site_id": "SITE-HTF-DC1",
+   "case_id": "ORNL-FRP-RTU-YCD150|2020-10-10",
+   "created_at": "2026-10-29 09:00:00",
+   "status": "approved",
+   "status_reason": "approved by manager",
+   "priority": "P1",
+   "sla_due_at": "2026-10-29 13:00:00",
+   "fault_type": "oa_damper_stuck",
+   "route": "technician",
+   "required_certs": [
+    "CONTROLS"
+   ],
+   "est_minutes": 90,
+   "compatibility_uncertain": true,
+   "detection_disagreement": false,
+   "approval_deadline_at": "2026-10-29 13:00:00",
+   "steps": [
+    {
+     "kind": "safety",
+     "seq": 1,
+     "quote": "Failure to disconnect power before servicing could result in rotating components cutting and slashing technician which could result in death or serious injury.",
+     "manual_id": "trane-rt-svx21ad-precedent-gas-electric-3-10t",
+     "page": 64,
+     "verified": true
+    },
+    {
+     "kind": "check",
+     "seq": 1,
+     "quote": "Actuator has failed or become disconnected - check for stall, over voltage, under voltage and actuator count. Replace actuator if damper is moveable and supply voltage is between 21.6 V and 26.4 V.",
+     "manual_id": "honeywell-jade-w7220-63-2700",
+     "page": 24,
+     "verified": true
+    },
+    {
+     "kind": "citation",
+     "seq": 1,
+     "quote": "Actuator has failed or become disconnected - check for stall, over voltage, under voltage and actuator count. Replace actuator if damper is moveable and supply voltage is between 21.6 V and 26.4 V.",
+     "manual_id": "honeywell-jade-w7220-63-2700",
+     "page": 24,
+     "verified": true
+    }
+   ],
+   "approved_by": "scenario-manager",
+   "approved_at": "2026-10-29 09:15:00",
+   "edited": false
+  },
+  {
+   "work_order_id": "WO-AST-RTU-01-202610300700-7699c3",
+   "asset_id": "AST-RTU-01",
+   "site_id": "SITE-HTF-DC1",
+   "case_id": "ORNL-FRP-RTU-YCD150|2020-10-13",
+   "created_at": "2026-10-30 07:00:00",
+   "status": "approved",
+   "status_reason": "approved by manager",
+   "priority": "P1",
+   "sla_due_at": "2026-10-30 11:00:00",
+   "fault_type": "oa_damper_stuck",
+   "route": "technician",
+   "required_certs": [
+    "CONTROLS"
+   ],
+   "est_minutes": 90,
+   "compatibility_uncertain": true,
+   "detection_disagreement": false,
+   "approval_deadline_at": "2026-10-30 11:00:00",
+   "steps": [
+    {
+     "kind": "safety",
+     "seq": 1,
+     "quote": "Failure to disconnect power before servicing could result in rotating components cutting and slashing technician which could result in death or serious injury.",
+     "manual_id": "trane-rt-svx21ad-precedent-gas-electric-3-10t",
+     "page": 64,
+     "verified": true
+    },
+    {
+     "kind": "safety",
+     "seq": 2,
+     "quote": "Replace the filter access panel. The damper will close when the blower circuit is de-energized.",
+     "manual_id": "trane-rt-svx21ad-precedent-gas-electric-3-10t",
+     "page": 64,
+     "verified": true
+    },
+    {
+     "kind": "check",
+     "seq": 1,
+     "quote": "2. Verify that the dampers stroked to the minimum position.",
+     "manual_id": "trane-rt-svx21ad-precedent-gas-electric-3-10t",
+     "page": 64,
+     "verified": true
+    },
+    {
+     "kind": "citation",
+     "seq": 1,
+     "quote": "2. Verify that the dampers stroked to the minimum position.",
+     "manual_id": "trane-rt-svx21ad-precedent-gas-electric-3-10t",
+     "page": 64,
+     "verified": true
+    },
+    {
+     "kind": "citation",
+     "seq": 2,
+     "quote": "Replace the filter access panel. The damper will close when the blower circuit is de-energized.",
+     "manual_id": "trane-rt-svx21ad-precedent-gas-electric-3-10t",
+     "page": 64,
+     "verified": true
+    }
+   ],
+   "approved_by": "scenario-manager",
+   "approved_at": "2026-10-30 07:15:00",
+   "edited": false
+  },
+  {
+   "work_order_id": "WO-AST-RTU-01-202610260700-ab58f7",
+   "asset_id": "AST-RTU-01",
+   "site_id": "SITE-HTF-DC1",
+   "case_id": "ORNL-FRP-RTU-YCD150|2021-04-03",
+   "created_at": "2026-10-26 07:00:00",
+   "status": "approved",
+   "status_reason": "approved by manager",
+   "priority": "P1",
+   "sla_due_at": "2026-10-26 11:00:00",
+   "fault_type": "oa_damper_stuck",
+   "route": "technician",
+   "required_certs": [
+    "CONTROLS"
+   ],
+   "est_minutes": 90,
+   "compatibility_uncertain": true,
+   "detection_disagreement": false,
+   "approval_deadline_at": "2026-10-26 11:00:00",
+   "steps": [
+    {
+     "kind": "safety",
+     "seq": 1,
+     "quote": "Failure to disconnect power before servicing could result in rotating components cutting and slashing technician which could result in death or serious injury.",
+     "manual_id": "trane-rt-svx21ad-precedent-gas-electric-3-10t",
+     "page": 64,
+     "verified": true
+    },
+    {
+     "kind": "check",
+     "seq": 1,
+     "quote": "Replace actuator if damper is moveable and supply voltage is between 21.6 V and 26.4 V.",
+     "manual_id": "honeywell-jade-w7220-63-2700",
+     "page": 24,
+     "verified": true
+    },
+    {
+     "kind": "check",
+     "seq": 2,
+     "quote": "Actuator has failed or become disconnected - check for stall, over voltage, under voltage and actuator count.",
+     "manual_id": "honeywell-jade-w7220-63-2700",
+     "page": 24,
+     "verified": true
+    },
+    {
+     "kind": "citation",
+     "seq": 1,
+     "quote": "The economizer minimum damper position for all fan speeds is complete.",
+     "manual_id": "trane-rt-svx21ad-precedent-gas-electric-3-10t",
+     "page": 64,
+     "verified": true
+    },
+    {
+     "kind": "citation",
+     "seq": 2,
+     "quote": "Actuator has failed or become disconnected - check for stall, over voltage, under voltage and actuator count.",
+     "manual_id": "honeywell-jade-w7220-63-2700",
+     "page": 24,
+     "verified": true
+    }
+   ],
+   "approved_by": "scenario-manager",
+   "approved_at": "2026-10-26 07:15:00",
+   "edited": false
+  },
+  {
+   "work_order_id": "WO-AST-RTU-01-202610270700-4de6aa",
+   "asset_id": "AST-RTU-01",
+   "site_id": "SITE-HTF-DC1",
+   "case_id": "ORNL-FRP-RTU-YCD150|2021-04-04",
+   "created_at": "2026-10-27 07:00:00",
+   "status": "approved",
+   "status_reason": "approved by manager",
+   "priority": "P1",
+   "sla_due_at": "2026-10-27 11:00:00",
+   "fault_type": "oa_damper_stuck",
+   "route": "technician",
+   "required_certs": [
+    "CONTROLS"
+   ],
+   "est_minutes": 90,
+   "compatibility_uncertain": true,
+   "detection_disagreement": false,
+   "approval_deadline_at": "2026-10-27 11:00:00",
+   "steps": [
+    {
+     "kind": "safety",
+     "seq": 1,
+     "quote": "Failure to disconnect power before servicing could result in rotating components cutting and slashing technician which could result in death or serious injury.",
+     "manual_id": "trane-rt-svx21ad-precedent-gas-electric-3-10t",
+     "page": 64,
+     "verified": true
+    },
+    {
+     "kind": "check",
+     "seq": 1,
+     "quote": "2. Verify that the dampers stroked to the minimum position.",
+     "manual_id": "trane-rt-svx21ad-precedent-gas-electric-3-10t",
+     "page": 64,
+     "verified": true
+    },
+    {
+     "kind": "citation",
+     "seq": 1,
+     "quote": "Range of damper for this setting is 0-100%.",
+     "manual_id": "trane-rt-svx21ad-precedent-gas-electric-3-10t",
+     "page": 64,
+     "verified": true
+    },
+    {
+     "kind": "citation",
+     "seq": 2,
+     "quote": "2. Verify that the dampers stroked to the minimum position.",
+     "manual_id": "trane-rt-svx21ad-precedent-gas-electric-3-10t",
+     "page": 64,
+     "verified": true
+    }
+   ],
+   "approved_by": "scenario-manager",
+   "approved_at": "2026-10-27 07:15:00",
+   "edited": false
+  },
+  {
+   "work_order_id": "WO-AST-RTU-01-202610280700-000aac",
+   "asset_id": "AST-RTU-01",
+   "site_id": "SITE-HTF-DC1",
+   "case_id": "ORNL-FRP-RTU-YCD150|2021-04-05",
+   "created_at": "2026-10-28 07:00:00",
+   "status": "blocked",
+   "status_reason": "insufficient evidence: no manual passage supports the cause; manual review",
+   "priority": "P1",
+   "sla_due_at": "2026-10-28 11:00:00",
+   "fault_type": "oa_damper_stuck",
+   "route": "manual_review",
+   "required_certs": [],
+   "est_minutes": 0,
+   "compatibility_uncertain": false,
+   "detection_disagreement": false,
+   "approval_deadline_at": "2026-10-28 11:00:00",
+   "steps": [],
+   "approved_by": null,
+   "approved_at": null,
+   "edited": false
+  },
+  {
+   "work_order_id": "WO-AST-RTU-01-202610290700-46b0d2",
+   "asset_id": "AST-RTU-01",
+   "site_id": "SITE-HTF-DC1",
+   "case_id": "ORNL-FRP-RTU-YCD150|2021-04-06",
+   "created_at": "2026-10-29 07:00:00",
+   "status": "approved",
+   "status_reason": "approved by manager",
+   "priority": "P1",
+   "sla_due_at": "2026-10-29 11:00:00",
+   "fault_type": "oa_damper_stuck",
+   "route": "technician",
+   "required_certs": [
+    "CONTROLS"
+   ],
+   "est_minutes": 90,
+   "compatibility_uncertain": true,
+   "detection_disagreement": false,
+   "approval_deadline_at": "2026-10-29 11:00:00",
+   "steps": [
+    {
+     "kind": "safety",
+     "seq": 1,
+     "quote": "Failure to disconnect power before servicing could result in rotating components cutting and slashing technician which could result in death or serious injury.",
+     "manual_id": "trane-rt-svx21ad-precedent-gas-electric-3-10t",
+     "page": 64,
+     "verified": true
+    },
+    {
+     "kind": "check",
+     "seq": 1,
+     "quote": "2. Verify that the dampers stroked to the minimum position.",
+     "manual_id": "trane-rt-svx21ad-precedent-gas-electric-3-10t",
+     "page": 64,
+     "verified": true
+    },
+    {
+     "kind": "citation",
+     "seq": 1,
+     "quote": "2. Verify that the dampers stroked to the minimum position.",
+     "manual_id": "trane-rt-svx21ad-precedent-gas-electric-3-10t",
+     "page": 64,
+     "verified": true
+    },
+    {
+     "kind": "citation",
+     "seq": 2,
+     "quote": "Replace the filter access panel. The damper will close when the blower circuit is de-energized.",
+     "manual_id": "trane-rt-svx21ad-precedent-gas-electric-3-10t",
+     "page": 64,
+     "verified": true
+    }
+   ],
+   "approved_by": "scenario-manager",
+   "approved_at": "2026-10-29 07:15:00",
+   "edited": false
+  },
+  {
+   "work_order_id": "WO-AST-RTU-01-202610300700-5f5c20",
+   "asset_id": "AST-RTU-01",
+   "site_id": "SITE-HTF-DC1",
+   "case_id": "ORNL-FRP-RTU-YCD150|2021-04-07",
+   "created_at": "2026-10-30 07:00:00",
+   "status": "blocked",
+   "status_reason": "no sourced lockout or disconnect step in the manuals; approval blocked",
+   "priority": "P1",
+   "sla_due_at": "2026-10-30 11:00:00",
+   "fault_type": "sa_temp_sensor_bias",
+   "route": "technician",
+   "required_certs": [
+    "CONTROLS"
+   ],
+   "est_minutes": 90,
+   "compatibility_uncertain": true,
+   "detection_disagreement": false,
+   "approval_deadline_at": "2026-10-30 11:00:00",
+   "steps": [
+    {
+     "kind": "citation",
+     "seq": 1,
+     "quote": "As a limit sensor for supply air temperature: Mount as close as possible to the air outlet into the room.",
+     "manual_id": "siemens-duct-temperature-sensor-129-525",
+     "page": 1,
+     "verified": true
+    }
+   ],
+   "approved_by": null,
+   "approved_at": null,
+   "edited": false
+  },
+  {
+   "work_order_id": "WO-AST-RTU-01-202610260700-5aaa1f",
+   "asset_id": "AST-RTU-01",
+   "site_id": "SITE-HTF-DC1",
+   "case_id": "ORNL-FRP-RTU-YCD150|2021-04-08",
+   "created_at": "2026-10-26 07:00:00",
+   "status": "blocked",
+   "status_reason": "insufficient evidence: no manual passage supports the cause; manual review",
+   "priority": "P1",
+   "sla_due_at": "2026-10-26 11:00:00",
+   "fault_type": "thermostat_bias",
+   "route": "manual_review",
+   "required_certs": [],
+   "est_minutes": 0,
+   "compatibility_uncertain": false,
+   "detection_disagreement": false,
+   "approval_deadline_at": "2026-10-26 11:00:00",
+   "steps": [],
+   "approved_by": null,
+   "approved_at": null,
+   "edited": false
+  },
+  {
+   "work_order_id": "WO-AST-RTU-01-202610270700-25877c",
+   "asset_id": "AST-RTU-01",
+   "site_id": "SITE-HTF-DC1",
+   "case_id": "ORNL-FRP-RTU-YCD150|2021-04-09",
+   "created_at": "2026-10-27 07:00:00",
+   "status": "blocked",
+   "status_reason": "no sourced lockout or disconnect step in the manuals; approval blocked",
+   "priority": "P1",
+   "sla_due_at": "2026-10-27 11:00:00",
+   "fault_type": "sa_temp_sensor_bias",
+   "route": "technician",
+   "required_certs": [
+    "CONTROLS"
+   ],
+   "est_minutes": 90,
+   "compatibility_uncertain": true,
+   "detection_disagreement": false,
+   "approval_deadline_at": "2026-10-27 11:00:00",
+   "steps": [
+    {
+     "kind": "citation",
+     "seq": 1,
+     "quote": "As a limit sensor for supply air temperature: Mount as close as possible to the air outlet into the room.",
+     "manual_id": "siemens-duct-temperature-sensor-129-525",
+     "page": 1,
+     "verified": true
+    }
+   ],
+   "approved_by": null,
+   "approved_at": null,
+   "edited": false
+  },
+  {
+   "work_order_id": "WO-AST-RTU-01-202610280700-8d4f05",
+   "asset_id": "AST-RTU-01",
+   "site_id": "SITE-HTF-DC1",
+   "case_id": "ORNL-FRP-RTU-YCD150|2021-04-10",
+   "created_at": "2026-10-28 07:00:00",
+   "status": "blocked",
+   "status_reason": "no sourced lockout or disconnect step in the manuals; approval blocked",
+   "priority": "P1",
+   "sla_due_at": "2026-10-28 11:00:00",
+   "fault_type": "sa_temp_sensor_bias",
+   "route": "technician",
+   "required_certs": [
+    "CONTROLS"
+   ],
+   "est_minutes": 90,
+   "compatibility_uncertain": true,
+   "detection_disagreement": false,
+   "approval_deadline_at": "2026-10-28 11:00:00",
+   "steps": [
+    {
+     "kind": "citation",
+     "seq": 1,
+     "quote": "As a limit sensor for supply air temperature: Mount as close as possible to the air outlet into the room.",
+     "manual_id": "siemens-duct-temperature-sensor-129-525",
+     "page": 1,
+     "verified": true
+    }
+   ],
+   "approved_by": null,
+   "approved_at": null,
+   "edited": false
+  },
+  {
+   "work_order_id": "WO-AST-RTU-01-202610290700-a2a972",
+   "asset_id": "AST-RTU-01",
+   "site_id": "SITE-HTF-DC1",
+   "case_id": "ORNL-FRP-RTU-YCD150|2021-04-11",
+   "created_at": "2026-10-29 07:00:00",
+   "status": "blocked",
+   "status_reason": "no sourced lockout or disconnect step in the manuals; approval blocked",
+   "priority": "P1",
+   "sla_due_at": "2026-10-29 11:00:00",
+   "fault_type": "sa_temp_sensor_bias",
+   "route": "technician",
+   "required_certs": [
+    "CONTROLS"
+   ],
+   "est_minutes": 90,
+   "compatibility_uncertain": true,
+   "detection_disagreement": false,
+   "approval_deadline_at": "2026-10-29 11:00:00",
+   "steps": [
+    {
+     "kind": "citation",
+     "seq": 1,
+     "quote": "As a limit sensor for supply air temperature: Mount as close as possible to the air outlet into the room.",
+     "manual_id": "siemens-duct-temperature-sensor-129-525",
+     "page": 1,
+     "verified": true
+    }
+   ],
+   "approved_by": null,
+   "approved_at": null,
+   "edited": false
+  },
+  {
+   "work_order_id": "WO-AST-RTU-01-202610300700-86fa84",
+   "asset_id": "AST-RTU-01",
+   "site_id": "SITE-HTF-DC1",
+   "case_id": "ORNL-FRP-RTU-YCD150|2021-04-12",
+   "created_at": "2026-10-30 07:00:00",
+   "status": "blocked",
+   "status_reason": "no sourced lockout or disconnect step in the manuals; approval blocked",
+   "priority": "P1",
+   "sla_due_at": "2026-10-30 11:00:00",
+   "fault_type": "sa_temp_sensor_bias",
+   "route": "technician",
+   "required_certs": [
+    "CONTROLS"
+   ],
+   "est_minutes": 90,
+   "compatibility_uncertain": true,
+   "detection_disagreement": false,
+   "approval_deadline_at": "2026-10-30 11:00:00",
+   "steps": [
+    {
+     "kind": "citation",
+     "seq": 1,
+     "quote": "As a limit sensor for supply air temperature: Mount as close as possible to the air outlet into the room.",
+     "manual_id": "siemens-duct-temperature-sensor-129-525",
+     "page": 1,
+     "verified": true
+    }
+   ],
+   "approved_by": null,
+   "approved_at": null,
+   "edited": false
+  },
+  {
+   "work_order_id": "WO-AST-RTU-01-202610260800-781616",
+   "asset_id": "AST-RTU-01",
+   "site_id": "SITE-HTF-DC1",
+   "case_id": "ORNL-FRP-RTU-YCD150|2021-04-13",
+   "created_at": "2026-10-26 08:00:00",
+   "status": "blocked",
+   "status_reason": "no sourced lockout or disconnect step in the manuals; approval blocked",
+   "priority": "P1",
+   "sla_due_at": "2026-10-26 12:00:00",
+   "fault_type": "sa_temp_sensor_bias",
+   "route": "technician",
+   "required_certs": [
+    "CONTROLS"
+   ],
+   "est_minutes": 90,
+   "compatibility_uncertain": true,
+   "detection_disagreement": false,
+   "approval_deadline_at": "2026-10-26 12:00:00",
+   "steps": [
+    {
+     "kind": "citation",
+     "seq": 1,
+     "quote": "As a limit sensor for supply air temperature: Mount as close as possible to the air outlet into the room.",
+     "manual_id": "siemens-duct-temperature-sensor-129-525",
+     "page": 1,
+     "verified": true
+    }
+   ],
+   "approved_by": null,
+   "approved_at": null,
+   "edited": false
+  },
+  {
+   "work_order_id": "WO-AST-RTU-01-202610270800-1624d2",
+   "asset_id": "AST-RTU-01",
+   "site_id": "SITE-HTF-DC1",
+   "case_id": "ORNL-FRP-RTU-YCD150|2021-04-15",
+   "created_at": "2026-10-27 08:00:00",
+   "status": "blocked",
+   "status_reason": "insufficient evidence: no manual passage supports the cause; manual review",
+   "priority": "P1",
+   "sla_due_at": "2026-10-27 12:00:00",
+   "fault_type": "insufficient_evidence",
+   "route": "manual_review",
+   "required_certs": [],
+   "est_minutes": 0,
+   "compatibility_uncertain": false,
+   "detection_disagreement": false,
+   "approval_deadline_at": "2026-10-27 12:00:00",
+   "steps": [],
+   "approved_by": null,
+   "approved_at": null,
+   "edited": false
+  },
+  {
+   "work_order_id": "WO-AST-RTU-01-202610280700-74bdbd",
+   "asset_id": "AST-RTU-01",
+   "site_id": "SITE-HTF-DC1",
+   "case_id": "ORNL-FRP-RTU-YCD150|2021-06-05",
+   "created_at": "2026-10-28 07:00:00",
+   "status": "approved",
+   "status_reason": "approved by manager",
+   "priority": "P1",
+   "sla_due_at": "2026-10-28 11:00:00",
+   "fault_type": "oa_damper_stuck",
+   "route": "technician",
+   "required_certs": [
+    "CONTROLS"
+   ],
+   "est_minutes": 90,
+   "compatibility_uncertain": true,
+   "detection_disagreement": false,
+   "approval_deadline_at": "2026-10-28 11:00:00",
+   "steps": [
+    {
+     "kind": "safety",
+     "seq": 1,
+     "quote": "Failure to disconnect power before servicing could result in rotating components cutting and slashing technician which could result in death or serious injury.",
+     "manual_id": "trane-rt-svx21ad-precedent-gas-electric-3-10t",
+     "page": 64,
+     "verified": true
+    },
+    {
+     "kind": "check",
+     "seq": 1,
+     "quote": "Verify that the dampers stroked to the minimum position.",
+     "manual_id": "trane-rt-svx21ad-precedent-gas-electric-3-10t",
+     "page": 64,
+     "verified": true
+    },
+    {
+     "kind": "check",
+     "seq": 2,
+     "quote": "Actuator has failed or become disconnected - check for stall, over voltage, under voltage and actuator count. Replace actuator if damper is moveable and supply voltage is between 21.6 V and 26.4 V.",
+     "manual_id": "honeywell-jade-w7220-63-2700",
+     "page": 24,
+     "verified": true
+    },
+    {
+     "kind": "citation",
+     "seq": 1,
+     "quote": "Actuator has failed or become disconnected - check for stall, over voltage, under voltage and actuator count. Replace actuator if damper is moveable and supply voltage is between 21.6 V and 26.4 V.",
+     "manual_id": "honeywell-jade-w7220-63-2700",
+     "page": 24,
+     "verified": true
+    }
+   ],
+   "approved_by": "scenario-manager",
+   "approved_at": "2026-10-28 07:15:00",
+   "edited": false
+  },
+  {
+   "work_order_id": "WO-AST-RTU-01-202610291100-5fca3e",
+   "asset_id": "AST-RTU-01",
+   "site_id": "SITE-HTF-DC1",
+   "case_id": "ORNL-FRP-RTU-YCD150|2021-06-06",
+   "created_at": "2026-10-29 11:00:00",
+   "status": "approved",
+   "status_reason": "approved by manager",
+   "priority": "P1",
+   "sla_due_at": "2026-10-29 15:00:00",
+   "fault_type": "oa_damper_stuck",
+   "route": "technician",
+   "required_certs": [
+    "CONTROLS"
+   ],
+   "est_minutes": 90,
+   "compatibility_uncertain": true,
+   "detection_disagreement": true,
+   "approval_deadline_at": "2026-10-29 15:00:00",
+   "steps": [
+    {
+     "kind": "safety",
+     "seq": 1,
+     "quote": "Failure to disconnect power before servicing could result in rotating components cutting and slashing technician which could result in death or serious injury.",
+     "manual_id": "trane-rt-svx21ad-precedent-gas-electric-3-10t",
+     "page": 64,
+     "verified": true
+    },
+    {
+     "kind": "check",
+     "seq": 1,
+     "quote": "Verify that the dampers stroked to the minimum position.",
+     "manual_id": "trane-rt-svx21ad-precedent-gas-electric-3-10t",
+     "page": 64,
+     "verified": true
+    },
+    {
+     "kind": "citation",
+     "seq": 1,
+     "quote": "Range of damper for this setting is 0-100%.",
+     "manual_id": "trane-rt-svx21ad-precedent-gas-electric-3-10t",
+     "page": 64,
+     "verified": true
+    },
+    {
+     "kind": "citation",
+     "seq": 2,
+     "quote": "The damper will close when the blower circuit is de-energized.",
+     "manual_id": "trane-rt-svx21ad-precedent-gas-electric-3-10t",
+     "page": 64,
+     "verified": true
+    },
+    {
+     "kind": "citation",
+     "seq": 3,
+     "quote": "set the minimum position setpoint for the economizer to 0% using the setpoint potentiometer located on the Economizer Control (ECA)",
+     "manual_id": "trane-rt-svx26p-voyager-gas-electric-12-25t",
+     "page": 37,
+     "verified": true
+    }
+   ],
+   "approved_by": "scenario-manager",
+   "approved_at": "2026-10-29 11:15:00",
+   "edited": false
+  },
+  {
+   "work_order_id": "WO-AST-RTU-01-202610300700-541000",
+   "asset_id": "AST-RTU-01",
+   "site_id": "SITE-HTF-DC1",
+   "case_id": "ORNL-FRP-RTU-YCD150|2021-06-07",
+   "created_at": "2026-10-30 07:00:00",
+   "status": "approved",
+   "status_reason": "approved by manager",
+   "priority": "P1",
+   "sla_due_at": "2026-10-30 11:00:00",
+   "fault_type": "oa_damper_stuck",
+   "route": "technician",
+   "required_certs": [
+    "CONTROLS"
+   ],
+   "est_minutes": 90,
+   "compatibility_uncertain": true,
+   "detection_disagreement": false,
+   "approval_deadline_at": "2026-10-30 11:00:00",
+   "steps": [
+    {
+     "kind": "safety",
+     "seq": 1,
+     "quote": "Failure to disconnect power before servicing could result in rotating components cutting and slashing technician which could result in death or serious injury.",
+     "manual_id": "trane-rt-svx21ad-precedent-gas-electric-3-10t",
+     "page": 64,
+     "verified": true
+    },
+    {
+     "kind": "check",
+     "seq": 1,
+     "quote": "2. Verify that the dampers stroked to the minimum position.",
+     "manual_id": "trane-rt-svx21ad-precedent-gas-electric-3-10t",
+     "page": 64,
+     "verified": true
+    },
+    {
+     "kind": "citation",
+     "seq": 1,
+     "quote": "2. Verify that the dampers stroked to the minimum position.",
+     "manual_id": "trane-rt-svx21ad-precedent-gas-electric-3-10t",
+     "page": 64,
+     "verified": true
+    },
+    {
+     "kind": "citation",
+     "seq": 2,
+     "quote": "Replace the filter access panel. The damper will close when the blower circuit is de-energized.",
+     "manual_id": "trane-rt-svx21ad-precedent-gas-electric-3-10t",
+     "page": 64,
+     "verified": true
+    }
+   ],
+   "approved_by": "scenario-manager",
+   "approved_at": "2026-10-30 07:15:00",
+   "edited": false
+  },
+  {
+   "work_order_id": "WO-AST-RTU-01-202610260700-80481b",
+   "asset_id": "AST-RTU-01",
+   "site_id": "SITE-HTF-DC1",
+   "case_id": "ORNL-FRP-RTU-YCD150|2021-06-08",
+   "created_at": "2026-10-26 07:00:00",
+   "status": "blocked",
+   "status_reason": "insufficient evidence: no manual passage supports the cause; manual review",
+   "priority": "P1",
+   "sla_due_at": "2026-10-26 11:00:00",
+   "fault_type": "oa_damper_stuck",
+   "route": "manual_review",
+   "required_certs": [],
+   "est_minutes": 0,
+   "compatibility_uncertain": false,
+   "detection_disagreement": false,
+   "approval_deadline_at": "2026-10-26 11:00:00",
+   "steps": [],
+   "approved_by": null,
+   "approved_at": null,
+   "edited": false
+  },
+  {
+   "work_order_id": "WO-AST-RTU-01-202610270700-127477",
+   "asset_id": "AST-RTU-01",
+   "site_id": "SITE-HTF-DC1",
+   "case_id": "ORNL-FRP-RTU-YCD150|2021-06-09",
+   "created_at": "2026-10-27 07:00:00",
+   "status": "approved",
+   "status_reason": "approved by manager",
+   "priority": "P1",
+   "sla_due_at": "2026-10-27 11:00:00",
+   "fault_type": "oa_damper_stuck",
+   "route": "technician",
+   "required_certs": [
+    "CONTROLS"
+   ],
+   "est_minutes": 90,
+   "compatibility_uncertain": true,
+   "detection_disagreement": false,
+   "approval_deadline_at": "2026-10-27 11:00:00",
+   "steps": [
+    {
+     "kind": "safety",
+     "seq": 1,
+     "quote": "Failure to disconnect power before servicing could result in rotating components cutting and slashing technician which could result in death or serious injury.",
+     "manual_id": "trane-rt-svx21ad-precedent-gas-electric-3-10t",
+     "page": 64,
+     "verified": true
+    },
+    {
+     "kind": "check",
+     "seq": 1,
+     "quote": "Actuator has failed or become disconnected - check for stall, over voltage, under voltage and actuator count. Replace actuator if damper is moveable and supply voltage is between 21.6 V and 26.4 V.",
+     "manual_id": "honeywell-jade-w7220-63-2700",
+     "page": 24,
+     "verified": true
+    },
+    {
+     "kind": "citation",
+     "seq": 1,
+     "quote": "Actuator has failed or become disconnected - check for stall, over voltage, under voltage and actuator count. Replace actuator if damper is moveable and supply voltage is between 21.6 V and 26.4 V.",
+     "manual_id": "honeywell-jade-w7220-63-2700",
+     "page": 24,
+     "verified": true
+    }
+   ],
+   "approved_by": "scenario-manager",
+   "approved_at": "2026-10-27 07:15:00",
+   "edited": false
+  },
+  {
+   "work_order_id": "WO-AST-RTU-01-202610280700-ec1a95",
+   "asset_id": "AST-RTU-01",
+   "site_id": "SITE-HTF-DC1",
+   "case_id": "ORNL-FRP-RTU-YCD150|2021-06-10",
+   "created_at": "2026-10-28 07:00:00",
+   "status": "approved",
+   "status_reason": "approved by manager",
+   "priority": "P1",
+   "sla_due_at": "2026-10-28 11:00:00",
+   "fault_type": "oa_damper_stuck",
+   "route": "technician",
+   "required_certs": [
+    "CONTROLS"
+   ],
+   "est_minutes": 90,
+   "compatibility_uncertain": true,
+   "detection_disagreement": false,
+   "approval_deadline_at": "2026-10-28 11:00:00",
+   "steps": [
+    {
+     "kind": "safety",
+     "seq": 1,
+     "quote": "Failure to disconnect power before servicing could result in rotating components cutting and slashing technician which could result in death or serious injury.",
+     "manual_id": "trane-rt-svx21ad-precedent-gas-electric-3-10t",
+     "page": 64,
+     "verified": true
+    },
+    {
+     "kind": "safety",
+     "seq": 2,
+     "quote": "The damper will close when the blower circuit is de-energized.",
+     "manual_id": "trane-rt-svx21ad-precedent-gas-electric-3-10t",
+     "page": 64,
+     "verified": true
+    },
+    {
+     "kind": "check",
+     "seq": 1,
+     "quote": "Verify that the dampers stroked to the minimum position.",
+     "manual_id": "trane-rt-svx21ad-precedent-gas-electric-3-10t",
+     "page": 64,
+     "verified": true
+    },
+    {
+     "kind": "citation",
+     "seq": 1,
+     "quote": "Range of damper for this setting is 0-100%.",
+     "manual_id": "trane-rt-svx21ad-precedent-gas-electric-3-10t",
+     "page": 64,
+     "verified": true
+    },
+    {
+     "kind": "citation",
+     "seq": 2,
+     "quote": "Verify that the dampers stroked to the minimum position.",
+     "manual_id": "trane-rt-svx21ad-precedent-gas-electric-3-10t",
+     "page": 64,
+     "verified": true
+    }
+   ],
+   "approved_by": "scenario-manager",
+   "approved_at": "2026-10-28 07:15:00",
+   "edited": false
+  },
+  {
+   "work_order_id": "WO-AST-RTU-01-202610290700-c0e20e",
+   "asset_id": "AST-RTU-01",
+   "site_id": "SITE-HTF-DC1",
+   "case_id": "ORNL-FRP-RTU-YCD150|2021-06-11",
+   "created_at": "2026-10-29 07:00:00",
+   "status": "blocked",
+   "status_reason": "no sourced lockout or disconnect step in the manuals; approval blocked",
+   "priority": "P1",
+   "sla_due_at": "2026-10-29 11:00:00",
+   "fault_type": "sa_temp_sensor_bias",
+   "route": "technician",
+   "required_certs": [
+    "CONTROLS"
+   ],
+   "est_minutes": 90,
+   "compatibility_uncertain": true,
+   "detection_disagreement": false,
+   "approval_deadline_at": "2026-10-29 11:00:00",
+   "steps": [
+    {
+     "kind": "citation",
+     "seq": 1,
+     "quote": "As a limit sensor for supply air temperature: Mount as close as possible to the air outlet into the room.",
+     "manual_id": "siemens-duct-temperature-sensor-129-525",
+     "page": 1,
+     "verified": true
+    }
+   ],
+   "approved_by": null,
+   "approved_at": null,
+   "edited": false
+  },
+  {
+   "work_order_id": "WO-AST-RTU-01-202610300700-605cf9",
+   "asset_id": "AST-RTU-01",
+   "site_id": "SITE-HTF-DC1",
+   "case_id": "ORNL-FRP-RTU-YCD150|2021-06-12",
+   "created_at": "2026-10-30 07:00:00",
+   "status": "blocked",
+   "status_reason": "no sourced lockout or disconnect step in the manuals; approval blocked",
+   "priority": "P1",
+   "sla_due_at": "2026-10-30 11:00:00",
+   "fault_type": "sa_temp_sensor_bias",
+   "route": "technician",
+   "required_certs": [
+    "CONTROLS"
+   ],
+   "est_minutes": 90,
+   "compatibility_uncertain": true,
+   "detection_disagreement": false,
+   "approval_deadline_at": "2026-10-30 11:00:00",
+   "steps": [
+    {
+     "kind": "citation",
+     "seq": 1,
+     "quote": "As a limit sensor for supply air temperature: Mount as close as possible to the air outlet into the room.",
+     "manual_id": "siemens-duct-temperature-sensor-129-525",
+     "page": 1,
+     "verified": true
+    }
+   ],
+   "approved_by": null,
+   "approved_at": null,
+   "edited": false
+  },
+  {
+   "work_order_id": "WO-AST-RTU-01-202610260800-7e0963",
+   "asset_id": "AST-RTU-01",
+   "site_id": "SITE-HTF-DC1",
+   "case_id": "ORNL-FRP-RTU-YCD150|2021-06-13",
+   "created_at": "2026-10-26 08:00:00",
+   "status": "approved",
+   "status_reason": "approved by manager",
+   "priority": "P1",
+   "sla_due_at": "2026-10-26 12:00:00",
+   "fault_type": "oa_damper_stuck",
+   "route": "technician",
+   "required_certs": [
+    "CONTROLS"
+   ],
+   "est_minutes": 90,
+   "compatibility_uncertain": true,
+   "detection_disagreement": false,
+   "approval_deadline_at": "2026-10-26 12:00:00",
+   "steps": [
+    {
+     "kind": "safety",
+     "seq": 1,
+     "quote": "Failure to disconnect power before servicing could result in rotating components cutting and slashing technician which could result in death or serious injury.",
+     "manual_id": "trane-rt-svx21ad-precedent-gas-electric-3-10t",
+     "page": 64,
+     "verified": true
+    },
+    {
+     "kind": "check",
+     "seq": 1,
+     "quote": "Actuator has failed or become disconnected - check for stall, over voltage, under voltage and actuator count. Replace actuator if damper is moveable and supply voltage is between 21.6 V and 26.4 V.",
+     "manual_id": "honeywell-jade-w7220-63-2700",
+     "page": 24,
+     "verified": true
+    },
+    {
+     "kind": "citation",
+     "seq": 1,
+     "quote": "Actuator has failed or become disconnected - check for stall, over voltage, under voltage and actuator count. Replace actuator if damper is moveable and supply voltage is between 21.6 V and 26.4 V.",
+     "manual_id": "honeywell-jade-w7220-63-2700",
+     "page": 24,
+     "verified": true
+    }
+   ],
+   "approved_by": "scenario-manager",
+   "approved_at": "2026-10-26 08:15:00",
+   "edited": false
+  },
+  {
+   "work_order_id": "WO-AST-RTU-01-202610270700-fd578e",
+   "asset_id": "AST-RTU-01",
+   "site_id": "SITE-HTF-DC1",
+   "case_id": "ORNL-FRP-RTU-YCD150|2021-06-14",
+   "created_at": "2026-10-27 07:00:00",
+   "status": "blocked",
+   "status_reason": "no sourced lockout or disconnect step in the manuals; approval blocked",
+   "priority": "P1",
+   "sla_due_at": "2026-10-27 11:00:00",
+   "fault_type": "sa_temp_sensor_bias",
+   "route": "technician",
+   "required_certs": [
+    "CONTROLS"
+   ],
+   "est_minutes": 90,
+   "compatibility_uncertain": true,
+   "detection_disagreement": false,
+   "approval_deadline_at": "2026-10-27 11:00:00",
+   "steps": [
+    {
+     "kind": "citation",
+     "seq": 1,
+     "quote": "As a limit sensor for supply air temperature: Mount as close as possible to the air outlet into the room.",
+     "manual_id": "siemens-duct-temperature-sensor-129-525",
+     "page": 1,
+     "verified": true
+    }
+   ],
+   "approved_by": null,
+   "approved_at": null,
+   "edited": false
+  },
+  {
+   "work_order_id": "WO-AST-RTU-01-202610280700-f73323",
+   "asset_id": "AST-RTU-01",
+   "site_id": "SITE-HTF-DC1",
+   "case_id": "ORNL-FRP-RTU-YCD150|2021-06-15",
+   "created_at": "2026-10-28 07:00:00",
+   "status": "approved",
+   "status_reason": "approved by manager",
+   "priority": "P1",
+   "sla_due_at": "2026-10-28 11:00:00",
+   "fault_type": "oa_damper_stuck",
+   "route": "technician",
+   "required_certs": [
+    "CONTROLS"
+   ],
+   "est_minutes": 90,
+   "compatibility_uncertain": true,
+   "detection_disagreement": false,
+   "approval_deadline_at": "2026-10-28 11:00:00",
+   "steps": [
+    {
+     "kind": "safety",
+     "seq": 1,
+     "quote": "Failure to disconnect power before servicing could result in rotating components cutting and slashing technician which could result in death or serious injury.",
+     "manual_id": "trane-rt-svx21ad-precedent-gas-electric-3-10t",
+     "page": 64,
+     "verified": true
+    },
+    {
+     "kind": "check",
+     "seq": 1,
+     "quote": "Actuator has failed or become disconnected - check for stall, over voltage, under voltage and actuator count. Replace actuator if damper is moveable and supply voltage is between 21.6 V and 26.4 V.",
+     "manual_id": "honeywell-jade-w7220-63-2700",
+     "page": 24,
+     "verified": true
+    },
+    {
+     "kind": "citation",
+     "seq": 1,
+     "quote": "Actuator has failed or become disconnected - check for stall, over voltage, under voltage and actuator count. Replace actuator if damper is moveable and supply voltage is between 21.6 V and 26.4 V.",
+     "manual_id": "honeywell-jade-w7220-63-2700",
+     "page": 24,
+     "verified": true
+    }
+   ],
+   "approved_by": "scenario-manager",
+   "approved_at": "2026-10-28 07:15:00",
+   "edited": false
+  },
+  {
+   "work_order_id": "WO-AST-RTU-01-202610290800-6ea40a",
+   "asset_id": "AST-RTU-01",
+   "site_id": "SITE-HTF-DC1",
+   "case_id": "ORNL-FRP-RTU-YCD150|2021-06-16",
+   "created_at": "2026-10-29 08:00:00",
+   "status": "approved",
+   "status_reason": "approved by manager",
+   "priority": "P1",
+   "sla_due_at": "2026-10-29 12:00:00",
+   "fault_type": "oa_damper_stuck",
+   "route": "technician",
+   "required_certs": [
+    "CONTROLS"
+   ],
+   "est_minutes": 90,
+   "compatibility_uncertain": true,
+   "detection_disagreement": false,
+   "approval_deadline_at": "2026-10-29 12:00:00",
+   "steps": [
+    {
+     "kind": "safety",
+     "seq": 1,
+     "quote": "Failure to disconnect power before servicing could result in rotating components cutting and slashing technician which could result in death or serious injury.",
+     "manual_id": "trane-rt-svx21ad-precedent-gas-electric-3-10t",
+     "page": 64,
+     "verified": true
+    },
+    {
+     "kind": "check",
+     "seq": 1,
+     "quote": "Actuator has failed or become disconnected - check for stall, over voltage, under voltage and actuator count.",
+     "manual_id": "honeywell-jade-w7220-63-2700",
+     "page": 24,
+     "verified": true
+    },
+    {
+     "kind": "citation",
+     "seq": 1,
+     "quote": "If the actuator does not drive, the economizer actuator is bad. Replace the ECA.",
+     "manual_id": "trane-rt-svx21ad-precedent-gas-electric-3-10t",
+     "page": 76,
+     "verified": true
+    },
+    {
+     "kind": "citation",
+     "seq": 2,
+     "quote": "If the ECA is not driving the dampers, verify that 24 Vac is between the ECA terminals TR and TR1 is present.",
+     "manual_id": "trane-rt-svx21ad-precedent-gas-electric-3-10t",
+     "page": 76,
+     "verified": true
+    }
+   ],
+   "approved_by": "scenario-manager",
+   "approved_at": "2026-10-29 08:15:00",
+   "edited": false
+  },
+  {
+   "work_order_id": "WO-AST-RTU-01-202610300700-3d1cd8",
+   "asset_id": "AST-RTU-01",
+   "site_id": "SITE-HTF-DC1",
+   "case_id": "ORNL-FRP-RTU-YCD150|2022-02-25",
+   "created_at": "2026-10-30 07:00:00",
+   "status": "blocked",
+   "status_reason": "insufficient evidence: no manual passage supports the cause; manual review",
+   "priority": "P1",
+   "sla_due_at": "2026-10-30 11:00:00",
+   "fault_type": "oa_damper_stuck",
+   "route": "manual_review",
+   "required_certs": [],
+   "est_minutes": 0,
+   "compatibility_uncertain": false,
+   "detection_disagreement": false,
+   "approval_deadline_at": "2026-10-30 11:00:00",
+   "steps": [],
+   "approved_by": null,
+   "approved_at": null,
+   "edited": false
+  },
+  {
+   "work_order_id": "WO-AST-RTU-01-202610260700-d1afe8",
+   "asset_id": "AST-RTU-01",
+   "site_id": "SITE-HTF-DC1",
+   "case_id": "ORNL-FRP-RTU-YCD150|2022-02-26",
+   "created_at": "2026-10-26 07:00:00",
+   "status": "blocked",
+   "status_reason": "insufficient evidence: no manual passage supports the cause; manual review",
+   "priority": "P1",
+   "sla_due_at": "2026-10-26 11:00:00",
+   "fault_type": "oa_damper_stuck",
+   "route": "manual_review",
+   "required_certs": [],
+   "est_minutes": 0,
+   "compatibility_uncertain": false,
+   "detection_disagreement": false,
+   "approval_deadline_at": "2026-10-26 11:00:00",
+   "steps": [],
+   "approved_by": null,
+   "approved_at": null,
+   "edited": false
+  },
+  {
+   "work_order_id": "WO-AST-RTU-01-202610270700-48de95",
+   "asset_id": "AST-RTU-01",
+   "site_id": "SITE-HTF-DC1",
+   "case_id": "ORNL-FRP-RTU-YCD150|2022-02-27",
+   "created_at": "2026-10-27 07:00:00",
+   "status": "approved",
+   "status_reason": "approved by manager",
+   "priority": "P1",
+   "sla_due_at": "2026-10-27 11:00:00",
+   "fault_type": "oa_damper_stuck",
+   "route": "technician",
+   "required_certs": [
+    "CONTROLS"
+   ],
+   "est_minutes": 90,
+   "compatibility_uncertain": true,
+   "detection_disagreement": false,
+   "approval_deadline_at": "2026-10-27 11:00:00",
+   "steps": [
+    {
+     "kind": "safety",
+     "seq": 1,
+     "quote": "Failure to disconnect power before servicing could result in rotating components cutting and slashing technician which could result in death or serious injury.",
+     "manual_id": "trane-rt-svx21ad-precedent-gas-electric-3-10t",
+     "page": 64,
+     "verified": true
+    },
+    {
+     "kind": "citation",
+     "seq": 1,
+     "quote": "Turn the MIN POS - DESIGN potentiometer on the RTEM clockwise to open or counter-clockwise to close. This will set the minimum damper position at maximum fan speed. Range of damper for this setting is 0-50%.",
+     "manual_id": "trane-rt-svx21ad-precedent-gas-electric-3-10t",
+     "page": 64,
+     "verified": true
+    },
+    {
+     "kind": "citation",
+     "seq": 2,
+     "quote": "Replace the filter access panel. The damper will close when the blower circuit is de-energized.",
+     "manual_id": "trane-rt-svx21ad-precedent-gas-electric-3-10t",
+     "page": 64,
+     "verified": true
+    }
+   ],
+   "approved_by": "scenario-manager",
+   "approved_at": "2026-10-27 07:15:00",
+   "edited": false
+  },
+  {
+   "work_order_id": "WO-AST-RTU-01-202610280700-19f514",
+   "asset_id": "AST-RTU-01",
+   "site_id": "SITE-HTF-DC1",
+   "case_id": "ORNL-FRP-RTU-YCD150|2022-02-28",
+   "created_at": "2026-10-28 07:00:00",
+   "status": "approved",
+   "status_reason": "approved by manager",
+   "priority": "P1",
+   "sla_due_at": "2026-10-28 11:00:00",
+   "fault_type": "oa_damper_stuck",
+   "route": "technician",
+   "required_certs": [
+    "CONTROLS"
+   ],
+   "est_minutes": 90,
+   "compatibility_uncertain": true,
+   "detection_disagreement": false,
+   "approval_deadline_at": "2026-10-28 11:00:00",
+   "steps": [
+    {
+     "kind": "safety",
+     "seq": 1,
+     "quote": "Failure to disconnect power before servicing could result in rotating components cutting and slashing technician which could result in death or serious injury.",
+     "manual_id": "trane-rt-svx21ad-precedent-gas-electric-3-10t",
+     "page": 64,
+     "verified": true
+    },
+    {
+     "kind": "check",
+     "seq": 1,
+     "quote": "2. Verify that the dampers stroked to the minimum position.",
+     "manual_id": "trane-rt-svx21ad-precedent-gas-electric-3-10t",
+     "page": 64,
+     "verified": true
+    },
+    {
+     "kind": "citation",
+     "seq": 1,
+     "quote": "Range of damper for this setting is 0-100%.",
+     "manual_id": "trane-rt-svx21ad-precedent-gas-electric-3-10t",
+     "page": 64,
+     "verified": true
+    },
+    {
+     "kind": "citation",
+     "seq": 2,
+     "quote": "The damper will close when the blower circuit is de-energized.",
+     "manual_id": "trane-rt-svx21ad-precedent-gas-electric-3-10t",
+     "page": 64,
+     "verified": true
+    }
+   ],
+   "approved_by": "scenario-manager",
+   "approved_at": "2026-10-28 07:15:00",
+   "edited": false
+  },
+  {
+   "work_order_id": "WO-AST-RTU-01-202610290700-cc582a",
+   "asset_id": "AST-RTU-01",
+   "site_id": "SITE-HTF-DC1",
+   "case_id": "ORNL-FRP-RTU-YCD150|2022-03-01",
+   "created_at": "2026-10-29 07:00:00",
+   "status": "blocked",
+   "status_reason": "no sourced lockout or disconnect step in the manuals; approval blocked",
+   "priority": "P1",
+   "sla_due_at": "2026-10-29 11:00:00",
+   "fault_type": "sa_temp_sensor_bias",
+   "route": "technician",
+   "required_certs": [
+    "CONTROLS"
+   ],
+   "est_minutes": 90,
+   "compatibility_uncertain": true,
+   "detection_disagreement": false,
+   "approval_deadline_at": "2026-10-29 11:00:00",
+   "steps": [
+    {
+     "kind": "citation",
+     "seq": 1,
+     "quote": "As a limit sensor for supply air temperature: Mount as close as possible to the air outlet into the room.",
+     "manual_id": "siemens-duct-temperature-sensor-129-525",
+     "page": 1,
+     "verified": true
+    }
+   ],
+   "approved_by": null,
+   "approved_at": null,
+   "edited": false
+  },
+  {
+   "work_order_id": "WO-AST-RTU-01-202610300700-aeff5f",
+   "asset_id": "AST-RTU-01",
+   "site_id": "SITE-HTF-DC1",
+   "case_id": "ORNL-FRP-RTU-YCD150|2022-03-02",
+   "created_at": "2026-10-30 07:00:00",
+   "status": "blocked",
+   "status_reason": "no sourced lockout or disconnect step in the manuals; approval blocked",
+   "priority": "P1",
+   "sla_due_at": "2026-10-30 11:00:00",
+   "fault_type": "sa_temp_sensor_bias",
+   "route": "technician",
+   "required_certs": [
+    "CONTROLS"
+   ],
+   "est_minutes": 90,
+   "compatibility_uncertain": true,
+   "detection_disagreement": false,
+   "approval_deadline_at": "2026-10-30 11:00:00",
+   "steps": [
+    {
+     "kind": "citation",
+     "seq": 1,
+     "quote": "As a limit sensor for supply air temperature: Mount as close as possible to the air outlet into the room.",
+     "manual_id": "siemens-duct-temperature-sensor-129-525",
+     "page": 1,
+     "verified": true
+    }
+   ],
+   "approved_by": null,
+   "approved_at": null,
+   "edited": false
+  },
+  {
+   "work_order_id": "WO-AST-RTU-01-202610260700-a92cca",
+   "asset_id": "AST-RTU-01",
+   "site_id": "SITE-HTF-DC1",
+   "case_id": "ORNL-FRP-RTU-YCD150|2022-03-03",
+   "created_at": "2026-10-26 07:00:00",
+   "status": "blocked",
+   "status_reason": "no sourced lockout or disconnect step in the manuals; approval blocked",
+   "priority": "P1",
+   "sla_due_at": "2026-10-26 11:00:00",
+   "fault_type": "sa_temp_sensor_bias",
+   "route": "technician",
+   "required_certs": [
+    "CONTROLS"
+   ],
+   "est_minutes": 90,
+   "compatibility_uncertain": true,
+   "detection_disagreement": false,
+   "approval_deadline_at": "2026-10-26 11:00:00",
+   "steps": [
+    {
+     "kind": "citation",
+     "seq": 1,
+     "quote": "As a limit sensor for supply air temperature: Mount as close as possible to the air outlet into the room.",
+     "manual_id": "siemens-duct-temperature-sensor-129-525",
+     "page": 1,
+     "verified": true
+    }
+   ],
+   "approved_by": null,
+   "approved_at": null,
+   "edited": false
+  },
+  {
+   "work_order_id": "WO-AST-RTU-01-202610270700-78ed48",
+   "asset_id": "AST-RTU-01",
+   "site_id": "SITE-HTF-DC1",
+   "case_id": "ORNL-FRP-RTU-YCD150|2022-03-04",
+   "created_at": "2026-10-27 07:00:00",
+   "status": "blocked",
+   "status_reason": "no sourced lockout or disconnect step in the manuals; approval blocked",
+   "priority": "P1",
+   "sla_due_at": "2026-10-27 11:00:00",
+   "fault_type": "sa_temp_sensor_bias",
+   "route": "technician",
+   "required_certs": [
+    "CONTROLS"
+   ],
+   "est_minutes": 90,
+   "compatibility_uncertain": true,
+   "detection_disagreement": false,
+   "approval_deadline_at": "2026-10-27 11:00:00",
+   "steps": [
+    {
+     "kind": "citation",
+     "seq": 1,
+     "quote": "As a limit sensor for supply air temperature: Mount as close as possible to the air outlet into the room.",
+     "manual_id": "siemens-duct-temperature-sensor-129-525",
+     "page": 1,
+     "verified": true
+    }
+   ],
+   "approved_by": null,
+   "approved_at": null,
+   "edited": false
+  },
+  {
+   "work_order_id": "WO-AST-RTU-01-202610280700-5b740e",
+   "asset_id": "AST-RTU-01",
+   "site_id": "SITE-HTF-DC1",
+   "case_id": "ORNL-FRP-RTU-YCD150|2022-03-05",
+   "created_at": "2026-10-28 07:00:00",
+   "status": "blocked",
+   "status_reason": "insufficient evidence: no manual passage supports the cause; manual review",
+   "priority": "P1",
+   "sla_due_at": "2026-10-28 11:00:00",
+   "fault_type": "oa_damper_stuck",
+   "route": "manual_review",
+   "required_certs": [],
+   "est_minutes": 0,
+   "compatibility_uncertain": false,
+   "detection_disagreement": false,
+   "approval_deadline_at": "2026-10-28 11:00:00",
+   "steps": [],
+   "approved_by": null,
+   "approved_at": null,
+   "edited": false
+  },
+  {
+   "work_order_id": "WO-AST-RTU-01-202610290700-e956b0",
+   "asset_id": "AST-RTU-01",
+   "site_id": "SITE-HTF-DC1",
+   "case_id": "ORNL-FRP-RTU-YCD150|2022-03-06",
+   "created_at": "2026-10-29 07:00:00",
+   "status": "approved",
+   "status_reason": "approved by manager",
+   "priority": "P1",
+   "sla_due_at": "2026-10-29 11:00:00",
+   "fault_type": "oa_damper_stuck",
+   "route": "technician",
+   "required_certs": [
+    "CONTROLS"
+   ],
+   "est_minutes": 90,
+   "compatibility_uncertain": true,
+   "detection_disagreement": false,
+   "approval_deadline_at": "2026-10-29 11:00:00",
+   "steps": [
+    {
+     "kind": "safety",
+     "seq": 1,
+     "quote": "Failure to disconnect power before servicing could result in rotating components cutting and slashing technician which could result in death or serious injury.",
+     "manual_id": "trane-rt-svx21ad-precedent-gas-electric-3-10t",
+     "page": 64,
+     "verified": true
+    },
+    {
+     "kind": "check",
+     "seq": 1,
+     "quote": "Actuator has failed or become disconnected - check for stall, over voltage, under voltage and actuator count.",
+     "manual_id": "honeywell-jade-w7220-63-2700",
+     "page": 24,
+     "verified": true
+    },
+    {
+     "kind": "citation",
+     "seq": 1,
+     "quote": "The damper will close when the blower circuit is de-energized.",
+     "manual_id": "trane-rt-svx21ad-precedent-gas-electric-3-10t",
+     "page": 64,
+     "verified": true
+    },
+    {
+     "kind": "citation",
+     "seq": 2,
+     "quote": "Range of damper for this setting is 0-100%.",
+     "manual_id": "trane-rt-svx21ad-precedent-gas-electric-3-10t",
+     "page": 64,
+     "verified": true
+    }
+   ],
+   "approved_by": "scenario-manager",
+   "approved_at": "2026-10-29 07:15:00",
+   "edited": false
+  },
+  {
+   "work_order_id": "WO-AST-RTU-01-202610300700-ad1962",
+   "asset_id": "AST-RTU-01",
+   "site_id": "SITE-HTF-DC1",
+   "case_id": "ORNL-FRP-RTU-YCD150|2022-03-07",
+   "created_at": "2026-10-30 07:00:00",
+   "status": "blocked",
+   "status_reason": "insufficient evidence: no manual passage supports the cause; manual review",
+   "priority": "P1",
+   "sla_due_at": "2026-10-30 11:00:00",
+   "fault_type": "oa_damper_stuck",
+   "route": "manual_review",
+   "required_certs": [],
+   "est_minutes": 0,
+   "compatibility_uncertain": false,
+   "detection_disagreement": false,
+   "approval_deadline_at": "2026-10-30 11:00:00",
+   "steps": [],
+   "approved_by": null,
+   "approved_at": null,
+   "edited": false
+  },
+  {
+   "work_order_id": "WO-AST-RTU-01-202610261200-c079d6",
+   "asset_id": "AST-RTU-01",
+   "site_id": "SITE-HTF-DC1",
+   "case_id": "ORNL-FRP-RTU-YCD150|2022-03-08",
+   "created_at": "2026-10-26 12:00:00",
+   "status": "blocked",
+   "status_reason": "insufficient evidence: no manual passage supports the cause; manual review",
+   "priority": "P1",
+   "sla_due_at": "2026-10-26 16:00:00",
+   "fault_type": "insufficient_evidence",
+   "route": "manual_review",
+   "required_certs": [],
+   "est_minutes": 0,
+   "compatibility_uncertain": false,
+   "detection_disagreement": false,
+   "approval_deadline_at": "2026-10-26 16:00:00",
+   "steps": [],
+   "approved_by": null,
+   "approved_at": null,
+   "edited": false
+  },
+  {
+   "work_order_id": "WO-AST-RTU-02-202610271400-73d719",
+   "asset_id": "AST-RTU-02",
+   "site_id": "SITE-HTF-DC1",
+   "case_id": "ORNL-FRP2-RTU|2017-08-27",
+   "created_at": "2026-10-27 14:00:00",
+   "status": "approved",
+   "status_reason": "approved by manager",
+   "priority": "P1",
+   "sla_due_at": "2026-10-27 18:00:00",
+   "fault_type": "refrigerant_undercharge",
+   "route": "technician",
+   "required_certs": [
+    "EPA608_II",
+    "HVAC"
+   ],
+   "est_minutes": 180,
+   "compatibility_uncertain": true,
+   "detection_disagreement": true,
+   "approval_deadline_at": "2026-10-27 18:00:00",
+   "steps": [
+    {
+     "kind": "safety",
+     "seq": 1,
+     "quote": "Unless specified otherwise, disconnect all electrical power including remote disconnect and discharge all energy storing devices such as capacitors before servicing. Follow proper lockout/tagout procedures to ensure the power can not be inadvertently energized.",
+     "manual_id": "trane-rt-svx26p-voyager-gas-electric-12-25t",
+     "page": 45,
+     "verified": true
+    },
+    {
+     "kind": "check",
+     "seq": 1,
+     "quote": "Attach a set of service gauges onto the suction and discharge gauge ports for each circuit. Refer to the refrigerant circuit illustration in the Service Facts.",
+     "manual_id": "trane-rt-svx21ad-precedent-gas-electric-3-10t",
+     "page": 65,
+     "verified": true
+    },
+    {
+     "kind": "citation",
+     "seq": 1,
+     "quote": "Check system superheat. Follow the instruction listed on the superheat charging curve in the Service Facts. Superheat should be within \u00b15 F of the superheat chart value.",
+     "manual_id": "trane-rt-svx21ad-precedent-gas-electric-3-10t",
+     "page": 65,
+     "verified": true
+    }
+   ],
+   "approved_by": "scenario-manager",
+   "approved_at": "2026-10-27 14:15:00",
+   "edited": false
+  },
+  {
+   "work_order_id": "WO-AST-RTU-02-202610280700-0cb897",
+   "asset_id": "AST-RTU-02",
+   "site_id": "SITE-HTF-DC1",
+   "case_id": "ORNL-FRP2-RTU|2017-08-29",
+   "created_at": "2026-10-28 07:00:00",
+   "status": "approved",
+   "status_reason": "approved by manager",
+   "priority": "P1",
+   "sla_due_at": "2026-10-28 11:00:00",
+   "fault_type": "refrigerant_undercharge",
+   "route": "technician",
+   "required_certs": [
+    "EPA608_II",
+    "HVAC"
+   ],
+   "est_minutes": 180,
+   "compatibility_uncertain": true,
+   "detection_disagreement": false,
+   "approval_deadline_at": "2026-10-28 11:00:00",
+   "steps": [
+    {
+     "kind": "safety",
+     "seq": 1,
+     "quote": "Close the main disconnect switch or circuit protector switch that provides the supply power to the unit\u2019s terminal block.",
+     "manual_id": "trane-rt-svx21ad-precedent-gas-electric-3-10t",
+     "page": 65,
+     "verified": true
+    },
+    {
+     "kind": "check",
+     "seq": 1,
+     "quote": "Check system superheat. Follow the instruction listed on the superheat charging curve in the Service Facts. Superheat should be within \u00b15 F of the superheat chart value.",
+     "manual_id": "trane-rt-svx21ad-precedent-gas-electric-3-10t",
+     "page": 65,
+     "verified": true
+    },
+    {
+     "kind": "citation",
+     "seq": 1,
+     "quote": "Check system superheat. Follow the instruction listed on the superheat charging curve in the Service Facts. Superheat should be within \u00b15 F of the superheat chart value.",
+     "manual_id": "trane-rt-svx21ad-precedent-gas-electric-3-10t",
+     "page": 65,
+     "verified": true
+    }
+   ],
+   "approved_by": "scenario-manager",
+   "approved_at": "2026-10-28 07:15:00",
+   "edited": false
+  },
+  {
+   "work_order_id": "WO-AST-RTU-02-202610290700-3a3dd3",
+   "asset_id": "AST-RTU-02",
+   "site_id": "SITE-HTF-DC1",
+   "case_id": "ORNL-FRP2-RTU|2017-12-01",
+   "created_at": "2026-10-29 07:00:00",
+   "status": "approved",
+   "status_reason": "approved by manager",
+   "priority": "P1",
+   "sla_due_at": "2026-10-29 11:00:00",
+   "fault_type": "compressor_stage2_not_engaging",
+   "route": "technician",
+   "required_certs": [
+    "HVAC",
+    "ELECTRICAL"
+   ],
+   "est_minutes": 120,
+   "compatibility_uncertain": true,
+   "detection_disagreement": true,
+   "approval_deadline_at": "2026-10-29 11:00:00",
+   "steps": [
+    {
+     "kind": "safety",
+     "seq": 1,
+     "quote": "To stop the SERVICE TEST, turn the main power disconnect switch to the \u201cOff\u201d position or proceed to the next component start-up procedure.",
+     "manual_id": "trane-rt-svx21ad-precedent-gas-electric-3-10t",
+     "page": 65,
+     "verified": true
+    },
+    {
+     "kind": "citation",
+     "seq": 1,
+     "quote": "When the (K10) relay contacts close, the compressor contactor (CC2) coil is energized provided the low pressure control (LPC2), high pressure control (HPC2) and discharge line thermostat (TDL 2) are closed.",
+     "manual_id": "trane-rt-svx21ad-precedent-gas-electric-3-10t",
+     "page": 51,
+     "verified": true
+    }
+   ],
+   "approved_by": "scenario-manager",
+   "approved_at": "2026-10-29 07:15:00",
+   "edited": false
+  },
+  {
+   "work_order_id": "WO-AST-RTU-02-202610300800-ad41de",
+   "asset_id": "AST-RTU-02",
+   "site_id": "SITE-HTF-DC1",
+   "case_id": "ORNL-FRP2-RTU|2017-12-07",
+   "created_at": "2026-10-30 08:00:00",
+   "status": "blocked",
+   "status_reason": "no sourced lockout or disconnect step in the manuals; approval blocked",
+   "priority": "P1",
+   "sla_due_at": "2026-10-30 12:00:00",
+   "fault_type": "compressor_stage2_not_engaging",
+   "route": "technician",
+   "required_certs": [
+    "HVAC",
+    "ELECTRICAL"
+   ],
+   "est_minutes": 120,
+   "compatibility_uncertain": true,
+   "detection_disagreement": true,
+   "approval_deadline_at": "2026-10-30 12:00:00",
+   "steps": [
+    {
+     "kind": "citation",
+     "seq": 1,
+     "quote": "When the (K10) relay contacts close, the compressor contactor (CC2) coil is energized provided the low pressure control (LPC2), high pressure control (HPC2) and discharge line thermostat (TDL 2) are closed.",
+     "manual_id": "trane-rt-svx21ad-precedent-gas-electric-3-10t",
+     "page": 51,
+     "verified": true
+    }
+   ],
+   "approved_by": null,
+   "approved_at": null,
+   "edited": false
+  },
+  {
+   "work_order_id": "WO-AST-RTU-02-202610260100-2a9c43",
+   "asset_id": "AST-RTU-02",
+   "site_id": "SITE-HTF-DC1",
+   "case_id": "ORNL-FRP2-RTU|2017-12-14",
+   "created_at": "2026-10-26 01:00:00",
+   "status": "blocked",
+   "status_reason": "no sourced lockout or disconnect step in the manuals; approval blocked",
+   "priority": "P1",
+   "sla_due_at": "2026-10-26 05:00:00",
+   "fault_type": "compressor_stage2_not_engaging",
+   "route": "technician",
+   "required_certs": [
+    "HVAC",
+    "ELECTRICAL"
+   ],
+   "est_minutes": 120,
+   "compatibility_uncertain": true,
+   "detection_disagreement": true,
+   "approval_deadline_at": "2026-10-26 05:00:00",
+   "steps": [
+    {
+     "kind": "citation",
+     "seq": 1,
+     "quote": "When the (K10) relay contacts close, the compressor contactor (CC2) coil is energized provided the low pressure control (LPC2), high pressure control (HPC2) and discharge line thermostat (TDL 2) are closed.",
+     "manual_id": "trane-rt-svx21ad-precedent-gas-electric-3-10t",
+     "page": 51,
+     "verified": true
+    }
+   ],
+   "approved_by": null,
+   "approved_at": null,
+   "edited": false
+  },
+  {
+   "work_order_id": "WO-AST-RTU-02-202610280900-316728",
+   "asset_id": "AST-RTU-02",
+   "site_id": "SITE-HTF-DC1",
+   "case_id": "ORNL-FRP2-RTU|2018-01-27",
+   "created_at": "2026-10-28 09:00:00",
+   "status": "approved",
+   "status_reason": "approved by manager",
+   "priority": "P1",
+   "sla_due_at": "2026-10-28 13:00:00",
+   "fault_type": "compressor_stage2_not_engaging",
+   "route": "technician",
+   "required_certs": [
+    "HVAC",
+    "ELECTRICAL"
+   ],
+   "est_minutes": 120,
+   "compatibility_uncertain": true,
+   "detection_disagreement": true,
+   "approval_deadline_at": "2026-10-28 13:00:00",
+   "steps": [
+    {
+     "kind": "safety",
+     "seq": 1,
+     "quote": "To stop the SERVICE TEST, turn the main power disconnect switch to the \u201cOff\u201d position or proceed to the next component start-up procedure.",
+     "manual_id": "trane-rt-svx21ad-precedent-gas-electric-3-10t",
+     "page": 65,
+     "verified": true
+    },
+    {
+     "kind": "citation",
+     "seq": 1,
+     "quote": "When the (K10) relay contacts close, the compressor contactor (CC2) coil is energized provided the low pressure control (LPC2), high pressure control (HPC2) and discharge line thermostat (TDL 2) are closed.",
+     "manual_id": "trane-rt-svx21ad-precedent-gas-electric-3-10t",
+     "page": 51,
+     "verified": true
+    }
+   ],
+   "approved_by": "scenario-manager",
+   "approved_at": "2026-10-28 09:15:00",
+   "edited": false
+  },
+  {
+   "work_order_id": "WO-AST-RTU-02-202610290700-8a0581",
+   "asset_id": "AST-RTU-02",
+   "site_id": "SITE-HTF-DC1",
+   "case_id": "ORNL-FRP2-RTU|2018-01-28",
+   "created_at": "2026-10-29 07:00:00",
+   "status": "approved",
+   "status_reason": "approved by manager",
+   "priority": "P1",
+   "sla_due_at": "2026-10-29 11:00:00",
+   "fault_type": "compressor_stage2_not_engaging",
+   "route": "technician",
+   "required_certs": [
+    "HVAC",
+    "ELECTRICAL"
+   ],
+   "est_minutes": 120,
+   "compatibility_uncertain": true,
+   "detection_disagreement": true,
+   "approval_deadline_at": "2026-10-29 11:00:00",
+   "steps": [
+    {
+     "kind": "safety",
+     "seq": 1,
+     "quote": "To stop the SERVICE TEST, turn the main power disconnect switch to the \u201cOff\u201d position or proceed to the next component start-up procedure.",
+     "manual_id": "trane-rt-svx21ad-precedent-gas-electric-3-10t",
+     "page": 65,
+     "verified": true
+    },
+    {
+     "kind": "citation",
+     "seq": 1,
+     "quote": "When the (K10) relay contacts close, compressor contactor (CC2) coil is energized provided the low pressure control (LPC2), high pressure control (HPC2) and discharge line thermostat (TDL 2) are closed.",
+     "manual_id": "trane-rt-svx21ad-precedent-gas-electric-3-10t",
+     "page": 51,
+     "verified": true
+    },
+    {
+     "kind": "citation",
+     "seq": 2,
+     "quote": "If the second stage of cooling can not satisfy the cooling requirement, the RTRM keeps the (K9) relay coil energized and energizes the (K10) relay coil.",
+     "manual_id": "trane-rt-svx21ad-precedent-gas-electric-3-10t",
+     "page": 51,
+     "verified": true
+    }
+   ],
+   "approved_by": "scenario-manager",
+   "approved_at": "2026-10-29 07:15:00",
+   "edited": false
+  },
+  {
+   "work_order_id": "WO-AST-RTU-02-202610300900-f414e3",
+   "asset_id": "AST-RTU-02",
+   "site_id": "SITE-HTF-DC1",
+   "case_id": "ORNL-FRP2-RTU|2018-01-31",
+   "created_at": "2026-10-30 09:00:00",
+   "status": "approved",
+   "status_reason": "approved by manager",
+   "priority": "P1",
+   "sla_due_at": "2026-10-30 13:00:00",
+   "fault_type": "compressor_stage2_not_engaging",
+   "route": "technician",
+   "required_certs": [
+    "HVAC",
+    "ELECTRICAL"
+   ],
+   "est_minutes": 120,
+   "compatibility_uncertain": true,
+   "detection_disagreement": true,
+   "approval_deadline_at": "2026-10-30 13:00:00",
+   "steps": [
+    {
+     "kind": "safety",
+     "seq": 1,
+     "quote": "To stop the SERVICE TEST, turn the main power disconnect switch to the \u201cOff\u201d position or proceed to the next component start-up procedure.",
+     "manual_id": "trane-rt-svx21ad-precedent-gas-electric-3-10t",
+     "page": 65,
+     "verified": true
+    },
+    {
+     "kind": "citation",
+     "seq": 1,
+     "quote": "When the (K10) relay contacts close, compressor contactor (CC2) is energized. This is the smaller of the two compressors (CPR2).",
+     "manual_id": "trane-rt-svx21ad-precedent-gas-electric-3-10t",
+     "page": 51,
+     "verified": true
+    }
+   ],
+   "approved_by": "scenario-manager",
+   "approved_at": "2026-10-30 09:15:00",
+   "edited": false
+  },
+  {
+   "work_order_id": "WO-AST-RTU-02-202610260800-271201",
+   "asset_id": "AST-RTU-02",
+   "site_id": "SITE-HTF-DC1",
+   "case_id": "ORNL-FRP2-RTU|2018-02-01",
+   "created_at": "2026-10-26 08:00:00",
+   "status": "approved",
+   "status_reason": "approved by manager",
+   "priority": "P1",
+   "sla_due_at": "2026-10-26 12:00:00",
+   "fault_type": "compressor_stage2_not_engaging",
+   "route": "technician",
+   "required_certs": [
+    "HVAC",
+    "ELECTRICAL"
+   ],
+   "est_minutes": 120,
+   "compatibility_uncertain": true,
+   "detection_disagreement": true,
+   "approval_deadline_at": "2026-10-26 12:00:00",
+   "steps": [
+    {
+     "kind": "safety",
+     "seq": 1,
+     "quote": "To stop the SERVICE TEST, turn the main power disconnect switch to the \u201cOff\u201d position",
+     "manual_id": "trane-rt-svx21ad-precedent-gas-electric-3-10t",
+     "page": 65,
+     "verified": true
+    },
+    {
+     "kind": "citation",
+     "seq": 1,
+     "quote": "If the second stage of cooling cannot satisfy the cooling requirement, the RTRM keeps the (K9) relay coil energized and energizes the (K10) relay coil. Compressor contactors (CC1)",
+     "manual_id": "trane-rt-svx21ad-precedent-gas-electric-3-10t",
+     "page": 51,
+     "verified": true
+    }
+   ],
+   "approved_by": "scenario-manager",
+   "approved_at": "2026-10-26 08:15:00",
+   "edited": false
+  },
+  {
+   "work_order_id": "WO-AST-RTU-02-202610270700-dd3dcb",
+   "asset_id": "AST-RTU-02",
+   "site_id": "SITE-HTF-DC1",
+   "case_id": "ORNL-FRP2-RTU|2018-02-07",
+   "created_at": "2026-10-27 07:00:00",
+   "status": "approved",
+   "status_reason": "approved by manager",
+   "priority": "P1",
+   "sla_due_at": "2026-10-27 11:00:00",
+   "fault_type": "compressor_stage2_not_engaging",
+   "route": "technician",
+   "required_certs": [
+    "HVAC",
+    "ELECTRICAL"
+   ],
+   "est_minutes": 120,
+   "compatibility_uncertain": true,
+   "detection_disagreement": true,
+   "approval_deadline_at": "2026-10-27 11:00:00",
+   "steps": [
+    {
+     "kind": "safety",
+     "seq": 1,
+     "quote": "To stop the SERVICE TEST, turn the main power disconnect switch to the \u201cOff\u201d position or proceed to the next component start\u2011up procedure.",
+     "manual_id": "trane-rt-svx21ad-precedent-gas-electric-3-10t",
+     "page": 65,
+     "verified": true
+    },
+    {
+     "kind": "citation",
+     "seq": 1,
+     "quote": "When the (K10) relay contacts close, the compressor contactor (CC2) coil is energized provided the low pressure control (LPC2), high pressure control (HPC2) and discharge line thermostat (TDL 2) are closed.",
+     "manual_id": "trane-rt-svx21ad-precedent-gas-electric-3-10t",
+     "page": 51,
+     "verified": true
+    }
+   ],
+   "approved_by": "scenario-manager",
+   "approved_at": "2026-10-27 07:15:00",
+   "edited": false
+  },
+  {
+   "work_order_id": "WO-AST-RTU-02-202610281000-a483b2",
+   "asset_id": "AST-RTU-02",
+   "site_id": "SITE-HTF-DC1",
+   "case_id": "ORNL-FRP2-RTU|2018-02-09",
+   "created_at": "2026-10-28 10:00:00",
+   "status": "approved",
+   "status_reason": "approved by manager",
+   "priority": "P1",
+   "sla_due_at": "2026-10-28 14:00:00",
+   "fault_type": "compressor_stage2_not_engaging",
+   "route": "technician",
+   "required_certs": [
+    "HVAC",
+    "ELECTRICAL"
+   ],
+   "est_minutes": 120,
+   "compatibility_uncertain": true,
+   "detection_disagreement": true,
+   "approval_deadline_at": "2026-10-28 14:00:00",
+   "steps": [
+    {
+     "kind": "safety",
+     "seq": 1,
+     "quote": "To stop the SERVICE TEST, turn the main power disconnect switch to the \u201cOff\u201d position or proceed to the next component start-up procedure.",
+     "manual_id": "trane-rt-svx21ad-precedent-gas-electric-3-10t",
+     "page": 65,
+     "verified": true
+    },
+    {
+     "kind": "citation",
+     "seq": 1,
+     "quote": "When the (K10) relay contacts close, the compressor contactor (CC2) coil is energized provided the low pressure control (LPC2), high pressure control (HPC2) and discharge line thermostat (TDL 2) are closed.",
+     "manual_id": "trane-rt-svx21ad-precedent-gas-electric-3-10t",
+     "page": 51,
+     "verified": true
+    }
+   ],
+   "approved_by": "scenario-manager",
+   "approved_at": "2026-10-28 10:15:00",
+   "edited": false
+  },
+  {
+   "work_order_id": "WO-AST-RTU-02-202610290800-96c163",
+   "asset_id": "AST-RTU-02",
+   "site_id": "SITE-HTF-DC1",
+   "case_id": "ORNL-FRP2-RTU|2018-02-18",
+   "created_at": "2026-10-29 08:00:00",
+   "status": "approved",
+   "status_reason": "approved by manager",
+   "priority": "P1",
+   "sla_due_at": "2026-10-29 12:00:00",
+   "fault_type": "refrigerant_undercharge",
+   "route": "technician",
+   "required_certs": [
+    "EPA608_II",
+    "HVAC"
+   ],
+   "est_minutes": 180,
+   "compatibility_uncertain": true,
+   "detection_disagreement": true,
+   "approval_deadline_at": "2026-10-29 12:00:00",
+   "steps": [
+    {
+     "kind": "safety",
+     "seq": 1,
+     "quote": "Close the main disconnect switch or circuit protector switch that provides the supply power to the unit\u2019s terminal block.",
+     "manual_id": "trane-rt-svx21ad-precedent-gas-electric-3-10t",
+     "page": 65,
+     "verified": true
+    },
+    {
+     "kind": "check",
+     "seq": 1,
+     "quote": "Check system superheat. Follow the instruction listed on the superheat charging curve in the Service Facts.",
+     "manual_id": "trane-rt-svx21ad-precedent-gas-electric-3-10t",
+     "page": 65,
+     "verified": true
+    },
+    {
+     "kind": "citation",
+     "seq": 1,
+     "quote": "Superheat should be within \u00b15 F of the superheat chart value.",
+     "manual_id": "trane-rt-svx21ad-precedent-gas-electric-3-10t",
+     "page": 65,
+     "verified": true
+    }
+   ],
+   "approved_by": "scenario-manager",
+   "approved_at": "2026-10-29 08:15:00",
+   "edited": false
+  },
+  {
+   "work_order_id": "WO-AST-RTU-03-202610300800-de7085",
+   "asset_id": "AST-RTU-03",
+   "site_id": "SITE-MLF-REST",
+   "case_id": "Site1-Milford-7.5t|2021-06-09",
+   "created_at": "2026-10-30 08:00:00",
+   "status": "approved",
+   "status_reason": "approved by manager",
+   "priority": "P3",
+   "sla_due_at": "2026-10-31 08:00:00",
+   "fault_type": "compressor_stage2_not_engaging",
+   "route": "technician",
+   "required_certs": [
+    "HVAC",
+    "ELECTRICAL"
+   ],
+   "est_minutes": 120,
+   "compatibility_uncertain": true,
+   "detection_disagreement": true,
+   "approval_deadline_at": "2026-10-30 12:00:00",
+   "steps": [
+    {
+     "kind": "safety",
+     "seq": 1,
+     "quote": "To stop the SERVICE TEST, turn the main power disconnect switch to the \u201cOff\u201d position or proceed to the next component start-up procedure.",
+     "manual_id": "trane-rt-svx21ad-precedent-gas-electric-3-10t",
+     "page": 65,
+     "verified": true
+    },
+    {
+     "kind": "citation",
+     "seq": 1,
+     "quote": "When the (K10) relay contacts close, the compressor contactor (CC2) coil is energized provided the low pressure control (LPC2), high pressure control (HPC2) and discharge line thermostat (TDL 2) are closed.",
+     "manual_id": "trane-rt-svx21ad-precedent-gas-electric-3-10t",
+     "page": 51,
+     "verified": true
+    }
+   ],
+   "approved_by": "scenario-manager",
+   "approved_at": "2026-10-30 08:15:00",
+   "edited": false
+  },
+  {
+   "work_order_id": "WO-AST-RTU-03-202610260700-2c482e",
+   "asset_id": "AST-RTU-03",
+   "site_id": "SITE-MLF-REST",
+   "case_id": "Site1-Milford-7.5t|2021-06-28",
+   "created_at": "2026-10-26 07:00:00",
+   "status": "approved",
+   "status_reason": "approved by manager",
+   "priority": "P3",
+   "sla_due_at": "2026-10-27 07:00:00",
+   "fault_type": "compressor_stage2_not_engaging",
+   "route": "technician",
+   "required_certs": [
+    "HVAC",
+    "ELECTRICAL"
+   ],
+   "est_minutes": 120,
+   "compatibility_uncertain": true,
+   "detection_disagreement": true,
+   "approval_deadline_at": "2026-10-26 11:00:00",
+   "steps": [
+    {
+     "kind": "safety",
+     "seq": 1,
+     "quote": "turn the main power disconnect switch to the \u201cOff\u201d position",
+     "manual_id": "trane-rt-svx21ad-precedent-gas-electric-3-10t",
+     "page": 65,
+     "verified": true
+    },
+    {
+     "kind": "citation",
+     "seq": 1,
+     "quote": "When the (K10) relay contacts close, the compressor contactor (CC2) coil is energized provided the low pressure control (LPC2), high pressure control (HPC2) and discharge line thermostat (TDL 2) are closed.",
+     "manual_id": "trane-rt-svx21ad-precedent-gas-electric-3-10t",
+     "page": 51,
+     "verified": true
+    }
+   ],
+   "approved_by": "scenario-manager",
+   "approved_at": "2026-10-26 07:15:00",
+   "edited": false
+  },
+  {
+   "work_order_id": "WO-AST-RTU-03-202610271000-a84e60",
+   "asset_id": "AST-RTU-03",
+   "site_id": "SITE-MLF-REST",
+   "case_id": "Site1-Milford-7.5t|2021-07-18",
+   "created_at": "2026-10-27 10:00:00",
+   "status": "blocked",
+   "status_reason": "insufficient evidence: no manual passage supports the cause; manual review",
+   "priority": "P3",
+   "sla_due_at": "2026-10-28 10:00:00",
+   "fault_type": "insufficient_evidence",
+   "route": "manual_review",
+   "required_certs": [],
+   "est_minutes": 0,
+   "compatibility_uncertain": false,
+   "detection_disagreement": true,
+   "approval_deadline_at": "2026-10-27 14:00:00",
+   "steps": [],
+   "approved_by": null,
+   "approved_at": null,
+   "edited": false
+  },
+  {
+   "work_order_id": "WO-AST-RTU-03-202610281100-6a1f2f",
+   "asset_id": "AST-RTU-03",
+   "site_id": "SITE-MLF-REST",
+   "case_id": "Site1-Milford-7.5t|2021-08-07",
+   "created_at": "2026-10-28 11:00:00",
+   "status": "approved",
+   "status_reason": "approved by manager",
+   "priority": "P3",
+   "sla_due_at": "2026-10-29 11:00:00",
+   "fault_type": "compressor_stage2_not_engaging",
+   "route": "technician",
+   "required_certs": [
+    "HVAC",
+    "ELECTRICAL"
+   ],
+   "est_minutes": 120,
+   "compatibility_uncertain": true,
+   "detection_disagreement": true,
+   "approval_deadline_at": "2026-10-28 15:00:00",
+   "steps": [
+    {
+     "kind": "safety",
+     "seq": 1,
+     "quote": "To stop the SERVICE TEST, turn the main power disconnect switch to the \u201cOff\u201d position.",
+     "manual_id": "trane-rt-svx21ad-precedent-gas-electric-3-10t",
+     "page": 65,
+     "verified": true
+    },
+    {
+     "kind": "citation",
+     "seq": 1,
+     "quote": "When the (K10) relay contacts close, compressor contactor (CC2) coil is energized provided the low pressure control (LPC2), high pressure control (HPC2) and discharge line thermostat (TDL 2) are closed.",
+     "manual_id": "trane-rt-svx21ad-precedent-gas-electric-3-10t",
+     "page": 51,
+     "verified": true
+    },
+    {
+     "kind": "citation",
+     "seq": 2,
+     "quote": "This is the smaller of the two compressors (CPR2). This staging order is opposite standard staging order.",
+     "manual_id": "trane-rt-svx21ad-precedent-gas-electric-3-10t",
+     "page": 51,
+     "verified": true
+    }
+   ],
+   "approved_by": "scenario-manager",
+   "approved_at": "2026-10-28 11:15:00",
+   "edited": false
+  },
+  {
+   "work_order_id": "WO-AST-RTU-04-202610291600-5a4ef1",
+   "asset_id": "AST-RTU-04",
+   "site_id": "SITE-COL-DIST",
+   "case_id": "Site2-Colchester-10t|2020-06-01",
+   "created_at": "2026-10-29 16:00:00",
+   "status": "draft",
+   "status_reason": "building operations issue; operations review, no technician dispatch; rules and model disagree, manager review required",
+   "priority": "P3",
+   "sla_due_at": "2026-10-30 00:00:00",
+   "fault_type": "hvac_setback_delayed_onset",
+   "route": "operations_review",
+   "required_certs": [],
+   "est_minutes": 0,
+   "compatibility_uncertain": false,
+   "detection_disagreement": true,
+   "approval_deadline_at": "2026-10-29 20:00:00",
+   "steps": [],
+   "approved_by": null,
+   "approved_at": null,
+   "edited": false
+  },
+  {
+   "work_order_id": "WO-AST-RTU-04-202610301100-aa2c22",
+   "asset_id": "AST-RTU-04",
+   "site_id": "SITE-COL-DIST",
+   "case_id": "Site2-Colchester-10t|2020-06-08",
+   "created_at": "2026-10-30 11:00:00",
+   "status": "approved",
+   "status_reason": "approved by manager",
+   "priority": "P2",
+   "sla_due_at": "2026-10-30 19:00:00",
+   "fault_type": "refrigerant_undercharge",
+   "route": "technician",
+   "required_certs": [
+    "EPA608_II",
+    "HVAC"
+   ],
+   "est_minutes": 180,
+   "compatibility_uncertain": true,
+   "detection_disagreement": true,
+   "approval_deadline_at": "2026-10-30 15:00:00",
+   "steps": [
+    {
+     "kind": "safety",
+     "seq": 1,
+     "quote": "Close the main disconnect switch or circuit protector switch that provides the supply power to the unit\u2019s terminal block or the unit mounted disconnect switch.",
+     "manual_id": "trane-rt-svx21ad-precedent-gas-electric-3-10t",
+     "page": 65,
+     "verified": true
+    },
+    {
+     "kind": "check",
+     "seq": 1,
+     "quote": "Check system superheat. Follow the instruction listed on the superheat charging curve in the Service Facts. Superheat should be within \u00b15 F of the superheat chart value.",
+     "manual_id": "trane-rt-svx21ad-precedent-gas-electric-3-10t",
+     "page": 65,
+     "verified": true
+    },
+    {
+     "kind": "citation",
+     "seq": 1,
+     "quote": "Check system superheat. Follow the instruction listed on the superheat charging curve in the Service Facts. Superheat should be within \u00b15 F of the superheat chart value.",
+     "manual_id": "trane-rt-svx21ad-precedent-gas-electric-3-10t",
+     "page": 65,
+     "verified": true
+    }
+   ],
+   "approved_by": "scenario-manager",
+   "approved_at": "2026-10-30 11:15:00",
+   "edited": false
+  },
+  {
+   "work_order_id": "WO-AST-RTU-04-202610260900-985630",
+   "asset_id": "AST-RTU-04",
+   "site_id": "SITE-COL-DIST",
+   "case_id": "Site2-Colchester-10t|2020-06-18",
+   "created_at": "2026-10-26 09:00:00",
+   "status": "approved",
+   "status_reason": "approved by manager",
+   "priority": "P2",
+   "sla_due_at": "2026-10-26 17:00:00",
+   "fault_type": "refrigerant_undercharge",
+   "route": "technician",
+   "required_certs": [
+    "EPA608_II",
+    "HVAC"
+   ],
+   "est_minutes": 180,
+   "compatibility_uncertain": true,
+   "detection_disagreement": false,
+   "approval_deadline_at": "2026-10-26 13:00:00",
+   "steps": [
+    {
+     "kind": "safety",
+     "seq": 1,
+     "quote": "Close the main disconnect switch or circuit protector switch that provides the supply power to the unit\u2019s terminal block or the unit mounted disconnect switch.",
+     "manual_id": "trane-rt-svx21ad-precedent-gas-electric-3-10t",
+     "page": 65,
+     "verified": true
+    },
+    {
+     "kind": "check",
+     "seq": 1,
+     "quote": "Check system superheat. Follow the instruction listed on the superheat charging curve in the Service Facts. Superheat should be within \u00b15 F of the superheat chart value.",
+     "manual_id": "trane-rt-svx21ad-precedent-gas-electric-3-10t",
+     "page": 65,
+     "verified": true
+    },
+    {
+     "kind": "citation",
+     "seq": 1,
+     "quote": "Check system superheat. Follow the instruction listed on the superheat charging curve in the Service Facts. Superheat should be within \u00b15 F of the superheat chart value.",
+     "manual_id": "trane-rt-svx21ad-precedent-gas-electric-3-10t",
+     "page": 65,
+     "verified": true
+    }
+   ],
+   "approved_by": "scenario-manager",
+   "approved_at": "2026-10-26 09:15:00",
+   "edited": false
+  },
+  {
+   "work_order_id": "WO-AST-RTU-04-202610271500-70fbf3",
+   "asset_id": "AST-RTU-04",
+   "site_id": "SITE-COL-DIST",
+   "case_id": "Site2-Colchester-10t|2020-06-25",
+   "created_at": "2026-10-27 15:00:00",
+   "status": "blocked",
+   "status_reason": "no sourced lockout or disconnect step in the manuals; approval blocked",
+   "priority": "P2",
+   "sla_due_at": "2026-10-27 23:00:00",
+   "fault_type": "condenser_fouling",
+   "route": "technician",
+   "required_certs": [
+    "HVAC"
+   ],
+   "est_minutes": 120,
+   "compatibility_uncertain": true,
+   "detection_disagreement": true,
+   "approval_deadline_at": "2026-10-27 19:00:00",
+   "steps": [
+    {
+     "kind": "check",
+     "seq": 1,
+     "quote": "Inspect the evaporator and condenser coils for dirt, bent fins, etc. If the coils appear dirty, clean them according to the instructions described in \u201cCondenser Coil Cleaning,\u201d p. 43.",
+     "manual_id": "trane-rt-svx26p-voyager-gas-electric-12-25t",
+     "page": 43,
+     "verified": true
+    },
+    {
+     "kind": "citation",
+     "seq": 1,
+     "quote": "fan brake horsepower, due to increase static pressure losses; airflow reduction.",
+     "manual_id": "trane-rt-svx26p-voyager-gas-electric-12-25t",
+     "page": 43,
+     "verified": true
+    }
+   ],
+   "approved_by": null,
+   "approved_at": null,
+   "edited": false
+  }
+ ]
+}

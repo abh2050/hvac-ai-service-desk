@@ -1,0 +1,158 @@
+{
+ "gate": 2,
+ "name": "diagnosis",
+ "run_utc": "2026-10-23T17:09:38Z",
+ "git_commit": "f6b2a3c",
+ "runtime_seconds": 280.2,
+ "limit": null,
+ "models": {
+  "diagnosis": "openai.gpt-oss-120b-1:0",
+  "entailment": "openai.gpt-oss-20b-1:0",
+  "embeddings": "amazon.titan-embed-text-v2:0 (local index; Bedrock KB pending deploy)"
+ },
+ "guardrails": "not attached (Bedrock Guardrail resource not yet deployed)",
+ "categories": {
+  "ground_truth": "LBNL fault labels",
+  "measured": "every metric in results"
+ },
+ "results": {
+  "lab": {
+   "cases": 84,
+   "ai": {
+    "fault_type_accuracy": 0.262,
+    "accuracy_when_answered": 0.415,
+    "proposal_accuracy": 0.393,
+    "abstention_rate": 0.369,
+    "citation_support_rate": 0.88,
+    "citation_deterministic_pass_rate": 0.987,
+    "citations_checked": 75,
+    "actionability_rate": 0.377,
+    "compatibility_warning_rate": 1.0,
+    "lockout_sourced_rate": 0.623,
+    "parse_ok_rate": 0.976
+   },
+   "baseline": {
+    "fault_type_accuracy": 0.036,
+    "rule_hint_accuracy": 0.298,
+    "abstention_rate": 0.917,
+    "citation_support_rate": 0.103,
+    "actionability_rate": 1.0
+   }
+  },
+  "field": {
+   "cases": 8,
+   "ai": {
+    "fault_type_accuracy": 0.625,
+    "accuracy_when_answered": 0.833,
+    "proposal_accuracy": 0.75,
+    "abstention_rate": 0.125,
+    "citation_support_rate": 0.875,
+    "citation_deterministic_pass_rate": 1.0,
+    "citations_checked": 8,
+    "actionability_rate": 0.5,
+    "compatibility_warning_rate": 1.0,
+    "lockout_sourced_rate": 0.833,
+    "parse_ok_rate": 0.875
+   },
+   "baseline": {
+    "fault_type_accuracy": 0.125,
+    "rule_hint_accuracy": 0.625,
+    "abstention_rate": 0.75,
+    "citation_support_rate": 0.333,
+    "actionability_rate": 1.0
+   }
+  },
+  "all": {
+   "cases": 92,
+   "ai": {
+    "fault_type_accuracy": 0.293,
+    "accuracy_when_answered": 0.458,
+    "proposal_accuracy": 0.424,
+    "abstention_rate": 0.348,
+    "citation_support_rate": 0.88,
+    "citation_deterministic_pass_rate": 0.988,
+    "citations_checked": 83,
+    "actionability_rate": 0.39,
+    "compatibility_warning_rate": 1.0,
+    "lockout_sourced_rate": 0.644,
+    "parse_ok_rate": 0.967
+   },
+   "baseline": {
+    "fault_type_accuracy": 0.043,
+    "rule_hint_accuracy": 0.326,
+    "abstention_rate": 0.902,
+    "citation_support_rate": 0.122,
+    "actionability_rate": 1.0
+   }
+  },
+  "by_family": {
+   "field/refrig": {
+    "cases": 8,
+    "ai_proposal_accuracy": 0.75,
+    "rule_hint_accuracy": 0.625,
+    "ai_final_accuracy": 0.625,
+    "baseline_final_accuracy": 0.125,
+    "ai_abstention_rate": 0.125
+   },
+   "lab/ahu": {
+    "cases": 23,
+    "ai_proposal_accuracy": 0.217,
+    "rule_hint_accuracy": 0.087,
+    "ai_final_accuracy": 0.0,
+    "baseline_final_accuracy": 0.0,
+    "ai_abstention_rate": 0.826
+   },
+   "lab/econ": {
+    "cases": 48,
+    "ai_proposal_accuracy": 0.583,
+    "rule_hint_accuracy": 0.458,
+    "ai_final_accuracy": 0.458,
+    "baseline_final_accuracy": 0.042,
+    "ai_abstention_rate": 0.25
+   },
+   "lab/refrig": {
+    "cases": 13,
+    "ai_proposal_accuracy": 0.0,
+    "rule_hint_accuracy": 0.077,
+    "ai_final_accuracy": 0.0,
+    "baseline_final_accuracy": 0.077,
+    "ai_abstention_rate": 0.0
+   }
+  },
+  "operations_routing": {
+   "operations_cases": 11,
+   "operations_routed_to_operations_review": 0.0,
+   "operations_exact_type_correct": 0.0,
+   "equipment_cases": 81,
+   "equipment_misrouted_to_operations_review": 0.012
+  },
+  "evidence_withheld_probes": {
+   "cases": 20,
+   "ai_abstention_rate": 1.0,
+   "ai_llm_self_abstention_rate": 1.0,
+   "baseline_abstention_rate": 1.0
+  },
+  "cost_latency": {
+   "ai_seconds_p50": 9.89,
+   "ai_seconds_p95": 14.54,
+   "baseline_seconds_p50": 0.66,
+   "diagnosis_llm": {
+    "calls": 220,
+    "input_tokens": 495967,
+    "output_tokens": 167640,
+    "cost_usd": 0.175,
+    "truncated_replies": 1
+   },
+   "entailment_llm": {
+    "calls": 284,
+    "input_tokens": 326362,
+    "output_tokens": 73829,
+    "cost_usd": 0.045,
+    "truncated_replies": 0
+   },
+   "cost_per_diagnosis_usd": 0.00196,
+   "query_embedding_note": "Titan v2 query embeddings at $0.02 per 1M tokens are under $0.0001 per case"
+  },
+  "policy_1_would_route_to_manual_review": 0.304
+ }
+}

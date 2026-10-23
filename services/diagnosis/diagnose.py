@@ -44,9 +44,6 @@ COMPONENT = {
 
 PROPOSE_SYSTEM = """You assist HVAC service managers. From sensor evidence and rule results, propose the most likely fault.
 The rule hint can be wrong; weigh the sensor evidence yourself.
-Some allowed causes are building operations problems (schedules, setbacks, lighting, infiltration, thermostat offsets),
-not equipment faults. They show up in OPERATING_PATTERN (when the unit ran) and zone conditions more than in
-refrigerant or coil readings. Consider them before choosing an equipment fault.
 Choose probable_cause from ALLOWED_CAUSES. Then write manual_query: a short search query (under 15 words) for
 equipment manual pages about inspecting, checking, servicing, or adjusting the component involved.
 Reply with one JSON object and nothing else."""
