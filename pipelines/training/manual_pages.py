@@ -31,6 +31,14 @@ MANUALS = {
                                             "classes": ["AHU-MZVAV", "AHU-SZCAV", "AHU-SZVAV"], "match": "class"},
     "honeywell-jade-w7220-63-2700": {"title": "Honeywell 63-2700 JADE W7220 Economizer Module",
                                      "classes": ["RTU"], "match": "class"},
+    # Added after Gate 2 run 1 for components with no coverage. Appended so earlier chunk indexes
+    # (and their cached embeddings) stay valid.
+    "siemens-duct-temperature-sensor-129-525": {"title": "Siemens 129-525 Duct Temperature Sensor Installation Instructions",
+                                                "classes": ["RTU", "AHU-MZVAV", "AHU-SZCAV", "AHU-SZVAV"], "match": "class"},
+    "jci-te6300m-duct-averaging-sensor": {"title": "Johnson Controls TE-6300M Duct Averaging Temperature Sensors Installation Instructions",
+                                          "classes": ["RTU", "AHU-MZVAV", "AHU-SZCAV", "AHU-SZVAV"], "match": "class"},
+    "honeywell-ml6984-ml7984-series4000": {"title": "Honeywell ML6984/ML7984 Series 4000 Direct Coupled Valve Actuators",
+                                           "classes": ["AHU-MZVAV", "AHU-SZCAV", "AHU-SZVAV"], "match": "class"},
 }
 CHUNK_CHARS = 1800
 OVERLAP = 200

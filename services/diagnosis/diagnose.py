@@ -20,6 +20,12 @@ FAULT_TYPES = {
 }
 ABSTAIN = "insufficient_evidence"
 
+# Owner decision after Gate 2 run 1: building operations faults go to operations review, not to a
+# technician. No repair procedure is issued for them, so no manual citation is required.
+OPERATIONS = {"hvac_setback_delayed_onset", "hvac_setback_early_termination", "no_overnight_hvac_setback",
+              "excessive_infiltration", "lighting_setback_delayed_onset", "lighting_setback_early_termination",
+              "no_overnight_lighting_setback", "thermostat_bias"}
+
 # Deterministic fault -> component map. Verification claims use it for the AI path and the
 # baseline alike, so both are judged against the same wording.
 COMPONENT = {
@@ -38,6 +44,9 @@ COMPONENT = {
 
 PROPOSE_SYSTEM = """You assist HVAC service managers. From sensor evidence and rule results, propose the most likely fault.
 The rule hint can be wrong; weigh the sensor evidence yourself.
+Some allowed causes are building operations problems (schedules, setbacks, lighting, infiltration, thermostat offsets),
+not equipment faults. They show up in OPERATING_PATTERN (when the unit ran) and zone conditions more than in
+refrigerant or coil readings. Consider them before choosing an equipment fault.
 Choose probable_cause from ALLOWED_CAUSES. Then write manual_query: a short search query (under 15 words) for
 equipment manual pages about inspecting, checking, servicing, or adjusting the component involved.
 Reply with one JSON object and nothing else."""
@@ -77,7 +86,9 @@ def equipment_group(equipment_class: str) -> str:
 
 
 def case_view(case: dict) -> dict:
-    return {k: case[k] for k in ("equipment_class", "unit", "source_type", "detection", "sensor_evidence")}
+    view = {k: case[k] for k in ("equipment_class", "unit", "source_type", "detection", "sensor_evidence")}
+    view["OPERATING_PATTERN"] = case.get("operating_pattern")
+    return view
 
 
 def propose(case: dict, llm: LLM) -> dict:
@@ -108,7 +119,10 @@ def build_prompt(case: dict, passages: list[dict], proposed: dict) -> str:
 
 def diagnose(case: dict, passages: list[dict], llm: LLM, proposed: dict) -> dict:
     """Step 3: cite what the retrieved manual pages say about the proposed fault's component."""
-    if proposed["probable_cause"] == ABSTAIN:
+    if proposed["probable_cause"] in OPERATIONS:
+        out = {"probable_cause": proposed["probable_cause"], "route": "operations_review", "citations": [],
+               "recommended_checks": [], "safety_steps": [], "raw": ""}
+    elif proposed["probable_cause"] == ABSTAIN:
         out = {"probable_cause": ABSTAIN, "citations": [], "recommended_checks": [], "safety_steps": [], "raw": ""}
     else:
         raw = llm.complete(SYSTEM, build_prompt(case, passages, proposed))
@@ -120,6 +134,7 @@ def diagnose(case: dict, passages: list[dict], llm: LLM, proposed: dict) -> dict
     out["confidence"] = proposed.get("confidence")
     out["explanation"] = proposed.get("explanation")
     out["component"] = proposed.get("component")
+    out["route"] = out.get("route", "technician")
     # Resolve passage ids to manual pages so the verifier can check the page text.
     ids = {f"P{i + 1}": p for i, p in enumerate(passages)}
     for key in ("citations", "recommended_checks", "safety_steps"):

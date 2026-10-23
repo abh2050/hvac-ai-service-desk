@@ -66,6 +66,22 @@ All five manuals are public PDFs published by the equipment maker. The makers ke
 
 We also tried `CLCH-SVX07R-EN` (the general CSAA manual) at its listed eLibrary URL, and the server returned HTTP 404.
 
+### Component manuals added after Gate 2 run 1 (downloaded 2026-10-23)
+
+Gate 2 run 1 showed that 38 of 51 AI abstentions came from components that no manual covered. The most common were the supply air temperature sensor and the coil valves. The owner approved adding public documents for those components. All three are documents from the equipment maker, hosted by distributors.
+
+| File | Title (from the PDF) | URL | Pages | SHA256 |
+|---|---|---|---|---|
+| siemens-duct-temperature-sensor-129-525.pdf | Siemens Document No. 129-525 (2008-10-27), Duct Temperature Sensor Installation Instructions | https://zotsupply.com/content/PDFs/Siemens/Temperature/Averaging/Duct%20Temperature%20Sensor%20Installation.pdf (Siemens document hosted by a distributor) | 3 | `7b58244bc91fd7da480f69f564169ca602e6e12a0a98e8e66ea495db61dd1772` |
+| jci-te6300m-duct-averaging-sensor.pdf | Johnson Controls, TE-6300M Series Duct Averaging Temperature Sensors Installation Instructions | https://resource.gemaire.com/is/content/Watscocom/Gemaire/johnsoncontrols_te-6316m-1_article_1405423016904_en_ii.pdf?fmt=pdf (Johnson Controls document hosted by a distributor) | 2 | `84a5900ecadb7effca5744bbf912312976d1b2b90cee33ae8a5083e47e1aeee8` |
+| honeywell-ml6984-ml7984-series4000.pdf | Honeywell 95C-10939-11, ML6984, ML7984 Series 4000 Direct Coupled Valve Actuators | https://fwwebbimage.fwwebb.com/ProductInfo/Honeywell_ML6984A4000_U_Specification_Sheet.pdf (Honeywell document hosted by a distributor) | 12 | `8d6fc3cd139555ed2ef265bce49caa8f4239972ed49d9a0e7614ec61766c3017` |
+
+Tried and not used:
+- The Trane support attachments that were expected to hold the ReliaTel service manual RT-SVD03M-EN both turned out to be the communications interface installer guide (ACC-SVN18). The article page returns HTTP 403.
+- The Honeywell ML6984/ML7984 troubleshooting guide on kele.com returned HTTP 403.
+
+Compatibility: LBNL does not name the sensor or valve actuator models for any unit. All three documents are component class matches, and they carry the "compatibility uncertain" flag like the other manuals.
+
 ## Manual compatibility table
 
 An exact match means the manual covers the same maker and model series. A class match means the manual covers the same equipment class but a different or unknown model. The diagnosis step marks every class match "compatibility uncertain".

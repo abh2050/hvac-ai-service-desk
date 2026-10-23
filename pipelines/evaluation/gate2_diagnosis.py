@@ -119,7 +119,8 @@ def summarize(rows, ai_usage, ent_usage, cfg_policy):
                       "all": normal}.items():
         if not sel:
             continue
-        ai_ans = [r for r in sel if not r["ai"]["final"]["abstained"]]
+        ai_ans = [r for r in sel if not r["ai"]["final"]["abstained"]
+                  and r["ai"]["final"].get("route", "technician") == "technician"]
         all_cites = [v for r in sel for v in r["ai"]["verified"]["citations"]]
         out[name] = {
             "cases": len(sel),
@@ -156,6 +157,15 @@ def summarize(rows, ai_usage, ent_usage, cfg_policy):
             "baseline_final_accuracy": rate(r["baseline"]["probable_cause"] == r["label"]["fault_type"] for r in sel),
             "ai_abstention_rate": rate(r["ai"]["final"]["abstained"] for r in sel),
         }
+    ops = [r for r in normal if r["label"]["category"] == "operations"]
+    equip = [r for r in normal if r["label"]["category"] == "equipment"]
+    out["operations_routing"] = {
+        "operations_cases": len(ops),
+        "operations_routed_to_operations_review": rate(r["ai"]["final"].get("route") == "operations_review" for r in ops),
+        "operations_exact_type_correct": rate(r["ai"]["final"]["probable_cause"] == r["label"]["fault_type"] for r in ops),
+        "equipment_cases": len(equip),
+        "equipment_misrouted_to_operations_review": rate(r["ai"]["final"].get("route") == "operations_review" for r in equip),
+    }
     out["evidence_withheld_probes"] = {
         "cases": len(probes),
         "ai_abstention_rate": rate(r["ai"]["final"]["abstained"] for r in probes),

@@ -81,6 +81,13 @@ def main() -> None:
                 "model_probability_mean": round(float(alarm.model_prob.mean()), 3),
             },
             "sensor_evidence": evidence,
+            "operating_pattern": {
+                "weekday": pd.Timestamp(day).day_name(),
+                "first_operating_hour": int(g.window_start.min().hour),
+                "last_operating_hour": int(g.window_start.max().hour),
+                "operating_hours": int(len(g)),
+                "alarm_hours": sorted({int(h) for h in alarm.window_start.dt.hour}),
+            },
             "label": {"fault_type": g.fault_type.iloc[0], "category": g.category.iloc[0]},
             "probe": None,
         })

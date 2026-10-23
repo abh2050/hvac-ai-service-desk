@@ -1,0 +1,154 @@
+{
+ "gate": 2,
+ "name": "diagnosis",
+ "run_utc": "2026-10-23T16:09:55Z",
+ "git_commit": "77c2756",
+ "runtime_seconds": 281.0,
+ "limit": null,
+ "models": {
+  "diagnosis": "openai.gpt-oss-120b-1:0",
+  "entailment": "openai.gpt-oss-20b-1:0",
+  "embeddings": "amazon.titan-embed-text-v2:0 (local index; Bedrock KB pending deploy)"
+ },
+ "guardrails": "not attached (Bedrock Guardrail resource not yet deployed)",
+ "categories": {
+  "ground_truth": "LBNL fault labels",
+  "measured": "every metric in results"
+ },
+ "results": {
+  "lab": {
+   "cases": 84,
+   "ai": {
+    "fault_type_accuracy": 0.131,
+    "accuracy_when_answered": 0.314,
+    "proposal_accuracy": 0.369,
+    "abstention_rate": 0.583,
+    "citation_support_rate": 0.812,
+    "citation_deterministic_pass_rate": 1.0,
+    "citations_checked": 48,
+    "actionability_rate": 0.629,
+    "compatibility_warning_rate": 1.0,
+    "lockout_sourced_rate": 0.971,
+    "parse_ok_rate": 0.94
+   },
+   "baseline": {
+    "fault_type_accuracy": 0.024,
+    "rule_hint_accuracy": 0.298,
+    "abstention_rate": 0.917,
+    "citation_support_rate": 0.103,
+    "actionability_rate": 1.0
+   }
+  },
+  "field": {
+   "cases": 8,
+   "ai": {
+    "fault_type_accuracy": 0.625,
+    "accuracy_when_answered": 0.833,
+    "proposal_accuracy": 0.75,
+    "abstention_rate": 0.25,
+    "citation_support_rate": 0.75,
+    "citation_deterministic_pass_rate": 1.0,
+    "citations_checked": 8,
+    "actionability_rate": 0.333,
+    "compatibility_warning_rate": 1.0,
+    "lockout_sourced_rate": 0.5,
+    "parse_ok_rate": 1.0
+   },
+   "baseline": {
+    "fault_type_accuracy": 0.125,
+    "rule_hint_accuracy": 0.625,
+    "abstention_rate": 0.75,
+    "citation_support_rate": 0.333,
+    "actionability_rate": 1.0
+   }
+  },
+  "all": {
+   "cases": 92,
+   "ai": {
+    "fault_type_accuracy": 0.174,
+    "accuracy_when_answered": 0.39,
+    "proposal_accuracy": 0.402,
+    "abstention_rate": 0.554,
+    "citation_support_rate": 0.804,
+    "citation_deterministic_pass_rate": 1.0,
+    "citations_checked": 56,
+    "actionability_rate": 0.585,
+    "compatibility_warning_rate": 1.0,
+    "lockout_sourced_rate": 0.902,
+    "parse_ok_rate": 0.946
+   },
+   "baseline": {
+    "fault_type_accuracy": 0.033,
+    "rule_hint_accuracy": 0.326,
+    "abstention_rate": 0.902,
+    "citation_support_rate": 0.122,
+    "actionability_rate": 1.0
+   }
+  },
+  "by_family": {
+   "field/refrig": {
+    "cases": 8,
+    "ai_proposal_accuracy": 0.75,
+    "rule_hint_accuracy": 0.625,
+    "ai_final_accuracy": 0.625,
+    "baseline_final_accuracy": 0.125,
+    "ai_abstention_rate": 0.25
+   },
+   "lab/ahu": {
+    "cases": 23,
+    "ai_proposal_accuracy": 0.174,
+    "rule_hint_accuracy": 0.087,
+    "ai_final_accuracy": 0.087,
+    "baseline_final_accuracy": 0.0,
+    "ai_abstention_rate": 0.739
+   },
+   "lab/econ": {
+    "cases": 48,
+    "ai_proposal_accuracy": 0.562,
+    "rule_hint_accuracy": 0.458,
+    "ai_final_accuracy": 0.188,
+    "baseline_final_accuracy": 0.021,
+    "ai_abstention_rate": 0.625
+   },
+   "lab/refrig": {
+    "cases": 13,
+    "ai_proposal_accuracy": 0.0,
+    "rule_hint_accuracy": 0.077,
+    "ai_final_accuracy": 0.0,
+    "baseline_final_accuracy": 0.077,
+    "ai_abstention_rate": 0.154
+   }
+  },
+  "evidence_withheld_probes": {
+   "cases": 20,
+   "ai_abstention_rate": 1.0,
+   "ai_llm_self_abstention_rate": 1.0,
+   "baseline_abstention_rate": 1.0
+  },
+  "cost_latency": {
+   "ai_seconds_p50": 8.89,
+   "ai_seconds_p95": 17.25,
+   "baseline_seconds_p50": 0.72,
+   "diagnosis_llm": {
+    "calls": 221,
+    "input_tokens": 476558,
+    "output_tokens": 159738,
+    "cost_usd": 0.1673,
+    "truncated_replies": 4
+   },
+   "entailment_llm": {
+    "calls": 244,
+    "input_tokens": 290819,
+    "output_tokens": 71539,
+    "cost_usd": 0.0418,
+    "truncated_replies": 0
+   },
+   "cost_per_diagnosis_usd": 0.00187,
+   "query_embedding_note": "Titan v2 query embeddings at $0.02 per 1M tokens are under $0.0001 per case"
+  },
+  "policy_1_would_route_to_manual_review": 0.304
+ },
+ "resummarized_utc": "2026-10-23T16:10:38Z",
+ "code_commit": "1169bf7",
+ "git_commit_note": "git_commit is HEAD when the run started; the code that produced the run is code_commit"
+}

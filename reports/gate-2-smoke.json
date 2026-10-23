@@ -1,10 +1,10 @@
 {
  "gate": 2,
  "name": "diagnosis",
- "run_utc": "2026-10-23T16:05:04Z",
- "git_commit": "77c2756",
- "runtime_seconds": 20.6,
- "limit": 5,
+ "run_utc": "2026-10-23T16:18:21Z",
+ "git_commit": "3d6f15b",
+ "runtime_seconds": 14.2,
+ "limit": 3,
  "models": {
   "diagnosis": "openai.gpt-oss-120b-1:0",
   "entailment": "openai.gpt-oss-20b-1:0",
@@ -17,50 +17,75 @@
  },
  "results": {
   "lab": {
-   "cases": 5,
+   "cases": 3,
    "ai": {
-    "fault_type_accuracy": 0.2,
-    "accuracy_when_answered": 0.333,
-    "llm_proposed_cause_accuracy": 0.2,
-    "abstention_rate": 0.4,
-    "citation_support_rate": 0.8,
+    "fault_type_accuracy": 0.0,
+    "accuracy_when_answered": 0.0,
+    "proposal_accuracy": 0.0,
+    "abstention_rate": 0.333,
+    "citation_support_rate": 1.0,
     "citation_deterministic_pass_rate": 1.0,
-    "citations_checked": 5,
-    "actionability_rate": 0.333,
+    "citations_checked": 2,
+    "actionability_rate": 0.5,
     "compatibility_warning_rate": 1.0,
-    "lockout_sourced_rate": 0.667,
+    "lockout_sourced_rate": 1.0,
     "parse_ok_rate": 1.0
    },
    "baseline": {
-    "fault_type_accuracy": 0.2,
-    "rule_hint_accuracy": 0.2,
-    "abstention_rate": 0.8,
-    "citation_support_rate": 0.5,
-    "actionability_rate": 1.0
+    "fault_type_accuracy": 0.0,
+    "rule_hint_accuracy": 0.0,
+    "abstention_rate": 1.0,
+    "citation_support_rate": 0.0,
+    "actionability_rate": null
    }
   },
   "all": {
-   "cases": 5,
+   "cases": 3,
    "ai": {
-    "fault_type_accuracy": 0.2,
-    "accuracy_when_answered": 0.333,
-    "llm_proposed_cause_accuracy": 0.2,
-    "abstention_rate": 0.4,
-    "citation_support_rate": 0.8,
+    "fault_type_accuracy": 0.0,
+    "accuracy_when_answered": 0.0,
+    "proposal_accuracy": 0.0,
+    "abstention_rate": 0.333,
+    "citation_support_rate": 1.0,
     "citation_deterministic_pass_rate": 1.0,
-    "citations_checked": 5,
-    "actionability_rate": 0.333,
+    "citations_checked": 2,
+    "actionability_rate": 0.5,
     "compatibility_warning_rate": 1.0,
-    "lockout_sourced_rate": 0.667,
+    "lockout_sourced_rate": 1.0,
     "parse_ok_rate": 1.0
    },
    "baseline": {
-    "fault_type_accuracy": 0.2,
-    "rule_hint_accuracy": 0.2,
-    "abstention_rate": 0.8,
-    "citation_support_rate": 0.5,
-    "actionability_rate": 1.0
+    "fault_type_accuracy": 0.0,
+    "rule_hint_accuracy": 0.0,
+    "abstention_rate": 1.0,
+    "citation_support_rate": 0.0,
+    "actionability_rate": null
    }
+  },
+  "by_family": {
+   "lab/ahu": {
+    "cases": 2,
+    "ai_proposal_accuracy": 0.0,
+    "rule_hint_accuracy": 0.0,
+    "ai_final_accuracy": 0.0,
+    "baseline_final_accuracy": 0.0,
+    "ai_abstention_rate": 0.5
+   },
+   "lab/refrig": {
+    "cases": 1,
+    "ai_proposal_accuracy": 0.0,
+    "rule_hint_accuracy": 0.0,
+    "ai_final_accuracy": 0.0,
+    "baseline_final_accuracy": 0.0,
+    "ai_abstention_rate": 0.0
+   }
+  },
+  "operations_routing": {
+   "operations_cases": 0,
+   "operations_routed_to_operations_review": null,
+   "operations_exact_type_correct": null,
+   "equipment_cases": 3,
+   "equipment_misrouted_to_operations_review": 0.0
   },
   "evidence_withheld_probes": {
    "cases": 0,
@@ -70,25 +95,25 @@
   },
   "cost_latency": {
    "ai_seconds_p50": 9.85,
-   "ai_seconds_p95": 18.98,
+   "ai_seconds_p95": 13.51,
    "baseline_seconds_p50": 0.0,
    "diagnosis_llm": {
-    "calls": 10,
-    "input_tokens": 20169,
-    "output_tokens": 7580,
-    "cost_usd": 0.0076,
+    "calls": 6,
+    "input_tokens": 12437,
+    "output_tokens": 5090,
+    "cost_usd": 0.0049,
     "truncated_replies": 0
    },
    "entailment_llm": {
-    "calls": 14,
-    "input_tokens": 17234,
-    "output_tokens": 6506,
-    "cost_usd": 0.0032,
-    "truncated_replies": 1
+    "calls": 7,
+    "input_tokens": 7680,
+    "output_tokens": 1464,
+    "cost_usd": 0.001,
+    "truncated_replies": 0
    },
-   "cost_per_diagnosis_usd": 0.00215,
+   "cost_per_diagnosis_usd": 0.00197,
    "query_embedding_note": "Titan v2 query embeddings at $0.02 per 1M tokens are under $0.0001 per case"
   },
-  "policy_1_would_route_to_manual_review": 0.4
+  "policy_1_would_route_to_manual_review": 0.667
  }
 }
