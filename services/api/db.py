@@ -71,5 +71,8 @@ def save_assignment(conn, a, method: str, decided_at, scenario_id: str | None = 
 
 
 def audit(conn, actor: str, role: str, action: str, resource: str, allowed: bool, detail: dict) -> None:
+    if not allowed:
+        from handlers.metrics import emit
+        emit("DeniedCalls", 1, "Count", Action=action)
     conn.execute("""INSERT INTO audit_log (actor, actor_role, action, resource, allowed, detail)
                     VALUES (%s,%s,%s,%s,%s,%s)""", (actor, role, action, resource, allowed, json.dumps(detail)))

@@ -25,6 +25,7 @@ from diagnosis.retrieval import KbIndex
 from dispatch import model as dm
 
 from .common import APP_ROOT, config, db, guardrail, param
+from .metrics import emit
 
 LOCAL = ZoneInfo("America/New_York")      # technician shifts and site hours are local time
 CHECK_CLAIM = "This passage gives a step to inspect, check, adjust, clean, or service the {}."
@@ -94,6 +95,8 @@ def _llm(model_id: str, max_tokens: int) -> LLM:
 
 def diagnose_case(event, _ctx):
     """Propose -> retrieve from the Knowledge Base -> cite. Returns the raw (unverified) diagnosis."""
+    import time as _t
+    started = _t.time()
     case = event["case"]
     models = config("models")
     llm = _llm("openai.gpt-oss-120b-1:0", models["diagnosis"]["max_tokens"])
@@ -102,14 +105,18 @@ def diagnose_case(event, _ctx):
     passages = KbIndex(kb_id).search(proposed["manual_query"], case["equipment_class"], k=6)
     diag = diagnose(case, passages, llm, proposed)
     diag.pop("raw", None)
+    emit("StageSeconds", round(_t.time() - started, 2), "Seconds", Stage="diagnose")
     return {**event, "proposed": {k: proposed.get(k) for k in ("probable_cause", "confidence", "component",
                                                                  "manual_query", "explanation")},
             "diagnosis": diag, "retrieved": [(p["manual_id"], p["page"]) for p in passages],
-            "llm_usage": {"calls": llm.usage.calls, "cost_usd": round(llm.usage.cost_usd, 5)}}
+            "llm_usage": {"calls": llm.usage.calls, "cost_usd": round(llm.usage.cost_usd, 5),
+                          "input_tokens": llm.usage.input_tokens, "output_tokens": llm.usage.output_tokens}}
 
 
 def verify_and_draft(event, _ctx):
     """Verifier + policy (deterministic) -> work order draft saved to Aurora."""
+    import time as _t
+    started = _t.time()
     case, diag = event["case"], event["diagnosis"]
     models, pol = config("models"), config("policy")
     ent = _llm("openai.gpt-oss-20b-1:0", models["entailment"]["max_tokens"])
@@ -139,6 +146,9 @@ def verify_and_draft(event, _ctx):
                       + (" (compatibility uncertain)" if final.get("compatibility_uncertain") else ""), f"run:{event['run_id']}")
         dbmod_history(conn, wo.asset_id, "work_order", f"Work order {wo.work_order_id} created, status {wo.status}.",
                       f"work_order:{wo.work_order_id}")
+    emit("StageSeconds", round(_t.time() - started, 2), "Seconds", Stage="verify_and_draft")
+    emit("IncidentModelCostUSD", round(event.get("llm_usage", {}).get("cost_usd", 0) + ent.usage.cost_usd, 6), "None")
+    emit("WorkOrders", 1, "Count", Status=wo.status)
     return {"run_id": event["run_id"], "work_order_id": wo.work_order_id, "status": wo.status, "route": wo.route,
             "needs_approval": wo.status == "draft" and wo.route == "technician",
             "verification": {k: [v["pass"] for v in vs] for k, vs in verified.items()},

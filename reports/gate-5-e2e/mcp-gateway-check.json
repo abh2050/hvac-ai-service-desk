@@ -1,0 +1,23 @@
+{
+ "no_token_status": 401,
+ "tools": [
+  "x_amz_bedrock_agentcore_search",
+  "uptime___get_asset_history",
+  "uptime___get_work_order",
+  "uptime___list_my_jobs",
+  "uptime___search_manuals"
+ ],
+ "t01_jobs": 9,
+ "t01_reads_other": {
+  "denied": true,
+  "reason": "work order is assigned to another technician"
+ },
+ "t01_spoofs_manager": {
+  "denied": true,
+  "reason": "work order is assigned to another technician"
+ },
+ "manager_reads": {
+  "found": true,
+  "assigned_technician": "T16"
+ }
+}

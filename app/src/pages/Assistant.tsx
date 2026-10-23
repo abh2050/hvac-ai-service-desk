@@ -1,5 +1,5 @@
-import { useState } from 'react';
-import { api } from '../api';
+import { useEffect, useState } from 'react';
+import { api, type Me } from '../api';
 
 type Answer = { question: string; answer: string; citations_shown: { manual_id: string; page: number; quote: string }[];
   insufficient_evidence: boolean; answer_rewritten: boolean; tool_trace: { tool: string; input: Record<string, unknown>; error: boolean; denied: boolean }[];
@@ -16,6 +16,8 @@ export default function Assistant() {
   const [log, setLog] = useState<Answer[]>([]);
   const [busy, setBusy] = useState(false);
   const [error, setError] = useState('');
+  const [me, setMe] = useState<Me | null>(null);
+  useEffect(() => { api<Me>('/me').then(setMe).catch(() => undefined); }, []);
   async function ask() {
     setBusy(true);
     setError('');
@@ -32,6 +34,10 @@ export default function Assistant() {
     <>
       <h1>Technician assistant</h1>
       <p className="muted">Ask about your own jobs. The assistant reads only your work orders and their assets. It quotes the manuals word for word and shows each tool call it made.</p>
+      {me?.role === 'manager' && (
+        <div className="banner warn">You are signed in as a manager. Managers have no jobs of their own: ask about any work order
+          or asset by its id, for example a work order id from the Work orders page. Sign in as a technician to ask "what are my jobs".</div>
+      )}
       <div className="card row">
         <input style={{ flex: 1, minWidth: 240 }} value={q} onChange={(e) => setQ(e.target.value)}
           onKeyDown={(e) => { if (e.key === 'Enter' && !busy) ask(); }} aria-label="Question" />

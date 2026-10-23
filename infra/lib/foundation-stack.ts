@@ -4,6 +4,8 @@ import * as s3 from 'aws-cdk-lib/aws-s3';
 import { Construct } from 'constructs';
 import { DataLayer } from './data-layer';
 import { ApiLayer } from './api-layer';
+import { McpGateway } from './mcp-gateway';
+import { Dashboard } from './dashboard';
 
 // Managed prefix list for S3 in us-east-2 (com.amazonaws.us-east-2.s3).
 const PREFIX_LIST_S3: Record<string, string> = { 'us-east-2': 'pl-7ba54012' };
@@ -85,6 +87,8 @@ export class FoundationStack extends cdk.Stack {
     // The API needs the Cognito pool that Amplify Gen 2 creates; deploy it once that pool exists.
     if (this.node.tryGetContext('withApi') !== 'false') {
       new ApiLayer(this, 'Api', this, ['https://main.du00v4uwlekbh.amplifyapp.com', 'http://localhost:5173']);
+      new McpGateway(this, 'Mcp', this);
+      new Dashboard(this, 'Dashboard');
     }
 
     new cdk.CfnOutput(this, 'DataBucketName', { value: this.dataBucket.bucketName });

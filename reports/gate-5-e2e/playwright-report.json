@@ -3,7 +3,8 @@
     "argv": [
       "/opt/homebrew/Cellar/node/25.1.0/bin/node",
       "/Users/abhishekshah/Desktop/hvac/app/node_modules/.bin/playwright",
-      "test"
+      "test",
+      "e2e/mcp-gateway.spec.ts"
     ],
     "configFile": "/Users/abhishekshah/Desktop/hvac/app/playwright.config.ts",
     "rootDir": "/Users/abhishekshah/Desktop/hvac/app/e2e",
@@ -60,15 +61,9 @@
             "width": 1920,
             "height": 1080
           },
-          "video": {
-            "mode": "on",
-            "size": {
-              "width": 1920,
-              "height": 1080
-            }
-          },
+          "video": "off",
           "launchOptions": {
-            "slowMo": 400
+            "slowMo": 0
           },
           "trace": "retain-on-failure"
         },
@@ -104,18 +99,18 @@
   },
   "suites": [
     {
-      "title": "full-flow.spec.ts",
-      "file": "full-flow.spec.ts",
+      "title": "mcp-gateway.spec.ts",
+      "file": "mcp-gateway.spec.ts",
       "column": 0,
       "line": 0,
       "specs": [
         {
-          "title": "replay, diagnose, approve, dispatch, and ask the assistant",
+          "title": "MCP gateway: auth, ownership, spoofing",
           "ok": true,
           "tags": [],
           "tests": [
             {
-              "timeout": 900000,
+              "timeout": 180000,
               "annotations": [],
               "expectedStatus": "passed",
               "projectId": "",
@@ -125,28 +120,44 @@
                   "workerIndex": 0,
                   "parallelIndex": 0,
                   "status": "passed",
-                  "duration": 107298,
+                  "duration": 38577,
                   "errors": [],
-                  "stdout": [],
+                  "stdout": [
+                    {
+                      "text": "[mcp-check 21:02:02] signing in as technician\n"
+                    },
+                    {
+                      "text": "[mcp-check 21:02:06] technician token ok\n"
+                    },
+                    {
+                      "text": "[mcp-check 21:02:09] manager token ok\n"
+                    },
+                    {
+                      "text": "[mcp-check 21:02:09] calling gateway without a token\n"
+                    },
+                    {
+                      "text": "[mcp-check 21:02:15] no-token status 401\n"
+                    },
+                    {
+                      "text": "[mcp-check 21:02:20] tools/list status 200: {\"jsonrpc\":\"2.0\",\"id\":2,\"result\":{\"tools\":[{\"inputSchema\":{\"type\":\"object\",\"properties\":{\"query\":{\"type\":\"string\"}},\"required\":[\"query\"]},\"name\":\"x_amz_bedrock_agentcore_search\",\"description\":\"A special tool that returns a trimmed down list of tools given a context. Use this tool only when there are\n"
+                    },
+                    {
+                      "text": "[mcp-check 21:02:20] calling tools\n"
+                    }
+                  ],
                   "stderr": [],
                   "retry": 0,
-                  "startTime": "2026-10-23T20:03:50.401Z",
+                  "startTime": "2026-10-23T21:02:02.628Z",
                   "annotations": [],
-                  "attachments": [
-                    {
-                      "name": "video",
-                      "contentType": "video/webm",
-                      "path": "/Users/abhishekshah/Desktop/hvac/reports/gate-5-e2e/artifacts/full-flow-replay-diagnose--2237d-patch-and-ask-the-assistant/video.webm"
-                    }
-                  ]
+                  "attachments": []
                 }
               ],
               "status": "expected"
             }
           ],
-          "id": "0366a69751fb3136692b-001d5411e93d75d1a6e4",
-          "file": "full-flow.spec.ts",
-          "line": 21,
+          "id": "805bf404ae11e1188f9d-24580fa86d3159a57ef3",
+          "file": "mcp-gateway.spec.ts",
+          "line": 47,
           "column": 1
         }
       ]
@@ -154,8 +165,8 @@
   ],
   "errors": [],
   "stats": {
-    "startTime": "2026-10-23T20:03:50.190Z",
-    "duration": 107752.80799999999,
+    "startTime": "2026-10-23T21:02:02.369Z",
+    "duration": 39093.014,
     "expected": 1,
     "skipped": 0,
     "unexpected": 0,

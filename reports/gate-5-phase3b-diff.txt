@@ -1,0 +1,160 @@
+[WARNING] aws-cdk-lib.aws_lambda.FunctionOptions#logRetention is deprecated, and will be removed in the next major release.
+  use `logGroup` instead
+WARNING No cross-stack-reference strength configured, defaulting to "strong". We recommend you set feature flag "@aws-cdk/core:defaultCrossStackReferences" to "both", then deploy everywhere, then set it to "weak". Alternatively, set it to "strong" explicitly to lock in the current producer-protecting behavior. (See: https://github.com/aws/aws-cdk/blob/main/packages/aws-cdk-lib/README.md#reference-strength) (Construct Annotations)
+   UptimeDesk-Demo
+   Acknowledge with 'Annotation::@aws-cdk/core:crossStackReferencesDefaultStrong'
+
+Stack UptimeDesk-Foundation (aws://054772656600/us-east-2)
+IAM Statement Changes
+┌───┬─────────────────────────────────────────────────────────────────────────────────────────┬────────┬───────────────────────────────┬─────────────────────────────────────────┬──────────────────────────────────────────────────────────────────────────────────────────────────────────────┐
+│   │ Resource                                                                                │ Effect │ Action                        │ Principal                               │ Condition                                                                                                    │
+├───┼─────────────────────────────────────────────────────────────────────────────────────────┼────────┼───────────────────────────────┼─────────────────────────────────────────┼──────────────────────────────────────────────────────────────────────────────────────────────────────────────┤
+│ + │ ${Data/Aurora/Secret/Attachment}                                                        │ Allow  │ secretsmanager:DescribeSecret │ AWS:${Mcp/Tools/ServiceRole}            │                                                                                                              │
+│   │                                                                                         │        │ secretsmanager:GetSecretValue │                                         │                                                                                                              │
+├───┼─────────────────────────────────────────────────────────────────────────────────────────┼────────┼───────────────────────────────┼─────────────────────────────────────────┼──────────────────────────────────────────────────────────────────────────────────────────────────────────────┤
+│ + │ ${Mcp/Gateway/ServiceRole.Arn}                                                          │ Allow  │ sts:AssumeRole                │ Service:bedrock-agentcore.amazonaws.com │                                                                                                              │
+│ + │ ${Mcp/Gateway/ServiceRole.Arn}                                                          │ Allow  │ sts:AssumeRole                │ Service:bedrock-agentcore.amazonaws.com │ "StringEquals": {                                                                                            │
+│   │                                                                                         │        │                               │                                         │   "aws:SourceAccount": "054772656600"                                                                        │
+│   │                                                                                         │        │                               │                                         │ },                                                                                                           │
+│   │                                                                                         │        │                               │                                         │ "ArnLike": {                                                                                                 │
+│   │                                                                                         │        │                               │                                         │   "aws:SourceArn": "arn:${AWS::Partition}:bedrock-agentcore:us-east-2:054772656600:gateway/uptime-desk-mcp*" │
+│   │                                                                                         │        │                               │                                         │ }                                                                                                            │
+├───┼─────────────────────────────────────────────────────────────────────────────────────────┼────────┼───────────────────────────────┼─────────────────────────────────────────┼──────────────────────────────────────────────────────────────────────────────────────────────────────────────┤
+│ + │ ${Mcp/Interceptor.Arn}                                                                  │ Allow  │ lambda:InvokeFunction         │ AWS:${Mcp/Gateway/ServiceRole}          │                                                                                                              │
+│   │ ${Mcp/Interceptor.Arn}:*                                                                │        │                               │                                         │                                                                                                              │
+├───┼─────────────────────────────────────────────────────────────────────────────────────────┼────────┼───────────────────────────────┼─────────────────────────────────────────┼──────────────────────────────────────────────────────────────────────────────────────────────────────────────┤
+│ + │ ${Mcp/Interceptor/ServiceRole.Arn}                                                      │ Allow  │ sts:AssumeRole                │ Service:lambda.amazonaws.com            │                                                                                                              │
+├───┼─────────────────────────────────────────────────────────────────────────────────────────┼────────┼───────────────────────────────┼─────────────────────────────────────────┼──────────────────────────────────────────────────────────────────────────────────────────────────────────────┤
+│ + │ ${Mcp/Tools.Arn}                                                                        │ Allow  │ lambda:InvokeFunction         │ AWS:${Mcp/Gateway/ServiceRole}          │                                                                                                              │
+│   │ ${Mcp/Tools.Arn}:*                                                                      │        │                               │                                         │                                                                                                              │
+├───┼─────────────────────────────────────────────────────────────────────────────────────────┼────────┼───────────────────────────────┼─────────────────────────────────────────┼──────────────────────────────────────────────────────────────────────────────────────────────────────────────┤
+│ + │ ${Mcp/Tools/ServiceRole.Arn}                                                            │ Allow  │ sts:AssumeRole                │ Service:lambda.amazonaws.com            │                                                                                                              │
+├───┼─────────────────────────────────────────────────────────────────────────────────────────┼────────┼───────────────────────────────┼─────────────────────────────────────────┼──────────────────────────────────────────────────────────────────────────────────────────────────────────────┤
+│ + │ arn:aws:bedrock:us-east-2:054772656600:knowledge-base/${Data/ManualsKb.KnowledgeBaseId} │ Allow  │ bedrock:Retrieve              │ AWS:${Mcp/Tools/ServiceRole}            │                                                                                                              │
+└───┴─────────────────────────────────────────────────────────────────────────────────────────┴────────┴───────────────────────────────┴─────────────────────────────────────────┴──────────────────────────────────────────────────────────────────────────────────────────────────────────────┘
+IAM Policy Changes
+┌───┬────────────────────────────────┬────────────────────────────────────────────────────────────────────────────────────┐
+│   │ Resource                       │ Managed Policy ARN                                                                 │
+├───┼────────────────────────────────┼────────────────────────────────────────────────────────────────────────────────────┤
+│ + │ ${Mcp/Interceptor/ServiceRole} │ arn:${AWS::Partition}:iam::aws:policy/service-role/AWSLambdaBasicExecutionRole     │
+├───┼────────────────────────────────┼────────────────────────────────────────────────────────────────────────────────────┤
+│ + │ ${Mcp/Tools/ServiceRole}       │ arn:${AWS::Partition}:iam::aws:policy/service-role/AWSLambdaBasicExecutionRole     │
+│ + │ ${Mcp/Tools/ServiceRole}       │ arn:${AWS::Partition}:iam::aws:policy/service-role/AWSLambdaVPCAccessExecutionRole │
+└───┴────────────────────────────────┴────────────────────────────────────────────────────────────────────────────────────┘
+(NOTE: There may be security-related changes not in this list. See https://github.com/aws/aws-cdk/issues/1299)
+
+Resources
+[+] AWS::IAM::Role Mcp/Interceptor/ServiceRole McpInterceptorServiceRole63D399DF
+[+] AWS::Lambda::Function Mcp/Interceptor McpInterceptor4A349FD7
+[+] Custom::LogRetention Mcp/Interceptor/LogRetention McpInterceptorLogRetention207EA082
+[+] AWS::IAM::Role Mcp/Tools/ServiceRole McpToolsServiceRole0D108082
+[+] AWS::IAM::Policy Mcp/Tools/ServiceRole/DefaultPolicy McpToolsServiceRoleDefaultPolicyD890A3E9
+[+] AWS::Lambda::Function Mcp/Tools McpTools53B9CF65
+[+] Custom::LogRetention Mcp/Tools/LogRetention McpToolsLogRetention8780BA7C
+[+] AWS::IAM::Role Mcp/Gateway/ServiceRole McpGatewayServiceRole498777C7
+[+] AWS::IAM::Policy Mcp/Gateway/ServiceRole/DefaultPolicy McpGatewayServiceRoleDefaultPolicyB3BCAA5D
+[+] AWS::BedrockAgentCore::Gateway Mcp/Gateway McpGateway4963DA07
+[+] AWS::BedrockAgentCore::GatewayTarget Mcp/Gateway/ToolsTarget McpGatewayToolsTarget5CC1064C
+[+] AWS::SSM::Parameter Mcp/McpUrl McpMcpUrlE15DEE87
+[+] AWS::CloudWatch::Dashboard Dashboard/Ops DashboardOpsF3B35C9D
+[~] AWS::Lambda::Function Data/DbInit DataDbInit88C545FD
+ └─ [~] Code
+     └─ [~] .ImageUri:
+         └─ [~] .Fn::Sub:
+             ├─ [-] 054772656600.dkr.ecr.us-east-2.${AWS::URLSuffix}/cdk-hnb659fds-container-assets-054772656600-us-east-2:0bbdefb4be6426764217a2ee7c4237150db3c785bf2543cad2aa9cb473866e61
+             └─ [+] 054772656600.dkr.ecr.us-east-2.${AWS::URLSuffix}/cdk-hnb659fds-container-assets-054772656600-us-east-2:a77fa9c890078b93b02bfc4c393d1d3ea5b7e0f81a74cdd338bd8ff8aab77538
+[~] AWS::CloudFormation::CustomResource Data/DbInitResource DataDbInitResourceF4C8182E may be replaced
+ └─ [~] schemaHash (may cause replacement)
+     ├─ [-] 4b513405ff3d1ca0c89360062710d6c68737181fa25aba376362595b0c6f455a
+     └─ [+] e0781272c48e572604a2e388c131a4aada2bbb5b9998ded906a1a01c010fb09c
+[~] AWS::Lambda::Function Api/Api ApiCD79AAA0
+ └─ [~] Code
+     └─ [~] .ImageUri:
+         └─ [~] .Fn::Sub:
+             ├─ [-] 054772656600.dkr.ecr.us-east-2.${AWS::URLSuffix}/cdk-hnb659fds-container-assets-054772656600-us-east-2:0bbdefb4be6426764217a2ee7c4237150db3c785bf2543cad2aa9cb473866e61
+             └─ [+] 054772656600.dkr.ecr.us-east-2.${AWS::URLSuffix}/cdk-hnb659fds-container-assets-054772656600-us-east-2:a77fa9c890078b93b02bfc4c393d1d3ea5b7e0f81a74cdd338bd8ff8aab77538
+
+Outputs
+[+] Output McpGatewayId McpGatewayId: {"Value":{"Fn::GetAtt":["McpGateway4963DA07","GatewayIdentifier"]}}
+[+] Output McpGatewayUrl McpGatewayUrl: {"Value":{"Fn::GetAtt":["McpGateway4963DA07","GatewayUrl"]}}
+
+
+
+Stack UptimeDesk-Demo (aws://054772656600/us-east-2)
+Resources
+[~] AWS::Lambda::Function Pipeline/Replay PipelineReplay663337C8
+ └─ [~] Code
+     └─ [~] .ImageUri:
+         └─ [~] .Fn::Sub:
+             ├─ [-] 054772656600.dkr.ecr.us-east-2.${AWS::URLSuffix}/cdk-hnb659fds-container-assets-054772656600-us-east-2:0bbdefb4be6426764217a2ee7c4237150db3c785bf2543cad2aa9cb473866e61
+             └─ [+] 054772656600.dkr.ecr.us-east-2.${AWS::URLSuffix}/cdk-hnb659fds-container-assets-054772656600-us-east-2:a77fa9c890078b93b02bfc4c393d1d3ea5b7e0f81a74cdd338bd8ff8aab77538
+[~] AWS::Lambda::Function Pipeline/Detect PipelineDetect52BC5D07
+ └─ [~] Code
+     └─ [~] .ImageUri:
+         └─ [~] .Fn::Sub:
+             ├─ [-] 054772656600.dkr.ecr.us-east-2.${AWS::URLSuffix}/cdk-hnb659fds-container-assets-054772656600-us-east-2:0bbdefb4be6426764217a2ee7c4237150db3c785bf2543cad2aa9cb473866e61
+             └─ [+] 054772656600.dkr.ecr.us-east-2.${AWS::URLSuffix}/cdk-hnb659fds-container-assets-054772656600-us-east-2:a77fa9c890078b93b02bfc4c393d1d3ea5b7e0f81a74cdd338bd8ff8aab77538
+[~] AWS::Lambda::Function Pipeline/Window PipelineWindow4A1B640C
+ └─ [~] Code
+     └─ [~] .ImageUri:
+         └─ [~] .Fn::Sub:
+             ├─ [-] 054772656600.dkr.ecr.us-east-2.${AWS::URLSuffix}/cdk-hnb659fds-container-assets-054772656600-us-east-2:0bbdefb4be6426764217a2ee7c4237150db3c785bf2543cad2aa9cb473866e61
+             └─ [+] 054772656600.dkr.ecr.us-east-2.${AWS::URLSuffix}/cdk-hnb659fds-container-assets-054772656600-us-east-2:a77fa9c890078b93b02bfc4c393d1d3ea5b7e0f81a74cdd338bd8ff8aab77538
+[~] AWS::Lambda::Function Pipeline/EndOfDay PipelineEndOfDayDF7A3498
+ └─ [~] Code
+     └─ [~] .ImageUri:
+         └─ [~] .Fn::Sub:
+             ├─ [-] 054772656600.dkr.ecr.us-east-2.${AWS::URLSuffix}/cdk-hnb659fds-container-assets-054772656600-us-east-2:0bbdefb4be6426764217a2ee7c4237150db3c785bf2543cad2aa9cb473866e61
+             └─ [+] 054772656600.dkr.ecr.us-east-2.${AWS::URLSuffix}/cdk-hnb659fds-container-assets-054772656600-us-east-2:a77fa9c890078b93b02bfc4c393d1d3ea5b7e0f81a74cdd338bd8ff8aab77538
+[~] AWS::Lambda::Function Pipeline/Diagnose PipelineDiagnose23284D10
+ └─ [~] Code
+     └─ [~] .ImageUri:
+         └─ [~] .Fn::Sub:
+             ├─ [-] 054772656600.dkr.ecr.us-east-2.${AWS::URLSuffix}/cdk-hnb659fds-container-assets-054772656600-us-east-2:0bbdefb4be6426764217a2ee7c4237150db3c785bf2543cad2aa9cb473866e61
+             └─ [+] 054772656600.dkr.ecr.us-east-2.${AWS::URLSuffix}/cdk-hnb659fds-container-assets-054772656600-us-east-2:a77fa9c890078b93b02bfc4c393d1d3ea5b7e0f81a74cdd338bd8ff8aab77538
+[~] AWS::Lambda::Function Pipeline/VerifyDraft PipelineVerifyDraft56E0FED5
+ └─ [~] Code
+     └─ [~] .ImageUri:
+         └─ [~] .Fn::Sub:
+             ├─ [-] 054772656600.dkr.ecr.us-east-2.${AWS::URLSuffix}/cdk-hnb659fds-container-assets-054772656600-us-east-2:0bbdefb4be6426764217a2ee7c4237150db3c785bf2543cad2aa9cb473866e61
+             └─ [+] 054772656600.dkr.ecr.us-east-2.${AWS::URLSuffix}/cdk-hnb659fds-container-assets-054772656600-us-east-2:a77fa9c890078b93b02bfc4c393d1d3ea5b7e0f81a74cdd338bd8ff8aab77538
+[~] AWS::Lambda::Function Pipeline/StoreToken PipelineStoreTokenF4D5105F
+ └─ [~] Code
+     └─ [~] .ImageUri:
+         └─ [~] .Fn::Sub:
+             ├─ [-] 054772656600.dkr.ecr.us-east-2.${AWS::URLSuffix}/cdk-hnb659fds-container-assets-054772656600-us-east-2:0bbdefb4be6426764217a2ee7c4237150db3c785bf2543cad2aa9cb473866e61
+             └─ [+] 054772656600.dkr.ecr.us-east-2.${AWS::URLSuffix}/cdk-hnb659fds-container-assets-054772656600-us-east-2:a77fa9c890078b93b02bfc4c393d1d3ea5b7e0f81a74cdd338bd8ff8aab77538
+[~] AWS::Lambda::Function Pipeline/Escalate PipelineEscalate940E024E
+ └─ [~] Code
+     └─ [~] .ImageUri:
+         └─ [~] .Fn::Sub:
+             ├─ [-] 054772656600.dkr.ecr.us-east-2.${AWS::URLSuffix}/cdk-hnb659fds-container-assets-054772656600-us-east-2:0bbdefb4be6426764217a2ee7c4237150db3c785bf2543cad2aa9cb473866e61
+             └─ [+] 054772656600.dkr.ecr.us-east-2.${AWS::URLSuffix}/cdk-hnb659fds-container-assets-054772656600-us-east-2:a77fa9c890078b93b02bfc4c393d1d3ea5b7e0f81a74cdd338bd8ff8aab77538
+[~] AWS::ECS::TaskDefinition Pipeline/DispatchTask PipelineDispatchTaskF93734BD replace
+ └─ [~] ContainerDefinitions (requires replacement)
+     └─ @@ -23,7 +23,7 @@
+        [ ] ],
+        [ ] "Essential": true,
+        [ ] "Image": {
+        [-]   "Fn::Sub": "054772656600.dkr.ecr.us-east-2.${AWS::URLSuffix}/cdk-hnb659fds-container-assets-054772656600-us-east-2:0bbdefb4be6426764217a2ee7c4237150db3c785bf2543cad2aa9cb473866e61"
+        [+]   "Fn::Sub": "054772656600.dkr.ecr.us-east-2.${AWS::URLSuffix}/cdk-hnb659fds-container-assets-054772656600-us-east-2:a77fa9c890078b93b02bfc4c393d1d3ea5b7e0f81a74cdd338bd8ff8aab77538"
+        [ ] },
+        [ ] "LogConfiguration": {
+        [ ]   "LogDriver": "awslogs",
+[~] AWS::IAM::Policy Pipeline/CaseMachine/Role/DefaultPolicy PipelineCaseMachineRoleDefaultPolicyD0A1A510
+ └─ [~] PolicyDocument
+     └─ [~] .Statement:
+         └─ @@ -33,7 +33,7 @@
+            [ ] },
+            [ ] {
+            [ ]   "Action": "ecs:RunTask",
+            [-]   "Resource": "arn:aws:ecs:us-east-2:054772656600:task-definition/UptimeDeskDemoPipelineDispatchTask6849D44E:*",
+            [+]   "Resource": "{{changeSet:KNOWN_AFTER_APPLY}}",
+            [ ]   "Effect": "Allow"
+            [ ] },
+            [ ] {
+
+
+
+✨  Number of stacks with differences: 2
+

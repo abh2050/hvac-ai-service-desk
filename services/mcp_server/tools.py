@@ -42,6 +42,10 @@ def get_work_order(conn, caller: Caller, work_order_id: str) -> dict:
 
 def list_my_jobs(conn, caller: Caller, technician_id: str | None = None) -> dict:
     target = technician_id or caller.technician_id
+    if caller.role == "manager" and not target:
+        return {"technician_id": None, "jobs": [],
+                "note": "Managers have no assigned jobs. A manager can read any work order or asset history by id, "
+                        "or list one technician's jobs by technician id."}
     if caller.role != "manager" and target != caller.technician_id:
         return _deny(conn, caller, "list_my_jobs", f"technician:{target}", "cannot list another technician's jobs")
     ids = _owned(conn, Caller(caller.sub, "technician", target)) if target else []
