@@ -1,0 +1,95 @@
+[WARNING] aws-cdk-lib.aws_lambda.FunctionOptions#logRetention is deprecated, and will be removed in the next major release.
+  use `logGroup` instead
+WARNING No cross-stack-reference strength configured, defaulting to "strong". We recommend you set feature flag "@aws-cdk/core:defaultCrossStackReferences" to "both", then deploy everywhere, then set it to "weak". Alternatively, set it to "strong" explicitly to lock in the current producer-protecting behavior. (See: https://github.com/aws/aws-cdk/blob/main/packages/aws-cdk-lib/README.md#reference-strength) (Construct Annotations)
+   UptimeDesk-Demo
+   Acknowledge with 'Annotation::@aws-cdk/core:crossStackReferencesDefaultStrong'
+
+Stack UptimeDesk-Foundation (aws://054772656600/us-east-2)
+Resources
+[~] AWS::Lambda::Function Data/DbInit DataDbInit88C545FD
+ └─ [~] Code
+     └─ [~] .ImageUri:
+         └─ [~] .Fn::Sub:
+             ├─ [-] 054772656600.dkr.ecr.us-east-2.${AWS::URLSuffix}/cdk-hnb659fds-container-assets-054772656600-us-east-2:1174763e13a338d290cf329f333272c7544ef53a5663d015a6079a0c87e7f9f1
+             └─ [+] 054772656600.dkr.ecr.us-east-2.${AWS::URLSuffix}/cdk-hnb659fds-container-assets-054772656600-us-east-2:b92ca04f7be2ac1bcfea16e73db7bbf011202463be81314d30926ea5c8860f7e
+
+
+
+Stack UptimeDesk-Demo (aws://054772656600/us-east-2)
+Resources
+[~] AWS::Lambda::Function Pipeline/Replay PipelineReplay663337C8
+ └─ [~] Code
+     └─ [~] .ImageUri:
+         └─ [~] .Fn::Sub:
+             ├─ [-] 054772656600.dkr.ecr.us-east-2.${AWS::URLSuffix}/cdk-hnb659fds-container-assets-054772656600-us-east-2:1174763e13a338d290cf329f333272c7544ef53a5663d015a6079a0c87e7f9f1
+             └─ [+] 054772656600.dkr.ecr.us-east-2.${AWS::URLSuffix}/cdk-hnb659fds-container-assets-054772656600-us-east-2:b92ca04f7be2ac1bcfea16e73db7bbf011202463be81314d30926ea5c8860f7e
+[~] AWS::Lambda::Function Pipeline/Detect PipelineDetect52BC5D07
+ └─ [~] Code
+     └─ [~] .ImageUri:
+         └─ [~] .Fn::Sub:
+             ├─ [-] 054772656600.dkr.ecr.us-east-2.${AWS::URLSuffix}/cdk-hnb659fds-container-assets-054772656600-us-east-2:1174763e13a338d290cf329f333272c7544ef53a5663d015a6079a0c87e7f9f1
+             └─ [+] 054772656600.dkr.ecr.us-east-2.${AWS::URLSuffix}/cdk-hnb659fds-container-assets-054772656600-us-east-2:b92ca04f7be2ac1bcfea16e73db7bbf011202463be81314d30926ea5c8860f7e
+[~] AWS::Lambda::Function Pipeline/Window PipelineWindow4A1B640C
+ └─ [~] Code
+     └─ [~] .ImageUri:
+         └─ [~] .Fn::Sub:
+             ├─ [-] 054772656600.dkr.ecr.us-east-2.${AWS::URLSuffix}/cdk-hnb659fds-container-assets-054772656600-us-east-2:1174763e13a338d290cf329f333272c7544ef53a5663d015a6079a0c87e7f9f1
+             └─ [+] 054772656600.dkr.ecr.us-east-2.${AWS::URLSuffix}/cdk-hnb659fds-container-assets-054772656600-us-east-2:b92ca04f7be2ac1bcfea16e73db7bbf011202463be81314d30926ea5c8860f7e
+[~] AWS::Lambda::Function Pipeline/EndOfDay PipelineEndOfDayDF7A3498
+ └─ [~] Code
+     └─ [~] .ImageUri:
+         └─ [~] .Fn::Sub:
+             ├─ [-] 054772656600.dkr.ecr.us-east-2.${AWS::URLSuffix}/cdk-hnb659fds-container-assets-054772656600-us-east-2:1174763e13a338d290cf329f333272c7544ef53a5663d015a6079a0c87e7f9f1
+             └─ [+] 054772656600.dkr.ecr.us-east-2.${AWS::URLSuffix}/cdk-hnb659fds-container-assets-054772656600-us-east-2:b92ca04f7be2ac1bcfea16e73db7bbf011202463be81314d30926ea5c8860f7e
+[~] AWS::Lambda::Function Pipeline/Diagnose PipelineDiagnose23284D10
+ └─ [~] Code
+     └─ [~] .ImageUri:
+         └─ [~] .Fn::Sub:
+             ├─ [-] 054772656600.dkr.ecr.us-east-2.${AWS::URLSuffix}/cdk-hnb659fds-container-assets-054772656600-us-east-2:1174763e13a338d290cf329f333272c7544ef53a5663d015a6079a0c87e7f9f1
+             └─ [+] 054772656600.dkr.ecr.us-east-2.${AWS::URLSuffix}/cdk-hnb659fds-container-assets-054772656600-us-east-2:b92ca04f7be2ac1bcfea16e73db7bbf011202463be81314d30926ea5c8860f7e
+[~] AWS::Lambda::Function Pipeline/VerifyDraft PipelineVerifyDraft56E0FED5
+ └─ [~] Code
+     └─ [~] .ImageUri:
+         └─ [~] .Fn::Sub:
+             ├─ [-] 054772656600.dkr.ecr.us-east-2.${AWS::URLSuffix}/cdk-hnb659fds-container-assets-054772656600-us-east-2:1174763e13a338d290cf329f333272c7544ef53a5663d015a6079a0c87e7f9f1
+             └─ [+] 054772656600.dkr.ecr.us-east-2.${AWS::URLSuffix}/cdk-hnb659fds-container-assets-054772656600-us-east-2:b92ca04f7be2ac1bcfea16e73db7bbf011202463be81314d30926ea5c8860f7e
+[~] AWS::Lambda::Function Pipeline/StoreToken PipelineStoreTokenF4D5105F
+ └─ [~] Code
+     └─ [~] .ImageUri:
+         └─ [~] .Fn::Sub:
+             ├─ [-] 054772656600.dkr.ecr.us-east-2.${AWS::URLSuffix}/cdk-hnb659fds-container-assets-054772656600-us-east-2:1174763e13a338d290cf329f333272c7544ef53a5663d015a6079a0c87e7f9f1
+             └─ [+] 054772656600.dkr.ecr.us-east-2.${AWS::URLSuffix}/cdk-hnb659fds-container-assets-054772656600-us-east-2:b92ca04f7be2ac1bcfea16e73db7bbf011202463be81314d30926ea5c8860f7e
+[~] AWS::Lambda::Function Pipeline/Escalate PipelineEscalate940E024E
+ └─ [~] Code
+     └─ [~] .ImageUri:
+         └─ [~] .Fn::Sub:
+             ├─ [-] 054772656600.dkr.ecr.us-east-2.${AWS::URLSuffix}/cdk-hnb659fds-container-assets-054772656600-us-east-2:1174763e13a338d290cf329f333272c7544ef53a5663d015a6079a0c87e7f9f1
+             └─ [+] 054772656600.dkr.ecr.us-east-2.${AWS::URLSuffix}/cdk-hnb659fds-container-assets-054772656600-us-east-2:b92ca04f7be2ac1bcfea16e73db7bbf011202463be81314d30926ea5c8860f7e
+[~] AWS::ECS::TaskDefinition Pipeline/DispatchTask PipelineDispatchTaskF93734BD replace
+ └─ [~] ContainerDefinitions (requires replacement)
+     └─ @@ -23,7 +23,7 @@
+        [ ] ],
+        [ ] "Essential": true,
+        [ ] "Image": {
+        [-]   "Fn::Sub": "054772656600.dkr.ecr.us-east-2.${AWS::URLSuffix}/cdk-hnb659fds-container-assets-054772656600-us-east-2:1174763e13a338d290cf329f333272c7544ef53a5663d015a6079a0c87e7f9f1"
+        [+]   "Fn::Sub": "054772656600.dkr.ecr.us-east-2.${AWS::URLSuffix}/cdk-hnb659fds-container-assets-054772656600-us-east-2:b92ca04f7be2ac1bcfea16e73db7bbf011202463be81314d30926ea5c8860f7e"
+        [ ] },
+        [ ] "LogConfiguration": {
+        [ ]   "LogDriver": "awslogs",
+[~] AWS::IAM::Policy Pipeline/CaseMachine/Role/DefaultPolicy PipelineCaseMachineRoleDefaultPolicyD0A1A510
+ └─ [~] PolicyDocument
+     └─ [~] .Statement:
+         └─ @@ -33,7 +33,7 @@
+            [ ] },
+            [ ] {
+            [ ]   "Action": "ecs:RunTask",
+            [-]   "Resource": "arn:aws:ecs:us-east-2:054772656600:task-definition/UptimeDeskDemoPipelineDispatchTask6849D44E:*",
+            [+]   "Resource": "{{changeSet:KNOWN_AFTER_APPLY}}",
+            [ ]   "Effect": "Allow"
+            [ ] },
+            [ ] {
+
+
+
+✨  Number of stacks with differences: 2
+

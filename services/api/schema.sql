@@ -109,3 +109,41 @@ CREATE TABLE IF NOT EXISTS audit_log (
     detail           jsonb NOT NULL DEFAULT '{}'::jsonb
 );
 CREATE INDEX IF NOT EXISTS audit_denied ON audit_log (allowed, occurred_at DESC);
+
+-- Live pipeline state (Gate 5). Replay runs, per-window detection results, and cases.
+CREATE TABLE IF NOT EXISTS pipeline_runs (
+    run_id           text PRIMARY KEY,
+    episode_id       text NOT NULL,
+    source_type      text NOT NULL CHECK (source_type IN ('lab', 'field', 'simulated')),
+    started_at       timestamptz NOT NULL DEFAULT now(),
+    started_by       text NOT NULL,
+    replay_execution_arn text,
+    note             text NOT NULL DEFAULT 'replay of recorded data'
+);
+
+CREATE TABLE IF NOT EXISTS detection_windows (
+    run_id           text NOT NULL REFERENCES pipeline_runs(run_id),
+    window_start     timestamp NOT NULL,          -- original recorded timestamp
+    rule_alarm       boolean NOT NULL,
+    rules_fired      text NOT NULL DEFAULT '',
+    rule_hint        text,
+    model_prob       double precision,
+    model_alarm      boolean NOT NULL,
+    features         jsonb NOT NULL DEFAULT '{}'::jsonb,
+    received_at      timestamptz NOT NULL DEFAULT now(),
+    PRIMARY KEY (run_id, window_start)
+);
+
+CREATE TABLE IF NOT EXISTS cases (
+    case_id          text PRIMARY KEY,
+    run_id           text NOT NULL UNIQUE REFERENCES pipeline_runs(run_id),
+    asset_id         text NOT NULL REFERENCES assets(asset_id),
+    opened_at        timestamptz NOT NULL DEFAULT now(),
+    detection        jsonb NOT NULL,
+    route            text NOT NULL,
+    diagnosis        jsonb,
+    execution_arn    text
+);
+
+ALTER TABLE work_orders ADD COLUMN IF NOT EXISTS approval_task_token text;
+ALTER TABLE work_orders ADD COLUMN IF NOT EXISTS run_id text;

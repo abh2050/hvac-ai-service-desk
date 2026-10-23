@@ -3,6 +3,9 @@ import * as cdk from 'aws-cdk-lib';
 import * as bedrock from 'aws-cdk-lib/aws-bedrock';
 import * as ec2 from 'aws-cdk-lib/aws-ec2';
 import * as iam from 'aws-cdk-lib/aws-iam';
+import * as lambda from 'aws-cdk-lib/aws-lambda';
+import * as logs from 'aws-cdk-lib/aws-logs';
+import * as cr from 'aws-cdk-lib/custom-resources';
 import * as rds from 'aws-cdk-lib/aws-rds';
 import * as s3 from 'aws-cdk-lib/aws-s3';
 import * as s3deploy from 'aws-cdk-lib/aws-s3-deployment';
@@ -15,6 +18,8 @@ const REPO = path.join(__dirname, '..', '..');
 interface DataLayerProps {
   vpc: ec2.Vpc;
   dataBucket: s3.Bucket;
+  lambdaSg: ec2.SecurityGroup;
+  lambdaSubnets: ec2.SubnetSelection;
 }
 
 /**
@@ -76,6 +81,39 @@ export class DataLayer extends Construct {
       destinationBucket: props.dataBucket,
       destinationKeyPrefix: 'models/',
     });
+
+    // Recorded episodes the replay reads (Release 1 lab and field days) and the scenario catalog.
+    new s3deploy.BucketDeployment(this, 'Episodes', {
+      sources: [s3deploy.Source.asset(path.join(REPO, 'data/deploy/episodes'))],
+      destinationBucket: props.dataBucket,
+      destinationKeyPrefix: 'episodes/',
+      memoryLimit: 2048,
+      ephemeralStorageSize: cdk.Size.gibibytes(2),
+    });
+    new s3deploy.BucketDeployment(this, 'Catalog', {
+      sources: [s3deploy.Source.asset(path.join(REPO, 'data/deploy'), { exclude: ['episodes', 'episodes/**'] })],
+      destinationBucket: props.dataBucket,
+      destinationKeyPrefix: 'catalog/',
+    });
+
+    // --- Schema and configuration seed, applied on every deploy (idempotent) ---
+    const dbInit = new lambda.DockerImageFunction(this, 'DbInit', {
+      code: lambda.DockerImageCode.fromImageAsset(REPO, {
+        file: 'services/Dockerfile', platform: cdk.aws_ecr_assets.Platform.LINUX_ARM64, cmd: ['handlers.db_init.handler'],
+      }),
+      architecture: lambda.Architecture.ARM_64, memorySize: 512, timeout: cdk.Duration.minutes(5),
+      vpc: props.vpc, vpcSubnets: props.lambdaSubnets, securityGroups: [props.lambdaSg],
+      environment: { DB_SECRET_ARN: this.cluster.secret!.secretArn },
+      logRetention: logs.RetentionDays.ONE_WEEK,
+    });
+    this.cluster.secret!.grantRead(dbInit);
+    const provider = new cr.Provider(this, 'DbInitProvider', { onEventHandler: dbInit });
+    const init = new cdk.CustomResource(this, 'DbInitResource', {
+      serviceToken: provider.serviceToken,
+      properties: { schemaHash: cdk.FileSystem.fingerprint(path.join(REPO, 'services/api')),
+                    configHash: cdk.FileSystem.fingerprint(path.join(REPO, 'config')) },
+    });
+    init.node.addDependency(this.cluster);
 
     // --- S3 Vectors index (1024-dim Titan v2, cosine) and the Knowledge Base ---
     const vectorBucket = new s3vectors.CfnVectorBucket(this, 'VectorBucket', {

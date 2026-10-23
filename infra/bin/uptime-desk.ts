@@ -12,11 +12,13 @@ if (profile !== 'idle' && profile !== 'demo') {
 }
 
 const foundation = new FoundationStack(app, 'UptimeDesk-Foundation', { env });
+// The foundation is always on, so it always carries the idle tag, whichever profile is deploying.
+cdk.Tags.of(foundation).add('cost-profile', 'idle');
 
 // The demo stack exists only while the demo profile is active; demo-down.sh destroys it.
 if (profile === 'demo') {
-  new DemoStack(app, 'UptimeDesk-Demo', { env, foundation });
+  const demo = new DemoStack(app, 'UptimeDesk-Demo', { env, foundation });
+  cdk.Tags.of(demo).add('cost-profile', 'demo');
 }
 
 cdk.Tags.of(app).add('project', 'uptime-desk');
-cdk.Tags.of(app).add('cost-profile', profile);

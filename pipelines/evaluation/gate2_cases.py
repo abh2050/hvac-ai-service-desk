@@ -21,26 +21,8 @@ import yaml
 ROOT = Path(__file__).resolve().parents[2]
 sys.path.insert(0, str(ROOT / "services"))
 from detection.rules import RULES  # noqa: E402
+from diagnosis.evidence import FEATURES  # noqa: E402
 
-FEATURES = {
-    "ahu": {"sat_err_mean": "supply air temp error vs setpoint band (F)", "coil_dt_mean": "supply minus mixed air temp (F)",
-            "oaf_err_mean": "measured outdoor air fraction minus damper command", "dmpr_mean": "OA damper command (0-1)",
-            "clg_mean": "cooling valve command (0-1)", "htg_mean": "heating valve command (0-1)",
-            "heat_closed_mean": "supply minus mixed air temp while heating valve closed (F)",
-            "cool_closed_mean": "mixed minus supply air temp while cooling valve closed (F)",
-            "simul_mean": "share of minutes with heating and cooling valves both open"},
-    "econ": {"sat_err_mean": "supply air temp minus 55 F setpoint (F)", "oaf_err_mean": "measured OA fraction minus damper command",
-             "dmpr_mean": "OA damper command (%)", "oat_mean": "outdoor air temp (F)",
-             "sat_minus_vav_mean": "supply air sensor minus VAV discharge temps with reheat off (F)",
-             "econ_enabled_mean": "share of minutes economizer should be enabled (OAT < 50 F)",
-             "comp_on_mean": "share of minutes a compressor runs", "mat_minus_oat_mean": "mixed minus outdoor air temp (F)",
-             "zone_minus_csp_mean": "zone temp minus cooling setpoint (F)"},
-    "refrig": {"on1_mean": "share of minutes circuit 1 runs", "on2_mean": "share of minutes circuit 2 runs",
-               "pr1_mean": "circuit 1 discharge/suction pressure ratio", "pr2_mean": "circuit 2 discharge/suction pressure ratio",
-               "suct_ratio_mean": "lower/higher suction pressure when both circuits run",
-               "dt_suct_1_mean": "circuit 1 discharge minus suction temp (C)", "dt_suct_2_mean": "circuit 2 discharge minus suction temp (C)",
-               "air_dt_mean": "return minus supply air temp while cooling (C)", "oat_mean": "outdoor air temp (C)"},
-}
 N_FIELD_DAYS = 4
 N_PROBES = 20
 

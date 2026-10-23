@@ -94,3 +94,34 @@ class BM25Index:
             scores.append(s)
         top = np.argsort(-np.asarray(scores))[:k]
         return [dict(self.chunks[i], score=float(scores[i])) for i in top if scores[i] > 0]
+
+
+class KbIndex:
+    """Bedrock Knowledge Base retriever with the same interface as VectorIndex.
+
+    KB documents start with the manual title line (pipelines/deploy/build_kb_docs.py); it is
+    removed so passage text matches the page text the citation verifier checks.
+    """
+
+    def __init__(self, knowledge_base_id: str, region: str = "us-east-2", profile: str | None = None):
+        session = boto3.Session(profile_name=profile, region_name=region)
+        self.client = session.client("bedrock-agent-runtime",
+                                     config=Config(retries={"max_attempts": 6, "mode": "adaptive"}))
+        self.kb = knowledge_base_id
+
+    def search(self, query: str, equipment_class: str, k: int = 6) -> list[dict]:
+        resp = self.client.retrieve(
+            knowledgeBaseId=self.kb, retrievalQuery={"text": query},
+            retrievalConfiguration={"vectorSearchConfiguration": {
+                "numberOfResults": k,
+                "filter": {"listContains": {"key": "classes", "value": equipment_class}}}})
+        out = []
+        for r in resp["retrievalResults"]:
+            md = r.get("metadata", {})
+            text = r["content"]["text"]
+            text = text.split("\n", 1)[1] if text.startswith(md.get("title", "\0")) and "\n" in text else text
+            out.append({"manual_id": md.get("manual_id"), "page": int(float(md.get("page", 0))), "title": md.get("title"),
+                        "match": md.get("match"), "classes": [str(c).strip('"') for c in md.get("classes") or []],
+                        "text": text,
+                        "score": float(r.get("score", 0.0))})
+        return out

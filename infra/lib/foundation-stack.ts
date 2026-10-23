@@ -4,6 +4,9 @@ import * as s3 from 'aws-cdk-lib/aws-s3';
 import { Construct } from 'constructs';
 import { DataLayer } from './data-layer';
 
+// Managed prefix list for S3 in us-east-2 (com.amazonaws.us-east-2.s3).
+const PREFIX_LIST_S3: Record<string, string> = { 'us-east-2': 'pl-7ba54012' };
+
 /**
  * Always-on (idle profile) resources: storage, networking, and the data layer (Aurora, the
  * manual Knowledge Base, the Guardrail). Later phases add the API and the MCP tools.
@@ -17,6 +20,7 @@ export class FoundationStack extends cdk.Stack {
   readonly dataBucket: s3.Bucket;
   readonly lambdaSubnets: ec2.SubnetSelection;
   readonly data: DataLayer;
+  readonly lambdaSg: ec2.SecurityGroup;
 
   constructor(scope: Construct, id: string, props: cdk.StackProps) {
     super(scope, id, props);
@@ -65,7 +69,17 @@ export class FoundationStack extends cdk.Stack {
       });
     }
 
-    this.data = new DataLayer(this, 'Data', { vpc: this.vpc, dataBucket: this.dataBucket });
+    // In-VPC Lambdas: outbound only, HTTPS to the endpoints and PostgreSQL to Aurora.
+    this.lambdaSg = new ec2.SecurityGroup(this, 'LambdaSg', {
+      vpc: this.vpc, description: 'In-VPC Lambdas: HTTPS to endpoints, 5432 to Aurora', allowAllOutbound: false,
+    });
+    this.lambdaSg.addEgressRule(ec2.Peer.ipv4(this.vpc.vpcCidrBlock), ec2.Port.tcp(443));
+    this.lambdaSg.addEgressRule(ec2.Peer.ipv4(this.vpc.vpcCidrBlock), ec2.Port.tcp(5432));
+    // The S3 gateway endpoint routes S3 traffic by prefix list.
+    this.lambdaSg.addEgressRule(ec2.Peer.prefixList(PREFIX_LIST_S3[this.region] ?? 'pl-7ba54012'), ec2.Port.tcp(443));
+
+    this.data = new DataLayer(this, 'Data', { vpc: this.vpc, dataBucket: this.dataBucket, lambdaSg: this.lambdaSg,
+                                              lambdaSubnets: this.lambdaSubnets });
 
     new cdk.CfnOutput(this, 'DataBucketName', { value: this.dataBucket.bucketName });
     new cdk.CfnOutput(this, 'VpcId', { value: this.vpc.vpcId });

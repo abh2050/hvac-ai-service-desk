@@ -1,0 +1,7 @@
+# Pinned to the versions that trained the detector models and ran the gate evaluations.
+pandas==3.1.0
+numpy==2.5.4
+xgboost-cpu==3.4.1
+pyyaml==6.0.3
+psycopg[binary]==3.3.6
+ortools==9.15.6755

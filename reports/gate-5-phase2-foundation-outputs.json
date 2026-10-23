@@ -1,0 +1,20 @@
+{
+  "UptimeDesk-Foundation": {
+    "GuardrailId": "r4gcaz15blbm",
+    "ExportsOutputFnGetAttDataManualsKb75C659C2KnowledgeBaseIdE6BF587D": "UZ6QJKMLFK",
+    "ExportsOutputFnGetAttLambdaSg30A6108CGroupId30BB2F0D": "sg-0dfae6fbdf1a07ef2",
+    "DataBucketName": "uptimedesk-foundation-databuckete3889a50-yvbfgn1crmig",
+    "ExportsOutputFnGetAttDataBucketE3889A50Arn98F8399F": "arn:aws:s3:::uptimedesk-foundation-databuckete3889a50-yvbfgn1crmig",
+    "KnowledgeBaseId": "UZ6QJKMLFK",
+    "ExportsOutputRefVpcisolatedSubnet1SubnetE62B1B9BEE029908": "subnet-03e4cbb3ed7d9ed9c",
+    "ExportsOutputFnGetAttDataGuardrail96693D20GuardrailId2468CF0C": "r4gcaz15blbm",
+    "AuroraEndpoint": "uptimedesk-foundation-dataaurora8cc34183-fkpt0nv0onjm.cluster-cri0q0qig5na.us-east-2.rds.amazonaws.com",
+    "ExportsOutputRefVpc8378EB38272D6E3A": "vpc-06e0f72ecad05c2bb",
+    "ExportsOutputRefDataBucketE3889A50250F5285": "uptimedesk-foundation-databuckete3889a50-yvbfgn1crmig",
+    "VpcId": "vpc-06e0f72ecad05c2bb",
+    "ExportsOutputFnGetAttDataGuardrailVersion16AA9D64VersionDF998F39": "1",
+    "ExportsOutputRefVpcpublicSubnet1Subnet2BB74ED74EB42ADC": "subnet-00d9e60c3834e1502",
+    "ExportsOutputRefVpcpublicSubnet2SubnetE34B022AC8BB6627": "subnet-0178b82542d7211cf",
+    "ExportsOutputRefDataAuroraSecretAttachment4F29BD4E3BAD97E2": "arn:aws:secretsmanager:us-east-2:054772656600:secret:uptime-desk/aurora-tfq31C"
+  }
+}

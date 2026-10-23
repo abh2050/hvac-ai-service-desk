@@ -1,0 +1,6 @@
+*
+!services/
+!config/
+!data/processed/manual_pages.jsonl
+!data/deploy/catalog.json
+services/**/__pycache__
