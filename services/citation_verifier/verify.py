@@ -14,8 +14,10 @@ sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
 from diagnosis.llm import LLM, parse_json  # noqa: E402
 
 WORD = re.compile(r"[a-z0-9]+")
+SUPPORTED = re.compile(r"\"?supported\"?\s*:\s*(true|false)", re.I)
 
-ENTAIL_SYSTEM = """You check citations for HVAC service records. Decide if the PAGE text supports the CLAIM.
+ENTAIL_SYSTEM = """Reasoning: low
+You check citations for HVAC service records. Decide if the PAGE text supports the CLAIM.
 Supported means the page states it or directly describes it. General relevance is not enough.
 Reply with one JSON object: {"supported": true or false, "reason": "one sentence"}."""
 
@@ -54,8 +56,14 @@ class Verifier:
         det = coverage >= self.min_overlap
         entailed, reason = False, "skipped: quote not on page"
         if det:
-            reply = parse_json(self.llm.complete(ENTAIL_SYSTEM, json.dumps({"CLAIM": claim, "PAGE": text[:6000]})))
-            entailed = bool(reply and reply.get("supported") is True)
-            reason = (reply or {}).get("reason", "unparseable reply")
+            raw = self.llm.complete(ENTAIL_SYSTEM, json.dumps({"CLAIM": claim, "PAGE": text[:6000]}))
+            reply = parse_json(raw)
+            if reply is not None:
+                entailed = reply.get("supported") is True
+                reason = reply.get("reason", "")
+            else:
+                m = SUPPORTED.search(raw)
+                entailed = bool(m and m.group(1) == "true")
+                reason = f"loose parse: {raw[:200]}" if m else f"unparseable reply: {raw[:200]!r}"
         return {"deterministic_pass": det, "coverage": coverage, "entailed": entailed, "reason": reason,
                 "pass": det and entailed}

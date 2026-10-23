@@ -18,7 +18,7 @@ diagnosis:
   temperature: 0
 entailment:
   model_match: "openai.gpt-oss-20b"         # yes/no: does the cited page text support the claim
-  max_tokens: 400
+  max_tokens: 3000   # reasoning tokens count; 400 and 1500 truncated some replies in smoke tests
   temperature: 0
 assistant:
   model_match: "openai.gpt-oss-120b"        # technician assistant answers over MCP tool results

@@ -24,6 +24,7 @@ class Usage:
     output_tokens: int = 0
     latency_ms: list[int] = field(default_factory=list)
     cost_usd: float = 0.0
+    truncated: int = 0
 
 
 class LLM:
@@ -44,6 +45,8 @@ class LLM:
         t = time.time()
         resp = self.client.converse(**kwargs)
         self.usage.latency_ms.append(int((time.time() - t) * 1000))
+        if resp.get("stopReason") == "max_tokens":
+            self.usage.truncated += 1
         u = resp.get("usage", {})
         self.usage.calls += 1
         self.usage.input_tokens += u.get("inputTokens", 0)
