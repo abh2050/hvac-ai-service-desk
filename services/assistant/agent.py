@@ -15,8 +15,6 @@ import sys
 import time
 from pathlib import Path
 
-from mcp import ClientSession
-from mcp.client.stdio import StdioServerParameters, stdio_client
 
 ROOT = Path(__file__).resolve().parents[2]
 sys.path.insert(0, str(ROOT / "services"))
@@ -60,7 +58,10 @@ def render_quotes_only(shown: list[dict]) -> str:
         f'{i + 1}. "{c["quote"]}" ({c["manual_id"]}, page {c["page"]})' for i, c in enumerate(shown))
 
 
-def _server_params(caller: dict, fail_tools: list[str]) -> StdioServerParameters:
+def _server_params(caller: dict, fail_tools: list[str]):
+    # The MCP SDK is imported here, not at module load, so the API Lambda (which calls the tool
+    # handlers in process through assistant.inprocess) does not need it in its image.
+    from mcp.client.stdio import StdioServerParameters
     env = dict(os.environ)
     env.update({"UPTIME_CALLER_SUB": caller["sub"], "UPTIME_CALLER_ROLE": caller["role"],
                 "UPTIME_CALLER_TECH": caller.get("technician_id") or "", "UPTIME_FAIL_TOOLS": ",".join(fail_tools),
@@ -70,6 +71,8 @@ def _server_params(caller: dict, fail_tools: list[str]) -> StdioServerParameters
 
 
 async def ask(question: str, caller: dict, llm: LLM, verifier, fail_tools: list[str] | None = None) -> dict:
+    from mcp import ClientSession
+    from mcp.client.stdio import stdio_client
     trace, t0 = [], time.time()
     async with stdio_client(_server_params(caller, fail_tools or [])) as (read, write):
         async with ClientSession(read, write) as session:

@@ -1,0 +1,18 @@
+{
+ "run": "1",
+ "scenario": "Site1-Milford-7.5t|2021-06-09",
+ "signed_in_s": 4.5,
+ "run_id": "run-20261023195244-9d4b39",
+ "replay_started_s": 8.4,
+ "work_order_drafted_s": 53.9,
+ "work_order_id": "WO-AST-RTU-03-202610231553-ecd37d",
+ "work_order_status": "draft",
+ "verified_citations_shown": 2,
+ "approved_s": 56.6,
+ "dispatch_outcome": "escalated_or_reschedule",
+ "dispatched_s": 92.3,
+ "assistant_answered_s": 103.1,
+ "cross_technician_denied": true,
+ "cross_technician_leak": false,
+ "done_s": 106.3
+}

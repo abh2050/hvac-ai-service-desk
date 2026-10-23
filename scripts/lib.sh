@@ -1,6 +1,8 @@
 # shellcheck shell=bash disable=SC2034
 # Shared settings for Uptime Desk scripts. Region is us-east-2 because the org SCP denies
 # regional services in us-west-2 and us-east-1.
+# Prefer the native ARM AWS CLI; /usr/local/bin/aws on this Mac is an Intel build that no longer runs.
+export PATH="$HOME/.local/bin:$PATH"
 export AWS_PROFILE="${AWS_PROFILE:-awsnew}"
 export AWS_REGION="us-east-2"
 export AWS_DEFAULT_REGION="us-east-2"

@@ -4,3 +4,5 @@
 !data/processed/manual_pages.jsonl
 !data/deploy/catalog.json
 services/**/__pycache__
+!reports/gate-3-detail.json
+!pipelines/evaluation/gate4_seed.py

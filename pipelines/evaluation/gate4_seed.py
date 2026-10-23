@@ -35,6 +35,13 @@ def main():
     conn.execute("DROP SCHEMA public CASCADE; CREATE SCHEMA public;")
     dbmod.migrate(conn)
     dbmod.seed_config(conn, ROOT)
+    seed_week(conn, detail)
+
+
+def seed_week(conn, detail: dict) -> dict:
+    """Load the recorded scenario week (work orders, OR-Tools plan, asset history). Idempotent."""
+    if conn.execute("SELECT count(*) FROM dispatch_decisions WHERE scenario_id = %s", (SCENARIO,)).fetchone()[0]:
+        return {"seeded": False, "reason": "scenario week already present"}
     wos = {}
     for d in detail["work_orders"]:
         fields = {k: parse(v) for k, v in d.items()}
@@ -84,9 +91,7 @@ def main():
     counts = {t: conn.execute(f"SELECT count(*) FROM {t}").fetchone()[0]
               for t in ("work_orders", "work_order_steps", "dispatch_decisions", "asset_history")}
     print(json.dumps({"assigned": assigned, **counts}))
-    for row in conn.execute("""SELECT technician_id, count(*) FROM dispatch_decisions WHERE technician_id IS NOT NULL
-                               GROUP BY 1 ORDER BY 1""").fetchall():
-        print(row)
+    return {"seeded": True, "assigned": assigned, **counts}
 
 
 if __name__ == "__main__":

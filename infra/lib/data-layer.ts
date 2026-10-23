@@ -111,7 +111,8 @@ export class DataLayer extends Construct {
     const init = new cdk.CustomResource(this, 'DbInitResource', {
       serviceToken: provider.serviceToken,
       properties: { schemaHash: cdk.FileSystem.fingerprint(path.join(REPO, 'services/api')),
-                    configHash: cdk.FileSystem.fingerprint(path.join(REPO, 'config')) },
+                    configHash: cdk.FileSystem.fingerprint(path.join(REPO, 'config')),
+                 seedHash: cdk.FileSystem.fingerprint(path.join(REPO, 'pipelines/evaluation/gate4_seed.py')) },
     });
     init.node.addDependency(this.cluster);
 

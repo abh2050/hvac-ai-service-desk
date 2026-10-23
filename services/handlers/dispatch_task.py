@@ -20,7 +20,9 @@ from .common import APP_ROOT, db
 def main() -> dict:
     sites, techs, dispatch = dm.load_config(APP_ROOT)
     now = _now_local()
-    start = now.replace(hour=0, minute=0)
+    # Live dispatch plans the next 24 hours from the current hour. (The Gate 3 scenario evaluation
+    # plans whole calendar days and does not use this task.)
+    start = now.replace(minute=0)
     with db() as conn:
         rows = conn.execute("""SELECT w.work_order_id, a.site_id, w.approved_at, w.sla_due_at, w.required_certs,
                                w.est_minutes, w.priority, w.asset_id FROM work_orders w JOIN assets a USING (asset_id)

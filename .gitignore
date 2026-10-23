@@ -26,3 +26,7 @@ video/audio/
 docs/*.mov
 docs/*.mp4
 .DS_Store
+
+# Playwright footage and traces (large); the brag skill reads them locally
+reports/gate-5-e2e/artifacts/
+video/capture/
