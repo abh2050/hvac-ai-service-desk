@@ -13,6 +13,7 @@ import * as sfn from 'aws-cdk-lib/aws-stepfunctions';
 import * as tasks from 'aws-cdk-lib/aws-stepfunctions-tasks';
 import { Construct } from 'constructs';
 import { FoundationStack } from './foundation-stack';
+import { CASE_MACHINE_NAME, REPLAY_MACHINE_NAME } from './api-layer';
 
 const REPO = path.join(__dirname, '..', '..');
 const DIAG_MODELS = ['openai.gpt-oss-120b-1:0', 'openai.gpt-oss-20b-1:0'];
@@ -150,6 +151,7 @@ export class Pipeline extends Construct {
           .otherwise(noApproval)))
         .otherwise(noCase));
     this.caseMachine = new sfn.StateMachine(this, 'CaseMachine', {
+      stateMachineName: CASE_MACHINE_NAME,
       definitionBody: sfn.DefinitionBody.fromChainable(definition), timeout: cdk.Duration.hours(6),
       tracingEnabled: false,
       logs: { destination: new logs.LogGroup(this, 'CaseLogs', { retention: logs.RetentionDays.ONE_WEEK,
@@ -158,6 +160,7 @@ export class Pipeline extends Construct {
 
     // --- Replay state machine (the API starts it) ---
     this.replayMachine = new sfn.StateMachine(this, 'ReplayMachine', {
+      stateMachineName: REPLAY_MACHINE_NAME,
       definitionBody: sfn.DefinitionBody.fromChainable(
         new tasks.LambdaInvoke(this, 'ReplayRecordedDay', { lambdaFunction: replay, payloadResponseOnly: true })),
       timeout: cdk.Duration.minutes(10),
