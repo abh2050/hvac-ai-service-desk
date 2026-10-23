@@ -1,0 +1,156 @@
+1
+00:00:00,000 --> 00:00:03,000
+An air handler starts drifting in a critical building.
+
+2
+00:00:03,000 --> 00:00:06,000
+The alarm is easy. The hard question is what
+
+3
+00:00:06,000 --> 00:00:09,000
+failed, which instructions are safe, and who can reach
+
+4
+00:00:09,000 --> 00:00:12,000
+it before the service window closes.
+
+5
+00:00:12,000 --> 00:00:15,050
+Sensor trends sit in one system. Equipment manuals sit
+
+6
+00:00:15,050 --> 00:00:18,100
+in another. Dispatch rules live in spreadsheets and experience.
+
+7
+00:00:18,100 --> 00:00:21,150
+Each handoff creates another place for evidence or time
+
+8
+00:00:21,150 --> 00:00:24,200
+to disappear.
+
+9
+00:00:24,200 --> 00:00:28,700
+Uptime Desk joins that path on AWS. Recorded LBNL
+
+10
+00:00:28,700 --> 00:00:33,200
+data streams through Kinesis. Rules stay primary while XGBoost
+
+11
+00:00:33,200 --> 00:00:37,700
+supplies a second opinion. Bedrock proposes a diagnosis from
+
+12
+00:00:37,700 --> 00:00:42,200
+manual pages, then a second model verifies each quotation.
+
+13
+00:00:42,200 --> 00:00:46,700
+PostgreSQL rejects unverified steps. Step Functions waits for a
+
+14
+00:00:46,700 --> 00:00:51,200
+manager, then OR-Tools assigns a qualified technician. Cognito and
+
+15
+00:00:51,200 --> 00:00:55,700
+the MCP gateway bind requests to a verified identity.
+
+16
+00:00:55,700 --> 00:00:59,567
+The manager launches a recorded field scenario and watches
+
+17
+00:00:59,567 --> 00:01:03,433
+each stage complete. The diagnosis shows rules, model, and
+
+18
+00:01:03,433 --> 00:01:07,300
+disagreement. Every accepted check opens the source manual at
+
+19
+00:01:07,300 --> 00:01:11,167
+the cited page. The manager keeps control: approve the
+
+20
+00:01:11,167 --> 00:01:15,033
+draft, remove an optional step, or reject it with
+
+21
+00:01:15,033 --> 00:01:18,900
+a reason. Approval resumes the case machine. The dispatch
+
+22
+00:01:18,900 --> 00:01:22,767
+board shows the selected technician, a runner-up, travel, lateness,
+
+23
+00:01:22,767 --> 00:01:26,633
+and rationale. The assistant can list that technician's jobs
+
+24
+00:01:26,633 --> 00:01:30,500
+and answer from verified passages. A request for another
+
+25
+00:01:30,500 --> 00:01:34,367
+technician's order is denied and audited. A passing hosted
+
+26
+00:01:34,367 --> 00:01:38,233
+run reached a draft in a median 39.4 seconds
+
+27
+00:01:38,233 --> 00:01:42,100
+and dispatch in 77.3. If the case has no
+
+28
+00:01:42,100 --> 00:01:45,967
+sourced lockout step, the pipeline stops. In the hosted
+
+29
+00:01:45,967 --> 00:01:49,833
+batch, that policy blocked 2 of 10 runs instead
+
+30
+00:01:49,833 --> 00:01:53,700
+of sending unsupported work.
+
+31
+00:01:53,700 --> 00:01:58,400
+The measured results keep their boundaries. On lab air
+
+32
+00:01:58,400 --> 00:02:03,100
+handlers, model recall was 0.957 against 0.739 for rules.
+
+33
+00:02:03,100 --> 00:02:07,800
+Rules won on the lab economizer and field RTU.
+
+34
+00:02:07,800 --> 00:02:12,500
+Citation support was 0.880 against 0.122. In the dispatch
+
+35
+00:02:12,500 --> 00:02:17,200
+scenario, OR-Tools cut lateness from 1,343 to 402 minutes
+
+36
+00:02:17,200 --> 00:02:21,900
+against nearest qualified, while earliest available also reached 402.
+
+37
+00:02:21,900 --> 00:02:24,600
+Explore the recorded demo, inspect every gate report on
+
+38
+00:02:24,600 --> 00:02:27,300
+GitHub, and see the rest of Abhishek Shah's work
+
+39
+00:02:27,300 --> 00:02:30,000
+in the linked portfolio.
+

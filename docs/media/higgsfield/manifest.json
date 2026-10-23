@@ -1,0 +1,22 @@
+{
+  "hero": {
+    "url": "https://d3u0tzju9qaucj.cloudfront.net/db289e2a-b3ba-4c8b-9013-4890a356ae53/6b7ead25-ab14-47f6-a12f-ce2478fa15ea/2a2a9681-bea2-4177-93e0-53dd7c709add.png",
+    "file": "docs/media/higgsfield/hero.png",
+    "requestId": "6b7ead25-ab14-47f6-a12f-ce2478fa15ea"
+  },
+  "scene": {
+    "url": "https://d3u0tzju9qaucj.cloudfront.net/db289e2a-b3ba-4c8b-9013-4890a356ae53/119703d9-47c0-40b5-bb77-3962b5a86a3f/09b55c31-473b-494f-b6a0-576a61bc613a.png",
+    "file": "docs/media/higgsfield/scene.png",
+    "requestId": "119703d9-47c0-40b5-bb77-3962b5a86a3f"
+  },
+  "before": {
+    "url": "https://d3u0tzju9qaucj.cloudfront.net/db289e2a-b3ba-4c8b-9013-4890a356ae53/62576dc1-5313-4065-850b-191cc879a264/1e8cf0d3-0a5b-4a72-9c11-209ef5719341.png",
+    "file": "docs/media/higgsfield/before.png",
+    "requestId": "62576dc1-5313-4065-850b-191cc879a264"
+  },
+  "resolved": {
+    "url": "https://d3u0tzju9qaucj.cloudfront.net/db289e2a-b3ba-4c8b-9013-4890a356ae53/e17325b3-96a0-4b98-b8fc-7b40c026045d/8378be08-27e2-4ebb-9369-35a9fb42fd17.png",
+    "file": "docs/media/higgsfield/resolved.png",
+    "requestId": "e17325b3-96a0-4b98-b8fc-7b40c026045d"
+  }
+}

@@ -1,0 +1,98 @@
+{
+  "project": "Uptime Desk",
+  "rules": {
+    "categories": ["ground truth", "measured", "not validated"],
+    "dispatch_category": "scenario model",
+    "claim": "No downtime, visit, or dollar savings are validated."
+  },
+  "facts": [
+    {
+      "id": "detection_lab_ahu",
+      "category": "measured against ground truth",
+      "source": "reports/gate-1.json",
+      "values": {"model_recall": 0.957, "rules_recall": 0.739},
+      "scope": "lab AHU"
+    },
+    {
+      "id": "detection_lab_economizer",
+      "category": "measured against ground truth",
+      "source": "reports/gate-1.json",
+      "values": {"model_recall": 0.958, "rules_recall": 1.0},
+      "scope": "lab economizer",
+      "winner": "rules"
+    },
+    {
+      "id": "detection_field_rtu",
+      "category": "measured against ground truth",
+      "source": "reports/gate-1.json",
+      "values": {"model_recall": 0.187, "rules_recall": 0.648},
+      "scope": "field RTU",
+      "winner": "rules"
+    },
+    {
+      "id": "diagnosis_run3",
+      "category": "measured",
+      "source": "reports/gate-2.json",
+      "values": {
+        "cases": 92,
+        "ai_verified_fault_type": 0.293,
+        "baseline_verified_fault_type": 0.043,
+        "ai_proposal": 0.424,
+        "rule_hint": 0.326,
+        "ai_citation_support": 0.88,
+        "baseline_citation_support": 0.122
+      }
+    },
+    {
+      "id": "diagnosis_holdout_field",
+      "category": "measured",
+      "source": "reports/gate-2-holdout.json",
+      "values": {"days": 60, "fault_type_accuracy": 0.75, "citation_support": 0.915},
+      "scope": "unused days from two field episodes"
+    },
+    {
+      "id": "dispatch_daily",
+      "category": "measured scenario model",
+      "source": "reports/gate-3.json",
+      "values": {
+        "jobs": 37,
+        "ortools_lateness_minutes": 402,
+        "ortools_late_jobs": 4,
+        "nearest_lateness_minutes": 1343,
+        "nearest_late_jobs": 10,
+        "earliest_lateness_minutes": 402,
+        "earliest_late_jobs": 4,
+        "constraint_violations": 0,
+        "policy_tests_passed": 10
+      }
+    },
+    {
+      "id": "assistant",
+      "category": "measured",
+      "source": "reports/gate-4.json",
+      "values": {
+        "questions": 30,
+        "accuracy": 0.9,
+        "adversarial_passed": 12,
+        "adversarial_total": 12,
+        "unauthorized_reads": 0,
+        "p50_seconds": 4.12,
+        "cost_per_question_usd": 0.00097
+      }
+    },
+    {
+      "id": "hosted_flow",
+      "category": "measured",
+      "source": "reports/gate-5.json",
+      "values": {
+        "passes": 8,
+        "runs": 10,
+        "blocked_missing_lockout": 2,
+        "draft_median_seconds": 39.4,
+        "dispatch_median_seconds": 77.3,
+        "average_model_cost_usd": 0.0020649,
+        "cross_technician_leaks": 0
+      }
+    }
+  ]
+}

@@ -19,6 +19,7 @@ __pycache__/
 amplify_outputs.json
 video/out/*.mp4
 video/audio/
+video/public/
 .DS_Store
 !data/checksums.sha256
 
