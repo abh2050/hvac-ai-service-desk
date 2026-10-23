@@ -2,10 +2,11 @@ import * as cdk from 'aws-cdk-lib';
 import * as ec2 from 'aws-cdk-lib/aws-ec2';
 import * as s3 from 'aws-cdk-lib/aws-s3';
 import { Construct } from 'constructs';
+import { DataLayer } from './data-layer';
 
 /**
- * Always-on (idle profile) resources. Gate 0 holds storage and networking only; later gates
- * add Aurora, Cognito wiring, the API, and the MCP tools here.
+ * Always-on (idle profile) resources: storage, networking, and the data layer (Aurora, the
+ * manual Knowledge Base, the Guardrail). Later phases add the API and the MCP tools.
  *
  * Networking: no NAT gateway. In-VPC Lambdas reach AWS services through one S3 gateway
  * endpoint (free) and four interface endpoints placed in a single AZ to hold idle cost near
@@ -15,6 +16,7 @@ export class FoundationStack extends cdk.Stack {
   readonly vpc: ec2.Vpc;
   readonly dataBucket: s3.Bucket;
   readonly lambdaSubnets: ec2.SubnetSelection;
+  readonly data: DataLayer;
 
   constructor(scope: Construct, id: string, props: cdk.StackProps) {
     super(scope, id, props);
@@ -62,6 +64,8 @@ export class FoundationStack extends cdk.Stack {
         privateDnsEnabled: true,
       });
     }
+
+    this.data = new DataLayer(this, 'Data', { vpc: this.vpc, dataBucket: this.dataBucket });
 
     new cdk.CfnOutput(this, 'DataBucketName', { value: this.dataBucket.bucketName });
     new cdk.CfnOutput(this, 'VpcId', { value: this.vpc.vpcId });

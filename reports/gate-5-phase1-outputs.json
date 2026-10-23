@@ -1,0 +1,9 @@
+{
+  "UptimeDesk-Foundation": {
+    "GuardrailId": "r4gcaz15blbm",
+    "DataBucketName": "uptimedesk-foundation-databuckete3889a50-yvbfgn1crmig",
+    "VpcId": "vpc-06e0f72ecad05c2bb",
+    "KnowledgeBaseId": "UZ6QJKMLFK",
+    "AuroraEndpoint": "uptimedesk-foundation-dataaurora8cc34183-fkpt0nv0onjm.cluster-cri0q0qig5na.us-east-2.rds.amazonaws.com"
+  }
+}

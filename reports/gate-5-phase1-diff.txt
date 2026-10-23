@@ -1,0 +1,166 @@
+start: Building UptimeDesk-Foundation Template
+success: Built UptimeDesk-Foundation Template
+start: Publishing UptimeDesk-Foundation Template (054772656600-us-east-2-8075ea2e)
+success: Published UptimeDesk-Foundation Template (054772656600-us-east-2-8075ea2e)
+Hold on while we create a read-only change set to get a diff with accurate replacement information (use --method=template to use a less accurate but faster template-only diff)
+
+Stack UptimeDesk-Foundation (aws://054772656600/us-east-2)
+IAM Statement Changes
+┌───┬──────────────────────────────────────────────────────────────────────────────────────┬────────┬────────────────────────────┬──────────────────────────────────────────────────────────────────────────────────────┬───────────────────────────────────────┐
+│   │ Resource                                                                             │ Effect │ Action                     │ Principal                                                                            │ Condition                             │
+├───┼──────────────────────────────────────────────────────────────────────────────────────┼────────┼────────────────────────────┼──────────────────────────────────────────────────────────────────────────────────────┼───────────────────────────────────────┤
+│ + │ ${Custom::CDKBucketDeployment8693BB64968944B69AAFB0CC9EB8756C512MiB/ServiceRole.Arn} │ Allow  │ sts:AssumeRole             │ Service:lambda.amazonaws.com                                                         │                                       │
+├───┼──────────────────────────────────────────────────────────────────────────────────────┼────────┼────────────────────────────┼──────────────────────────────────────────────────────────────────────────────────────┼───────────────────────────────────────┤
+│ + │ ${Custom::CDKBucketDeployment8693BB64968944B69AAFB0CC9EB8756C/ServiceRole.Arn}       │ Allow  │ sts:AssumeRole             │ Service:lambda.amazonaws.com                                                         │                                       │
+├───┼──────────────────────────────────────────────────────────────────────────────────────┼────────┼────────────────────────────┼──────────────────────────────────────────────────────────────────────────────────────┼───────────────────────────────────────┤
+│ + │ ${Custom::S3AutoDeleteObjectsCustomResourceProvider/Role.Arn}                        │ Allow  │ sts:AssumeRole             │ Service:lambda.amazonaws.com                                                         │                                       │
+├───┼──────────────────────────────────────────────────────────────────────────────────────┼────────┼────────────────────────────┼──────────────────────────────────────────────────────────────────────────────────────┼───────────────────────────────────────┤
+│ + │ ${DataBucket.Arn}                                                                    │ Deny   │ s3:*                       │ AWS:*                                                                                │ "Bool": {                             │
+│   │ ${DataBucket.Arn}/*                                                                  │        │                            │                                                                                      │   "aws:SecureTransport": "false"      │
+│   │                                                                                      │        │                            │                                                                                      │ }                                     │
+│ + │ ${DataBucket.Arn}                                                                    │ Allow  │ s3:DeleteObject*           │ AWS:${Custom::S3AutoDeleteObjectsCustomResourceProvider/Role.Arn}                    │                                       │
+│   │ ${DataBucket.Arn}/*                                                                  │        │ s3:GetBucket*              │                                                                                      │                                       │
+│   │                                                                                      │        │ s3:List*                   │                                                                                      │                                       │
+│   │                                                                                      │        │ s3:PutBucketPolicy         │                                                                                      │                                       │
+│ + │ ${DataBucket.Arn}                                                                    │ Allow  │ s3:Abort*                  │ AWS:${Custom::CDKBucketDeployment8693BB64968944B69AAFB0CC9EB8756C512MiB/ServiceRole} │                                       │
+│   │ ${DataBucket.Arn}/*                                                                  │        │ s3:DeleteObject*           │                                                                                      │                                       │
+│   │                                                                                      │        │ s3:GetBucket*              │                                                                                      │                                       │
+│   │                                                                                      │        │ s3:GetObject*              │                                                                                      │                                       │
+│   │                                                                                      │        │ s3:List*                   │                                                                                      │                                       │
+│   │                                                                                      │        │ s3:PutObject               │                                                                                      │                                       │
+│   │                                                                                      │        │ s3:PutObjectLegalHold      │                                                                                      │                                       │
+│   │                                                                                      │        │ s3:PutObjectRetention      │                                                                                      │                                       │
+│   │                                                                                      │        │ s3:PutObjectTagging        │                                                                                      │                                       │
+│   │                                                                                      │        │ s3:PutObjectVersionTagging │                                                                                      │                                       │
+│ + │ ${DataBucket.Arn}                                                                    │ Allow  │ s3:Abort*                  │ AWS:${Custom::CDKBucketDeployment8693BB64968944B69AAFB0CC9EB8756C/ServiceRole}       │                                       │
+│   │ ${DataBucket.Arn}/*                                                                  │        │ s3:DeleteObject*           │                                                                                      │                                       │
+│   │                                                                                      │        │ s3:GetBucket*              │                                                                                      │                                       │
+│   │                                                                                      │        │ s3:GetObject*              │                                                                                      │                                       │
+│   │                                                                                      │        │ s3:List*                   │                                                                                      │                                       │
+│   │                                                                                      │        │ s3:PutObject               │                                                                                      │                                       │
+│   │                                                                                      │        │ s3:PutObjectLegalHold      │                                                                                      │                                       │
+│   │                                                                                      │        │ s3:PutObjectRetention      │                                                                                      │                                       │
+│   │                                                                                      │        │ s3:PutObjectTagging        │                                                                                      │                                       │
+│   │                                                                                      │        │ s3:PutObjectVersionTagging │                                                                                      │                                       │
+├───┼──────────────────────────────────────────────────────────────────────────────────────┼────────┼────────────────────────────┼──────────────────────────────────────────────────────────────────────────────────────┼───────────────────────────────────────┤
+│ + │ ${DataBucket.Arn}                                                                    │ Allow  │ s3:GetBucket*              │ AWS:${Data/KbRole}                                                                   │                                       │
+│   │ ${DataBucket.Arn}/kb/*                                                               │        │ s3:GetObject*              │                                                                                      │                                       │
+│   │                                                                                      │        │ s3:List*                   │                                                                                      │                                       │
+├───┼──────────────────────────────────────────────────────────────────────────────────────┼────────┼────────────────────────────┼──────────────────────────────────────────────────────────────────────────────────────┼───────────────────────────────────────┤
+│ + │ ${Data/KbRole.Arn}                                                                   │ Allow  │ sts:AssumeRole             │ Service:bedrock.amazonaws.com                                                        │ "StringEquals": {                     │
+│   │                                                                                      │        │                            │                                                                                      │   "aws:SourceAccount": "054772656600" │
+│   │                                                                                      │        │                            │                                                                                      │ }                                     │
+├───┼──────────────────────────────────────────────────────────────────────────────────────┼────────┼────────────────────────────┼──────────────────────────────────────────────────────────────────────────────────────┼───────────────────────────────────────┤
+│ + │ ${Data/VectorIndex.IndexArn}                                                         │ Allow  │ s3vectors:DeleteVectors    │ AWS:${Data/KbRole}                                                                   │                                       │
+│   │                                                                                      │        │ s3vectors:GetIndex         │                                                                                      │                                       │
+│   │                                                                                      │        │ s3vectors:GetVectors       │                                                                                      │                                       │
+│   │                                                                                      │        │ s3vectors:PutVectors       │                                                                                      │                                       │
+│   │                                                                                      │        │ s3vectors:QueryVectors     │                                                                                      │                                       │
+├───┼──────────────────────────────────────────────────────────────────────────────────────┼────────┼────────────────────────────┼──────────────────────────────────────────────────────────────────────────────────────┼───────────────────────────────────────┤
+│ + │ arn:${AWS::Partition}:s3:::cdk-hnb659fds-assets-054772656600-us-east-2               │ Allow  │ s3:GetBucket*              │ AWS:${Custom::CDKBucketDeployment8693BB64968944B69AAFB0CC9EB8756C512MiB/ServiceRole} │                                       │
+│   │ arn:${AWS::Partition}:s3:::cdk-hnb659fds-assets-054772656600-us-east-2/*             │        │ s3:GetObject*              │                                                                                      │                                       │
+│   │                                                                                      │        │ s3:List*                   │                                                                                      │                                       │
+│ + │ arn:${AWS::Partition}:s3:::cdk-hnb659fds-assets-054772656600-us-east-2               │ Allow  │ s3:GetBucket*              │ AWS:${Custom::CDKBucketDeployment8693BB64968944B69AAFB0CC9EB8756C/ServiceRole}       │                                       │
+│   │ arn:${AWS::Partition}:s3:::cdk-hnb659fds-assets-054772656600-us-east-2/*             │        │ s3:GetObject*              │                                                                                      │                                       │
+│   │                                                                                      │        │ s3:List*                   │                                                                                      │                                       │
+├───┼──────────────────────────────────────────────────────────────────────────────────────┼────────┼────────────────────────────┼──────────────────────────────────────────────────────────────────────────────────────┼───────────────────────────────────────┤
+│ + │ arn:aws:bedrock:us-east-2::foundation-model/amazon.titan-embed-text-v2:0             │ Allow  │ bedrock:InvokeModel        │ AWS:${Data/KbRole}                                                                   │                                       │
+└───┴──────────────────────────────────────────────────────────────────────────────────────┴────────┴────────────────────────────┴──────────────────────────────────────────────────────────────────────────────────────┴───────────────────────────────────────┘
+IAM Policy Changes
+┌───┬──────────────────────────────────────────────────────────────────────────────────┬──────────────────────────────────────────────────────────────────────────────────────────────┐
+│   │ Resource                                                                         │ Managed Policy ARN                                                                           │
+├───┼──────────────────────────────────────────────────────────────────────────────────┼──────────────────────────────────────────────────────────────────────────────────────────────┤
+│ + │ ${Custom::CDKBucketDeployment8693BB64968944B69AAFB0CC9EB8756C512MiB/ServiceRole} │ arn:${AWS::Partition}:iam::aws:policy/service-role/AWSLambdaBasicExecutionRole               │
+├───┼──────────────────────────────────────────────────────────────────────────────────┼──────────────────────────────────────────────────────────────────────────────────────────────┤
+│ + │ ${Custom::CDKBucketDeployment8693BB64968944B69AAFB0CC9EB8756C/ServiceRole}       │ arn:${AWS::Partition}:iam::aws:policy/service-role/AWSLambdaBasicExecutionRole               │
+├───┼──────────────────────────────────────────────────────────────────────────────────┼──────────────────────────────────────────────────────────────────────────────────────────────┤
+│ + │ ${Custom::S3AutoDeleteObjectsCustomResourceProvider/Role}                        │ {"Fn::Sub":"arn:${AWS::Partition}:iam::aws:policy/service-role/AWSLambdaBasicExecutionRole"} │
+└───┴──────────────────────────────────────────────────────────────────────────────────┴──────────────────────────────────────────────────────────────────────────────────────────────┘
+Security Group Changes
+┌───┬───────────────────────┬─────┬─────────────┬────────────────────┐
+│   │ Group                 │ Dir │ Protocol    │ Peer               │
+├───┼───────────────────────┼─────┼─────────────┼────────────────────┤
+│ + │ ${Data/DbSg.GroupId}  │ In  │ TCP 5432    │ ${Vpc.CidrBlock}   │
+│ + │ ${Data/DbSg.GroupId}  │ Out │ ICMP 252-86 │ 255.255.255.255/32 │
+├───┼───────────────────────┼─────┼─────────────┼────────────────────┤
+│ + │ ${EndpointSg.GroupId} │ In  │ TCP 443     │ ${Vpc.CidrBlock}   │
+│ + │ ${EndpointSg.GroupId} │ Out │ ICMP 252-86 │ 255.255.255.255/32 │
+└───┴───────────────────────┴─────┴─────────────┴────────────────────┘
+(NOTE: There may be security-related changes not in this list. See https://github.com/aws/aws-cdk/issues/1299)
+
+Parameters
+[+] Parameter BootstrapVersion BootstrapVersion: {"Type":"AWS::SSM::Parameter::Value<String>","Default":"/cdk-bootstrap/hnb659fds/version","Description":"Version of the CDK Bootstrap resources in this environment, automatically retrieved from SSM Parameter Store. [cdk:skip]"}
+
+Resources
+[+] AWS::S3::Bucket DataBucket DataBucketE3889A50
+[+] AWS::S3::BucketPolicy DataBucket/Policy DataBucketPolicy3231C704
+[+] Custom::S3AutoDeleteObjects DataBucket/AutoDeleteObjectsCustomResource DataBucketAutoDeleteObjectsCustomResource9FB51BF3
+[+] AWS::IAM::Role Custom::S3AutoDeleteObjectsCustomResourceProvider/Role CustomS3AutoDeleteObjectsCustomResourceProviderRole3B1BD092
+[+] AWS::Lambda::Function Custom::S3AutoDeleteObjectsCustomResourceProvider/Handler CustomS3AutoDeleteObjectsCustomResourceProviderHandler9D90184F
+[+] AWS::EC2::VPC Vpc Vpc8378EB38
+[+] AWS::EC2::Subnet Vpc/publicSubnet1/Subnet VpcpublicSubnet1Subnet2BB74ED7
+[+] AWS::EC2::RouteTable Vpc/publicSubnet1/RouteTable VpcpublicSubnet1RouteTable15C15F8E
+[+] AWS::EC2::SubnetRouteTableAssociation Vpc/publicSubnet1/RouteTableAssociation VpcpublicSubnet1RouteTableAssociation4E83B6E4
+[+] AWS::EC2::Route Vpc/publicSubnet1/DefaultRoute VpcpublicSubnet1DefaultRouteB88F9E93
+[+] AWS::EC2::Subnet Vpc/publicSubnet2/Subnet VpcpublicSubnet2SubnetE34B022A
+[+] AWS::EC2::RouteTable Vpc/publicSubnet2/RouteTable VpcpublicSubnet2RouteTableC5A6DF77
+[+] AWS::EC2::SubnetRouteTableAssociation Vpc/publicSubnet2/RouteTableAssociation VpcpublicSubnet2RouteTableAssociationCCE257FF
+[+] AWS::EC2::Route Vpc/publicSubnet2/DefaultRoute VpcpublicSubnet2DefaultRoute732F0BEB
+[+] AWS::EC2::Subnet Vpc/isolatedSubnet1/Subnet VpcisolatedSubnet1SubnetE62B1B9B
+[+] AWS::EC2::RouteTable Vpc/isolatedSubnet1/RouteTable VpcisolatedSubnet1RouteTableE442650B
+[+] AWS::EC2::SubnetRouteTableAssociation Vpc/isolatedSubnet1/RouteTableAssociation VpcisolatedSubnet1RouteTableAssociationD259E31A
+[+] AWS::EC2::Subnet Vpc/isolatedSubnet2/Subnet VpcisolatedSubnet2Subnet39217055
+[+] AWS::EC2::RouteTable Vpc/isolatedSubnet2/RouteTable VpcisolatedSubnet2RouteTable334F9764
+[+] AWS::EC2::SubnetRouteTableAssociation Vpc/isolatedSubnet2/RouteTableAssociation VpcisolatedSubnet2RouteTableAssociation25A4716F
+[+] AWS::EC2::InternetGateway Vpc/IGW VpcIGWD7BA715C
+[+] AWS::EC2::VPCGatewayAttachment Vpc/VPCGW VpcVPCGWBF912B6E
+[+] AWS::EC2::VPCEndpoint Vpc/S3 VpcS3A5408339
+[+] AWS::EC2::VPCEndpoint Vpc/BedrockRuntime VpcBedrockRuntime1FB16359
+[+] AWS::EC2::VPCEndpoint Vpc/BedrockAgentRuntime VpcBedrockAgentRuntimeD7AD5608
+[+] AWS::EC2::VPCEndpoint Vpc/SecretsManager VpcSecretsManagerC91B0406
+[+] AWS::EC2::VPCEndpoint Vpc/StepFunctions VpcStepFunctions91AA4D4E
+[+] AWS::EC2::SecurityGroup EndpointSg EndpointSg9223A863
+[+] AWS::EC2::SecurityGroup Data/DbSg DataDbSg816B4B26
+[+] AWS::RDS::DBSubnetGroup Data/Aurora/Subnets DataAuroraSubnets2EEC0247
+[+] AWS::SecretsManager::Secret Data/Aurora/Secret UptimeDeskFoundationDataAuroraSecret03861B8E3fdaad7efa858a3daf9490cf0a702aeb
+[+] AWS::SecretsManager::SecretTargetAttachment Data/Aurora/Secret/Attachment DataAuroraSecretAttachment4F29BD4E
+[+] AWS::RDS::DBCluster Data/Aurora DataAurora8CC34183
+[+] AWS::RDS::DBInstance Data/Aurora/writer DataAurorawriter08FB7633
+[+] AWS::Lambda::LayerVersion Data/KbDocs/AwsCliLayer DataKbDocsAwsCliLayerE8EB1ACC
+[+] Custom::CDKBucketDeployment Data/KbDocs/CustomResource-512MiB DataKbDocsCustomResource512MiBBA0886C1
+[+] AWS::Lambda::LayerVersion Data/Manuals/AwsCliLayer DataManualsAwsCliLayerE35DA5E9
+[+] Custom::CDKBucketDeployment Data/Manuals/CustomResource-512MiB DataManualsCustomResource512MiB10150B27
+[+] AWS::Lambda::LayerVersion Data/Models/AwsCliLayer DataModelsAwsCliLayerC8B755D4
+[+] Custom::CDKBucketDeployment Data/Models/CustomResource DataModelsCustomResource16903408
+[+] AWS::S3Vectors::VectorBucket Data/VectorBucket DataVectorBucket1F7ED2F8
+[+] AWS::S3Vectors::Index Data/VectorIndex DataVectorIndex23392345
+[+] AWS::IAM::Role Data/KbRole DataKbRole21817807
+[+] AWS::IAM::Policy Data/KbRole/DefaultPolicy DataKbRoleDefaultPolicyEBD6D3A9
+[+] AWS::Bedrock::KnowledgeBase Data/ManualsKb DataManualsKb75C659C2
+[+] AWS::Bedrock::DataSource Data/ManualsSource DataManualsSourceA1C17563
+[+] AWS::Bedrock::Guardrail Data/Guardrail DataGuardrail96693D20
+[+] AWS::Bedrock::GuardrailVersion Data/GuardrailVersion DataGuardrailVersion16AA9D64
+[+] AWS::SSM::Parameter Data/Paramuptimedeskkbid DataParamuptimedeskkbid36CD99C4
+[+] AWS::SSM::Parameter Data/Paramuptimedeskguardrailid DataParamuptimedeskguardrailidD44F33EF
+[+] AWS::SSM::Parameter Data/Paramuptimedeskguardrailversion DataParamuptimedeskguardrailversion005316B3
+[+] AWS::SSM::Parameter Data/Paramuptimedeskdbsecretarn DataParamuptimedeskdbsecretarn0B76984F
+[+] AWS::SSM::Parameter Data/Paramuptimedeskdbendpoint DataParamuptimedeskdbendpoint56BF8100
+[+] AWS::SSM::Parameter Data/Paramuptimedeskdatabucket DataParamuptimedeskdatabucketF075B425
+[+] AWS::IAM::Role Custom::CDKBucketDeployment8693BB64968944B69AAFB0CC9EB8756C512MiB/ServiceRole CustomCDKBucketDeployment8693BB64968944B69AAFB0CC9EB8756C512MiBServiceRoleBA21DBC1
+[+] AWS::IAM::Policy Custom::CDKBucketDeployment8693BB64968944B69AAFB0CC9EB8756C512MiB/ServiceRole/DefaultPolicy CustomCDKBucketDeployment8693BB64968944B69AAFB0CC9EB8756C512MiBServiceRoleDefaultPolicy96C3E726
+[+] AWS::Lambda::Function Custom::CDKBucketDeployment8693BB64968944B69AAFB0CC9EB8756C512MiB CustomCDKBucketDeployment8693BB64968944B69AAFB0CC9EB8756C512MiB6723FB92
+[+] AWS::IAM::Role Custom::CDKBucketDeployment8693BB64968944B69AAFB0CC9EB8756C/ServiceRole CustomCDKBucketDeployment8693BB64968944B69AAFB0CC9EB8756CServiceRole89A01265
+[+] AWS::IAM::Policy Custom::CDKBucketDeployment8693BB64968944B69AAFB0CC9EB8756C/ServiceRole/DefaultPolicy CustomCDKBucketDeployment8693BB64968944B69AAFB0CC9EB8756CServiceRoleDefaultPolicy88902FDF
+[+] AWS::Lambda::Function Custom::CDKBucketDeployment8693BB64968944B69AAFB0CC9EB8756C CustomCDKBucketDeployment8693BB64968944B69AAFB0CC9EB8756C81C01536
+
+Outputs
+[+] Output KnowledgeBaseId KnowledgeBaseId: {"Value":{"Fn::GetAtt":["DataManualsKb75C659C2","KnowledgeBaseId"]}}
+[+] Output AuroraEndpoint AuroraEndpoint: {"Value":{"Fn::GetAtt":["DataAurora8CC34183","Endpoint.Address"]}}
+[+] Output GuardrailId GuardrailId: {"Value":{"Fn::GetAtt":["DataGuardrail96693D20","GuardrailId"]}}
+[+] Output DataBucketName DataBucketName: {"Value":{"Ref":"DataBucketE3889A50"}}
+[+] Output VpcId VpcId: {"Value":{"Ref":"Vpc8378EB38"}}
+
+
+
+✨  Number of stacks with differences: 1
+
