@@ -1,47 +1,60 @@
+<p align="center">
+  <a href="https://abh2050.github.io/hvac-ai-service-desk/#video"><img src="docs/media/explainer-poster.webp" alt="Watch the Uptime Desk explainer video" width="860"></a>
+</p>
+
 # Uptime Desk
 
-Uptime Desk turns recorded HVAC sensor faults into cited work orders, waits for a manager, and assigns a qualified technician.
+**An AI service desk for HVAC maintenance, built on AWS.** When an air handler or rooftop unit starts to fail, Uptime Desk turns the sensor alarm into a diagnosis that quotes the equipment manual, a work order that a manager approves, and a qualified technician on the way. Code checks every quote, approval, and assignment.
 
-[Try the permanent recorded demo](https://uptime-desk.vercel.app) | [Open the cinematic showcase](https://abh2050.github.io/hvac-ai-service-desk/) | [Read the gate evidence](reports/)
+**[Watch the 2.5-minute video](https://abh2050.github.io/hvac-ai-service-desk/#video)** · **[Open the recorded demo](https://uptime-desk.vercel.app)** · **[Visit the project page](https://abh2050.github.io/hvac-ai-service-desk/)** · **[Read the gate reports](reports/)**
 
-[![Uptime Desk cinematic showcase](docs/media/hero.gif)](https://abh2050.github.io/hvac-ai-service-desk/)
+| Replay to drafted work order | Replay to dispatched technician | Model cost per incident | Unauthorized reads |
+|:---:|:---:|:---:|:---:|
+| **39.4 s** median | **77.3 s** median | **$0.0021** average | **0** in 12 adversarial tests |
 
-> The public demo replays API responses captured from one live AWS run. It needs no sign-in or backend, so it remains available after the demo stacks are removed.
+<sub>Measured on the hosted AWS system (reports/gate-5.json, reports/gate-4.json). The recorded demo needs no sign-in: it replays real API responses captured from one live run, so it stays up after the AWS stacks are removed.</sub>
 
-## The 30-second version
+## The problem
 
-A service manager selects a recorded LBNL fault day. Uptime Desk replays its sensor rows through Kinesis, scores each operating window with deterministic rules and an XGBoost model, and opens a case only when the evidence clears policy checks. Bedrock proposes a diagnosis from equipment manuals. A second model and a literal page check verify every quotation. PostgreSQL refuses any unverified work-order step. The manager can approve, edit, or reject the draft. OR-Tools then assigns a technician who has the right certification, shift, site access, and SLA window. A technician assistant answers questions about that technician's own jobs through MCP.
+A building automation system can tell a service manager that a supply air temperature is drifting. It cannot answer the three questions that decide how fast the building recovers:
 
-The design keeps code in charge of identity, citations, approval, and dispatch constraints. The model proposes content inside those boundaries.
+1. **What failed?** Someone still has to work out which component failed, and whether the equipment or the building schedule caused it.
+2. **Which steps are safe?** Service and lockout steps live in manufacturer PDFs that the alarm system never reads.
+3. **Who can get there in time?** The nearest technician may lack the certification, the shift, the site badge, or the escort clearance, while the SLA clock runs.
 
-![Uptime Desk AWS architecture](diagrams/aws-architecture.png)
+## How it works, in five steps
 
-## What the demo shows
+1. **Detect.** Recorded sensor data replays through Kinesis. Deterministic rules decide whether an hour is faulty, and an XGBoost model gives a second opinion. A disagreement goes to a manager.
+2. **Diagnose with the manuals.** A model on Amazon Bedrock proposes the likely fault, the Knowledge Base returns matching manual pages, and the model quotes them with the page number.
+3. **Verify every quote.** Each quote must appear on its cited page, and a second model must judge that the page supports it. The database refuses any step that fails, and an order without a sourced lockout step is blocked.
+4. **Approve, then dispatch.** Step Functions pauses until the manager approves, edits, or rejects. Approval starts an OR-Tools solve on Fargate that respects certifications, shifts, site access, escorts, and SLAs.
+5. **Technicians ask over MCP.** Technicians ask about their own jobs through AgentCore Gateway. Identity comes from the sign-in token, so a request for another technician's job is denied and audited.
 
-1. A manager launches a replay of recorded building sensor data.
-2. The console shows rule alarms, model alarms, and their disagreement.
-3. A diagnosis page links each accepted quotation to its manual and page.
-4. The case machine pauses until the manager approves, edits, or rejects the draft.
-5. OR-Tools assigns a qualified technician and records a runner-up and reason.
-6. The technician assistant reads only the signed-in technician's jobs and verified manual passages.
+Models propose. Deterministic code decides. The manager approves every order that reaches a technician.
 
-The hosted end-to-end batch passed 8 of 10 runs. The 2 blocked runs had no sourced lockout step, so they never reached approval. This is a measured Gate 5 result from [reports/gate-5.json](reports/gate-5.json).
+### Who uses it and what it touches
 
-## Scene, before, and after
+[![System context](diagrams/system-context.png)](diagrams/system-context.svg)
 
-At 5:40 a.m., an illustrative facilities service manager stands beside an air handler while the building is still quiet. A supply-air trend has started to drift, but the alarm does not name the failed part or the safe service steps. The manager has to compare a trend, a manual, and a dispatch sheet before a qualified technician can move.
+### How one fault becomes one work order
 
-Before Uptime Desk, the evidence stops at each handoff. The trend does not carry a manual page. A plausible diagnosis can contain an unsupported step. The nearest technician can still lack the required certification, site access, shift coverage, or time before the service window closes.
+Every white diamond is a decision made by code, and P1 to P10 are the decision policies tested in Gate 3. The orange box is the only human decision.
 
-With Uptime Desk, the recorded episode keeps its source rows. Rules and XGBoost show their disagreement. Bedrock proposes a diagnosis from retrieved manual pages, and a second model verifies each quotation. PostgreSQL accepts only verified work-order steps. The manager approves, edits, or rejects the draft. OR-Tools then produces a policy-compliant dispatch, and the identity-bound assistant exposes only assigned work.
+[![Fault flow with decision policies](diagrams/fault-flow.png)](diagrams/fault-flow.svg)
 
-[![Recorded walkthrough from replay to assistant authorization](docs/media/walkthrough.gif)](https://abh2050.github.io/hvac-ai-service-desk/#walkthrough)
+## Results at a glance
 
-The scenario above is illustrative. The evaluation uses recorded public LBNL data, not a live customer building.
+Each gate compared the AI path against a simple baseline on recorded LBNL data. The baseline wins stay in the table.
 
-## Result categories
-
-Every result in this repository belongs to one of these categories.
+| Gate | What was tested | AI path | Baseline | Winner |
+|---|---|---:|---:|---|
+| 1 | Detection recall, lab air handlers | **0.957** | 0.739 rules | AI |
+| 1 | Detection recall, field rooftop units | 0.187 | **0.648** rules | Baseline |
+| 2 | Citation support, 92 cases | **0.880** | 0.122 keyword | AI |
+| 2 | Fault type, 60 held-out field days | **0.750** | 0.133 keyword | AI |
+| 3 | Total lateness, 37-job scenario | **402 min** | 1,343 nearest qualified; 402 earliest available | Tie with one baseline |
+| 4 | Assistant answers correct | **27 / 30** | none | 12 of 12 adversarial tests passed |
+| 5 | Hosted end-to-end runs | **8 / 10** | none | 2 blocked: no sourced lockout step |
 
 | Category | Meaning |
 |---|---|
@@ -49,9 +62,83 @@ Every result in this repository belongs to one of these categories.
 | **Measured** | Detection, diagnosis, citation, latency, cost, security, and computed optimizer results produced by the gate runs. |
 | **Not validated** | Downtime avoided, field visits saved, and dollar savings. Uptime Desk claims none of them. |
 
-Lab, field, and simulated results stay separate. Dispatch results come from a scenario model over recorded cases. They are not field savings.
+Lab, field, and simulated results stay separate. Dispatch results come from a scenario model over recorded cases, not from field operations.
 
-## Scorecards
+## Architecture on AWS
+
+Everything runs in `us-east-2` and is defined in AWS CDK (TypeScript). The always-on profile holds data, identity, and the API. The demo profile adds the streaming pipeline and the Fargate solver only while a demo runs. Orange badges follow one incident from sign-in to dispatch.
+
+[![Uptime Desk AWS architecture](diagrams/aws-architecture.png)](diagrams/aws-architecture.svg)
+
+| Layer | AWS services |
+|---|---|
+| Ingest and detect | Kinesis Data Streams, Lambda (arm64 container images), EventBridge |
+| Orchestrate | Step Functions with a task-token approval wait, ECS Fargate running OR-Tools CP-SAT |
+| Reason | Amazon Bedrock (gpt-oss-120b, gpt-oss-20b), Knowledge Bases on S3 Vectors with Titan Text Embeddings v2, Bedrock Guardrails |
+| Store | Aurora PostgreSQL Serverless v2 (auto-pause), S3, Secrets Manager, Systems Manager Parameter Store |
+| Access | Cognito, API Gateway HTTP API with JWT authorizer, AgentCore Gateway (MCP) with a request interceptor |
+| Network | VPC with no NAT gateway, four interface endpoints, an S3 gateway endpoint |
+| Deliver and operate | AWS CDK, Amplify Gen 2, CloudWatch dashboard with embedded metrics |
+
+## AWS deep dive
+
+Each diagram below opens as an SVG. The draw.io sources and the generator, [diagrams/build_diagrams.py](diagrams/build_diagrams.py), live in [diagrams/](diagrams/).
+
+### 1. Event-driven replay
+
+A replay starts with one API call. Step Functions drives the replay Lambda, which writes four recorded hours per second to Kinesis. The detect Lambda emits an EventBridge event per hour and one at the end of the day, which starts the case machine.
+
+[![Event-driven replay sequence](diagrams/replay-sequence.png)](diagrams/replay-sequence.svg)
+
+### 2. The Step Functions case machine
+
+Each Lambda task returns facts, and Choice states route on them. The approval wait stores a task token in Aurora. The API resumes the execution with SendTaskSuccess or SendTaskFailure, and a 4-hour timeout escalates the order instead of dispatching it.
+
+[![Step Functions case machine](diagrams/case-state-machine.png)](diagrams/case-state-machine.svg)
+
+### 3. Manual retrieval and citation checks
+
+Each manual page is one Knowledge Base document, with its manual and page in metadata. Retrieval filters by equipment class. A quote reaches a work order only after a literal page match and an entailment check by a second model.
+
+[![Knowledge Base retrieval and verification](diagrams/knowledge-base.png)](diagrams/knowledge-base.svg)
+
+### 4. Network: private by default
+
+Lambdas that touch Aurora run in one isolated subnet and reach AWS APIs through interface endpoints. Security groups allow only ports 443 and 5432 inside the VPC. Keeping the endpoints in one Availability Zone saves about $29 a month at list price; the trade-off is zone resilience.
+
+[![Network design](diagrams/network.png)](diagrams/network.svg)
+
+### 5. Identity and least privilege
+
+Cognito issues the identity, and both gateways verify it. Each Lambda has its own role scoped to named resources. The one wildcard is SendTaskSuccess and SendTaskFailure, because task tokens have no ARN.
+
+[![Identity and access](diagrams/security.png)](diagrams/security.svg)
+
+### 6. A technician question over MCP
+
+The gateway validates the token, and the interceptor replaces any identity the client sends. The tool checks ownership in Aurora, records the denial, and returns an error the assistant must report.
+
+[![MCP request sequence](diagrams/mcp-sequence.png)](diagrams/mcp-sequence.svg)
+
+### 7. Data model
+
+Eleven tables hold assets, work orders, verified steps, dispatch decisions, pipeline runs, and the audit log. `work_order_steps.verified` carries a CHECK constraint, so the database itself refuses unverified steps.
+
+[![Aurora data model](diagrams/data-model.png)](diagrams/data-model.svg)
+
+### 8. Infrastructure as code and cost profiles
+
+Two CDK stacks split always-on resources from demo-only resources, and each carries a cost-profile tag. Every deploy followed a posted `cdk diff`.
+
+[![Deployment and cost profiles](diagrams/deployment.png)](diagrams/deployment.svg)
+
+### 9. Observability
+
+Lambdas write CloudWatch embedded metric format lines, so cost per incident, stage latency, and denied calls reach the dashboard without a metrics agent.
+
+[![Observability](diagrams/observability.png)](diagrams/observability.svg)
+
+## Detailed results
 
 ### Gate 1: detection
 
@@ -114,39 +201,10 @@ The weak slice was mixed questions, where only 1 of 3 passed because the model s
 
 Both failed runs were blocked because the case had no sourced lockout step. The average model cost covers diagnosis and entailment calls. Per-incident infrastructure cost was not isolated. Source: measured results in [reports/gate-5.json](reports/gate-5.json).
 
-## System design
 
-The AWS deployment runs in `us-east-2`. The always-on foundation holds the API, Cognito, Aurora Serverless v2, the Bedrock Knowledge Base, AgentCore Gateway, S3, and CloudWatch. The demo profile adds Kinesis, the replay and case state machines, detection workers, and the Fargate dispatch task. The VPC has no NAT gateway. Four interface endpoints and one S3 gateway endpoint carry private service traffic.
+## Design choices and controls
 
-The permanent Vercel demo is a separate static build from GitHub `main`. It serves captured responses from `app/static-demo/snapshot/` and never calls the AWS backend.
-
-### Context and runtime flow
-
-| System context | Sensor replay |
-|---|---|
-| [![System context](diagrams/system-context.png)](diagrams/system-context.svg) | [![Replay sequence](diagrams/replay-sequence.png)](diagrams/replay-sequence.svg) |
-| Case state machine | Fault policy flow |
-| [![Case state machine](diagrams/case-state-machine.png)](diagrams/case-state-machine.svg) | [![Fault policy flow](diagrams/fault-flow.png)](diagrams/fault-flow.svg) |
-
-### Retrieval, access, and assistant calls
-
-| Manual retrieval and verification | Identity and access |
-|---|---|
-| [![Knowledge Base flow](diagrams/knowledge-base.png)](diagrams/knowledge-base.svg) | [![Identity and access](diagrams/security.png)](diagrams/security.svg) |
-| MCP request sequence | Data model |
-| [![MCP request sequence](diagrams/mcp-sequence.png)](diagrams/mcp-sequence.svg) | [![Data model](diagrams/data-model.png)](diagrams/data-model.svg) |
-
-### Infrastructure and operations
-
-| Full AWS architecture | Network |
-|---|---|
-| [![AWS architecture](diagrams/aws-architecture.png)](diagrams/aws-architecture.svg) | [![Network](diagrams/network.png)](diagrams/network.svg) |
-| Deployment and cost profiles | Observability |
-| [![Deployment and cost profiles](diagrams/deployment.png)](diagrams/deployment.svg) | [![Observability](diagrams/observability.png)](diagrams/observability.svg) |
-
-All 12 diagrams come from [diagrams/build_diagrams.py](diagrams/build_diagrams.py). The repository keeps the draw.io source plus PNG and SVG exports.
-
-## Safety and access controls
+### Safety and access controls
 
 - API Gateway validates a Cognito JWT on every API route except CORS preflight.
 - The AgentCore Gateway interceptor discards caller-supplied identity and inserts claims from the verified token.
@@ -158,7 +216,8 @@ All 12 diagrams come from [diagrams/build_diagrams.py](diagrams/build_diagrams.p
 - The case machine blocks approval when no sourced lockout or disconnect step exists.
 - A manager remains the only actor who can approve, edit, or reject a draft.
 
-## Data and models
+
+### Data and models
 
 The project uses 123 Release 1 episodes from public LBNL datasets: 119 lab episodes and 4 field files from 2 Connecticut sites. Another 27 simulated files remain held for Release 2. Raw source files stay out of git. [data/SOURCES.md](data/SOURCES.md) records URLs, licenses, checksums, label conflicts, and manual compatibility.
 
@@ -175,11 +234,38 @@ The project uses 123 Release 1 episodes from public LBNL datasets: 119 lab episo
 
 The manuals cover equipment classes, not the exact LBNL units. Every Release 1 diagnosis therefore carries a compatibility warning.
 
+
+### Copilot Studio plan
+
+Release 3 would expose selected API operations to a Microsoft Copilot Studio agent through a custom connector. The connector, its OAuth flow, and the agent have not been built. [docs/copilot.md](docs/copilot.md) records the proposed operations, identity boundary, and acceptance tests.
+
+
+## Limitations
+
+1. **Building operations faults go undetected by the diagnosis step.** The lab RTU.csv data has 11 operations fault cases, such as lighting schedule errors, setback errors, and infiltration. The AI proposed an equipment fault for all 11 and identified 0 of them (`reports/gate-2.json`, run 3, `operations_routing`). The pipeline still routes an operations proposal to operations review when no equipment rule fired. It never dispatches a technician for one.
+2. **No manual covers the coil valves of the lab air handlers.** The public manual set has no hot water or chilled water coil valve service manual. The added Honeywell document covers the valve actuator only. Lab AHU diagnoses therefore abstain on 82.6% of cases and produce 0 verified answers (`reports/gate-2.json`, run 3, `by_family`).
+3. **No manual matches any unit exactly.** LBNL does not name the makers of the AHUs or the field RTUs. Every manual is a class match, so every diagnosis carries "compatibility uncertain" (`data/SOURCES.md`).
+4. **The AI's lead over the rule hint is not statistically significant.** In naming the fault, the AI scored 0.424 (95% CI 0.328 to 0.526) and the rule hint 0.326 (0.239 to 0.427). That gives 15 against 6 discordant cases and an exact McNemar p of 0.078 (`reports/gate-2-stats.json`). The AI's lead in verified diagnoses over the keyword baseline is significant (0.293 against 0.043, p < 0.0001).
+5. **The diagnosis prompt was chosen after seeing test results.** Run 3 was selected after runs 1 and 2 were scored on the same cases. Every lab episode was used in those runs, so no lab holdout exists. The frozen run 3 pipeline was scored once on 60 unused days of the 2 field episodes (`reports/gate-2-holdout.json`). These are unused days, not unused episodes.
+6. **Field data is small.** The field set has 2 faulted episodes, one per site. Field results rest on those 2 units.
+7. **Detection raises too many false alarms for unattended use.** Gate 1 measured 0.5 to 1.9 alarm events per unfaulted operating day (`reports/gate-1.json`).
+8. **The travel model is simple.** Dispatch uses straight-line distance at 40 km/h from each technician's home base, with no road network.
+
+
+## What I would build next
+
+- Add exact equipment manuals and coil-valve service documents, then rerun diagnosis on a new episode-level holdout.
+- Train a separate router for building operations faults before any equipment diagnosis or technician dispatch.
+- Add road travel times and live technician location constraints to dispatch evaluation.
+- Improve mixed assistant questions so the agent always resolves the user's job before searching manuals.
+- Complete the planned Copilot Studio connector and test user-delegated identity end to end.
+
+
 ## Run it yourself
 
 ### Public demo
 
-Open [uptime-desk.vercel.app](https://uptime-desk.vercel.app). Choose any recorded run from the left rail. The demo contains the trend, diagnosis, citations, work order, dispatch result, assistant exchange, and evidence pages from one captured live run.
+Open [uptime-desk.vercel.app](https://uptime-desk.vercel.app). No sign-in is needed. The scenario launcher lists the recorded days, and **View recorded run** opens the one day that was run end to end: its pipeline stages, sensor trend, diagnosis and citations, work orders, dispatch board, and three recorded assistant answers. Every screen is a real API response captured from the live AWS system.
 
 ### Static demo locally
 
@@ -243,28 +329,6 @@ scripts/export-diagrams.sh
 
 The export script requires the draw.io desktop CLI on `PATH`.
 
-## Copilot Studio plan
-
-Release 3 would expose selected API operations to a Microsoft Copilot Studio agent through a custom connector. The connector, its OAuth flow, and the agent have not been built. [docs/copilot.md](docs/copilot.md) records the proposed operations, identity boundary, and acceptance tests.
-
-## Limitations
-
-1. **Building operations faults go undetected by the diagnosis step.** The lab RTU.csv data has 11 operations fault cases, such as lighting schedule errors, setback errors, and infiltration. The AI proposed an equipment fault for all 11 and identified 0 of them (`reports/gate-2.json`, run 3, `operations_routing`). The pipeline still routes an operations proposal to operations review when no equipment rule fired. It never dispatches a technician for one.
-2. **No manual covers the coil valves of the lab air handlers.** The public manual set has no hot water or chilled water coil valve service manual. The added Honeywell document covers the valve actuator only. Lab AHU diagnoses therefore abstain on 82.6% of cases and produce 0 verified answers (`reports/gate-2.json`, run 3, `by_family`).
-3. **No manual matches any unit exactly.** LBNL does not name the makers of the AHUs or the field RTUs. Every manual is a class match, so every diagnosis carries "compatibility uncertain" (`data/SOURCES.md`).
-4. **The AI's lead over the rule hint is not statistically significant.** In naming the fault, the AI scored 0.424 (95% CI 0.328 to 0.526) and the rule hint 0.326 (0.239 to 0.427). That gives 15 against 6 discordant cases and an exact McNemar p of 0.078 (`reports/gate-2-stats.json`). The AI's lead in verified diagnoses over the keyword baseline is significant (0.293 against 0.043, p < 0.0001).
-5. **The diagnosis prompt was chosen after seeing test results.** Run 3 was selected after runs 1 and 2 were scored on the same cases. Every lab episode was used in those runs, so no lab holdout exists. The frozen run 3 pipeline was scored once on 60 unused days of the 2 field episodes (`reports/gate-2-holdout.json`). These are unused days, not unused episodes.
-6. **Field data is small.** The field set has 2 faulted episodes, one per site. Field results rest on those 2 units.
-7. **Detection raises too many false alarms for unattended use.** Gate 1 measured 0.5 to 1.9 alarm events per unfaulted operating day (`reports/gate-1.json`).
-8. **The travel model is simple.** Dispatch uses straight-line distance at 40 km/h from each technician's home base, with no road network.
-
-## What I would build next
-
-- Add exact equipment manuals and coil-valve service documents, then rerun diagnosis on a new episode-level holdout.
-- Train a separate router for building operations faults before any equipment diagnosis or technician dispatch.
-- Add road travel times and live technician location constraints to dispatch evaluation.
-- Improve mixed assistant questions so the agent always resolves the user's job before searching manuals.
-- Complete the planned Copilot Studio connector and test user-delegated identity end to end.
 
 ## Repository map
 
@@ -279,6 +343,7 @@ Release 3 would expose selected API operations to a Microsoft Copilot Studio age
 | `diagrams/` | Generated draw.io, PNG, and SVG architecture set |
 | `docs/` | Showcase, source notes, and Release 3 plan |
 
+
 ## Builder
 
-Built by [Abhishek Shah](https://abh2050.github.io/abhishek-shah-portfolio/). Source: [github.com/abh2050/hvac-ai-service-desk](https://github.com/abh2050/hvac-ai-service-desk).
+Built end to end by [Abhishek Shah](https://abh2050.github.io/abhishek-shah-portfolio/): data, models, AWS infrastructure, app, and evaluation. Source: [github.com/abh2050/hvac-ai-service-desk](https://github.com/abh2050/hvac-ai-service-desk).

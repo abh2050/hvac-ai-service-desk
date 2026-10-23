@@ -247,10 +247,10 @@ def security() -> Path:
     tools = d.icon("Lambda: MCP tools", "lambda", "compute", 1160, 340, sub="owner_of(work order) ==<br>caller technician_id")
     aur = d.icon("Aurora: audit_log", "aurora", "database", 1162, 140, 52, sub="every denied call recorded")
     cw = d.icon("CloudWatch", "cloudwatch_2", "management", 1420, 140, sub="DeniedCalls metric")
-    d.edge(mgr, cog, "sign in")
-    d.edge(tech, cog, "sign in")
-    d.edge(cog, api, "ID token", style="exitX=1;exitY=0.25;")
-    d.edge(cog, agw, "ID token", style="exitX=1;exitY=0.75;")
+    d.edge(mgr, cog, "sign in", style="exitX=1;exitY=0.5;entryX=0;entryY=0.25;", points=[(240, 164), (240, 234)])
+    d.edge(tech, cog, "sign in", style="exitX=1;exitY=0.5;entryX=0;entryY=0.75;", points=[(240, 354), (240, 262)])
+    d.edge(cog, api, "ID token", style="exitX=1;exitY=0.25;entryX=0;entryY=0.5;", points=[(480, 234), (480, 168)])
+    d.edge(cog, agw, "ID token", style="exitX=1;exitY=0.75;entryX=0;entryY=0.5;", points=[(480, 262), (480, 368)])
     d.edge(api, l_api, "claims")
     d.edge(agw, icp, "REQUEST")
     d.edge(icp, tools, "caller_context")
@@ -498,8 +498,8 @@ def system_context() -> Path:
     cop = d.box("<b>Microsoft Copilot Studio agent</b><br><font color='#5A6B7B' style='font-size:11px'>Release 3, planned: "
                 "custom connector to the API (docs/copilot.md)</font>", 1040, 500, 280, 90, "#FFFFFF", MUTED,
                 "rounded=1;dashed=1;", 12)
-    d.edge(mgr, core, "web app, Cognito sign-in", points=[(184, 300)])
-    d.edge(tech, core, "web app or MCP", points=[(184, 420)])
+    d.edge(mgr, core, "web app, Cognito sign-in", style="exitX=1;exitY=0.5;entryX=0;entryY=0.25;", points=[(320, 204), (320, 305)])
+    d.edge(tech, core, "web app or MCP", style="exitX=1;exitY=0.5;entryX=0;entryY=0.75;", points=[(320, 544), (320, 415)])
     d.edge(lbnl, core, "replayed through Kinesis")
     d.edge(man, core, "indexed page by page")
     d.edge(core, llm, "proposals, entailment checks", style="exitX=1;exitY=0.15;", points=[(960, 283), (960, 205)])
@@ -616,7 +616,7 @@ def data_model() -> Path:
     for parent, child in [("sites", "assets"), ("assets", "work_orders"), ("assets", "asset_history"),
                           ("work_orders", "work_order_steps"), ("work_orders", "dispatch_decisions"),
                           ("technicians", "dispatch_decisions"), ("pipeline_runs", "detection_windows"),
-                          ("pipeline_runs", "cases"), ("assets", "cases")]:
+                          ("pipeline_runs", "cases")]:
         d.edge(ids[parent], ids[child], "", style=fk)
     return d.write()
 
