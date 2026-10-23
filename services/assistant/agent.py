@@ -102,6 +102,11 @@ async def ask(question: str, caller: dict, llm: LLM, verifier, fail_tools: list[
                                                    "content": [{"text": text[:12000]}],
                                                    "status": "error" if entry["error"] else "success"}})
                 messages.append({"role": "user", "content": results})
+    return finalize(question, caller, final_text, trace, verifier, t0)
+
+
+def finalize(question: str, caller: dict, final_text: str, trace: list, verifier, t0: float) -> dict:
+    """Verify citations, drop failures, and enforce quotes-only instructions. Shared by every transport."""
     out = parse_json(final_text) or {"answer": final_text, "citations": [], "insufficient_evidence": True}
     shown, checks = [], []
     for c in out.get("citations") or []:
