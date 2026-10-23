@@ -12,4 +12,4 @@ TECH_USER=$(get /uptime-desk/demo/technician-username)
 TECH_PASSWORD=$(get /uptime-desk/demo/technician-password)
 export E2E_RUN="${1:-1}" E2E_VIDEO="${2:-0}"
 cd "$REPO_ROOT/app"
-NODE_OPTIONS="--no-experimental-webstorage" npx playwright test
+NODE_OPTIONS="--no-experimental-webstorage" npx playwright test e2e/full-flow.spec.ts

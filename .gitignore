@@ -30,3 +30,4 @@ docs/*.mp4
 # Playwright footage and traces (large); the brag skill reads them locally
 reports/gate-5-e2e/artifacts*/
 video/capture/
+reports/gate-5-e2e/logs/

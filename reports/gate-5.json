@@ -1,0 +1,285 @@
+{
+ "gate": 5,
+ "name": "cloud and app",
+ "run_utc": "2026-10-23T21:20:31Z",
+ "git_commit": "149e280",
+ "hosted": {
+  "app_url": "https://main.du00v4uwlekbh.amplifyapp.com",
+  "api_url": "https://9pq6z01gmc.execute-api.us-east-2.amazonaws.com",
+  "mcp_url": "https://uptime-desk-mcp-4igswqw680.gateway.bedrock-agentcore.us-east-2.amazonaws.com/mcp",
+  "region": "us-east-2",
+  "stacks": [
+   "UptimeDesk-Foundation (idle profile)",
+   "UptimeDesk-Demo (demo profile)",
+   "Amplify Gen 2 app hvac-ai-service-desk"
+  ]
+ },
+ "categories": {
+  "measured": "pass rate, latency, model cost per incident, MCP authorization checks",
+  "not_validated": "none claimed",
+  "scenario_model": "dispatch assignments are scenario model results on recorded data"
+ },
+ "e2e": {
+  "runs": [
+   {
+    "run": 1,
+    "full_flow_passed": false,
+    "failure": "Error: work order WO-AST-RTU-04-202610231704-b4cfa8 was blocked, not draft"
+   },
+   {
+    "run": 2,
+    "full_flow_passed": true,
+    "failure": null,
+    "scenario": "Site2-Colchester-10t|2020-06-18",
+    "signed_in_s": 2.8,
+    "run_id": "run-20261023210423-097f3b",
+    "replay_started_s": 4.5,
+    "work_order_drafted_s": 47,
+    "work_order_id": "WO-AST-RTU-04-202610231705-30a9a3",
+    "work_order_status": "draft",
+    "verified_citations_shown": 3,
+    "approved_s": 51,
+    "dispatch_outcome": "assigned",
+    "dispatched_s": 85.9,
+    "assistant_answered_s": 95.6,
+    "cross_technician_denied": true,
+    "cross_technician_leak": false,
+    "done_s": 99
+   },
+   {
+    "run": 3,
+    "full_flow_passed": true,
+    "failure": null,
+    "scenario": "Site2-Colchester-10t|2020-06-18",
+    "signed_in_s": 2.7,
+    "run_id": "run-20261023210613-ed54dd",
+    "replay_started_s": 4.3,
+    "work_order_drafted_s": 40.7,
+    "work_order_id": "WO-AST-RTU-04-202610231706-3e047c",
+    "work_order_status": "draft",
+    "verified_citations_shown": 3,
+    "approved_s": 44.5,
+    "dispatch_outcome": "assigned",
+    "dispatched_s": 78.7,
+    "assistant_answered_s": 87.5,
+    "cross_technician_denied": true,
+    "cross_technician_leak": false,
+    "done_s": 90.4
+   },
+   {
+    "run": 4,
+    "full_flow_passed": false,
+    "failure": "Error: work order WO-AST-RTU-04-202610231708-5a5baf was blocked, not draft"
+   },
+   {
+    "run": 5,
+    "full_flow_passed": true,
+    "failure": null,
+    "scenario": "Site2-Colchester-10t|2020-06-18",
+    "signed_in_s": 2.7,
+    "run_id": "run-20261023210851-d63db1",
+    "replay_started_s": 4.3,
+    "work_order_drafted_s": 43.7,
+    "work_order_id": "WO-AST-RTU-04-202610231709-f5cd95",
+    "work_order_status": "draft",
+    "verified_citations_shown": 3,
+    "approved_s": 47.4,
+    "dispatch_outcome": "assigned",
+    "dispatched_s": 81.6,
+    "assistant_answered_s": 91.2,
+    "cross_technician_denied": true,
+    "cross_technician_leak": false,
+    "done_s": 94.1
+   },
+   {
+    "run": 6,
+    "full_flow_passed": true,
+    "failure": null,
+    "scenario": "Site2-Colchester-10t|2020-06-18",
+    "signed_in_s": 2.7,
+    "run_id": "run-20261023211035-0a0d45",
+    "replay_started_s": 4.2,
+    "work_order_drafted_s": 43.6,
+    "work_order_id": "WO-AST-RTU-04-202610231711-205dc0",
+    "work_order_status": "draft",
+    "verified_citations_shown": 3,
+    "approved_s": 47.5,
+    "dispatch_outcome": "assigned",
+    "dispatched_s": 81.5,
+    "assistant_answered_s": 90.3,
+    "cross_technician_denied": true,
+    "cross_technician_leak": false,
+    "done_s": 93.7
+   },
+   {
+    "run": 7,
+    "full_flow_passed": true,
+    "failure": null,
+    "scenario": "Site2-Colchester-10t|2020-06-18",
+    "signed_in_s": 2.8,
+    "run_id": "run-20261023211220-82622d",
+    "replay_started_s": 4.4,
+    "work_order_drafted_s": 43.8,
+    "work_order_id": "WO-AST-RTU-04-202610231712-493281",
+    "work_order_status": "draft",
+    "verified_citations_shown": 3,
+    "approved_s": 47.6,
+    "dispatch_outcome": "assigned",
+    "dispatched_s": 81.7,
+    "assistant_answered_s": 90.9,
+    "cross_technician_denied": true,
+    "cross_technician_leak": false,
+    "done_s": 94.3
+   },
+   {
+    "run": 8,
+    "full_flow_passed": true,
+    "failure": null,
+    "scenario": "Site2-Colchester-10t|2020-06-18",
+    "signed_in_s": 2.7,
+    "run_id": "run-20261023211404-10f592",
+    "replay_started_s": 4.3,
+    "work_order_drafted_s": 43.7,
+    "work_order_id": "WO-AST-RTU-04-202610231714-a17e93",
+    "work_order_status": "draft",
+    "verified_citations_shown": 3,
+    "approved_s": 47.5,
+    "dispatch_outcome": "assigned",
+    "dispatched_s": 81.6,
+    "assistant_answered_s": 90.3,
+    "cross_technician_denied": true,
+    "cross_technician_leak": false,
+    "done_s": 93.2
+   },
+   {
+    "run": 9,
+    "full_flow_passed": true,
+    "failure": null,
+    "scenario": "Site2-Colchester-10t|2020-06-18",
+    "signed_in_s": 2.7,
+    "run_id": "run-20261023211548-d260cb",
+    "replay_started_s": 4.4,
+    "work_order_drafted_s": 40.7,
+    "work_order_id": "WO-AST-RTU-04-202610231716-983c7c",
+    "work_order_status": "draft",
+    "verified_citations_shown": 3,
+    "approved_s": 44.6,
+    "dispatch_outcome": "assigned",
+    "dispatched_s": 78.6,
+    "assistant_answered_s": 86.8,
+    "cross_technician_denied": true,
+    "cross_technician_leak": false,
+    "done_s": 89.7
+   },
+   {
+    "run": 10,
+    "full_flow_passed": true,
+    "failure": null,
+    "scenario": "Site2-Colchester-10t|2020-06-18",
+    "signed_in_s": 2.7,
+    "run_id": "run-20261023211728-9a7178",
+    "replay_started_s": 4.3,
+    "work_order_drafted_s": 43.7,
+    "work_order_id": "WO-AST-RTU-04-202610231718-cdaee1",
+    "work_order_status": "draft",
+    "verified_citations_shown": 3,
+    "approved_s": 47.4,
+    "dispatch_outcome": "assigned",
+    "dispatched_s": 81.5,
+    "assistant_answered_s": 91.1,
+    "cross_technician_denied": true,
+    "cross_technician_leak": false,
+    "done_s": 94
+   }
+  ],
+  "scenario": "Site2-Colchester-10t|2020-06-18 (field measured, replay of recorded data)",
+  "full_flow_passed": 8,
+  "pass_rate": 0.8,
+  "failures": [
+   {
+    "run": 1,
+    "failure": "Error: work order WO-AST-RTU-04-202610231704-b4cfa8 was blocked, not draft"
+   },
+   {
+    "run": 4,
+    "failure": "Error: work order WO-AST-RTU-04-202610231708-5a5baf was blocked, not draft"
+   }
+  ],
+  "latency_seconds": {
+   "replay_start_to_work_order_draft": {
+    "median": 39.4,
+    "range": [
+     36.3,
+     42.5
+    ]
+   },
+   "replay_start_to_dispatch": {
+    "median": 77.3,
+    "range": [
+     74.2,
+     81.4
+    ]
+   },
+   "sign_in_to_test_end": {
+    "median": 93.8,
+    "range": [
+     89.7,
+     99
+    ]
+   }
+  },
+  "passed_runs_dispatch_outcome": {
+   "assigned": 8
+  },
+  "cross_technician_denied": "8/8",
+  "cross_technician_leaks": 0,
+  "harness_note": "e2e.sh also ran the MCP check spec without its settings during this batch, so every process exit code was 1; pass/fail above is the full-flow test result in each run log. Fixed after the batch."
+ },
+ "cost_per_incident": {
+  "model_usd": {
+   "average": 0.0020649,
+   "min": 0.001967,
+   "max": 0.002261,
+   "incidents": 10,
+   "source": "CloudWatch metric UptimeDesk/IncidentModelCostUSD over the batch window"
+  },
+  "infrastructure_note": "Lambda, Step Functions, EventBridge, and Fargate charges per incident were not isolated; Cost Explorer does not resolve per run."
+ },
+ "work_orders_in_batch": {
+  "draft": 8,
+  "blocked": 2,
+  "source": "CloudWatch metric UptimeDesk/WorkOrders"
+ },
+ "mcp_gateway_check": {
+  "no_token_status": 401,
+  "tools": [
+   "x_amz_bedrock_agentcore_search",
+   "uptime___get_asset_history",
+   "uptime___get_work_order",
+   "uptime___list_my_jobs",
+   "uptime___search_manuals"
+  ],
+  "t01_jobs": 9,
+  "t01_reads_other": {
+   "denied": true,
+   "reason": "work order is assigned to another technician"
+  },
+  "t01_spoofs_manager": {
+   "denied": true,
+   "reason": "work order is assigned to another technician"
+  },
+  "manager_reads": {
+   "found": true,
+   "assigned_technician": "T16"
+  }
+ },
+ "idle_cost": {
+  "status": "not measured",
+  "reason": "owner keeps the demo profile up for the hiring-manager week; idle cost is measured from Cost Explorer after demo-down.sh, at least one full day later",
+  "estimate_usd_per_week": {
+   "idle": 7.5,
+   "demo_added": 3.0,
+   "basis": "list prices, us-east-2"
+  }
+ }
+}

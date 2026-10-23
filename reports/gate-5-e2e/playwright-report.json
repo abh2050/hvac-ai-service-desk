@@ -3,8 +3,7 @@
     "argv": [
       "/opt/homebrew/Cellar/node/25.1.0/bin/node",
       "/Users/abhishekshah/Desktop/hvac/app/node_modules/.bin/playwright",
-      "test",
-      "e2e/mcp-gateway.spec.ts"
+      "test"
     ],
     "configFile": "/Users/abhishekshah/Desktop/hvac/app/playwright.config.ts",
     "rootDir": "/Users/abhishekshah/Desktop/hvac/app/e2e",
@@ -99,6 +98,48 @@
   },
   "suites": [
     {
+      "title": "full-flow.spec.ts",
+      "file": "full-flow.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "replay, diagnose, approve, dispatch, and ask the assistant",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 900000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 94004,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-23T21:17:24.469Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "0366a69751fb3136692b-001d5411e93d75d1a6e4",
+          "file": "full-flow.spec.ts",
+          "line": 21,
+          "column": 1
+        }
+      ]
+    },
+    {
       "title": "mcp-gateway.spec.ts",
       "file": "mcp-gateway.spec.ts",
       "column": 0,
@@ -106,7 +147,7 @@
       "specs": [
         {
           "title": "MCP gateway: auth, ownership, spoofing",
-          "ok": true,
+          "ok": false,
           "tags": [],
           "tests": [
             {
@@ -119,40 +160,70 @@
                 {
                   "workerIndex": 0,
                   "parallelIndex": 0,
-                  "status": "passed",
-                  "duration": 38577,
-                  "errors": [],
+                  "status": "failed",
+                  "duration": 5630,
+                  "error": {
+                    "message": "TypeError: Failed to parse URL from undefined",
+                    "stack": "TypeError: Failed to parse URL from undefined\n    at rpc (/Users/abhishekshah/Desktop/hvac/app/e2e/mcp-gateway.spec.ts:32:15)\n    at /Users/abhishekshah/Desktop/hvac/app/e2e/mcp-gateway.spec.ts:58:16",
+                    "cause": {
+                      "message": "TypeError: Invalid URL",
+                      "stack": "TypeError: Invalid URL\n    at rpc (/Users/abhishekshah/Desktop/hvac/app/e2e/mcp-gateway.spec.ts:32:21)\n    at /Users/abhishekshah/Desktop/hvac/app/e2e/mcp-gateway.spec.ts:58:22"
+                    },
+                    "location": {
+                      "file": "/Users/abhishekshah/Desktop/hvac/app/e2e/mcp-gateway.spec.ts",
+                      "column": 15,
+                      "line": 32
+                    },
+                    "snippet": "  30 | let id = 0;\n  31 | async function rpc(token: string | null, method: string, params: Record<string, unknown> = {}) {\n> 32 |   const res = await fetch(URL, {\n     |               ^\n  33 |     method: 'POST',\n  34 |     headers: { 'content-type': 'application/json', accept: 'application/json, text/event-stream',\n  35 |                ...(token ? { authorization: `Bearer ${token}` } : {}) },"
+                  },
+                  "errors": [
+                    {
+                      "location": {
+                        "file": "/Users/abhishekshah/Desktop/hvac/app/e2e/mcp-gateway.spec.ts",
+                        "column": 15,
+                        "line": 32
+                      },
+                      "message": "TypeError: Failed to parse URL from undefined\n\n  30 | let id = 0;\n  31 | async function rpc(token: string | null, method: string, params: Record<string, unknown> = {}) {\n> 32 |   const res = await fetch(URL, {\n     |               ^\n  33 |     method: 'POST',\n  34 |     headers: { 'content-type': 'application/json', accept: 'application/json, text/event-stream',\n  35 |                ...(token ? { authorization: `Bearer ${token}` } : {}) },\n    at rpc (/Users/abhishekshah/Desktop/hvac/app/e2e/mcp-gateway.spec.ts:32:15)\n    at /Users/abhishekshah/Desktop/hvac/app/e2e/mcp-gateway.spec.ts:58:16\n[cause]: TypeError: Invalid URL\n    at rpc (/Users/abhishekshah/Desktop/hvac/app/e2e/mcp-gateway.spec.ts:32:21)\n    at /Users/abhishekshah/Desktop/hvac/app/e2e/mcp-gateway.spec.ts:58:22"
+                    }
+                  ],
                   "stdout": [
                     {
-                      "text": "[mcp-check 21:02:02] signing in as technician\n"
+                      "text": "[mcp-check 21:18:58] signing in as technician\n"
                     },
                     {
-                      "text": "[mcp-check 21:02:06] technician token ok\n"
+                      "text": "[mcp-check 21:19:01] technician token ok\n"
                     },
                     {
-                      "text": "[mcp-check 21:02:09] manager token ok\n"
+                      "text": "[mcp-check 21:19:04] manager token ok\n"
                     },
                     {
-                      "text": "[mcp-check 21:02:09] calling gateway without a token\n"
-                    },
-                    {
-                      "text": "[mcp-check 21:02:15] no-token status 401\n"
-                    },
-                    {
-                      "text": "[mcp-check 21:02:20] tools/list status 200: {\"jsonrpc\":\"2.0\",\"id\":2,\"result\":{\"tools\":[{\"inputSchema\":{\"type\":\"object\",\"properties\":{\"query\":{\"type\":\"string\"}},\"required\":[\"query\"]},\"name\":\"x_amz_bedrock_agentcore_search\",\"description\":\"A special tool that returns a trimmed down list of tools given a context. Use this tool only when there are\n"
-                    },
-                    {
-                      "text": "[mcp-check 21:02:20] calling tools\n"
+                      "text": "[mcp-check 21:19:04] calling gateway without a token\n"
                     }
                   ],
                   "stderr": [],
                   "retry": 0,
-                  "startTime": "2026-10-23T21:02:02.628Z",
+                  "startTime": "2026-10-23T21:18:58.576Z",
                   "annotations": [],
-                  "attachments": []
+                  "attachments": [
+                    {
+                      "name": "error-context",
+                      "contentType": "text/markdown",
+                      "path": "/Users/abhishekshah/Desktop/hvac/reports/gate-5-e2e/artifacts/mcp-gateway-MCP-gateway-auth-ownership-spoofing/error-context.md"
+                    },
+                    {
+                      "name": "trace",
+                      "contentType": "application/zip",
+                      "path": "/Users/abhishekshah/Desktop/hvac/reports/gate-5-e2e/artifacts/mcp-gateway-MCP-gateway-auth-ownership-spoofing/trace.zip"
+                    }
+                  ],
+                  "errorLocation": {
+                    "file": "/Users/abhishekshah/Desktop/hvac/app/e2e/mcp-gateway.spec.ts",
+                    "column": 15,
+                    "line": 32
+                  }
                 }
               ],
-              "status": "expected"
+              "status": "unexpected"
             }
           ],
           "id": "805bf404ae11e1188f9d-24580fa86d3159a57ef3",
@@ -165,11 +236,11 @@
   ],
   "errors": [],
   "stats": {
-    "startTime": "2026-10-23T21:02:02.369Z",
-    "duration": 39093.014,
+    "startTime": "2026-10-23T21:17:24.261Z",
+    "duration": 100025.24200000001,
     "expected": 1,
     "skipped": 0,
-    "unexpected": 0,
+    "unexpected": 1,
     "flaky": 0
   }
 }

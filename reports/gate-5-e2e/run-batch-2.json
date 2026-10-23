@@ -1,0 +1,18 @@
+{
+ "run": "batch-2",
+ "scenario": "Site2-Colchester-10t|2020-06-18",
+ "signed_in_s": 2.8,
+ "run_id": "run-20261023210423-097f3b",
+ "replay_started_s": 4.5,
+ "work_order_drafted_s": 47,
+ "work_order_id": "WO-AST-RTU-04-202610231705-30a9a3",
+ "work_order_status": "draft",
+ "verified_citations_shown": 3,
+ "approved_s": 51,
+ "dispatch_outcome": "assigned",
+ "dispatched_s": 85.9,
+ "assistant_answered_s": 95.6,
+ "cross_technician_denied": true,
+ "cross_technician_leak": false,
+ "done_s": 99
+}
