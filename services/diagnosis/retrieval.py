@@ -13,10 +13,11 @@ import json
 import math
 import re
 from collections import Counter
-from concurrent.futures import ThreadPoolExecutor
+import time
 from pathlib import Path
 
 import boto3
+from botocore.config import Config
 import numpy as np
 
 EMBED_MODEL = "amazon.titan-embed-text-v2:0"
@@ -30,7 +31,7 @@ def load_chunks(path: Path) -> list[dict]:
 class Embedder:
     def __init__(self, region: str = "us-east-2", profile: str | None = None):
         session = boto3.Session(profile_name=profile, region_name=region)
-        self.client = session.client("bedrock-runtime")
+        self.client = session.client("bedrock-runtime", config=Config(retries={"max_attempts": 10, "mode": "adaptive"}))
         self.input_tokens = 0
 
     def embed(self, text: str) -> np.ndarray:
@@ -39,9 +40,21 @@ class Embedder:
         self.input_tokens += resp.get("inputTextTokenCount", 0)
         return np.asarray(resp["embedding"], dtype=np.float32)
 
-    def embed_many(self, texts: list[str], workers: int = 8) -> np.ndarray:
-        with ThreadPoolExecutor(workers) as pool:
-            return np.vstack(list(pool.map(self.embed, texts)))
+    def embed_many(self, texts: list[str], per_minute: int = 55, cache: Path | None = None) -> np.ndarray:
+        """Embed under the account's requests-per-minute quota; resumes from `cache` if given."""
+        done = json.loads(cache.read_text()) if cache and cache.exists() else {}
+        interval = 60.0 / per_minute
+        for i, t in enumerate(texts):
+            if str(i) in done:
+                continue
+            start = time.time()
+            done[str(i)] = self.embed(t).tolist()
+            if cache and i % 25 == 0:
+                cache.write_text(json.dumps(done))
+            time.sleep(max(0.0, interval - (time.time() - start)))
+        if cache:
+            cache.write_text(json.dumps(done))
+        return np.vstack([np.asarray(done[str(i)], dtype=np.float32) for i in range(len(texts))])
 
 
 class VectorIndex:
