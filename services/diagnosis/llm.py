@@ -36,6 +36,30 @@ class LLM:
         self.model_id, self.max_tokens, self.guardrail = model_id, max_tokens, guardrail
         self.usage = Usage()
 
+    def converse_raw(self, system: str, messages: list, tool_config: dict | None = None) -> dict:
+        """One Converse call with a full message list (tool use). Usage is recorded like complete()."""
+        kwargs = dict(modelId=self.model_id, system=[{"text": system}], messages=messages,
+                      inferenceConfig={"maxTokens": self.max_tokens, "temperature": 0})
+        if tool_config:
+            kwargs["toolConfig"] = tool_config
+        if self.guardrail:
+            kwargs["guardrailConfig"] = self.guardrail
+        t = time.time()
+        resp = self.client.converse(**kwargs)
+        self.usage.latency_ms.append(int((time.time() - t) * 1000))
+        if resp.get("stopReason") == "max_tokens":
+            self.usage.truncated += 1
+        u = resp.get("usage", {})
+        self.usage.calls += 1
+        self.usage.input_tokens += u.get("inputTokens", 0)
+        self.usage.output_tokens += u.get("outputTokens", 0)
+        p_in, p_out = PRICES.get(self.model_id, (0.0, 0.0))
+        self.usage.cost_usd += (u.get("inputTokens", 0) * p_in + u.get("outputTokens", 0) * p_out) / 1e6
+        # Drop reasoning blocks before they are sent back: only text and tool blocks continue the turn.
+        resp["output"]["message"]["content"] = [b for b in resp["output"]["message"]["content"]
+                                                if "reasoningContent" not in b]
+        return resp
+
     def complete(self, system: str, user: str) -> str:
         kwargs = dict(modelId=self.model_id, system=[{"text": system}],
                       messages=[{"role": "user", "content": [{"text": user}]}],
@@ -62,6 +86,6 @@ def parse_json(text: str) -> dict | None:
     if not match:
         return None
     try:
-        return json.loads(match.group(0))
+        return json.loads(match.group(0), strict=False)   # tolerate raw newlines inside strings
     except json.JSONDecodeError:
         return None

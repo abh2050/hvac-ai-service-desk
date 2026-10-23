@@ -23,6 +23,7 @@ def get_work_order(conn, work_order_id: str) -> dict | None:
 
 
 def owner_of(conn, work_order_id: str) -> str | None:
+    # Latest OR-Tools decision, live or from the labeled demo scenario week.
     row = conn.execute("""SELECT technician_id FROM dispatch_decisions WHERE work_order_id = %s AND method = 'ortools'
-                          AND scenario_id IS NULL ORDER BY decided_at DESC LIMIT 1""", (work_order_id,)).fetchone()
+                          ORDER BY decided_at DESC LIMIT 1""", (work_order_id,)).fetchone()
     return row[0] if row else None

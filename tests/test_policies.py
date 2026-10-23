@@ -9,7 +9,7 @@ from citation_verifier.verify import Verifier
 from diagnosis import policy
 from dispatch import model as dm
 from dispatch import optimizer as opt
-from mcp.authz import Caller, authorize
+from mcp_server.authz import Caller, authorize
 
 
 class StubJudge:
