@@ -1,0 +1,12 @@
+{
+  "$schema": "https://openapi.vercel.sh/vercel.json",
+  "framework": null,
+  "installCommand": "cd app && npm install",
+  "buildCommand": "bash scripts/build-static-demo.sh",
+  "outputDirectory": "build/vercel/uptime-desk",
+  "rewrites": [{ "source": "/((?!reports/|assets/|snapshot/).*)", "destination": "/index.html" }],
+  "headers": [{ "source": "/(.*)", "headers": [
+    { "key": "X-Frame-Options", "value": "DENY" },
+    { "key": "Referrer-Policy", "value": "strict-origin-when-cross-origin" }
+  ] }]
+}
