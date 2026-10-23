@@ -5,6 +5,12 @@ type Answer = { question: string; answer: string; citations_shown: { manual_id: 
   insufficient_evidence: boolean; answer_rewritten: boolean; tool_trace: { tool: string; input: Record<string, unknown>; error: boolean; denied: boolean }[];
   seconds: number; cost_usd: number };
 
+// The model writes light markdown (**bold**). Render bold, show everything else as plain text.
+function Rich({ text }: { text: string }) {
+  return <>{text.split(/(\*\*[^*]+\*\*)/g).map((part, i) =>
+    part.startsWith('**') && part.endsWith('**') ? <strong key={i}>{part.slice(2, -2)}</strong> : <span key={i}>{part}</span>)}</>;
+}
+
 export default function Assistant() {
   const [q, setQ] = useState('What jobs do I have this week?');
   const [log, setLog] = useState<Answer[]>([]);
@@ -38,7 +44,7 @@ export default function Assistant() {
           {a.tool_trace.some((t) => t.denied) && <div className="banner bad">Access denied. That item belongs to another technician, and the request was recorded in the audit log.</div>}
           {a.insufficient_evidence && <div className="banner warn">The tools did not provide what this question needs.</div>}
           {a.answer_rewritten && <div className="banner warn">The answer restated manual steps in its own words, so only the verified quotes are shown.</div>}
-          <p style={{ whiteSpace: 'pre-wrap' }}>{a.answer}</p>
+          <p style={{ whiteSpace: 'pre-wrap' }}><Rich text={a.answer} /></p>
           {a.citations_shown.map((c, j) => (
             <div key={j}><span className="muted">{c.manual_id}, page {c.page}</span><blockquote>{c.quote}</blockquote></div>
           ))}
