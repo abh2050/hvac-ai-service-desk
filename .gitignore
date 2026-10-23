@@ -31,3 +31,4 @@ docs/*.mp4
 reports/gate-5-e2e/artifacts*/
 video/capture/
 reports/gate-5-e2e/logs/
+build/

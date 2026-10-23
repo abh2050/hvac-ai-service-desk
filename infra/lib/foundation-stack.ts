@@ -86,7 +86,7 @@ export class FoundationStack extends cdk.Stack {
 
     // The API needs the Cognito pool that Amplify Gen 2 creates; deploy it once that pool exists.
     if (this.node.tryGetContext('withApi') !== 'false') {
-      new ApiLayer(this, 'Api', this, ['https://main.du00v4uwlekbh.amplifyapp.com', 'http://localhost:5173']);
+      new ApiLayer(this, 'Api', this, ['https://main.du00v4uwlekbh.amplifyapp.com', 'https://uptime-desk.vercel.app', 'http://localhost:5173']);
       new McpGateway(this, 'Mcp', this);
       new Dashboard(this, 'Dashboard');
     }
