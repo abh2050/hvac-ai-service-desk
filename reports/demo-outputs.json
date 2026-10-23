@@ -10,6 +10,7 @@
     "ExportsOutputFnGetAttDataGuardrail96693D20GuardrailId2468CF0C": "r4gcaz15blbm",
     "AuroraEndpoint": "uptimedesk-foundation-dataaurora8cc34183-fkpt0nv0onjm.cluster-cri0q0qig5na.us-east-2.rds.amazonaws.com",
     "ExportsOutputRefVpc8378EB38272D6E3A": "vpc-06e0f72ecad05c2bb",
+    "ApiUrl": "https://9pq6z01gmc.execute-api.us-east-2.amazonaws.com",
     "ExportsOutputRefDataBucketE3889A50250F5285": "uptimedesk-foundation-databuckete3889a50-yvbfgn1crmig",
     "VpcId": "vpc-06e0f72ecad05c2bb",
     "ExportsOutputFnGetAttDataGuardrailVersion16AA9D64VersionDF998F39": "1",
@@ -18,8 +19,8 @@
     "ExportsOutputRefDataAuroraSecretAttachment4F29BD4E3BAD97E2": "arn:aws:secretsmanager:us-east-2:054772656600:secret:uptime-desk/aurora-tfq31C"
   },
   "UptimeDesk-Demo": {
-    "ReplayMachineArn": "arn:aws:states:us-east-2:054772656600:stateMachine:PipelineReplayMachine4B866890-ONw45pANhlrx",
-    "CaseMachineArn": "arn:aws:states:us-east-2:054772656600:stateMachine:PipelineCaseMachine3363A6F2-6sX6BbAamvl3",
+    "ReplayMachineArn": "arn:aws:states:us-east-2:054772656600:stateMachine:uptime-desk-replay",
+    "CaseMachineArn": "arn:aws:states:us-east-2:054772656600:stateMachine:uptime-desk-case",
     "StreamName": "UptimeDesk-Demo-SensorReplayStreamBCC21B1E-g82ntTr0TYSn"
   }
 }

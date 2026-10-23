@@ -21,3 +21,8 @@ video/out/*.mp4
 video/audio/
 .DS_Store
 !data/checksums.sha256
+
+# Local screen recordings (large, may show sign-in screens); never pushed to the public repo
+docs/*.mov
+docs/*.mp4
+.DS_Store

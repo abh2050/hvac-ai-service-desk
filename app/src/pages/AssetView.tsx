@@ -17,7 +17,7 @@ export default function AssetView() {
   return (
     <>
       <h1>Asset view</h1>
-      <p className="muted">{t?.scenario_id}. {t?.note}. Shaded hours are alarm windows: orange when the rules fired, purple when only the model alarmed.</p>
+      <p className="muted">Recorded day {t?.scenario_id}. Replay of recorded data. Shaded hours are alarm windows: orange when the rules fired, purple when only the model alarmed.</p>
       {error && <div className="banner bad">{error}</div>}
       <div className="card" style={{ height: 380 }}>
         <ResponsiveContainer>

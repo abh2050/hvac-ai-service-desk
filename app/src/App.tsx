@@ -14,8 +14,11 @@ import Evidence from './pages/Evidence';
 function Shell({ signOut }: { signOut?: () => void }) {
   const [me, setMe] = useState<Me | null>(null);
   const [error, setError] = useState('');
+  const [slow, setSlow] = useState(false);
   useEffect(() => {
-    api<Me>('/me').then(setMe).catch((e) => setError(String(e.message)));
+    const t = window.setTimeout(() => setSlow(true), 3000);
+    api<Me>('/me').then(setMe).catch((e) => setError(String(e.message))).finally(() => { window.clearTimeout(t); setSlow(false); });
+    return () => window.clearTimeout(t);
   }, []);
   const links: [string, string][] = [
     ['/scenarios', 'Scenario launcher'], ['/pipeline', 'Live pipeline'], ['/asset', 'Asset view'],
@@ -33,6 +36,9 @@ function Shell({ signOut }: { signOut?: () => void }) {
         <button className="secondary" style={{ marginTop: 'auto' }} onClick={signOut}>Sign out</button>
       </nav>
       <main className="content">
+        {slow && !me && (
+          <div className="banner warn">Waking up the database. The first request after a quiet period can take up to 30 seconds.</div>
+        )}
         <Routes>
           <Route path="/" element={<Navigate to={me?.role === 'technician' ? '/assistant' : '/scenarios'} replace />} />
           <Route path="/scenarios" element={<Scenarios me={me} />} />

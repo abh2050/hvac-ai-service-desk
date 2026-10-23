@@ -82,6 +82,19 @@ export class ApiLayer extends Construct {
       defaultAuthorizer: authorizer,
       defaultIntegration: new integrations.HttpLambdaIntegration('ApiIntegration', fn),
     });
+    // Browsers send CORS preflights without a token. A catch-all route with the JWT authorizer would
+    // answer them 401, which the browser reports as a network failure. This OPTIONS route has no
+    // authorizer, so API Gateway answers preflights from the CORS settings above. Every other method
+    // still requires a valid Cognito token.
+    api.addRoutes({
+      path: '/{proxy+}', methods: [apigw.HttpMethod.OPTIONS],
+      integration: new integrations.HttpLambdaIntegration('PreflightIntegration', fn),
+      authorizer: new apigw.HttpNoneAuthorizer(),
+    });
+
+    // Public demo: cap request rate so a shared link cannot run up Bedrock or Lambda costs.
+    const stage = api.defaultStage!.node.defaultChild as apigw.CfnStage;
+    stage.defaultRouteSettings = { throttlingRateLimit: 5, throttlingBurstLimit: 10 };
     this.url = api.apiEndpoint;
     new ssm.StringParameter(this, 'ApiUrl', { parameterName: '/uptime-desk/api/url', stringValue: api.apiEndpoint });
     new cdk.CfnOutput(stack, 'ApiUrl', { value: api.apiEndpoint });

@@ -39,8 +39,11 @@ def _db_secret() -> dict:
 def db() -> psycopg.Connection:
     s = _db_secret()
     # Aurora may be resuming from auto pause; allow time for the first connection.
+    # Session time zone is the service territory's (Connecticut). Pipeline times are local wall-clock
+    # times; without this, Postgres would read them as UTC and every SLA would be off by 4 or 5 hours.
     return psycopg.connect(host=s["host"], port=s.get("port", 5432), dbname=s.get("dbname", "uptime"),
-                           user=s["username"], password=s["password"], autocommit=True, connect_timeout=60)
+                           user=s["username"], password=s["password"], autocommit=True, connect_timeout=60,
+                           options="-c timezone=America/New_York")
 
 
 def bucket() -> str:

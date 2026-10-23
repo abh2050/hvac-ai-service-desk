@@ -34,7 +34,7 @@ export default function Pipeline() {
   return (
     <>
       <h1>Live pipeline</h1>
-      <p className="muted">Run <code>{runId}</code>, {run?.scenario_id}. {run?.note}.</p>
+      <p className="muted">Run <code>{runId}</code>, recorded day {run?.scenario_id}. Replay of recorded data.</p>
       {error && <div className="banner bad">{error}</div>}
       <div className="card row">
         <div><strong>Replay</strong><div>{run?.replay.status ?? 'starting'}</div></div>

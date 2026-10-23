@@ -15,7 +15,7 @@ import uuid
 from datetime import datetime
 
 import pandas as pd
-from fastapi import Depends, FastAPI, HTTPException, Request
+from fastapi import Depends, FastAPI, HTTPException, Request, Response
 from pydantic import BaseModel
 
 from handlers.common import bucket, catalog, client, config, db
@@ -34,6 +34,12 @@ TREND_COLUMNS = {
                "RTU: Supply Air Temperature", "RTU: Return Air Temperature",
                "RTU: Circuit 1 Suction Pressure", "RTU: Circuit 2 Suction Pressure"],
 }
+
+
+@app.options("/{path:path}", include_in_schema=False)
+def preflight(path: str) -> Response:
+    """CORS preflight (no token). API Gateway adds the allowed-origin headers from its CORS settings."""
+    return Response(status_code=204)
 
 
 def caller(request: Request) -> Caller:
